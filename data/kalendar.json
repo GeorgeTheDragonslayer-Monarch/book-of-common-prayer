@@ -1,0 +1,2768 @@
+{
+  "1-1": [
+    {
+      "name": "Circumcision of Our Lord",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": "(Octave Day of Christmas)"
+    }
+  ],
+  "1-2": [
+    {
+      "name": "Most Holy Name of Jesus",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "Octave Day of St. Stephen, Protomartyr",
+      "rank": "Simple",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-3": [
+    {
+      "name": "Octave Day of St. John, Apostle & Evangelist",
+      "rank": "Simple",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-4": [
+    {
+      "name": "Octave Day of the Holy Innocents",
+      "rank": "Simple",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Titus, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-5": [
+    {
+      "name": "Vigil of the Epiphany",
+      "rank": "2nd Vigil",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Pope St. Telesphorus of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-6": [
+    {
+      "name": "Epiphany of Our Lord (2nd Octave)",
+      "rank": "1st Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "1-7": [
+    {
+      "name": "Day II within the Octave of the Epiphany",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-8": [
+    {
+      "name": "Day III within the Octave of the Epiphany",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-9": [
+    {
+      "name": "Day IV within the Octave of the Epiphany",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-10": [
+    {
+      "name": "Day V within the Octave of the Epiphany",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Paul the First Hermit, Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-11": [
+    {
+      "name": "Day VI within the Octave of the Epiphany",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Pope St. Hyginus of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-12": [
+    {
+      "name": "Day VII within the Octave of the Epiphany",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Benedict Biscop, Abbot",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-13": [
+    {
+      "name": "Octave Day of the Epiphany",
+      "rank": "Greater Double",
+      "redLetter": true,
+      "note": "(Baptism of Our Lord)"
+    }
+  ],
+  "1-14": [
+    {
+      "name": "St. Hilary of Poitiers, Bishop, Confessor, & Doctor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Felix of Nola, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-15": [
+    {
+      "name": "St. Maurus, Abbot",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-16": [
+    {
+      "name": "Pope St. Marcellus I of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-17": [
+    {
+      "name": "St. Anthony, Abbot",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-18": [
+    {
+      "name": "Chair of St. Peter in Rome",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Commemoration of St. Paul",
+      "rank": "Commemoration",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Prisca of Rome, Virgin Martyress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-19": [
+    {
+      "name": "Sts. Marius, Martha, Audifax, & Abachum, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Mark of Ephesus, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-20": [
+    {
+      "name": "Sts. Pope Fabian of Rome (Bishop) & Sebastian, Martyrs",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-21": [
+    {
+      "name": "St. Agnes of Rome, Virgin Martyress",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-22": [
+    {
+      "name": "Sts. Vincent & Anastasius, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-23": [
+    {
+      "name": "St. Emerentiana, Virgin Martyress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-24": [
+    {
+      "name": "St. Timothy, Bishop & Martyr",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-25": [
+    {
+      "name": "Conversion of St. Paul the Apostle",
+      "rank": "Greater Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "Commemoration of St. Peter",
+      "rank": "Commemoration",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-26": [
+    {
+      "name": "St. Polycarp of Smyrna, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-27": [
+    {
+      "name": "St. John Chrysostom, Bishop, Confessor, & Doctor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-28": [
+    {
+      "name": "Pope St. Cyril of Alexandria, Bishop, Confessor, & Doctor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Agnes of Rome, Virgin Martyress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-30": [
+    {
+      "name": "St. Martina, Virgin Martyress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "1-31": [
+    {
+      "name": null,
+      "rank": null,
+      "redLetter": false,
+      "note": "(Earliest Date of Septuagesima)"
+    }
+  ],
+  "2-1": [
+    {
+      "name": "St. Ignatius of Antioch, Bishop & Martyr",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Bridget of Ireland, Virgin",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-2": [
+    {
+      "name": "Purification of the Blessed Virgin Mary",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "2-3": [
+    {
+      "name": "St. Blaise of Sebaste, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-4": [
+    {
+      "name": "St. Joseph of Aleppo, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "New Martyrs of Russia",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-5": [
+    {
+      "name": "St. Agatha of Sicily, Virgin Martyress",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-6": [
+    {
+      "name": "St. Dorothea of Caesarea, Virgin Martyress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Photius I of Constantinople, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-7": [
+    {
+      "name": "St. Romuald, Abbot",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-9": [
+    {
+      "name": "St. Apollonia of Alexandria, Virgin Martyress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-10": [
+    {
+      "name": "St. Scholastica, Virgin",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-11": [
+    {
+      "name": "Pope St. Gregory II, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-14": [
+    {
+      "name": "St. Valentine, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-15": [
+    {
+      "name": "Sts. Faustinus & Jovita, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-17": [
+    {
+      "name": null,
+      "rank": null,
+      "redLetter": false,
+      "note": "(Earliest Date of Lent)"
+    }
+  ],
+  "2-18": [
+    {
+      "name": "St. Simeon of Jerusalem, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-22": [
+    {
+      "name": "Chair of St. Peter at Antioch",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "Commemoration of St. Paul",
+      "rank": "Commemoration",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-23": [
+    {
+      "name": "Vigil of St. Matthias",
+      "rank": "Vigil",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-24": [
+    {
+      "name": "St. Matthias, Apostle",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "2-25": [
+    {
+      "name": "St. Walburga of Heidenheim, Virgin",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-26": [
+    {
+      "name": "Pope St. Alexander of Alexandria, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "2-27": [
+    {
+      "name": "St. Raphael of Brooklyn, Bishop & Confessor",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "3-1": [
+    {
+      "name": "St. David of Wales, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "3-2": [
+    {
+      "name": "St. Chad, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "3-4": [
+    {
+      "name": "Pope St. Lucius I of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "3-6": [
+    {
+      "name": "Sts. Perpetua & Felicitas, Martyresses",
+      "rank": "Double",
+      "redLetter": false,
+      "note": "(Latest Date of Septuagesima)"
+    }
+  ],
+  "3-9": [
+    {
+      "name": "St. Gregory of Nyssa, Bishop, Confessor, & Doctor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "3-10": [
+    {
+      "name": "Forty Holy Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "3-12": [
+    {
+      "name": "Pope St. Gregory of Rome, Bishop, Confessor, & Doctor",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "3-17": [
+    {
+      "name": "St. Patrick, Bishop & Confessor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Joseph of Arimathea, Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "3-18": [
+    {
+      "name": "St. Cyril of Jerusalem, Bishop, Confessor, & Doctor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "King St. Edward, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "3-19": [
+    {
+      "name": "St. Joseph, Spouse of the Blessed Virgin Mary, Confessor",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "3-20": [
+    {
+      "name": "St. Cuthbert, Bishop & Confessor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "3-21": [
+    {
+      "name": "St. Benedict, Abbot",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "3-23": [
+    {
+      "name": null,
+      "rank": null,
+      "redLetter": false,
+      "note": "(Latest Date of Lent)"
+    }
+  ],
+  "3-24": [
+    {
+      "name": "St. Gabriel the Archangel",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "3-25": [
+    {
+      "name": "Annunciation of the Blessed Virgin Mary",
+      "rank": "1st Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "3-27": [
+    {
+      "name": "St. John Damascene, Confessor & Doctor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "3-30": [
+    {
+      "name": "St. John Climacus, Abbot",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "3-31": [
+    {
+      "name": "St. Innocent of Alaska, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "4-4": [
+    {
+      "name": "St. Isidore of Seville, Bishop, Confessor, & Doctor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": "(Earliest Date of Easter)"
+    }
+  ],
+  "4-7": [
+    {
+      "name": "St. Tikhon of Moscow, Bishop & Confessor (Common Octave)",
+      "rank": "1st Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "4-11": [
+    {
+      "name": "Pope St. Leo the Great, Bishop, Confessor, & Doctor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "4-13": [
+    {
+      "name": "St. Hermengild, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "4-14": [
+    {
+      "name": "St. Justin, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Sts. Tiburtius, Valerian, & Maximus, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "4-17": [
+    {
+      "name": "Pope St. Anicetus of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "4-22": [
+    {
+      "name": "Pope Sts. Soter & Caius of Rome, Bishops & Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "4-23": [
+    {
+      "name": "St. George, Martyr (Common Octave)",
+      "rank": "1st Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "4-24": [
+    {
+      "name": "Day II within the Octave of St. George",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "4-25": [
+    {
+      "name": "St. Mark, Evangelist",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "Day III within the Octave of St. George",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "4-26": [
+    {
+      "name": "Day IV within the Octave of St. George",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Sts. Cletus & Marcellinus, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "4-27": [
+    {
+      "name": "Day V within the Octave of St. George",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "4-28": [
+    {
+      "name": "Day VI within the Octave of St. George",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Vitalis, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "4-29": [
+    {
+      "name": "Day VII within the Octave of St. George",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "4-30": [
+    {
+      "name": "Octave Day of St. George",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-1": [
+    {
+      "name": "Sts. Philip & James, Apostles",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "5-2": [
+    {
+      "name": "Pope St. Athanasius of Alexandria, Bishop, Confessor, & Doctor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-3": [
+    {
+      "name": "Invention of the Holy Cross",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "Sts. Pope Alexander of Rome (Bishop), Eventius, Theodulus (Martyrs),",
+      "rank": null,
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "1em & Juvenalis (Bishop & Confessor)",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-4": [
+    {
+      "name": "St. Monica, Widow",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-6": [
+    {
+      "name": "St. John before the Latin Gate",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-7": [
+    {
+      "name": "St. Alexis Toth, Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-8": [
+    {
+      "name": "Apparition of St. Michael the Archangel",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Pope St. Boniface IV of Rome, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": "(Latest Date of Easter)"
+    }
+  ],
+  "5-9": [
+    {
+      "name": "St. Gregory Nazianzen, Bishop, Confessor, & Doctor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-10": [
+    {
+      "name": "Sts. Gordian & Epimachus, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-12": [
+    {
+      "name": "Sts. Nereus, Achilles, Domitilla, & Pancras, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-14": [
+    {
+      "name": "St. Boniface of Tarsus, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-18": [
+    {
+      "name": "St. Venantius, Martyr",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-19": [
+    {
+      "name": "St. Pudentiana, Virgin",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-22": [
+    {
+      "name": "St. Romanus, Abbot",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-24": [
+    {
+      "name": "St. Vincent of Lerins, Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-25": [
+    {
+      "name": "Pope St. Urban of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-26": [
+    {
+      "name": "St. Augustine of Canterbury, Bishop & Confessor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Pope St. Eleutherius of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-27": [
+    {
+      "name": "St. Bede the Venerable, Confessor & Doctor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Pope St. John I of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-30": [
+    {
+      "name": "Pope St. Felix I of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "5-31": [
+    {
+      "name": "St. Petronilla, Virgin",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-2": [
+    {
+      "name": "St. Marcellinus, Peter, & Erasmus, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-5": [
+    {
+      "name": "St. Boniface, Bishop & Martyr",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-9": [
+    {
+      "name": "St. Columba of Iona, Abbot",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Sts. Primus & Felician, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-10": [
+    {
+      "name": "Queen St. Margaret of Scotland, Matron",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-11": [
+    {
+      "name": "St. Barnabas, Apostle",
+      "rank": "Greater Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "6-12": [
+    {
+      "name": "Sts. Basilides, Cyrinus, Nabor, & Nazarius, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-14": [
+    {
+      "name": "St. Basil the Great, Bishop, Confessor, & Doctor",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-15": [
+    {
+      "name": "Sts. Vitus, Modestus, & Crescentia, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-18": [
+    {
+      "name": "St. Ephrem the Syrian, Confessor & Doctor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Sts. Marcus & Marcellianus, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-19": [
+    {
+      "name": "Sts. Gervase & Protase, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-20": [
+    {
+      "name": "Pope St. Silverius of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-22": [
+    {
+      "name": "St. Alban, Protomartyr of England",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Paulinus, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-23": [
+    {
+      "name": "Vigil of St. John Baptist",
+      "rank": "Vigil",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Queen St. Etheldreda, Virgin",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-24": [
+    {
+      "name": "Nativity of St. John Baptist (Common Octave)",
+      "rank": "1st Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "6-25": [
+    {
+      "name": "Day II within the Octave of St. John Baptist",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-26": [
+    {
+      "name": "Sts. John & Paul, Martyrs",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Day III within the Octave of St. John Baptist",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-27": [
+    {
+      "name": "Day IV within the Octave of St. John Baptist",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-28": [
+    {
+      "name": "Day V within the Octave of St. John Baptist",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Vigil of Sts. Peter & Paul",
+      "rank": "Vigil",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Pope St. Leo II of Rome, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-29": [
+    {
+      "name": "St. Peter, Apostle (Common Octave)",
+      "rank": "1st Double",
+      "redLetter": true,
+      "note": "(Sts. Peter & Paul, Apostles)"
+    },
+    {
+      "name": "Day VI within the Octave of St. John Baptist",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "6-30": [
+    {
+      "name": "Commemoration of St. Paul, Apostle",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Commemoration of St. Peter, Apostle",
+      "rank": "Commemoration",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Day VII within the Octave of St. John Baptist",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-1": [
+    {
+      "name": "Most Precious Blood of Our Lord Jesus Christ",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "Octave Day of St. John Baptist",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Day III within the Octave of Sts. Peter & Paul",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-2": [
+    {
+      "name": "Visitation of the Blessed Virgin Mary",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "St. John of San Francisco, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Sts. Processus & Martinian, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Day IV within the Octave of Sts. Peter & Paul",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-3": [
+    {
+      "name": "St. Irenus of Lyon, Bishop & Martyr",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Day V within the Octave of Sts. Peter & Paul",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-4": [
+    {
+      "name": "Day VI within the Octave of Sts. Peter & Paul",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-5": [
+    {
+      "name": "Day VII within the Octave of Sts. Peter & Paul",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-6": [
+    {
+      "name": "Octave Day of Sts. Peter & Paul",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-7": [
+    {
+      "name": "Sts. Cyril & Methodius, Bishops & Confessors",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-10": [
+    {
+      "name": "Seven Holy Brothers, with Sts. Rufina & Secunda, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Sts. Joseph of Damascus & Companions, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-11": [
+    {
+      "name": "Pope St. Pius I of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "[Solemnity of St. Benedict (Monastics & Oblates only)]",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-12": [
+    {
+      "name": "Sts. Nabor & Felix, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-13": [
+    {
+      "name": "Pope St. Anacletus of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-15": [
+    {
+      "name": "King St. Vladimir of Kiev, Confessor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-16": [
+    {
+      "name": "Sts. Nicholas & Habib Khasha, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "[Our Lady of Einsiedeln (Monastics & Oblates only)]",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-17": [
+    {
+      "name": "St. Alexius, Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-18": [
+    {
+      "name": "Translation of St. Raphael of Brooklyn",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Sts. Symphorosa & Her Seven Sons, Martyresses",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Sergius of Radonezh, Abbot",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-19": [
+    {
+      "name": "St. Seraphim of Sarov, Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-20": [
+    {
+      "name": "St. Elias the Prophet, Confessor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Margaret of Antioch, Virgin Martyress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-21": [
+    {
+      "name": "St. Praxedes, Virgin",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-22": [
+    {
+      "name": "St. Mary Magdalene, Penitent",
+      "rank": "Greater Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "7-23": [
+    {
+      "name": "St. John Cassian, Abbot",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Apollinaris of Ravenna, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Liborius, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-24": [
+    {
+      "name": "Vigil of St. James",
+      "rank": "Vigil",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Christina, Virgin Martyress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-25": [
+    {
+      "name": "St. James, Apostle",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "St. Christopher, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-26": [
+    {
+      "name": "St. Anne, Mother of the Blessed Virgin Mary",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "7-27": [
+    {
+      "name": "St. Pantaleon, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-28": [
+    {
+      "name": "Sts. Nazarius, Celsus, Martyrs; Pope St. Victor of Rome, Bishop & Martyr;",
+      "rank": null,
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "1em & Pope St. Innocent of Rome, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-29": [
+    {
+      "name": "St. Martha of Bethany, Virgin",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Sts. Pope Felix II of Rome (Bishop), Simplicius, Faustinus,",
+      "rank": null,
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "1em & Beatrice, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "7-30": [
+    {
+      "name": "Sts. Abdon & Sennen, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-1": [
+    {
+      "name": "Chains of St. Peter, Apostle",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Commemoration of St. Paul, Apostle",
+      "rank": "Commemoration",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Holy Maccabees, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-2": [
+    {
+      "name": "Pope St. Stephen of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-3": [
+    {
+      "name": "Invention of St. Stephen, Protomartyr",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-5": [
+    {
+      "name": "Dedication of Our Lady of the Snows",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "King St. Oswald, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-6": [
+    {
+      "name": "Transfiguration of Our Lord Jesus Christ",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "Sts. Pope Sixtus II of Rome (Bishop), Felicissimus,",
+      "rank": null,
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "1em & Agapitus, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-7": [
+    {
+      "name": "Most Holy Name of Jesus",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "St. Donatus, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-8": [
+    {
+      "name": "Sts. Cyriacus, Largus, & Smaragdus, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-9": [
+    {
+      "name": "Vigil of St. Lawrence",
+      "rank": "Vigil",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Romanus, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-10": [
+    {
+      "name": "St. Lawrence, Martyr (Simple Octave)",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "8-11": [
+    {
+      "name": "Sts. Tiburtius & Susanna, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-13": [
+    {
+      "name": "St. Maximus of Constantinople, Confessor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Sts. Hippolytus & Cassian, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-14": [
+    {
+      "name": "Vigil of the Assumption",
+      "rank": "Vigil",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Eusebius, Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-15": [
+    {
+      "name": "Assumption of the Blessed Virgin Mary (Common Octave)",
+      "rank": "1st Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "8-16": [
+    {
+      "name": "St. Joachim, Father of the Blessed Virgin Mary",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "8-17": [
+    {
+      "name": "Day III within the Octave of the Assumption",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Octave Day of St. Lawrence",
+      "rank": "Simple",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-18": [
+    {
+      "name": "Day IV within the Octave of the Assumption",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Helen, Empress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Agapitus, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-19": [
+    {
+      "name": "Day V within the Octave of the Assumption",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-20": [
+    {
+      "name": "Day VI within the Octave of the Assumption",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-21": [
+    {
+      "name": "Day VII within the Octave of the Assumption",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-22": [
+    {
+      "name": "Octave Day of the Assumption",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Sts. Timothy (Bishop), Hippolytus, & Symphorian, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-23": [
+    {
+      "name": "Vigil of St. Bartholomew",
+      "rank": "Vigil",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-24": [
+    {
+      "name": "St. Bartholomew, Apostle",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "8-26": [
+    {
+      "name": "Pope St. Zephyrinus of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-28": [
+    {
+      "name": "St. Augustine of Hippo, Bishop, Confessor, & Doctor",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Hermes, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-29": [
+    {
+      "name": "Decollation of St. John Baptist",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Sabina, Martyress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-30": [
+    {
+      "name": "Sts. Felix & Adauctus, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "8-31": [
+    {
+      "name": "St. Aidan of Lindisfarne, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-1": [
+    {
+      "name": "St. Giles, Abbot",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Twelve Holy Brothers, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-2": [
+    {
+      "name": "King St. Stephen of Hungary, Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-4": [
+    {
+      "name": "St. Gorazde of Prague, Bishop & Martyr",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-8": [
+    {
+      "name": "Nativity of the Blessed Virgin Mary (Simple Octave)",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "St. Hadrian, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-9": [
+    {
+      "name": "St. Gorgonius, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-11": [
+    {
+      "name": "Sts. Protus & Hyacinth, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-12": [
+    {
+      "name": "Most Holy Name of Mary",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-14": [
+    {
+      "name": "Exaltation of the Holy Cross",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-15": [
+    {
+      "name": "Seven Sorrows of the Blessed Virgin Mary",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "St. Nicomedes, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-16": [
+    {
+      "name": "Sts. Pope Cornelius of Rome & Cyprian, Bishops and Martyrs",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Sts. Euphemia, Lucy, & Geminian, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-19": [
+    {
+      "name": "Sts. Januarius & Companions, Martyrs",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Theodore of Canterbury, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-20": [
+    {
+      "name": "Sts. Eustace & Companions, Martyrs",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Vigil of St. Matthew",
+      "rank": "Vigil",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-21": [
+    {
+      "name": "St. Matthew, Apostle & Evangelist",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "9-22": [
+    {
+      "name": "Sts. Maurice & Companions, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-23": [
+    {
+      "name": "Pope St. Linus of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Thecla, Virgin Martyress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-26": [
+    {
+      "name": "Sts. Cyprian & Justina, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-27": [
+    {
+      "name": "Sts. Cosmas & Damian, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-28": [
+    {
+      "name": "Duke St. Wenceslaus, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "9-29": [
+    {
+      "name": "St. Michael & All Angels",
+      "rank": "1st Double",
+      "redLetter": true,
+      "note": "(Dedication of St. Michael the Archangel)"
+    }
+  ],
+  "9-30": [
+    {
+      "name": "St. Jerome, Confessor & Doctor",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Gregory of Armenia, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-1": [
+    {
+      "name": "St. Remigius, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-2": [
+    {
+      "name": "Holy Guardian Angels",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-5": [
+    {
+      "name": "Sts. Placidus & Companions, Martyrs",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-7": [
+    {
+      "name": "Holy Rosary of the Blessed Virgin Mary",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Pope St. Mark of Rome, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Sts. Sergius, Bacchus, Marcellus, & Apuleius, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-9": [
+    {
+      "name": "Sts. Denys, Rusticus, & Eleutherius, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-11": [
+    {
+      "name": "Motherhood of the Blessed Virgin Mary",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "10-12": [
+    {
+      "name": "St. Wilfrid, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-13": [
+    {
+      "name": "King St. Edward, Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-14": [
+    {
+      "name": "Pope St. Callistus of Rome, Bishop & Martyr",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-15": [
+    {
+      "name": "Our Lady of Walsingham",
+      "rank": "Greater Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "10-18": [
+    {
+      "name": "St. Luke, Evangelist",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "10-19": [
+    {
+      "name": "St. Frideswide, Virgin",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-21": [
+    {
+      "name": "St. Hilarion, Abbot",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Sts. Ursula & Companions, Virgin Martyresses",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-24": [
+    {
+      "name": "St. Raphael the Archangel",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-25": [
+    {
+      "name": "Sts. Chrysanthus & Daria, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-26": [
+    {
+      "name": "Pope St. Evaristus of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-27": [
+    {
+      "name": "Vigil of Sts. Simon & Jude",
+      "rank": "Vigil",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "10-28": [
+    {
+      "name": "Sts. Simon & Jude, Apostles",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "10-31": [
+    {
+      "name": "Hallowe'en",
+      "rank": "Vigil",
+      "redLetter": false,
+      "note": "(Vigil of All Hallows)"
+    }
+  ],
+  "11-1": [
+    {
+      "name": "All Hallows (Common Octave)",
+      "rank": "1st Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "11-2": [
+    {
+      "name": "All Souls",
+      "rank": "Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "Day II within the Octave of All Hallows",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-3": [
+    {
+      "name": "Day III within the Octave of All Hallows",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Winifred, Virgin Martyress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-4": [
+    {
+      "name": "Day IV within the Octave of All Hallows",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Sts. Vitalis & Agricola, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-5": [
+    {
+      "name": "Day V within the Octave of All Hallows",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Elizabeth, Mother of St. John Baptist",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-6": [
+    {
+      "name": "Day VI within the Octave of All Hallows",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-7": [
+    {
+      "name": "Day VII within the Octave of All Hallows",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Willibrord, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-8": [
+    {
+      "name": "Octave Day of All Hallows",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Four Crowned Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-9": [
+    {
+      "name": "Dedication of the Basilica of St. Saviour",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Theodore Tyro, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-10": [
+    {
+      "name": "Sts. Tryphon, Respicius, & Nympha, Martyrs",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-11": [
+    {
+      "name": "St. Martin of Tours, Bishop & Confessor",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Mennas, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-12": [
+    {
+      "name": "Pope St. Martin I of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-13": [
+    {
+      "name": "St. Britius of Tours, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-14": [
+    {
+      "name": "St. Gregory Palamas, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-17": [
+    {
+      "name": "St. Gregory the Wonder-worker, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Hilda of Whitby, Virgin",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-18": [
+    {
+      "name": "Dedication of the Basilica of the Holy Apostles Peter & Paul",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-19": [
+    {
+      "name": "Pope St. Pontianus of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-20": [
+    {
+      "name": "King St. Edmund, Martyr",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-21": [
+    {
+      "name": "Presentation of the Blessed Virgin Mary",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Gelasius, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Columbanus, Abbot",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-22": [
+    {
+      "name": "St. Cecilia, Virgin Martyress",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-23": [
+    {
+      "name": "Pope St. Clement I of Rome, Bishop & Martyr",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Felicitas, Martyress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-24": [
+    {
+      "name": "St. Chrysogonus, Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-25": [
+    {
+      "name": "St. Catherine of Alexandria, Virgin Martyress",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-26": [
+    {
+      "name": "Pope St. Peter of Alexandria, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-29": [
+    {
+      "name": "Vigil of St. Andrew",
+      "rank": "Vigil",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Saturninus of Toulouse, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "11-30": [
+    {
+      "name": "St. Andrew, Apostle",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "12-2": [
+    {
+      "name": "St. Peter Chrysologus, Bishop, Confessor, & Doctor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Bibiana, Virgin Martyress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-4": [
+    {
+      "name": "St. Barbara, Virgin Martyress",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-5": [
+    {
+      "name": "St. Sabbas of Juda, Abbot",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-6": [
+    {
+      "name": "St. Nicholas of Myra, Bishop & Confessor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-7": [
+    {
+      "name": "St. Ambrose of Milan, Bishop, Confessor, & Doctor",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-8": [
+    {
+      "name": "Conception of the Blessed Virgin Mary (Common Octave)",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "12-9": [
+    {
+      "name": "Day II within the Octave of the Conception",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-10": [
+    {
+      "name": "Day III within the Octave of the Conception",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Pope St. Melchiades of Rome, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-11": [
+    {
+      "name": "Day IV within the Octave of the Conception",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Pope St. Damasus I of Rome, Bishop & Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-12": [
+    {
+      "name": "Day V within the Octave of the Conception",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-13": [
+    {
+      "name": "St. Lucy, Virgin Martyress",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Day VI within the Octave of the Conception",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "St. Herman of Alaska, Confessor",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-14": [
+    {
+      "name": "Day VII within the Octave of the Conception",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-15": [
+    {
+      "name": "Octave Day of the Conception of the Blessed Virgin Mary",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-16": [
+    {
+      "name": "St. Eusebius of Vercelli, Bishop & Martyr",
+      "rank": "Memorial",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-18": [
+    {
+      "name": "Expectation of the Blessed Virgin Mary",
+      "rank": "Greater Double",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-20": [
+    {
+      "name": "Vigil of St. Thomas",
+      "rank": "Vigil",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-21": [
+    {
+      "name": "St. Thomas, Apostle",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    }
+  ],
+  "12-24": [
+    {
+      "name": "Christmas Even",
+      "rank": "1st Vigil",
+      "redLetter": true,
+      "note": "(Vigil of the Nativity of Our Lord)"
+    }
+  ],
+  "12-25": [
+    {
+      "name": "Christmas Day (3rd Octave)",
+      "rank": "1st Double",
+      "redLetter": true,
+      "note": "(Nativity of Our Lord)"
+    },
+    {
+      "name": "St. Anastasia, Virgin Martyress",
+      "rank": "Commemoration",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-26": [
+    {
+      "name": "St. Stephen, Protomartyr (Simple Octave)",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "Day II within the Christmas Octave",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-27": [
+    {
+      "name": "St. John, Apostle & Evangelist (Simple Octave)",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "Day III within the Christmas Octave",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-28": [
+    {
+      "name": "Holy Innocents, Martyrs (Simple Octave)",
+      "rank": "2nd Double",
+      "redLetter": true,
+      "note": null
+    },
+    {
+      "name": "Day IV within the Christmas Octave",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-29": [
+    {
+      "name": "Day V within the Christmas Octave",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-30": [
+    {
+      "name": "Day VI within the Christmas Octave",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ],
+  "12-31": [
+    {
+      "name": "Pope St. Sylvester of Rome, Bishop & Confessor",
+      "rank": "Double",
+      "redLetter": false,
+      "note": null
+    },
+    {
+      "name": "Day VII within the Christmas Octave",
+      "rank": "Semidouble",
+      "redLetter": false,
+      "note": null
+    }
+  ]
+}

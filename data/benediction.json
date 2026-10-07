@@ -1,0 +1,100 @@
+{
+  "title": "Benediction of the Blessed Sacrament",
+  "source": "Transcribed from pages/Eucharistic/Benediction.tex. Fully bilingual throughout, no cross marks, no elcol pairs beyond the standard structure - no \\paracol or minipage apparatus. The source's own occasional spelling inconsistency between the {\\ae} ligature macro and plain 'ae' letters (e.g. 'Quæ caeli') is preserved exactly as printed rather than normalized, matching the site's established practice of not correcting Latin spelling.",
+  "sections": [
+    {
+      "type": "heading",
+      "text": "O Salutaris Hostia"
+    },
+    {
+      "type": "rubric",
+      "text": "The Priest brings the Sacrament out of the Tabernacle with all kneeling, singing:"
+    },
+    {
+      "type": "hymnStanzas",
+      "stanzas": [
+        "O saving Victim op'ning wide * The Gate of heav'n to man below,\nOur foes press on from ev'ry side, * Thine aid supply, thy strength bestow.\nAll praise and thanks to thee ascend * For evermore, blest One in Three;\nO grant us life that shall not end, * In our true native land with thee. Amen."
+      ],
+      "stanzasLatin": [
+        "O salutáris Hóstia, * Quæ caeli pandis óstium:\nBella premunt hostília, * Da robur, fer auxílium.\nUni trinóque Dómino * Sit sempitérna glória,\nQui vitam sine término * Nobis donet in pátria. Amen."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Tantum Ergo Sacramentum"
+    },
+    {
+      "type": "rubric",
+      "text": "After a time for silence, the following Hymn is sung:"
+    },
+    {
+      "type": "hymnStanzas",
+      "stanzas": [
+        "Therefore we, before him bending, * This great Sacrament revere;\nTypes and shadows have their ending, * For the newer rite is here;\nFaith, our outward sense befriending, * Makes our inward vision clear.",
+        "Glory let us give and blessing * To the Father and the Son,\nHonour, thanks, and praise addressing, * While eternal ages run;\nEver too his love confessing * Who from One with Both is One. Amen."
+      ],
+      "stanzasLatin": [
+        "Tántum ergo Sacraméntum * Venerémur cérnui,\nEt antíquum documéntum, * Nóvo cédat rítui,\nPrǽstet fídes suppleméntum * Sénsuum deféctui.",
+        "Genitóri, Genitóque, * Laus et jubilátio;\nSálus, hónor, vírtus quoque * Sit et benedíctio.\nProcedénti ab unóque * Cómpar sit laudátio. Amen."
+      ]
+    },
+    {
+      "type": "versicle",
+      "alleluiaMarker": true,
+      "v": "Thou gavest them bread from heaven. (Alleluia)",
+      "r": "Containing in itself all sweetness. (Alleluia)",
+      "vLatin": "℣. Panem de cælis præstitísti eis. (Allelúja.)",
+      "rLatin": "℟. Omne delectaméntum in se habéntem. (Allelúja.)"
+    },
+    {
+      "type": "rubric",
+      "text": "{{Let us pray.}}",
+      "textLatin": "Orémus."
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "O God, who in this wonderful Sacrament hast left us a perpetual Memorial of thy Passion: Grant us, we beseech thee, so to venerate the Sacred Mysteries of thy Body and Blood, that we may ever perceive within ourselves the fruit of thy redemption; who livest and reignest, world without end. Amen.",
+      "textLatin": "Deus, qui nobis sub sacraménto mirábili, passiónis tuæ memóriam reliquísti: tríbue, quǽsumus, ita nos córporis et sánguinis tui sacra mystéria venerári, ut redemptiónis tuæ fructum in nobis iúgiter sentiámus. Qui vivis et regnas in sæcula sæculorum. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Divine Praises"
+    },
+    {
+      "type": "rubric",
+      "text": "All kneeling, the Priest blesses the People with the Blessed Sacrament. He then places it upon the Altar and says the Divine Praises, as followeth."
+    },
+    {
+      "type": "text",
+      "text": "Blessed be God.\nBlessed be his Holy Name.\nBlessed be Jesus Christ, true God and true Man.\nBlessed be the Name of Jesus.\nBlessed be Jesus in the Most Holy Sacrament of the Altar.\nBlessed be God the Holy Ghost, the Comforter.\nBlessed be the Great Mother of God, Mary most Holy.\nBlessed be the name of Mary, Virgin and Mother.\nBlessed be Saint Joseph, her most chaste spouse.\nBlessed be God in his Angels and in his Saints.",
+      "textLatin": "Benedíctus Deus.\nBenedíctum Nomen Sanctum ejus.\nBenedíctus Jesus Christus, verus Deus et verus homo.\nBenedíctum Nomen Jesu.\nBenedíctus Jesus in sanctíssimo altáris Sacraménto.\nBenedíctus Sanctus Spíritus, Paraclítus.\nBenedícta magna Mater Dei, María sanctíssima.\nBenedíctum nomen Maríæ, Vírginis et Matris.\nBenedíctus sanctus Joseph, ejus castíssimus Sponsus.\nBenedíctus Deus in Angelis suis, et in Sanctis suis."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 117. Laudate Dominum"
+    },
+    {
+      "type": "rubric",
+      "text": "The Blessed Sacrament is replaced in the Tabernacle. All stand and pray the following,"
+    },
+    {
+      "type": "text",
+      "alleluiaMarker": true,
+      "text": "Ant. Let us forever adore the Most Holy Sacrament. (Alleluia.)",
+      "textLatin": "Ant. Adorémus in ætérnum Sanctissimum Sacramentum. (Allelúja.)"
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "O praise the Lord, all ye heathen : praise him, all ye nations.\nFor his merciful kindness is ever more and more toward us : and the truth of the Lord endureth for ever. Praise the Lord.\nGlory be to the Father, and to the Son, and to the Holy Ghost:\nAs it was in the beginning, is now, and ever shall be, world without end. Amen.",
+      "textLatin": "Laudáte Dóminum, omnes gentes: * laudáte eum, omnes pópuli:\nQuóniam confirmáta est super nos misericórdia ejus: * et véritas Dómini manet in ætérnum.\nGlória Patri, et Fílio, * et Spirítui Sancto.\nSicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen."
+    },
+    {
+      "type": "text",
+      "alleluiaMarker": true,
+      "text": "Ant. Let us forever adore the Most Holy Sacrament. (Alleluia.)",
+      "textLatin": "Ant. Adorémus in ætérnum Sanctíssimum Sacraméntum. (Allelúja.)"
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "title": "Lauds of the Dead",
+  "source": "Transcribed from pages/OfficeDead/LaudsDead.tex. Entirely English-only. The four Psalms (51, 65, 63, 130) and Psalm 150 all match data/psalter.json verbatim (confirmed by direct comparison before transcription; Psalm 150 here is the same 6-verse form already established for the site's own Psalter and Thanksgiving.tex, not a further-abridged selection) and are reproduced here as this page's own copy in the Requiem Office's own antiphon/versicle structure - each Psalm's Gloria Patri is replaced throughout by the Requiem versicle 'Rest eternal * grant unto them, O Lord.' / 'And let light perpetual * shine upon them.', exactly as printed, with no Gloria Patri anywhere in this file. Every antiphon carries a {\\dag} dagger mark on its opening statement, dropped on the closing repeat - preserved as a literal †, matching the same asymmetric pattern established elsewhere (Thanksgiving.tex, Preparation.tex, VesperDead.tex). 'Ego dixi' (the biblical Canticle of Hezekiah, Isaiah 38:10-20) is unusual among this file's texts in carrying seven further {\\dag} marks scattered through the body of the canticle itself, not just its antiphon - each preserved as a literal † in its exact verse position. The canticle also preserves the source's own literal '*' pointing marks in each verse, the same convention already used for this site's Magnificat/Benedictus canticles when transcribed from a source that prints them (see VesperDead.tex). The Benedictus carries one standalone \\ding{64} cross mark ('Blessed ✠ be the Lord God of Israel'). One genuine wording inconsistency between the Benedictus antiphon's two occurrences - 'yet shall he live: and whosoever' (colon) on the first statement versus 'yet shall he live; and whosoever' (semicolon) on the repeat - is preserved exactly as printed rather than normalized, matching the site's practice of not silently correcting apparent source inconsistencies that aren't unambiguous single-word typos. The print-only page cross-reference '(p. \\pageref{dead})' is dropped as meaningless on this site.",
+  "sections": [
+    {
+      "type": "heading",
+      "text": "Lauds of the Dead"
+    },
+    {
+      "type": "rubric",
+      "text": "Before Lauds—if it be said separately from Matins—the Lord's Prayer and Angelic Salutation are said secretly. Otherwise, the Office begins at once with the Antiphon."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 51. Miserere mei, Deus"
+    },
+    {
+      "type": "text",
+      "text": "Ant. The bones which thou hast broken † shall rejoice in the Lord.",
+      "omitUnlessDoubleOrHigher": true
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "Have mercy upon me, O God, after thy great goodness : according to the multitude of thy mercies do away mine offences.\nWash me throughly from my wickedness : and cleanse me from my sin.\nFor I acknowledge my faults : and my sin is ever before me.\nAgainst thee only have I sinned, and done this evil in thy sight : that thou mightest be justified in thy saying, and clear when thou art judged.\nBehold, I was shapen in wickedness : and in sin hath my mother conceived me.\nBut lo, thou requirest truth in the inward parts : and shalt make me to understand wisdom secretly.\nThou shalt purge me with hyssop, and I shall be clean : thou shalt wash me, and I shall be whiter than snow.\nThou shalt make me hear of joy and gladness : that the bones which thou hast broken may rejoice.\nTurn thy face from my sins : and put out all my misdeeds.\nMake me a clean heart, O God : and renew a right spirit within me.\nCast me not away from thy presence : and take not thy holy Spirit from me.\nO give me the comfort of thy help again : and stablish me with thy free Spirit.\nThen shall I teach thy ways unto the wicked : and sinners shall be converted unto thee.\nDeliver me from blood-guiltiness, O God, thou that art the God of my health : and my tongue shall sing of thy righteousness.\nThou shalt open my lips, O Lord : and my mouth shall shew thy praise.\nFor thou desirest no sacrifice, else would I give it thee : but thou delightest not in burnt-offerings.\nThe sacrifice of God is a troubled spirit : a broken and contrite heart, O God, shalt thou not despise.\nO be favourable and gracious unto Sion : build thou the walls of Jerusalem.\nThen shalt thou be pleased with the sacrifice of righteousness, with the burnt-offerings and oblations : then shall they offer young bullocks upon thine altar."
+    },
+    {
+      "type": "versicle",
+      "v": "Rest eternal * grant unto them, O Lord.",
+      "r": "And let light perpetual * shine upon them."
+    },
+    {
+      "type": "text",
+      "text": "Ant. The bones which thou hast broken shall rejoice in the Lord."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 65. Te decet hymnus"
+    },
+    {
+      "type": "text",
+      "text": "Ant. Thou, O Lord, † that hearest the prayer, unto thee shall all flesh come.",
+      "omitUnlessDoubleOrHigher": true
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "Thou, O God, art praised in Sion : and unto thee shall the vow be performed in Jerusalem.\nThou that hearest the prayer : unto thee shall all flesh come.\nMy misdeeds prevail against me : O be thou merciful unto our sins.\nBlessed is the man whom thou choosest, and receivest unto thee : he shall dwell in thy court, and shall be satisfied with the pleasures of thy house, even of thy holy temple.\nThou shalt shew us wonderful things in thy righteousness, O God of our salvation : thou that art the hope of all the ends of the earth, and of them that remain in the broad sea.\nWho in his strength setteth fast the mountains : and is girded about with power.\nWho stilleth the raging of the sea : and the noise of his waves, and the madness of the people.\nThey also that dwell in the uttermost parts of the earth shall be afraid at thy tokens : thou that makest the outgoings of the morning and evening to praise thee.\nThou visitest the earth, and blessest it : thou makest it very plenteous.\nThe river of God is full of water : thou preparest their corn, for so thou providest for the earth.\nThou waterest her furrows, thou sendest rain into the little valleys thereof : thou makest it soft with the drops of rain, and blessest the increase of it.\nThou crownest the year with thy goodness : and thy clouds drop fatness.\nThey shall drop upon the dwellings of the wilderness : and the little hills shall rejoice on every side.\nThe folds shall be full of sheep : the valleys also shall stand so thick with corn, that they shall laugh and sing."
+    },
+    {
+      "type": "versicle",
+      "v": "Rest eternal * grant unto them, O Lord.",
+      "r": "And let light perpetual * shine upon them."
+    },
+    {
+      "type": "text",
+      "text": "Ant. Thou, O Lord, that hearest the prayer, unto thee shall all flesh come."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 63. Deus, Deus meus"
+    },
+    {
+      "type": "text",
+      "text": "Ant. Thy right hand † hath upholden me, O Lord.",
+      "omitUnlessDoubleOrHigher": true
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "O God, thou art my God : early will I seek thee.\nMy soul thirsteth for thee, my flesh also longeth after thee : in a barren and dry land where no water is.\nThus have I looked for thee in holiness : that I might behold thy power and glory.\nFor thy loving-kindness is better than the life itself : my lips shall praise thee.\nAs long as I live will I magnify thee on this manner : and lift up my hands in thy Name.\nMy soul shall be satisfied, even as it were with marrow and fatness : when my mouth praiseth thee with joyful lips.\nHave I not remembered thee in my bed : and thought upon thee when I was waking?\nBecause thou hast been my helper : therefore under the shadow of thy wings will I rejoice.\nMy soul hangeth upon thee : thy right hand hath upholden me.\nThese also that seek the hurt of my soul : they shall go under the earth.\nLet them fall upon the edge of the sword : that they may be a portion for foxes.\nBut the King shall rejoice in God; all they also that swear by him shall be commended : for the mouth of them that speak lies shall be stopped."
+    },
+    {
+      "type": "versicle",
+      "v": "Rest eternal * grant unto them, O Lord.",
+      "r": "And let light perpetual * shine upon them."
+    },
+    {
+      "type": "text",
+      "text": "Ant. Thy right hand hath upholden me, O Lord."
+    },
+    {
+      "type": "heading",
+      "text": "Ego dixi"
+    },
+    {
+      "type": "text",
+      "text": "Ant. From the gate of hell, † deliver my soul, O Lord.",
+      "omitUnlessDoubleOrHigher": true
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "I said in the cutting off of my days, † I shall go to the gates of the grave: * I am deprived of the residue of my years.\nI said, I shall not see the Lord, † even the Lord, in the land of the living: * I shall behold man no more with the inhabitants of the world.\nMine age is departed, * and is removed from me as a shepherd's tent;\nI have cut off like a weaver my life: † he will cut me off with pining sickness: * from day even to night wilt thou make an end of me.\nI reckoned till morning, † that, as a lion, so will he break all my bones: * from day even to night wilt thou make an end of me.\nLike a crane or a swallow, so did I chatter: * I did mourn as a dove.\nMine eyes fail with looking upward: * O Lord, I am oppressed; undertake for me.\nWhat shall I say? † he hath both spoken unto me, and himself hath done it: * I shall go softly all my years in the bitterness of my soul.\nO Lord, by these things men live, † and in all these things is the life of my spirit: * so wilt thou recover me, and make me to live.\nBehold, for peace I had great bitterness: † but thou hast in love to my soul delivered it from the pit of corruption: * for thou hast cast all my sins behind thy back.\nFor the grave cannot praise thee, † death can not celebrate thee: * they that go down into the pit cannot hope for thy truth.\nThe living, the living, he shall praise thee, as I do this day: * the father to the children shall make known thy truth.\nThe Lord was ready to save me: * therefore we will sing my songs to the stringed instruments all the days of our life in the house of the Lord."
+    },
+    {
+      "type": "versicle",
+      "v": "Rest eternal * grant unto them, O Lord.",
+      "r": "And let light perpetual * shine upon them."
+    },
+    {
+      "type": "text",
+      "text": "Ant. From the gate of hell, deliver my soul, O Lord."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 150. Laudate Dominum"
+    },
+    {
+      "type": "text",
+      "text": "Ant. Let everything that hath breath † praise the Lord.",
+      "omitUnlessDoubleOrHigher": true
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "O praise God in his holiness : praise him in the firmament of his power.\nPraise him in his noble acts : praise him according to his excellent greatness.\nPraise him in the sound of the trumpet : praise him upon the lute and harp.\nPraise him in the cymbals and dances : praise him upon the strings and pipe.\nPraise him upon the well-tuned cymbals : praise him upon the loud cymbals.\nLet every thing that hath breath : praise the Lord."
+    },
+    {
+      "type": "versicle",
+      "v": "Rest eternal * grant unto them, O Lord.",
+      "r": "And let light perpetual * shine upon them."
+    },
+    {
+      "type": "text",
+      "text": "Ant. Let everything that hath breath praise the Lord."
+    },
+    {
+      "type": "versicle",
+      "v": "I heard a voice from heaven, saying unto me.",
+      "r": "Blessed are the dead which die in the Lord."
+    },
+    {
+      "type": "heading",
+      "text": "Benedictus"
+    },
+    {
+      "type": "text",
+      "text": "Ant. I am the resurrection † and the life: he that believeth in me, though he were dead, yet shall he live: and whosoever liveth and believeth in me, shall never die.",
+      "omitUnlessDoubleOrHigher": true
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "Blessed ✠ be the Lord God of Israel; * for he hath visited and redeemed his people;\nAnd hath raised up a mighty salvation for us, * in the house of his servant David;\nAs he spake by the mouth of his holy Prophets, * which have been since the world began;\nThat we should be saved from our enemies, * and from the hand of all that hate us.\nTo perform the mercy promised to our forefathers, * and to remember his holy covenant;\nTo perform the oath which he sware to our forefather Abraham, * that he would give us;\nThat we being delivered out of the hand of our enemies * might serve him without fear;\nIn holiness and righteousness before him, * all the days of our life.\nAnd thou, child, shalt be called the prophet of the Highest: * for thou shalt go before the face of the Lord to prepare his ways;\nTo give knowledge of salvation unto his people * for the remission of their sins,\nThrough the tender mercy of our God; * whereby the day-spring from on high hath visited us;\nTo give light to them that sit in darkness, and in the shadow of death, * and to guide our feet into the way of peace."
+    },
+    {
+      "type": "versicle",
+      "v": "Rest eternal * grant unto them, O Lord.",
+      "r": "And let light perpetual * shine upon them."
+    },
+    {
+      "type": "text",
+      "text": "Ant. I am the resurrection and the life: he that believeth in me, though he were dead, yet shall he live; and whosoever liveth and believeth in me, shall never die."
+    },
+    {
+      "type": "heading",
+      "text": "Lord's Prayer"
+    },
+    {
+      "type": "rubric",
+      "text": "The Lord's Prayer is said, in secret, kneeling, ending with,"
+    },
+    {
+      "type": "versicle",
+      "v": "And lead us not into temptation.",
+      "r": "But deliver us from evil."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 130. De profundis"
+    },
+    {
+      "type": "rubric",
+      "text": "Psalm 130 is not said on All Souls Day, on the day of death or burial, nor at any time when the Office is recited with Double rite."
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "Out of the deep have I called unto thee, O Lord : Lord, hear my voice.\nO let thine ears consider well : the voice of my complaint.\nIf thou, Lord, wilt be extreme to mark what is done amiss : O Lord, who may abide it?\nFor there is mercy with thee : therefore shalt thou be feared.\nI look for the Lord; my soul doth wait for him : in his word is my trust.\nMy soul fleeth unto the Lord : before the morning watch, I say, before the morning watch.\nO Israel, trust in the Lord, for with the Lord there is mercy : and with him is plenteous redemption.\nAnd he shall redeem Israel : from all his sins."
+    },
+    {
+      "type": "versicle",
+      "v": "Rest eternal * grant unto them, O Lord.",
+      "r": "And let light perpetual * shine upon them."
+    },
+    {
+      "type": "heading",
+      "text": "Responsory"
+    },
+    {
+      "type": "versicle",
+      "v": "From the gate of hell.",
+      "r": "Deliver his soul, O Lord."
+    },
+    {
+      "type": "versicle",
+      "v": "May he rest in peace.",
+      "r": "Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Conclusion"
+    },
+    {
+      "type": "versicle",
+      "v": "O Lord, hear my prayer.",
+      "r": "And let my cry come unto thee."
+    },
+    {
+      "type": "versicle",
+      "v": "The Lord be with you.",
+      "r": "And with thy spirit."
+    },
+    {
+      "type": "officeDeadCollect"
+    },
+    {
+      "type": "versicle",
+      "v": "Rest eternal * grant unto them, O Lord.",
+      "r": "And let light perpetual * shine upon them."
+    },
+    {
+      "type": "versicle",
+      "v": "May they rest in peace.",
+      "r": "Amen."
+    },
+    {
+      "type": "end",
+      "text": "Here Endeth the Order of Lauds of the Dead."
+    }
+  ]
+}

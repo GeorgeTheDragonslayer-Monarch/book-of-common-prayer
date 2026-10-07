@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Book of Common Prayer &mdash; Dark Mode Design Preview</title>
+
+<!-- Google Fonts: Cinzel/Cormorant Garamond for sacred headings, EB Garamond for
+     book-like body text, Inter for small UI labels/buttons. -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+/* =====================================================================
+   DESIGN TOKENS
+   ===================================================================== */
+:root {
+  /* ---- Core palette ---- */
+  --bg-obsidian: #121110;                         /* page background */
+  --card-bg: rgba(26, 24, 23, 0.65);               /* glass pane fill */
+  --card-border: rgba(255, 255, 255, 0.05);        /* razor-thin card edge */
+  --text-main: #EAE5DE;                            /* soft alabaster white */
+  --text-muted: #A39E93;                           /* muted gold-gray */
+  --primary-fill: #801818;                         /* liturgical deep burgundy - primary buttons */
+  --primary-fill-hover: #5c1010;
+  --logo-bg: #1a1817;                              /* logo image's own backdrop */
+  --logo-border: rgba(255, 255, 255, 0.12);
+  --chip-bg: rgba(255, 255, 255, 0.04);            /* glass pill / chip fill (pill buttons, season switcher, calendar cells) */
+  --chip-bg-hover: rgba(255, 255, 255, 0.06);
+  --chip-border: rgba(255, 255, 255, 0.07);
+  --hairline: rgba(255, 255, 255, 0.06);           /* nav underline, dividers */
+  --glow-alpha-1: 0.35;                            /* ambient glow strength - lower in light mode so it stays soft */
+  --glow-alpha-2: 0.28;
+
+  /* ---- Fonts ---- */
+  --font-heading: 'Cinzel', 'Cormorant Garamond', serif;
+  --font-display: 'Cormorant Garamond', serif;      /* italic season labels, large numerals */
+  --font-body: 'EB Garamond', 'Lora', serif;
+  --font-ui: 'Inter', 'Lato', sans-serif;
+
+  /* ---- Layout ---- */
+  --col-narrow: 700px;   /* the "printed book" reading column - Office/Mass/Rites pages */
+  --col-wide: 1180px;    /* Home + Calendar only, desktop */
+  --radius-card: 18px;
+  --radius-pill: 999px;
+
+  /* =====================================================================
+     SEASONAL GLOW - the one variable that drives the whole ambient mood.
+     Change --season-glow-rgb (and optionally --season-glow-rgb-2 for a
+     softer second-light-source blob) to re-theme every glow, hover tint,
+     season dot, and focus ring on the page in one edit.
+
+     Values below are derived two ways for each season:
+       (a) LITURGICAL-PRECISE - converted straight from Augustine's CMYK
+           pigment specs (R=255*(1-C)*(1-K) etc.) - correct for solid
+           accents (dots, borders, badges) but often too dark/desaturated
+           to read as a soft blurred wash against near-black #121110.
+       (b) GLOW-SUGGESTED - the same hue lightened toward the given
+           default so it actually glows at low opacity + heavy blur.
+     Pick (a) for a somber, ink-accurate accent color; pick (b) if the
+     ambient wash is reading too faint. The user's own requested default
+     (138, 79, 186) is a glow-suggested violet for Advent/Lent and is used
+     as-is below.
+     ===================================================================== */
+  --season-glow-rgb: 138, 79, 186;      /* DEFAULT: Advent & Lent (solemn violet) */
+  --season-glow-rgb-2: 90, 50, 130;     /* secondary blob, slightly deeper */
+
+  /* --- Advent (deep violet-blue) ---------------------------------------
+     CMYK 0.95, 0.74, 0.07, 0.44 -> liturgical-precise rgb(7, 37, 133)
+     --season-glow-rgb: 60, 70, 190;   glow-suggested
+     --season-glow-rgb-2: 7, 37, 133;  liturgical-precise, as the deep blob
+  */
+
+  /* --- Septuagesima / Lent / Vigils (purple/violet) --------------------
+     CMYK 0.36, 0.65, 0, 0.5 -> liturgical-precise rgb(82, 45, 128)
+     --season-glow-rgb: 138, 79, 186;  glow-suggested (this file's default)
+     --season-glow-rgb-2: 82, 45, 128; liturgical-precise
+  */
+
+  /* --- Ordinary Ferias / Sundays / Trinitytide (deep green) ------------
+     CMYK 0.73, 0.40, 0.73, 0.27 -> liturgical-precise rgb(50, 112, 50)
+     --season-glow-rgb: 95, 185, 95;   glow-suggested
+     --season-glow-rgb-2: 50, 112, 50; liturgical-precise
+  */
+
+  /* --- Pentecost Sunday / Holy Week / Apostles & Martyrs (red) ---------
+     CMYK 0, 0.6, 0.6, 0.55 -> liturgical-precise rgb(115, 46, 46)
+     --season-glow-rgb: 205, 90, 80;   glow-suggested
+     --season-glow-rgb-2: 115, 46, 46; liturgical-precise
+  */
+
+  /* --- Gaudete / Laetare (rose) -----------------------------------------
+     CMYK 0.27, 0.74, 0.59, 0.25 -> liturgical-precise rgb(140, 50, 78)
+     --season-glow-rgb: 212, 112, 140; glow-suggested
+     --season-glow-rgb-2: 140, 50, 78; liturgical-precise
+  */
+
+  /* --- Pascha / Eastertide (white & gold - not in Augustine's CMYK list,
+     added for the paschal octave's own character) ------------------------
+     --season-glow-rgb: 255, 223, 150;
+     --season-glow-rgb-2: 212, 175, 55;
+  */
+
+  /* --- Good Friday / All Souls / Requiem Masses (black) ----------------
+     CMYK 0.4, 0.3, 0.3, 1 -> liturgical-precise rgb(0, 0, 0): true black
+     can't glow, so treat this as a deliberate "no-glow" mourning state
+     instead of forcing a visible color - see .no-glow below, toggled by
+     the season switcher's "Requiem" button.
+  */
+}
+
+/* =====================================================================
+   LIGHT MODE - a warm parchment/vellum theme, not a cold blue-gray
+   inversion. Same structure as dark mode (glass cards, seasonal glow,
+   chips) - only the surface colors flip. Toggled by setting
+   data-theme="light" on <html> (see the theme switcher button + script
+   near the end of this file). --season-glow-rgb itself is untouched by
+   theme - the same liturgical color glows in both modes, just at a
+   gentler alpha here so it stays soft against a light background.
+   ===================================================================== */
+html[data-theme="light"] {
+  --bg-obsidian: #F6F1E6;                          /* warm parchment, not white */
+  --card-bg: rgba(255, 255, 255, 0.55);            /* pale vellum glass pane fill */
+  --card-border: rgba(40, 32, 20, 0.08);
+  --text-main: #2B2620;                            /* warm ink, not pure black */
+  --text-muted: #8A8371;
+  --logo-bg: #ffffff;
+  --logo-border: rgba(40, 32, 20, 0.12);
+  --chip-bg: rgba(40, 32, 20, 0.035);
+  --chip-bg-hover: rgba(40, 32, 20, 0.06);
+  --chip-border: rgba(40, 32, 20, 0.1);
+  --hairline: rgba(40, 32, 20, 0.1);
+  --glow-alpha-1: 0.16;
+  --glow-alpha-2: 0.12;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg-obsidian);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* =====================================================================
+   AMBIENT GLOW - two huge, heavily blurred radial blobs fixed behind
+   everything. Position/size stay constant; only the color reacts to
+   --season-glow-rgb, so a season change (see the switcher script at the
+   bottom) re-tints the whole page's atmosphere with one variable write.
+   ===================================================================== */
+.ambient-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+.ambient-glow::before,
+.ambient-glow::after {
+  content: "";
+  position: absolute;
+  width: 70vw;
+  height: 70vw;
+  max-width: 900px;
+  max-height: 900px;
+  border-radius: 50%;
+  filter: blur(120px);
+  transition: background 0.8s ease;
+}
+.ambient-glow::before {
+  top: -15%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(var(--season-glow-rgb), var(--glow-alpha-1)) 0%, rgba(var(--season-glow-rgb), 0) 70%);
+}
+.ambient-glow::after {
+  bottom: -20%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(var(--season-glow-rgb-2), var(--glow-alpha-2)) 0%, rgba(var(--season-glow-rgb-2), 0) 70%);
+}
+/* Requiem / Good Friday: no glow at all - a deliberate still, void mood
+   rather than a forced color. Toggled via body.no-glow. */
+body.no-glow .ambient-glow { opacity: 0; }
+
+.page-shell { position: relative; z-index: 1; }
+
+/* =====================================================================
+   HEADER - logo enlarged, "2025" dropped from the title. Logo sits to
+   the left of the title/subtitle (a row lockup, not stacked), and the
+   title/subtitle are left-aligned under each other rather than centered
+   text. Desktop: the whole logo+title row sits directly above the nav
+   row, left-anchored so its left edge lines up with the Home link below
+   it (not centered independently). Mobile: the row as a whole is still
+   centered as a unit on the page, matching the nav's own centered
+   layout there - only the internal logo/title arrangement changed.
+   ===================================================================== */
+header.site-header {
+  padding: 2.5rem 1.5rem 0;
+}
+.header-inner {
+  max-width: var(--col-wide);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+}
+.header-inner img.site-logo {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  border: 1px solid var(--logo-border);
+  background: var(--logo-bg);
+  flex-shrink: 0;
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+.title-block { text-align: left; }
+.title-block h1 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
+  margin: 0;
+  color: var(--text-main);
+}
+.title-block .subtitle {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+}
+
+nav.main-nav {
+  max-width: var(--col-wide);
+  margin: 1.75rem auto 0;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 0.25rem;
+}
+nav.main-nav a {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+nav.main-nav a:hover,
+nav.main-nav a.current {
+  color: var(--text-main);
+  border-bottom-color: rgba(var(--season-glow-rgb), 0.7);
+}
+
+/* Desktop only: logo/title anchored over the Home link's x-position
+   instead of independently centered, per spec. 900px matches the real
+   site's existing mobile-nav breakpoint. */
+@media (min-width: 900px) {
+  /* Both header-inner and nav.main-nav are normally independently
+     centered (max-width + margin: auto) - fine on mobile, but on desktop
+     we want them left-anchored TOGETHER at the same x-position instead,
+     so the title sits directly above where "Home" starts rather than
+     each being centered on its own. Turning off nav's own auto-centering
+     (margin-left: 0) is required here too - without it, nav stays
+     centered at its own box position while header-inner moves to a
+     fixed offset, and the two drift apart instead of lining up. */
+  .header-inner { justify-content: flex-start; margin-left: 2.5rem; margin-right: 0; }
+  nav.main-nav {
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-right: 0;
+    /* 2.5rem = nav's own 1.5rem container padding + the first link's
+       1rem internal padding - matches header-inner's margin-left above
+       so "Home"'s actual text (not just the nav box) lines up with the
+       title's text. */
+  }
+}
+
+/* =====================================================================
+   PAGE LAYOUT - two widths. Every ordinary page (Office, Mass, Pastoral
+   Rites, Family Prayers...) keeps the narrow, book-like reading column
+   at every breakpoint. Home and Calendar specifically widen out and use
+   a multi-column layout on desktop, then collapse back to the same
+   narrow centered column as everything else on mobile.
+   ===================================================================== */
+main { padding: 3rem 1.5rem 6rem; }
+
+.col-narrow { max-width: var(--col-narrow); margin: 0 auto; }
+.col-wide   { max-width: var(--col-wide);   margin: 0 auto; }
+
+/* =====================================================================
+   GLASS CARD (Today summary / narrow-page content wells)
+   ===================================================================== */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 2rem 2.25rem;
+}
+.glass-card + .glass-card { margin-top: 2rem; }
+
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.today-date {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--text-main);
+  margin: 0.3rem 0 0.15rem;
+}
+.today-season {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: rgb(var(--season-glow-rgb));
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.season-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: rgb(var(--season-glow-rgb));
+  box-shadow: 0 0 10px rgba(var(--season-glow-rgb), 0.8);
+}
+.today-body { margin-top: 1.4rem; font-size: 1.05rem; color: var(--text-main); }
+.today-body p { margin: 0 0 0.9rem; }
+
+/* =====================================================================
+   BUTTONS
+   ===================================================================== */
+.btn-primary {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background: var(--primary-fill);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.85rem 1.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.btn-primary:hover { background: var(--primary-fill-hover); }
+.btn-primary:active { transform: scale(0.98); }
+
+/* Secondary: subtle glass pills, forced into a uniform symmetrical grid
+   so every edge aligns - replaces the old varied-width text-wrap pills. */
+.pill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+@media (min-width: 640px) {
+  .pill-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 900px) {
+  .pill-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.pill-btn {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-main);
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  border-radius: var(--radius-pill);
+  padding: 0.85rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.pill-btn:hover {
+  border-color: rgba(var(--season-glow-rgb), 0.4);
+  background: var(--chip-bg-hover);
+}
+
+.category-block { margin-top: 2.5rem; }
+.category-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text-main);
+  margin: 0 0 0.25rem;
+}
+.category-sub {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Tertiary: borderless text links, muted -> solid season color on hover */
+.tertiary-links { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem; }
+.tertiary-link {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  width: fit-content;
+}
+.tertiary-link:hover { color: rgb(var(--season-glow-rgb)); }
+
+/* =====================================================================
+   HOME / CALENDAR wide desktop layout - two columns above 1024px
+   (Today card + quick links beside it), single column + narrow max-width
+   below that so mobile matches every other page's centered book column.
+   ===================================================================== */
+.home-grid { display: block; }
+@media (min-width: 1024px) {
+  .home-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+}
+@media (max-width: 1023px) {
+  .home-grid .col-wide { max-width: var(--col-narrow); }
+}
+
+.calendar-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-top: 1rem;
+}
+.cal-cell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 10px;
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  border-top: 2px solid rgba(var(--season-glow-rgb), 0.5);
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--text-main);
+}
+.cal-cell.today { border-top-color: rgb(var(--season-glow-rgb)); box-shadow: 0 0 16px rgba(var(--season-glow-rgb), 0.25); }
+.cal-cell .dow { font-size: 0.65rem; color: var(--text-muted); }
+.cal-cell.head { background: none; border: none; }
+
+/* =====================================================================
+   SEASON SWITCHER - demo control only, not part of the shipped site.
+   Flips --season-glow-rgb / --season-glow-rgb-2 live so you can see how
+   every glow, dot, hover border and link-hover color reacts at once.
+   ===================================================================== */
+.season-switcher {
+  max-width: var(--col-wide);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.season-switcher button {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  border-radius: var(--radius-pill);
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.season-switcher button:hover { color: var(--text-main); background: var(--chip-bg-hover); }
+
+/* Light/dark mode toggle - visually a notch stronger than the season
+   chips (solid hairline, not just a faint tint) since it's the one
+   control that isn't seasonal and should read as a persistent setting
+   rather than a demo option. */
+.theme-toggle {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-main);
+  background: var(--chip-bg);
+  border: 1px solid var(--text-muted);
+  border-radius: var(--radius-pill);
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.theme-toggle:hover { background: var(--chip-bg-hover); border-color: rgb(var(--season-glow-rgb)); }
+.section-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 4rem 0 -1.5rem;
+}
+</style>
+</head>
+<body>
+
+<div class="ambient-glow"></div>
+
+<div class="page-shell">
+
+  <div class="season-switcher" style="padding-top: 1.5rem;">
+    <button id="themeToggleBtn" class="theme-toggle" onclick="toggleTheme()">&#9789; Dark mode</button>
+  </div>
+
+  <div class="season-switcher">
+    <button onclick="setSeason('138,79,186','90,50,130')">Advent / Lent (violet)</button>
+    <button onclick="setSeason('95,185,95','50,112,50')">Trinity / Sundays (green)</button>
+    <button onclick="setSeason('205,90,80','115,46,46')">Pentecost / Holy Week (red)</button>
+    <button onclick="setSeason('212,112,140','140,50,78')">Gaudete / Laetare (rose)</button>
+    <button onclick="setSeason('255,223,150','212,175,55')">Pascha (white &amp; gold)</button>
+    <button onclick="setSeason('0,0,0','0,0,0', true)">Requiem (no glow)</button>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <img class="site-logo" src="assets/logo-circle.png" alt="Apologia Anglicana seal" onerror="this.style.display='none'" />
+      <div class="title-block">
+        <h1>Book of Common Prayer</h1>
+        <div class="subtitle">Antiochian Western Rite Vicariate</div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="#" class="current">Home</a>
+      <a href="#">Calendar</a>
+      <a href="#">The Daily Office</a>
+      <a href="#">Holy Mass</a>
+      <a href="#">Pastoral Rites</a>
+      <a href="#">Family Prayers</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="home-grid col-wide">
+      <div>
+        <div class="glass-card">
+          <div class="eyebrow">Friday, August 21, 2026</div>
+          <div class="today-date">Friday after the Tenth Sunday after Trinity</div>
+          <div class="today-season"><span class="season-dot"></span> Today is a day of Abstinence</div>
+          <div class="today-body">
+            <p><strong style="color: var(--text-main);">Epistle: Ecclesiasticus 24:7</strong><br />With all these I sought rest; and in whose inheritance shall I lodge? Then the Creator of all things gave me a commandment...</p>
+            <p><strong style="color: var(--text-main);">Gospel: Luke 10:38</strong><br />At that time: it came to pass, as they went, that Jesus entered into a certain village: and a certain woman named Martha received him into her house...</p>
+          </div>
+          <button class="btn-primary" style="margin-top: 0.5rem;">Pray Evensong now</button>
+        </div>
+
+        <div class="category-block">
+          <div class="category-title">The Daily Office</div>
+          <div class="category-sub">Mattins &middot; Evensong &middot; Compline &middot; The Great Litany</div>
+          <div class="pill-grid">
+            <button class="pill-btn">Mattins</button>
+            <button class="pill-btn">Evensong</button>
+            <button class="pill-btn">Compline</button>
+            <button class="pill-btn">The Great Litany</button>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <div class="category-title">Holy Mass &amp; Devotions</div>
+          <div class="category-sub">The Ordinary &middot; Benediction &middot; Votive Masses</div>
+          <div class="pill-grid">
+            <button class="pill-btn">The Holy Communion</button>
+            <button class="pill-btn">Preparation for Communion</button>
+            <button class="pill-btn">Benediction</button>
+            <button class="pill-btn">Votive Masses</button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="glass-card">
+          <div class="eyebrow">This month</div>
+          <div class="today-date" style="font-size: 1.2rem;">August 2026</div>
+          <div class="calendar-mini-grid">
+            <div class="cal-cell head dow">S</div><div class="cal-cell head dow">M</div><div class="cal-cell head dow">T</div><div class="cal-cell head dow">W</div><div class="cal-cell head dow">T</div><div class="cal-cell head dow">F</div><div class="cal-cell head dow">S</div>
+            <div class="cal-cell">16</div><div class="cal-cell">17</div><div class="cal-cell">18</div><div class="cal-cell">19</div><div class="cal-cell">20</div><div class="cal-cell today">21</div><div class="cal-cell">22</div>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <div class="category-title">Pastoral Rites</div>
+          <div class="tertiary-links">
+            <a class="tertiary-link" href="#">Confession</a>
+            <a class="tertiary-link" href="#">Matrimony</a>
+            <a class="tertiary-link" href="#">Holy Unction</a>
+            <a class="tertiary-link" href="#">Burial of the Dead</a>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <div class="category-title">Family Prayers</div>
+          <div class="tertiary-links">
+            <a class="tertiary-link" href="#">Family Prayers</a>
+            <a class="tertiary-link" href="#">Vespers of the Dead</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">Below: how an ordinary page (Office, Mass, Pastoral Rites) stays narrow at every width</div>
+
+    <div class="col-narrow" style="margin-top: 4rem;">
+      <div class="glass-card">
+        <div class="eyebrow">Evensong</div>
+        <div class="today-date" style="font-size: 1.4rem;">O Lord, open thou our lips.</div>
+        <div class="today-body">
+          <p>And our mouth shall shew forth thy praise. O God, make speed to save us. O Lord, make haste to help us. Glory be to the Father, and to the Son, and to the Holy Ghost...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+function setSeason(glow, glow2, noGlow) {
+  document.documentElement.style.setProperty('--season-glow-rgb', glow);
+  document.documentElement.style.setProperty('--season-glow-rgb-2', glow2);
+  document.body.classList.toggle('no-glow', !!noGlow);
+}
+
+/* Light/dark mode - defaults to dark (per the original spec) but
+   remembers the visitor's choice via localStorage, since this is a real
+   file opened directly in a browser rather than an in-chat preview.
+   The button's own label always names the mode a click will switch TO,
+   not the current one. */
+function applyTheme(mode) {
+  document.documentElement.setAttribute('data-theme', mode);
+  var btn = document.getElementById('themeToggleBtn');
+  if (btn) {
+    btn.innerHTML = mode === 'light' ? '&#9789; Dark mode' : '&#9728; Light mode';
+  }
+  try { localStorage.setItem('bcp-theme', mode); } catch (e) {}
+}
+function toggleTheme() {
+  var current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  applyTheme(current === 'light' ? 'dark' : 'light');
+}
+(function initTheme() {
+  var saved = 'dark';
+  try { saved = localStorage.getItem('bcp-theme') || 'dark'; } catch (e) {}
+  applyTheme(saved);
+})();
+</script>
+
+</body>
+</html>

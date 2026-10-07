@@ -1,0 +1,166 @@
+{
+  "title": "Holy Matrimony",
+  "source": "Transcribed from pages/Votives/Votive.tex. Entirely English-only, no elcol pairs, \\paracol, or minipage apparatus anywhere in the file; one standalone \\ding{64} cross mark, in the nuptial blessing under Holy Matrimony ('sanctify and ✠ bless you'). Covers four distinct Votive Masses: Our Lady on Saturday (five seasonal forms - Advent, Epiphanytide, Septuagesimatide, Eastertide, Trinitytide - each with its own Introit/Collect/Epistle/Gradual-or-Alleluia/Gospel/Offertory/Secret/Communion/Postcommunion), the Mass of the Angels, the Mass at a wedding for Holy Matrimony (including the two nuptial-blessing prayers and the final ring-blessing formula, distinct from the Sacrament of Matrimony rite itself already built at data/matrimony.json), and Masses for the Dead (the Collect/Secret/Postcommunion for the day of death or burial - each with a further 3rd/7th/30th-day alternate - the anniversary of death, and daily Requiem Masses, which uniquely give three alternate Collects/Secrets/Postcommunions side by side per the rubric governing which to use). The source mixes two different ways of marking each Mass-part's label - explicit \\subsection{Introit} headings in the Angels/Matrimony/Requiem Masses, versus bare \\introit/\\collect/\\offertory/etc. macros with no subsection heading in Our Lady on Saturday - both of which print as the same bold section label in the finished book, so both are normalized here to the same 'heading' section type for consistency; this is a typographic-equivalence decision, not a content change. The Advent form of Our Lady on Saturday has its Collect, Secret, and Postcommunion each commented out in the source and replaced with a rubric directing to the Collects/Secrets/Postcommunions of St. Mary in Advent, the Advent Feria, and the Holy Ghost printed on other pages - only the active rubric is included, matching the site's established practice of following the source's own choice of what is currently active. Print-only page cross-references (to specific page numbers) are dropped as meaningless on this site; ordinal-number macros ('3rd', '7th', '30th', '1st', '2nd') are flattened to plain text. \\divineName{Lord} and \\textsc{Jesus} (typographic-only macros for the divine Name) are flattened to plain text, matching the site's established practice for \\textsc{} elsewhere. Added 8/29 (per Augustine's answer, Q10 of the release-audit list): a 'Third Collect, Secret & Postcommunion' block, sourced from pages/Propers/Seasonal.tex:52-58 ('Against the Persecutors of the Church') and :63-69 ('For the Chief Bishop'), with a manual toggle between the two (votiveThirdCollectOption/votiveThirdCollectChoice) - this is the ad libitum third Collect the Our Lady on Saturday rubrics above already reference but never supplied text for. Also added bvmSeasonOption flags to all five seasonal forms of Our Lady on Saturday, so the page shows only the one matching the current date (see pickBvmSaturdaySeason in app.js) rather than all five back to back. Task #201 (George's corrections doc: \"The different Votive Masses should be provided in different pages, accessible on different items under the Votive Masses drop-down in the menu.\"): this file was split out of the single combined data/votive.json (which held all four of pages/Votives/Votive.tex's own top-level \\section blocks - Our Lady on Saturday, Mass of the Angels, Holy Matrimony, and Masses for the Dead - concatenated one after another on one page) into its own separate template, one per source \\section, each now its own site page under a new \"Votive Masses\" nav dropdown. The old page-level \"Votive Masses\" heading and this section's own now-redundant repeat of its own title (previously plain `{\"type\": \"heading\"}` entries) are both dropped here, since the page's own <h2 class=\"office-title\"> already supplies the title - matching every other static-rite page's convention sitewide.",
+  "sections": [
+    {
+      "type": "rubric",
+      "text": "On a Sunday or 1st or 2nd Double, or Vigil of {{Whitsunday,}} or within the Octaves of {{Epiphany,}} Easter, {{Whitsunday,}} or Corpus Christi; Mass of the Day is said, with Creed and {{Gloria in excelsis,}} if the Mass require them, with Commemoration of the following Mass at a wedding, and the other things that belong."
+    },
+    {
+      "type": "rubric",
+      "text": "On other days (excepting All Souls' Day, on which both the Votive Mass and the solemn Nuptial benediction are forbidden) the following Mass is said, even if a Greater Double or less occur."
+    },
+    {
+      "type": "heading",
+      "text": "Introit"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "The God of Israel make you one: and may he be with you, even as he had mercy of two that were the only-begotten of their fathers: and now, O Lord, grant them to bless thee yet more abundantly. (Alleluia, alleluia.) Ps. Blessed are all they that fear the Lord: and walk in his ways.",
+      "alleluiaMarker": true
+    },
+    {
+      "type": "heading",
+      "text": "Collect"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "O eternal God, we humbly beseech thee, favourably to behold these thy servants now joined in wedlock according to thy holy ordinance; and grant that they, seeking first thy kingdom and thy righteousness, may obtain the manifold blessings of thy grace. Through."
+    },
+    {
+      "type": "heading",
+      "text": "Epistle. Ephesians 5:20"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Brethren: Give thanks always for all things unto God and the Father in the name of our Lord Jesus Christ; submitting yourselves one to another in the fear of God. Wives, submit yourselves unto your own husbands, as unto the Lord. For the husband is the head of the wife, even as Christ is the head of the church: and he is the saviour of the body. Therefore as the church is subject unto Christ, so let the wives be to their own husbands in every thing. Husbands, love your wives, even as Christ also loved the church, and gave himself for it; that he might sanctify and cleanse it with the washing of water by the word, that he might present it to himself a glorious church, not having spot, or wrinkle, or any such thing; but that it should be holy and without blemish. So ought men to love their wives as their own bodies. He that loveth his wife loveth himself. For no man ever yet hated his own flesh; but nourisheth and cherisheth it, even as the Lord the church: for we are members of his body, of his flesh, and of his bones. For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh. This is a great mystery: but I speak concerning Christ and the church. Nevertheless let every one of you in particular so love his wife even as himself; and the wife see that she reverence her husband."
+    },
+    {
+      "type": "heading",
+      "text": "Gradual"
+    },
+    {
+      "type": "text",
+      "text": "Thy wife shall be as the fruitful vine upon the walls of thine house. ℣. Thy children like the olive-branches round about thy table."
+    },
+    {
+      "type": "heading",
+      "text": "Alleluia"
+    },
+    {
+      "type": "text",
+      "text": "Alleluia, alleluia. ℣. The Lord send you help from the sanctuary: and strengthen you out of Sion. Alleluia."
+    },
+    {
+      "type": "rubric",
+      "text": "After Septuagesima, the following Tract is said instead of the {{Alleluia}} Verse."
+    },
+    {
+      "type": "heading",
+      "text": "Tract"
+    },
+    {
+      "type": "text",
+      "text": "Lo, thus shall the man be blessed, that feareth the Lord. ℣. The Lord from out of Sion shall so bless thee: that thou shalt see Jerusalem in prosperity all thy life long. ℣. Yea, that thou shalt see thy children's children: and peace upon Israel."
+    },
+    {
+      "type": "rubric",
+      "text": "In Eastertide, the following Greater {{Alleluia}} is said instead of the Gradual & the Lesser {{Alleluia}} Verse."
+    },
+    {
+      "type": "heading",
+      "text": "Alleluia"
+    },
+    {
+      "type": "text",
+      "text": "Alleluia, alleluia. ℣. The Lord send you help from the sanctuary: and strengthen you out of Sion. Alleluia. ℣. The Lord that made heaven and earth: give you blessing out of Sion. Alleluia."
+    },
+    {
+      "type": "heading",
+      "text": "Gospel. Matthew 19:4"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "At that time: The Pharisees came unto Jesus, tempting him, and saying unto him: Is it lawful for a man to put away his wife for every cause? And he answered and said unto them, Have ye not read, that he which made them at the beginning made them male and female, and said, For this cause shall a man leave father and mother, and shall cleave to his wife: and they twain shall be one flesh? Wherefore they are no more twain, but one flesh. What therefore God hath joined together, let not man put asunder."
+    },
+    {
+      "type": "heading",
+      "text": "Offertory"
+    },
+    {
+      "type": "text",
+      "text": "My hope hath been in thee, O Lord: I have said: Thou art my God: my time is in thy hand. (Alleluia.)",
+      "alleluiaMarker": true
+    },
+    {
+      "type": "heading",
+      "text": "Secret"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "O Lord, we beseech thee to accept this gift which we present unto thee for the sacred ordinance of matrimony: that this work begun by the bounty of thy goodness may be disposed according to thy will. Through."
+    },
+    {
+      "type": "rubric",
+      "text": "Once the Lord's Prayer is ended, the Priest immediately moves to the Epistle corner and turning towards the Bridegroom and Bride kneeling before the Altar, says the following prayers over them."
+    },
+    {
+      "type": "rubric",
+      "text": "Note, The following prayers are not said in second or third marriages."
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "O merciful Lord, and heavenly Father, by whose gracious gift mankind is increased: We beseech thee assist with thy blessing these two persons, that they may both be fruitful in procreation of children; and also live together so long in godly love and honesty, that they may see their children's children, unto the third and fourth generation, unto thy praise and honour: through Jesus Christ our Lord. Amen."
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "O God which by thy mighty power hast made all things of naught, which also after other things set in order didst appoint that out of man (created after thine own image and similitude) woman should take her beginning: and, knitting them together, didst teach, that it should never be lawful to put asunder those, whom thou by matrimony hadst made one: O God, which hast consecrated the state of matrimony to such an excellent mystery, that in it is signified and represented the spiritual marriage and unity betwixt Christ and his Church: Look mercifully upon these thy servants, that both this man may love his wife, according to thy Word, (as Christ did love his spouse the Church, who gave himself for it, loving and cherishing it even as his own flesh;) And also that this woman may be loving and amiable to her husband as Rachel, wise as Rebecca, faithful and obedient as Sara; And in all quietness, sobriety, and peace, be a follower of holy and godly matrons. O Lord, bless them both, and grant them to inherit thy everlasting kingdom, through Jesu Christ our Lord. Amen."
+    },
+    {
+      "type": "rubric",
+      "text": "The Priest then moving to the middle of the Altar, he continues with the {{Deliver us.}}"
+    },
+    {
+      "type": "rubric",
+      "text": "Note, during the Distribution of Communion, the Bridegroom and Bride should be communed first."
+    },
+    {
+      "type": "heading",
+      "text": "Communion"
+    },
+    {
+      "type": "text",
+      "text": "Lo, thus shall the man be blessed that feareth the Lord: yea, thou shalt see thy children's children: and peace upon Israel. (Alleluia.)",
+      "alleluiaMarker": true
+    },
+    {
+      "type": "heading",
+      "text": "Postcommunion"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "We beseech thee, almighty God: let thy gracious favour accompany the institution of thy providence; that those whom thou hast joined together in lawful union thou wouldest preserve in lasting peace. Through."
+    },
+    {
+      "type": "rubric",
+      "text": "Having said the Dismissal, the Priest, before blessing the People, turns to the Bridegroom and Bride and says:"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Almighty God, which at the beginning did create our first parents Adam and Eve, and did sanctify and join them together in marriage: Pour upon you the riches of his grace, sanctify and ✠ bless you, that ye may please him both in body and soul; and live together in holy love unto your lives' end. Amen."
+    },
+    {
+      "type": "rubric",
+      "text": "The Priest shall solemnly charge them that they shall be faithful to each other; that they shall remain chaste at the time of prayer, and especially during fasts and solemnities; that they shall love each other, and remain in the fear of God. Then he sprinkles them with holy water, and having said {{Let this my bounden duty,}} gives the blessing, and reads the Last Gospel as usual."
+    }
+  ]
+}

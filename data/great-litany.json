@@ -1,0 +1,490 @@
+{
+  "title": "The Great Litany",
+  "source": "pages/Litanies/GreatLitany.tex - transcribed in full.",
+  "sections": [
+    {
+      "type": "rubric",
+      "text": "To be used after the Third Collect at Morning or Evening Prayer; or before the Holy Communion; or separately."
+    },
+    {
+      "type": "rubric",
+      "text": "Note, It is a pious custom to pray this Litany upon Sundays, Wednesdays, and Fridays."
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "O God the Father, Creator of heaven and earth;"
+    },
+    {
+      "type": "versicle",
+      "r": "Have mercy upon us."
+    },
+    {
+      "type": "text",
+      "text": "O God the Son, Redeemer of the world;"
+    },
+    {
+      "type": "versicle",
+      "r": "Have mercy upon us."
+    },
+    {
+      "type": "text",
+      "text": "O God the Holy Ghost, Sanctifier of the faithful;"
+    },
+    {
+      "type": "versicle",
+      "r": "Have mercy upon us."
+    },
+    {
+      "type": "text",
+      "text": "O holy, blessed, and glorious Trinity, one God;"
+    },
+    {
+      "type": "versicle",
+      "r": "Have mercy upon us."
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "O Holy Virgin Mary, Mother of God our Saviour Jesu Christ,"
+    },
+    {
+      "type": "versicle",
+      "r": "Pray for us."
+    },
+    {
+      "type": "text",
+      "text": "All holy Angels and Archangels, and all holy orders of blessed spirits."
+    },
+    {
+      "type": "versicle",
+      "r": "Pray for us."
+    },
+    {
+      "type": "text",
+      "text": "All holy Patriarchs and Prophets, Apostles, Martyrs, Confessors and Virgins, and all the blessed company of heaven."
+    },
+    {
+      "type": "versicle",
+      "r": "Pray for us."
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Remember not, Lord, our offences, nor the offences of our forefathers; neither take thou vengeance of our sins: Spare us, good Lord, spare thy people, whom thou hast redeemed with thy most precious blood, and be not angry with us for ever."
+    },
+    {
+      "type": "versicle",
+      "r": "Spare us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "From all evil and mischief; from sin; from the crafts and assaults of the devil; from thy wrath, and from everlasting damnation;"
+    },
+    {
+      "type": "versicle",
+      "r": "Good Lord, deliver us."
+    },
+    {
+      "type": "text",
+      "text": "From all blindness of heart; from pride, vainglory, and hypocrisy; from envy, hatred, and malice, and all uncharitableness."
+    },
+    {
+      "type": "versicle",
+      "r": "Good Lord, deliver us."
+    },
+    {
+      "type": "text",
+      "text": "From all inordinate and sinful affections; and from all the deceits of the world, the flesh, and the devil,"
+    },
+    {
+      "type": "versicle",
+      "r": "Good Lord, deliver us."
+    },
+    {
+      "type": "text",
+      "text": "From lightning and tempest; from earthquake, fire, and flood; from plague, pestilence, and famine; from battle and murder, and from sudden death,"
+    },
+    {
+      "type": "versicle",
+      "r": "Good Lord, deliver us."
+    },
+    {
+      "type": "text",
+      "text": "From all sedition, privy conspiracy, and rebellion; from all false doctrine, heresy, and schism; from hardness of heart, and contempt of thy Word and Commandment,"
+    },
+    {
+      "type": "versicle",
+      "r": "Good Lord, deliver us."
+    },
+    {
+      "type": "text",
+      "text": "By the mystery of thy holy Incarnation; by thy holy Nativity and Circumcision; by thy Baptism, Fasting, and Temptation,"
+    },
+    {
+      "type": "versicle",
+      "r": "Good Lord, deliver us."
+    },
+    {
+      "type": "text",
+      "text": "By thine Agony and Bloody Sweat; by thy Cross and Passion; by thy precious Death and Burial; by thy glorious Resurrection and Ascension; and by the Coming of the Holy Ghost,"
+    },
+    {
+      "type": "versicle",
+      "r": "Good Lord, deliver us."
+    },
+    {
+      "type": "text",
+      "text": "In all time of our tribulation; in all time of our prosperity; in the hour of death, and in the day of judgment,"
+    },
+    {
+      "type": "versicle",
+      "r": "Good Lord, deliver us."
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "We sinners do beseech thee to hear us, O Lord God; and that it may please thee to rule and govern thy holy Church universal in the right way;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "rubric",
+      "regionOnly": "america",
+      "text": "In the United States and its territories, the following is said,"
+    },
+    {
+      "type": "text",
+      "regionOnly": "america",
+      "text": "That it may please thee so to rule the heart of thy servant, The President of the United States, that he may above all things seek thy honour and glory;"
+    },
+    {
+      "type": "versicle",
+      "regionOnly": "america",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "rubric",
+      "regionOnly": "commonwealth",
+      "text": "In the British Commonwealth, the following is said,"
+    },
+    {
+      "type": "text",
+      "regionOnly": "commonwealth",
+      "text": "That it may please thee to keep and strengthen in the true worshipping of thee, in righteousness and holiness of life, thy servant Charles, our most gracious King and Governor,"
+    },
+    {
+      "type": "versicle",
+      "regionOnly": "commonwealth",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "regionOnly": "commonwealth",
+      "text": "That it may please thee to rule his heart in thy faith, fear, and love, and that he may evermore have affiance in thee, and ever seek thy honour and glory,"
+    },
+    {
+      "type": "versicle",
+      "regionOnly": "commonwealth",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "regionOnly": "commonwealth",
+      "text": "That it may please thee to be his defender and keeper, giving him the victory over all his enemies,"
+    },
+    {
+      "type": "versicle",
+      "regionOnly": "commonwealth",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "regionOnly": "commonwealth",
+      "text": "That it may please thee to bless and preserve Queen Camilla, William Prince of Wales, the Princess of Wales, and all the Royal Family;"
+    },
+    {
+      "type": "versicle",
+      "regionOnly": "commonwealth",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to bless and preserve all Christian Rulers and Magistrates; giving them grace to execute justice, and to maintain truth;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to bless and illuminate all Bishops, Priests, and Deacons, with true knowledge and understanding of thy Word; and that both by their preaching and living they may set it forth, and show it accordingly;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to send forth labourers into thy harvest;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to bless and keep all thy people;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to give to all nations unity, peace, and concord;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to give us an heart to love and fear thee, and diligently to live after thy commandments;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to give to all thy people increase of grace to hear meekly thy Word, and to receive it with pure affection, and to bring forth the fruits of the Spirit:"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to bring into the way of truth all such as have erred, and are deceived;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to strengthen such as do stand; and to comfort and help the weak-hearted; and to raise up those who fall; and finally to beat down Satan under our feet;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to succour, help, and comfort, all who are in danger, necessity, and tribulation;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to preserve all who travel by land, by water, or by air, all women in child-birth, all sick persons, and young children; and to show thy pity upon all prisoners and captives;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to defend, and provide for, the fatherless children, and widows, and all who are desolate and oppressed;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to have mercy upon all men;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to forgive our enemies, persecutors, and slanderers, and to turn their hearts;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to give and preserve to our use the kindly fruits of the earth, so that in due time we may enjoy them;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "text",
+      "text": "That it may please thee to give us true repentance; to forgive us all our sins, negligences, and ignorances; and to endue us with the grace of thy Holy Spirit to amend our lives according to thy Holy Word;"
+    },
+    {
+      "type": "versicle",
+      "r": "We beseech thee to hear us, good Lord."
+    },
+    {
+      "type": "versicle",
+      "v": "Son of God, we beseech thee to hear us.",
+      "r": "Son of God, we beseech thee to hear us."
+    },
+    {
+      "type": "versicle",
+      "v": "O Lamb of God, who takest away the sins of the world;",
+      "r": "Grant us thy peace."
+    },
+    {
+      "type": "versicle",
+      "v": "O Lamb of God, who takest away the sins of the world;",
+      "r": "Have mercy upon us."
+    },
+    {
+      "type": "versicle",
+      "v": "O Christ, hear us.",
+      "r": "O Christ, hear us."
+    },
+    {
+      "type": "versicle",
+      "v": "Lord, have mercy upon us.",
+      "r": "Lord, have mercy upon us."
+    },
+    {
+      "type": "versicle",
+      "v": "Christ, have mercy upon us.",
+      "r": "Christ, have mercy upon us."
+    },
+    {
+      "type": "versicle",
+      "v": "Lord, have mercy upon us.",
+      "r": "Lord, have mercy upon us."
+    },
+    {
+      "type": "rubric",
+      "text": "Then shall the Minister, and the People with him, say the Lord's Prayer."
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Our Father, who art in heaven, Hallowed be thy Name. Thy kingdom come. Thy will be done on earth, As it is in heaven. Give us this day our daily bread. And forgive us our trespasses, As we forgive those who trespass against us. And lead us not into temptation; But deliver us from evil. Amen."
+    },
+    {
+      "type": "rubric",
+      "text": "The Minister may, at his discretion, omit all that followeth, to the Prayer, {{We humbly beseech thee, O Father, etc.}}"
+    },
+    {
+      "type": "inlineToggle",
+      "toggle": "litanyForm",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full Form"
+        },
+        {
+          "value": "shortened",
+          "label": "Shortened Form"
+        }
+      ]
+    },
+    {
+      "type": "versicle",
+      "litanyOmittable": true,
+      "v": "O Lord, deal not with us according to our sins.",
+      "r": "Neither reward us according to our iniquities."
+    },
+    {
+      "type": "rubric",
+      "litanyOmittable": true,
+      "text": "{{Let us pray.}}"
+    },
+    {
+      "type": "collect",
+      "litanyOmittable": true,
+      "dropcap": true,
+      "text": "O God, merciful Father, who despisest not the sighing of a contrite heart, nor the desire of such as are sorrowful; Mercifully assist our prayers which we make before thee in all our troubles and adversities, whensoever they oppress us; and graciously hear us, that those evils which the craft and subtilty of the devil or man worketh against us, may, by thy good providence, be brought to nought; that we thy servants, being hurt by no persecutions, may evermore give thanks unto thee in thy holy Church; through Jesus Christ our Lord."
+    },
+    {
+      "type": "versicle",
+      "litanyOmittable": true,
+      "r": "Amen. O Lord, arise, help us, and deliver us, for thy Name's sake."
+    },
+    {
+      "type": "text",
+      "litanyOmittable": true,
+      "dropcap": true,
+      "text": "O God, we have heard with our ears, and our fathers have declared unto us, the noble works that thou didst in their days, and in the old time before them."
+    },
+    {
+      "type": "versicle",
+      "litanyOmittable": true,
+      "r": "O Lord, arise, help us, and deliver us, for thine honour."
+    },
+    {
+      "type": "versicle",
+      "litanyOmittable": true,
+      "v": "Glory be to the Father, and to the Son, and to the Holy Ghost;",
+      "r": "As it was in the beginning, is now, and ever shall be, world without end. Amen."
+    },
+    {
+      "type": "versicle",
+      "litanyOmittable": true,
+      "v": "From our enemies defend us, O Christ.",
+      "r": "Graciously look upon our afflictions."
+    },
+    {
+      "type": "versicle",
+      "litanyOmittable": true,
+      "v": "With pity behold the sorrows of our hearts.",
+      "r": "Mercifully forgive the sins of thy people."
+    },
+    {
+      "type": "versicle",
+      "litanyOmittable": true,
+      "v": "Favourably with mercy hear our prayers.",
+      "r": "O Son of David, have mercy upon us."
+    },
+    {
+      "type": "versicle",
+      "litanyOmittable": true,
+      "v": "Both now and ever vouchsafe to hear us, O Christ.",
+      "r": "Graciously hear us, O Christ; graciously hear us, O Lord Christ."
+    },
+    {
+      "type": "versicle",
+      "litanyOmittable": true,
+      "v": "O Lord, let thy mercy be showed upon us;",
+      "r": "As we do put our trust in thee."
+    },
+    {
+      "type": "rubric",
+      "text": "{{Let us pray.}}"
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "We humbly beseech thee, O Father, mercifully to look upon our infirmities; and for the glory of thy Name, turn from us all those evils that we most justly have deserved; and grant, that in all our troubles we may put our whole trust and confidence in thy mercy, and evermore serve thee in holiness and pureness of living, to thy honour and glory; through our only Mediator and Advocate, Jesus Christ our Lord. Amen."
+    },
+    {
+      "type": "rubric",
+      "text": "The Minister may end the Litany here, or at his discretion add other Prayers from this Book."
+    },
+    {
+      "type": "end",
+      "text": "Here Endeth the Great Litany."
+    }
+  ]
+}

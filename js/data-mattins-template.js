@@ -1,0 +1,892 @@
+window.MATTINS_TEMPLATE = {
+  "title": "The Order for Daily Morning Prayer",
+  "titleLatin": "Ordo ad Matutinas",
+  "source": "pages/Office/Mattins.tex - both columns, transcribed in full.",
+  "invitatoryOptions": [
+    {
+      "season": "advent",
+      "text": "Our King and Saviour draweth nigh; * O come, let us adore him."
+    },
+    {
+      "season": "christmas",
+      "text": "Alleluia. Unto us a child is born; * O come, let us adore him. Alleluia."
+    },
+    {
+      "season": "epiphany",
+      "text": "The Lord hath manifested forth his glory; * O come, let us adore him."
+    },
+    {
+      "season": "septuagesima",
+      "text": "Let us come before the presence of the Lord with thanksgiving; * O come, let us adore him."
+    },
+    {
+      "season": "lent",
+      "text": "The goodness of God leadeth to repentance; * O come, let us adore him."
+    },
+    {
+      "season": "passiontide",
+      "text": "Christ our Lord became obedient unto death; * O come, let us adore him."
+    },
+    {
+      "season": "eastertide",
+      "text": "Alleluia. The Lord is risen indeed; * O come let us adore him. Alleluia."
+    },
+    {
+      "season": "ascensiontide",
+      "text": "Alleluia. Christ the Lord ascended into heaven; * O come, let us adore him. Alleluia."
+    },
+    {
+      "season": "trinitytide",
+      "text": "Father, Son, and Holy Ghost, One God; * O come, let us adore him."
+    },
+    {
+      "season": "feastsOfLordOrLady",
+      "text": "The Word was made flesh; * O come, let us adore him."
+    },
+    {
+      "season": "semidoubleOrHigher",
+      "text": "The Lord is glorious in his saints; * O come, let us adore him."
+    }
+  ],
+  "apostlesCreed": {
+    "heading": "Apostles' Creed",
+    "headingLatin": "Symbolum Apostolorum",
+    "text": "I believe in God the Father Almighty, Maker of heaven and earth: And in Jesus Christ his only Son our Lord: Who was conceived by the Holy Ghost, Born of the Virgin Mary: Suffered under Pontius Pilate, Was crucified, dead, and buried: He descended into hell; The third day he rose again from the dead: He ascended into heaven, And sitteth on the right hand of God the Father Almighty: From thence he shall come to judge the quick and the dead.\nI believe in the Holy Ghost: The holy Catholic Church; The Communion of Saints: The Forgiveness of sins: The Resurrection of the body: ✠ And the Life everlasting. Amen.",
+    "textLatin": "Credo in Deum, Patrem omnipoténtem, Creatórem cæli et terræ. Et in Jesum Christum, Fílium ejus únicum, Dóminum nostrum: qui concéptus est de Spíritu Sancto, natus ex María Vírgine, passus sub Póntio Piláto, crucifíxus, mórtuus, et sepúltus: descéndit ad ínferos; tértia die resurréxit a mórtuis; ascéndit ad cælos; sedet ad déxteram Dei Patris omnipoténtis: inde ventúrus est judicáre vivos et mórtuos.\nCredo in Spíritum Sanctum, sanctam Ecclésiam cathólicam, Sanctórum communiónem, remissiónem peccatórum, carnis ✠ resurrectiónem, vitam æternam. Amen."
+  },
+  "canticles": {
+    "teDeum": {
+      "heading": "Te Deum laudamus",
+      "headingLatin": "Te Deum laudamus",
+      "rubricNote": "Sung on Sundays outside Advent, Septuagesimatide & Lent; on Festivals of Semidouble rank or higher; on Octave Days; and the Saturday Office of St. Mary.",
+      "textLines": [
+        "We praise thee, O God; we acknowledge thee to be the Lord.",
+        "All the earth doth worship thee, the Father everlasting.",
+        "To thee all Angels cry aloud; the Heavens, and all the Powers therein;",
+        "To thee Cherubim and Seraphim continually do cry,",
+        "Holy, Holy, Holy, Lord God of Sabaoth;",
+        "Heaven and earth are full of the Majesty of thy glory.",
+        "The glorious company of the Apostles praise thee.",
+        "The goodly fellowship of the Prophets praise thee.",
+        "The noble army of Martyrs praise thee.",
+        "The holy Church throughout all the world doth acknowledge thee;",
+        "The Father of an infinite Majesty;",
+        "Thine honourable, true and only Son;",
+        "Also the Holy Ghost the Comforter.",
+        "Thou art the King of Glory, O Christ.",
+        "Thou art the everlasting Son of the Father.",
+        "When thou tookest upon thee to deliver man, thou didst not abhor the Virgin's womb.",
+        "When thou hadst overcome the sharpness of death, thou didst open the Kingdom of Heaven to all believers.",
+        "Thou sittest at the right hand of God, in the glory of the Father.",
+        "We believe that thou shalt come to be our Judge.",
+        "We therefore pray thee, help thy servants, whom thou hast redeemed with thy precious blood.",
+        "Make them to be numbered with thy Saints, in glory everlasting.",
+        "O Lord, save thy people, and bless thine heritage.",
+        "Govern them and lift them up for ever.",
+        "Day by day we magnify thee;",
+        "And we worship thy Name ever, world without end.",
+        "Vouchsafe, O Lord, to keep us this day without sin.",
+        "O Lord, have mercy upon us, have mercy upon us.",
+        "O Lord, let thy mercy lighten upon us, as our trust is in thee.",
+        "O Lord, in thee have I trusted; let me never be confounded."
+      ],
+      "textLinesLatin": [
+        "Te Deum laudámus: te Dóminum confitémur.",
+        "Te ætérnum Patrem omnis terra venerátur.",
+        "Tibi omnes Ángeli, tibi Cæli, et univérsæ Potestátes",
+        "Tibi Chérubim et Séraphim incessábili voce proclámant:",
+        "Sanctus, Sanctus, Sanctus Dóminus Deus Sábaoth.",
+        "Pleni sunt cæli et terra majestátis glóriæ tuæ.",
+        "Te gloriósus Apostolórum chorus,",
+        "Te Prophetárum laudábilis númerus,",
+        "Te Mártyrum candidátus laudat exércitus.",
+        "Te per orbem terrárum sancta confitétur Ecclésia,",
+        "Patrem imménsæ majestátis;",
+        "Venerándum tuum verum et únicum Fílium;",
+        "Sanctum quoque Paráclitum Spíritum.",
+        "Tu Rex glóriæ, Christe.",
+        "Tu Patris sempitérnus es Fílius.",
+        "Tu, ad liberándum susceptúrus hóminem: non horruísti Vírginis úterum.",
+        "Tu, devícto mortis acúleo, aperuísti credéntibus regna cælórum.",
+        "Tu ad déxteram Dei sedes, in glória Patris.",
+        "Judex créderis esse ventúrus.",
+        "Te ergo quǽsumus, tuis fámulis súbveni, quos pretióso sánguine redemísti.",
+        "Æterna fac cum Sanctis tuis in glória numerári.",
+        "Salvum fac pópulum tuum, Dómine, et bénedic hereditáti tuæ.",
+        "Et rege eos, et extólle illos usque in ætérnum.",
+        "Per síngulos dies benedícimus te.",
+        "Et laudámus nomen tuum in sǽculum, et in sǽculum sǽculi.",
+        "Dignáre, Dómine, die isto sine peccáto nos custodíre.",
+        "Miserére nostri, Dómine, miserére nostri.",
+        "Fiat misericórdia tua, Dómine, super nos, quemádmodum sperávimus in te.",
+        "In te, Dómine, sperávi: non confúndar in ætérnum."
+      ]
+    },
+    "benedicite": {
+      "heading": "Benedicite, omnia opera Domini",
+      "headingLatin": "Benedicite, omnia opera Domini",
+      "rubricNote": "Sung on Sundays in Advent, Septuagesimatide & Lent; and on days below Semidouble rank (Ferias, Memorials, Vigils).",
+      "textLines": [
+        "O all ye Works of the Lord, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Angels of the Lord, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Heavens, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Waters that be above the firmament, bless ye the Lord: praise him, and magnify him for ever.",
+        "O all ye Powers of the Lord, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Sun and Moon, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Stars of heaven, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Showers and Dew, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye winds of God, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Fire and Heat, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Winter and Summer, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Dews and Frosts, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Frost and Cold, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Ice and Snow, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Nights and Days, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Light and Darkness, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Lightnings and Clouds, bless ye the Lord: praise him, and magnify him for ever.",
+        "O let the Earth bless the Lord: yea, let it praise him, and magnify him for ever.",
+        "O ye Mountains and Hills, bless ye the Lord: praise him, and magnify him for ever.",
+        "O all ye Green Things upon the earth, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Wells, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Seas and Floods, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Whales, and all that move in the waters, bless ye the Lord: praise him, and magnify him for ever.",
+        "O all ye Fowls of the air, bless ye the Lord: praise him, and magnify him for ever.",
+        "O all ye Beasts and Cattle, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Children of Men, bless ye the Lord: praise him, and magnify him for ever.",
+        "O let Israel bless the Lord: praise him, and magnify him for ever.",
+        "O ye Priests of the Lord, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Servants of the Lord, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye Spirits and Souls of the Righteous, bless ye the Lord: praise him, and magnify him for ever.",
+        "O ye holy and humble Men of heart, bless ye the Lord: praise him, and magnify him for ever.",
+        "Let us bless the Father, and the Son, and the Holy Ghost: praise him, and magnify him for ever."
+      ],
+      "textLinesLatin": [
+        "Benedícite, ómnia ópera Dómini, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, Ángeli Dómini, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, cæli, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, aquæ omnes, quæ super cælos sunt, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, omnes virtútes Dómini, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, sol et luna, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, stellæ cæli, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, omnis imber et ros, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, omnes spíritus Dei, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, ignis et æstus, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, frigus et æstus, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, rores et pruína, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, gelu et frigus, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, glácies et nives, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, noctes et dies, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, lux et ténebræ, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, fúlgura et nubes, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícat terra Dóminum: laudet et superexáltet eum in sǽcula.",
+        "Benedícite, montes et colles, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, univérsa germinántia in terra, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, fontes, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, mária et flúmina, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, cete, et ómnia, quæ movéntur in aquis, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, omnes vólucres cæli, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, omnes béstiæ et pécora, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, fílii hóminum, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícat Israël Dóminum: laudet et superexáltet eum in sǽcula.",
+        "Benedícite, sacerdótes Dómini, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, servi Dómini, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, spíritus, et ánimæ justórum, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedícite, sancti, et húmiles corde, Dómino: laudáte et superexaltáte eum in sǽcula.",
+        "Benedicámus Patrem et Fílium cum Sancto Spíritu: laudémus et superexaltémus eum in sǽcula."
+      ]
+    }
+  },
+  "sections": [
+    {
+      "type": "placeholder",
+      "key": "foreOffice"
+    },
+    {
+      "type": "heading",
+      "text": "Introductory Versicles",
+      "headingLatin": null
+    },
+    {
+      "type": "versicle",
+      "v": "O Lord, ✝ open thou our lips.",
+      "r": "And our mouth shall show forth thy praise.",
+      "vLatin": "℣. Dómine, ✝ lábia nostra apéries.",
+      "rLatin": "℟. Et os nostrum annuntiábit laudem tuam."
+    },
+    {
+      "type": "versicle",
+      "v": "O God, ✠ make speed to save us.",
+      "r": "O Lord, make haste to help us.",
+      "vLatin": "℣. Deus, ✠ in adjutórium nostrum inténde.",
+      "rLatin": "℟. Dómine, ad adjuvándum nos festína."
+    },
+    {
+      "type": "rubric",
+      "text": "Here, all standing up, the Minister shall say,"
+    },
+    {
+      "type": "versicle",
+      "v": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+      "r": "As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+      "vLatin": "℣. Glória Patri, et Fílio, et Spirítui Sancto:",
+      "rLatin": "℟. Sicut erat in princípio, et nunc, et semper, et in sæcula sæculórum. Amen."
+    },
+    {
+      "type": "versicle",
+      "v": "Praise ye the Lord.",
+      "r": "The Lord's Name be praised.",
+      "vLatin": "℣. Laudáte Dóminum.",
+      "rLatin": "℟. Sit Nomen Dómini benedíctum."
+    },
+    {
+      "type": "heading",
+      "text": "Venite, exultemus Domino",
+      "headingLatin": "Venite, exultemus Domino",
+      "veniteGroup": true
+    },
+    {
+      "type": "placeholder",
+      "key": "invitatory",
+      "veniteGroup": true
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "O come, let us sing unto the Lord: let us heartily rejoice in the strength of our salvation.\nLet us come before his presence with thanksgiving: and shew ourselves glad in him with psalms.\nFor the Lord is a great God: and a great King above all gods.\nIn his hand are all the corners of the earth: and the strength of the hills is his also.\nThe sea is his, and he made it: and his hands prepared the dry land.\nO come, let us worship and fall down: and kneel before the Lord our Maker.\nFor he is the Lord our God: and we are the people of his pasture, and the sheep of his hand.\nTo-day if ye will hear his voice, harden not your hearts: as in the provocation, and as in the day of temptation in the wilderness.\nWhen your fathers tempted me: proved me, and saw my works.\nForty years long was I grieved with this generation, and said: It is a people that do err in their hearts, for they have not known my ways;\nUnto whom I sware in my wrath: that they should not enter into my rest.",
+      "textLatin": "Veníte, exsultémus Dómino, jubilémus Deo, salutári nostro:\nPræoccupémus fáciem ejus in confessióne, et in psalmis jubilémus ei.\nQuóniam Deus magnus Dóminus, et Rex magnus super omnes deos, quóniam non repéllet Dóminus plebem suam:\nQuia in manu ejus sunt omnes fines terræ, et altitúdines móntium ipse cónspicit.\nQuóniam ipsíus est mare, et ipse fecit illud, et áridam fundavérunt manus ejus.\nVeníte, adorémus, et procidámus ante Deum: plorémus coram Dómino, qui fecit nos,\nQuia ipse est Dóminus, Deus noster; nos autem pópulus ejus, et oves páscuæ ejus.\nHódie, si vocem ejus audiéritis, nolíte obduráre corda vestra, sicut in exacerbatióne secúndum diem tentatiónis in desérto: ubi tentavérunt me patres vestri, probavérunt et vidérunt ópera mea.\nQuadragínta annis próximus fui generatióni huic, et dixi; Semper hi errant corde, ipsi vero non cognovérunt vias meas: quibus jurávi in ira mea; Si introíbunt in réquiem meam.",
+      "continuousColumns": true,
+      "veniteGroup": true
+    },
+    {
+      "type": "versicle",
+      "v": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+      "r": "As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+      "vLatin": "℣. Glória Patri, et Fílio, et Spirítui Sancto:",
+      "rLatin": "℟. Sicut erat in princípio, et nunc, et semper, et in sæcula sæculórum. Amen.",
+      "veniteGroup": true
+    },
+    {
+      "type": "placeholder",
+      "key": "invitatory",
+      "veniteGroup": true
+    },
+    {
+      "type": "rubric",
+      "text": "On any Red Letter Day, Verses 8-11 of the {{Venite}} may be replaced with the following.",
+      "veniteGroup": true,
+      "redLetterNotice": true
+    },
+    {
+      "type": "text",
+      "text": "O worship the Lord in the beauty of holiness: let the whole earth stand in awe of him.\nFor he cometh, for he cometh to judge the earth: and with righteousness to judge the world, and the people with his truth.",
+      "textLatin": "Tóllite hóstias, et introíte in átria ejus: adoráte Dóminum in átrio sancto ejus.\nJudicábit orbem terræ in æquitáte: et pópulos in veritáte sua.",
+      "veniteGroup": true,
+      "redLetterNotice": true
+    },
+    {
+      "type": "rubric",
+      "text": "Note, After the {{Venite,}} a Hymn may be sung."
+    },
+    {
+      "type": "placeholder",
+      "key": "invitatoryHymnSlot"
+    },
+    {
+      "type": "heading",
+      "text": "The Psalms"
+    },
+    {
+      "type": "placeholder",
+      "key": "psalms"
+    },
+    {
+      "type": "heading",
+      "text": "The First Lesson"
+    },
+    {
+      "type": "placeholder",
+      "key": "lesson1"
+    },
+    {
+      "type": "placeholder",
+      "key": "morningCanticle"
+    },
+    {
+      "type": "heading",
+      "text": "The Second Lesson"
+    },
+    {
+      "type": "placeholder",
+      "key": "lesson2"
+    },
+    {
+      "type": "rubric",
+      "text": "After which may be sung or said a Hymn."
+    },
+    {
+      "type": "placeholder",
+      "key": "hymnSlot"
+    },
+    {
+      "type": "heading",
+      "text": "Benedictus",
+      "headingLatin": "Benedictus"
+    },
+    {
+      "type": "placeholder",
+      "key": "benedictusAntiphon",
+      "position": "before"
+    },
+    {
+      "type": "rubric",
+      "text": "Then shall be sung or said the Hymn following."
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "Blessed ✠ be the Lord God of Israel; for he hath visited and redeemed his people;\nAnd hath raised up a mighty salvation for us, in the house of his servant David;\nAs he spake by the mouth of his holy Prophets, which have been since the world began;\nThat we should be saved from our enemies, and from the hand of all that hate us.\nTo perform the mercy promised to our forefathers, and to remember his holy covenant;\nTo perform the oath which he sware to our forefather Abraham, that he would give us;\nThat we being delivered out of the hand of our enemies might serve him without fear;\nIn holiness and righteousness before him, all the days of our life.\nAnd thou, child, shalt be called the prophet of the Highest: for thou shalt go before the face of the Lord to prepare his ways;\nTo give knowledge of salvation unto his people for the remission of their sins,\nThrough the tender mercy of our God; whereby the day-spring from on high hath visited us;\nTo give light to them that sit in darkness, and in the shadow of death, and to guide our feet into the way of peace.",
+      "textLatin": "Benedíctus ✠ Dóminus, Deus Israël: quia visitávit, et fecit redemptiónem plebi suæ:\nEt eréxit cornu salútis nobis: in domo David, púeri sui.\nSicut locútus est per os sanctórum, qui a sǽculo sunt, prophetárum ejus:\nSalútem ex inimícis nostris, et de manu ómnium, qui odérunt nos.\nAd faciéndam misericórdiam cum pátribus nostris: et memorári testaménti sui sancti.\nJusjurándum, quod jurávit ad Ábraham patrem nostrum, datúrum se nobis:\nUt sine timóre, de manu inimicórum nostrórum liberáti, serviámus illi.\nIn sanctitáte, et justítia coram ipso, ómnibus diébus nostris.\nEt tu, puer, Prophéta Altíssimi vocáberis: præíbis enim ante fáciem Dómini, paráre vias ejus:\nAd dandam sciéntiam salútis plebi ejus: in remissiónem peccatórum eórum:\nPer víscera misericórdiæ Dei nostri: in quibus visitávit nos, óriens ex alto:\nIllumináre his, qui in ténebris, et in umbra mortis sedent: ad dirigéndos pedes nostros in viam pacis."
+    },
+    {
+      "type": "versicle",
+      "v": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+      "r": "As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+      "vLatin": "℣. Glória Patri, et Fílio, et Spirítui Sancto:",
+      "rLatin": "℟. Sicut erat in princípio, et nunc, et semper, et in sæcula sæculórum. Amen."
+    },
+    {
+      "type": "placeholder",
+      "key": "benedictusAntiphon",
+      "position": "after"
+    },
+    {
+      "type": "rubric",
+      "text": "Then shall be said the {{Apostles}}' Creed, by the Minister and the People, standing."
+    },
+    {
+      "type": "placeholder",
+      "key": "mattinsCreed"
+    },
+    {
+      "type": "rubric",
+      "text": "And after that, these Prayers following, the People devoutly kneeling; the Minister first pronouncing,"
+    },
+    {
+      "type": "versicle",
+      "v": "The Lord be with you. (or, O Lord, hear our prayer.)",
+      "r": "And with thy spirit. (or, And let our cry come unto thee.)",
+      "vLatin": "℣. Dóminus vobíscum. (vel, Dómine, exáudi oratiónem nostram.)",
+      "rLatin": "℟. Et cum spíritu tuo. (vel, Et clamor noster ad te véniat.)"
+    },
+    {
+      "type": "versicle",
+      "v": "Let us pray.",
+      "vLatin": "℣. Orémus."
+    },
+    {
+      "type": "versicle",
+      "v": "Lord, have mercy upon us.",
+      "vLatin": "℣. Kýrie, eléison."
+    },
+    {
+      "type": "versicle",
+      "v": "Christ, have mercy upon us.",
+      "vLatin": "℟. Christe, eléison."
+    },
+    {
+      "type": "versicle",
+      "v": "Lord, have mercy upon us.",
+      "vLatin": "℣. Kýrie, eléison."
+    },
+    {
+      "type": "heading",
+      "text": "The Lord's Prayer",
+      "headingLatin": "Pater Noster"
+    },
+    {
+      "type": "rubric",
+      "text": "Then the Minister, Clerks, and People—all kneeling—shall say the Lord's Prayer with a loud voice."
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Our Father, who art in heaven, Hallowed be thy Name. Thy kingdom come. Thy will be done on earth, As it is in heaven. Give us this day our daily bread. And forgive us our trespasses, As we forgive those who trespass against us. And lead us not into temptation; But deliver us from evil. Amen.",
+      "textLatin": "Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum quotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris: et ne nos indúcas in tentatiónem: sed líbera nos a malo. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Preces"
+    },
+    {
+      "type": "rubric",
+      "text": "Then the Minister standing up shall say,"
+    },
+    {
+      "type": "versicle",
+      "v": "O Lord, show thy mercy upon us.",
+      "r": "And grant us thy salvation.",
+      "vLatin": "℣. Osténde nobis, Dómine, misericórdiam tuam.",
+      "rLatin": "℟. Et salutáre tuum da nobis."
+    },
+    {
+      "type": "versicle",
+      "regionVersicle": true,
+      "v": "O Lord, save the State.",
+      "vCommonwealth": "O Lord, save the King.",
+      "r": "And mercifully hear us when we call upon thee.",
+      "vLatin": "℣. Dómine, salvam fac Civitátem.",
+      "vLatinCommonwealth": "℣. Dómine, salvum fac Regem.",
+      "rLatin": "℟. Et exáudi nos cum invocámus te."
+    },
+    {
+      "type": "versicle",
+      "v": "Endue thy Ministers with righteousness.",
+      "r": "And make thy chosen people joyful.",
+      "vLatin": "℣. Sacerdótes tui induántur justítia.",
+      "rLatin": "℟. Et sancti tui exúltent."
+    },
+    {
+      "type": "versicle",
+      "v": "O Lord, save thy people.",
+      "r": "And bless thine inheritance.",
+      "vLatin": "℣. Salvum fac pópulum tuum, Dómine.",
+      "rLatin": "℟. Et bénedic hæreditáti tuæ."
+    },
+    {
+      "type": "versicle",
+      "v": "Give peace in our time, O Lord.",
+      "r": "For it is thou, Lord, only, that makest us dwell in safety.",
+      "vLatin": "℣. Da pacem, Dómine, in diébus nostris.",
+      "rLatin": "℟. Quóniam tu, Dómine, singuláriter in spe constituísti me."
+    },
+    {
+      "type": "versicle",
+      "v": "O God, make clean our hearts within us.",
+      "r": "And take not thy Holy Spirit from us.",
+      "vLatin": "℣. Cor mundum crea in nobis, O Deus.",
+      "rLatin": "℟. Et Spíritum Sanctum tuum ne áuferas a nobis."
+    },
+    {
+      "type": "rubric",
+      "text": "Then shall follow the Collect(s) for the Day, except when the Communion Service is read; and then the Collect(s) for the Day shall be omitted here."
+    },
+    {
+      "type": "heading",
+      "text": "The Collect of the Day"
+    },
+    {
+      "type": "placeholder",
+      "key": "collectOfDay"
+    },
+    {
+      "type": "heading",
+      "text": "A Collect for Peace"
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "noLatinInSource": true,
+      "text": "O God, who art the author of peace and lover of concord, in knowledge of whom standeth our eternal life, whose service is perfect freedom; Defend us thy humble servants in all assaults of our enemies; that we, surely trusting in thy defence, may not fear the power of any adversaries, through the might of Jesus Christ our Lord. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "A Collect for Grace"
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "noLatinInSource": true,
+      "text": "O Lord, our heavenly Father, Almighty and everlasting God, who hast safely brought us to the beginning of this day; Defend us in the same with thy mighty power; and grant that this day we fall into no sin, neither run into any kind of danger; but that all our doings, being ordered by thy governance, may be righteous in thy sight; through Jesus Christ our Lord. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Conclusion"
+    },
+    {
+      "type": "versicle",
+      "v": "The Lord be with you. (or, O Lord, hear our prayer.)",
+      "r": "And with thy spirit. (or, And let our cry come unto thee.)",
+      "vLatin": "℣. Dóminus vobíscum. (vel, Dómine, exáudi oratiónem nostram.)",
+      "rLatin": "℟. Et cum spíritu tuo. (vel, Et clamor noster ad te véniat.)"
+    },
+    {
+      "type": "versicle",
+      "v": "Let us bless the Lord (alleluia, alleluia.)",
+      "r": "Thanks be to God (alleluia, alleluia.)",
+      "vLatin": "℣. Benedicámus Dómino (allelúja, allelúja.)",
+      "rLatin": "℟. Deo grátias (allelúja, allelúja.)",
+      "alleluiaSuffix": true
+    },
+    {
+      "type": "versicle",
+      "v": "May the souls ✠ of the faithful departed, through the mercy of God, rest in peace.",
+      "r": "Amen.",
+      "vLatin": "℣. Fidélium ánimæ ✠ per misericórdiam Dei requiéscant in pace.",
+      "rLatin": "℟. Amen."
+    },
+    {
+      "type": "rubric",
+      "text": "The following Prayers shall be omitted here when the {{Great Litany}} is said, and may be omitted when the Holy Communion is to follow. The Minister may here end the Morning Prayer with such intercessions taken out of this Book, as he shall think fit, or with the Grace."
+    },
+    {
+      "type": "heading",
+      "regionOnly": "america",
+      "text": "A Prayer for the President of the United States, and all in Civil Authority",
+      "optional": true
+    },
+    {
+      "type": "inlineToggle",
+      "toggle": "presidentPrayer",
+      "regionOnly": "america",
+      "optional": true,
+      "options": [
+        {
+          "value": "heavenlyFather",
+          "label": "O Lord, our heavenly Father"
+        },
+        {
+          "value": "governor",
+          "label": "O Lord our Governor"
+        }
+      ]
+    },
+    {
+      "type": "collect",
+      "regionOnly": "america",
+      "optional": true,
+      "noLatinInSource": true,
+      "dropcap": true,
+      "presidentPrayerOption": "heavenlyFather",
+      "text": "O Lord, our heavenly Father, the high and mighty Ruler of the universe, who dost from thy throne behold all the dwellers upon earth; Most heartily we beseech thee, with thy favour to behold and bless thy servant the President of the United States, and all others in authority; and so replenish them with the grace of thy Holy Spirit, that they may always incline to thy will, and walk in thy way. Endue them plenteously with heavenly gifts; grant them in health and prosperity long to live; and finally, after this life, to attain everlasting joy and felicity; through Jesus Christ our Lord. Amen."
+    },
+    {
+      "type": "collect",
+      "regionOnly": "america",
+      "optional": true,
+      "noLatinInSource": true,
+      "dropcap": true,
+      "presidentPrayerOption": "governor",
+      "text": "O Lord our Governor, whose glory is in all the world; We commend this nation to thy merciful care, that being guided by thy Providence, we may dwell secure in thy peace. Grant to the President of the United States, and to all in Authority, wisdom and strength to know and to do thy will. Fill them with the love of truth and righteousness; and make them ever mindful of their calling to serve this people in thy fear; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Ghost, one God, world without end. Amen."
+    },
+    {
+      "type": "heading",
+      "regionOnly": "commonwealth",
+      "text": "A Prayer for the King and the Royal Family",
+      "optional": true
+    },
+    {
+      "type": "collect",
+      "regionOnly": "commonwealth",
+      "optional": true,
+      "noLatinInSource": true,
+      "dropcap": true,
+      "text": "Almighty God, the fountain of all goodness, we humbly beseech thee to bless our Sovereign Lord King Charles, Queen Camilla, William Prince of Wales, the Princess of Wales, and all the Royal Family: Endue them with thy Holy Spirit; enrich them with thy heavenly grace; prosper them with all happiness; and bring them to thine everlasting kingdom; through Jesus Christ our Lord. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "A Prayer for the Clergy and People",
+      "optional": true
+    },
+    {
+      "type": "collect",
+      "optional": true,
+      "noLatinInSource": true,
+      "dropcap": true,
+      "text": "Almighty and everlasting God, from whom cometh every good and perfect gift; Send down upon our Bishops, and other Clergy, and upon the Congregations committed to their charge, the healthful Spirit of thy grace; and, that they may truly please thee, pour upon them the continual dew of thy blessing. Grant this, O Lord, for the honour of our Advocate and Mediator, Jesus Christ. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "A Prayer for all Sorts & Conditions of Men",
+      "optional": true
+    },
+    {
+      "type": "collect",
+      "optional": true,
+      "noLatinInSource": true,
+      "dropcap": true,
+      "text": "O God, the Creator and Preserver of all mankind, we humbly beseech thee for all sorts and conditions of men; that thou wouldest be pleased to make thy ways known unto them, thy saving health unto all nations. More especially we pray for thy holy Church universal; that it may be so guided and governed by thy good Spirit, that all who profess and call themselves Christians may be led into the way of truth, and hold the faith in unity of spirit, in the bond of peace, and in righteousness of life. Finally, we commend to thy fatherly goodness all those who are any ways afflicted, or distressed, in mind, body, or estate; (especially those for whom our prayers are desired;) that it may please thee to comfort and relieve them, according to their several necessities; giving them patience under their sufferings, and a happy issue out of all their afflictions. And this we beg for Jesus Christ's sake. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "A General Thanksgiving",
+      "optional": true
+    },
+    {
+      "type": "collect",
+      "optional": true,
+      "noLatinInSource": true,
+      "dropcap": true,
+      "text": "Almighty God, Father of all mercies, we, thine unworthy servants, do give thee most humble and hearty thanks for all thy goodness and loving-kindness to us and to all men; (to those who desire now to offer up their praises and thanksgivings for thy late mercies vouchsafed unto them.) We bless thee for our creation, preservation, and all the blessings of this life; but above all, for thine inestimable love in the redemption of the world by our Lord Jesus Christ; for the means of grace, and for the hope of glory. And, we beseech thee, give us that due sense of all thy mercies, that our hearts may be unfeignedly thankful; and that we show forth thy praise, not only with our lips, but in our lives, by giving up our selves to thy service, and by walking before thee in holiness and righteousness all our days; through Jesus Christ our Lord, to whom, with thee and the Holy Ghost, be all honour and glory, world without end. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "A Prayer of St. Chrysostom",
+      "optional": true
+    },
+    {
+      "type": "collect",
+      "optional": true,
+      "dropcap": true,
+      "noLatinInSource": true,
+      "text": "Almighty God, who hast given us grace at this time with one accord to make our common supplications unto thee; and dost promise that when two or three are gathered together in thy Name thou wilt grant their requests; Fulfil now, O Lord, the desires and petitions of thy servants, as may be most expedient for them; granting us in this world knowledge of thy truth, and in the world to come life everlasting. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "The Grace"
+    },
+    {
+      "type": "collect",
+      "noLatinInSource": true,
+      "text": "The grace of our Lord Jesus Christ, ✠ and the love of God, and the fellowship of the Holy Ghost, be with us all evermore. Amen.",
+      "dropcap": true
+    },
+    {
+      "type": "end",
+      "text": "Here Endeth the Order of Morning Prayer.",
+      "textLatin": "Explicit Ordo Matutinae Precationis."
+    }
+  ],
+  "nicaeanCreed": {
+    "heading": "Nicene Creed",
+    "headingLatin": "Symbolum Nicaenum",
+    "text": "I believe in one God [[(Bow head to Cross.)]] the Father Almighty, Maker of heaven and earth, And of all things visible and invisible:\nAnd in one Lord Jesus Christ, [[(Bow head to Cross.)]] the only-begotten Son of God; Begotten of his Father before all worlds, God of God, Light of Light, Very God of very God; Begotten, not made; Being of one substance with the Father; By whom all things were made: Who for us men and for our salvation came down from heaven, [[(Everyone genuflects.)]] And was incarnate by the Holy Ghost of the Virgin Mary, And was made man: [[(Everyone rises.)]] And was crucified also for us under Pontius Pilate; He suffered and was buried: And the third day he rose again according to the Scriptures: And ascended into heaven, And sitteth on the right hand of the Father: And he shall come again, with glory, to judge both the quick and the dead; Whose kingdom shall have no end.\nAnd I believe in the Holy Ghost, The Lord, and Giver of Life, Who proceedeth from the Father; Who with the Father and the Son together is worshiped [[(Bow head to Cross.)]] and glorified; Who spake by the Prophets: And I believe one, holy, catholic, and apostolic Church: I acknowledge one Baptism for the remission of sins: And I look for the Resurrection of the dead: ✠ And the Life of the world to come. Amen.",
+    "textLatin": "Credo in unum Deum, [[(Bow head to Cross.)]] Patrem omnipoténtem, factórem cæli et terræ, visibílium ómnium et invisibílium.\nEt in unum Dóminum Jesum Christum, [[(Bow head to Cross.)]] Fílium Dei unigénitum. Et ex Patre natum ante ómnia sǽcula. Deum de Deo, lumen de lúmine, Deum verum de Deo vero. Génitum, non factum, consubstantiálem Patri: per quem ómnia facta sunt. Qui propter nos hómines et propter nostram salútem descéndit de cælis. [[(Everyone genuflects.)]] Et incarnátus est de Spíritu Sancto ex María Vírgine: Et homo factus est. [[(Everyone rises.)]] Crucifíxus étiam pro nobis: sub Póntio Piláto passus, et sepúltus est. Et resurréxit tértia die, secúndum Scriptúras. Et ascéndit in cælum: sedet ad déxteram Patris. Et íterum ventúrus est cum glória judicáre vivos et mórtuos: cujus regni non erit finis.\nEt in Spíritum Sanctum, Dóminum et vivificántem: qui ex Patre procédit. Qui cum Patre et Fílio simul adorátur [[(Bow head to Cross.)]] et conglorificátur: qui locútus est per Prophétas. Et unam sanctam cathólicam et apostólicam Ecclésiam. Confíteor unum baptísma in remissiónem peccatórum. Et exspécto resurrectiónem mortuórum. ✠ Et vitam ventúri sæculi. Amen."
+  },
+  "mattinsHymnOptions": [
+    {
+      "season": "winter",
+      "heading": "Office Hymn (Sunday Mattins in Winter)",
+      "textLines": [
+        "Dawn sprinkles all the east with light;\nDay o'er the earth is gliding bright;\nMorn's glitt'ring rays their course begin;\nFarewell to darkness and to sin.",
+        "Each phantom of the night depart,\nEach thought of guilt forsake the heart:\nLet every ill that darkness brought\nBeneath its shade, now come to naught.",
+        "So that last morning, dread and great,\nWhich we with trembling hope await,\nWith blessed light for us shall glow,\nWho chant the song we sang below.",
+        "All laud to God the Father be:\nAll praise, eternal Son, to thee;\nAll glory, as is ever meet,\nTo God the Holy Paraclete. Amen."
+      ],
+      "versicle": {
+        "v": "The Lord is King, and hath put on glorious apparel.",
+        "r": "The Lord hath put on his apparel, and girded himself with strength."
+      }
+    },
+    {
+      "season": "summer",
+      "heading": "Office Hymn (Sunday Mattins in Summer)",
+      "textLines": [
+        "Lo! the dim shadows of the night are waning;\nRadiantly glowing, dawn of day returneth;\nFervent in spirit to the mighty Father\nPray we devoutly.",
+        "So shall our maker, of his great compassion,\nBanish all sickness, kindly health bestowing;\nAnd may he grant us, of a Father's goodness\nMansions in heaven.",
+        "This he vouchsafe us, God for ever blessed,\nFather eternal, Son, and Holy Spirit\nWhose is the glory which through all creation\nEver resoundeth. Amen."
+      ],
+      "versicle": {
+        "v": "The Lord is King, and hath put on glorious apparel.",
+        "r": "The Lord hath put on his apparel, and girded himself with strength."
+      }
+    },
+    {
+      "season": "monday",
+      "heading": "Office Hymn (Monday Mattins)",
+      "textLines": [
+        "Thou Brightness of the Father's ray\nTrue Light of Light and Day of Day\nLight's fountain and eternal spring,\nThou Morn, the morn illumining!",
+        "Glide in, thou very Sun divine;\nWith everlasting brightness shine:\nAnd shed abroad on every sense\nThe Spirit's light and influence.",
+        "Thee, Father, let us seek aright\nThe Father of perpetual light,\nThe Father of almighty grace,\nEach wile of sin away to chase.",
+        "Our acts with courage do thou fill;\nBlunt thou the tempter's tooth of ill:\nMisfortune into good convert,\nOr give us grace to bear unhurt.",
+        "Our spirits, whatsoe'er betide,\nIn chaste and loyal bodies guide;\nLet Faith, with fervour unalloy'd\nThe bane of falsehood still avoid.",
+        "And Christ our daily food be nigh,\nAnd Faith our daily cup supply\nSo may we quaff, to calm and bless,\nThe Spirit's rapturous holiness.",
+        "Now let the day in joy pass on:\nOur modesty like early dawn,\nOur faith like noontide splendour glow,\nOur souls the twilight never know.",
+        "See! morn pursues her shining way:\nTrue Morning, all thy beams display!\nSon with the mighty Father one,\nThe Father wholly in the Son.",
+        "All laud to God the Father be;\nAll praise, eternal Son, to thee;\nAll glory, as is ever meet,\nTo God the Holy Paraclete. Amen."
+      ],
+      "versicle": {
+        "v": "O satisfy us with thy mercy, and that soon.",
+        "r": "So shall we rejoice and be glad all the days of our life."
+      },
+      "benedictusAntiphon": {
+        "incipit": "Blessed",
+        "text": "Blessed be the Lord God of Israel."
+      }
+    },
+    {
+      "season": "tuesday",
+      "heading": "Office Hymn (Tuesday Mattins)",
+      "textLines": [
+        "The winged herald of the day\nProclaims the morn's approaching ray:\nAnd Christ the Lord our souls excites,\nAnd so to endless life invites.",
+        "Take up thy bed, to each he cries\nWho sick, or wrapp'd in slumber lies:\nAnd chaste, and just, and sober stand\nAnd watch; my coming is at hand.",
+        "With earnest cry, with tearful care,\nCall we the Lord to hear our prayer:\nWhile supplication, pure and deep,\nForbids each chasten'd heart to sleep.",
+        "Do thou, O Christ, our slumbers wake;\nDo thou the chains of darkness break:\nPurge thou our former sins away,\nAnd in our souls new light display.",
+        "All laud to God the Father be;\nAll praise, eternal Son, to thee;\nAll glory, as is ever meet,\nTo God the Holy Paraclete. Amen."
+      ],
+      "versicle": {
+        "v": "O satisfy us with thy mercy, and that soon.",
+        "r": "So shall we rejoice and be glad all the days of our life."
+      },
+      "benedictusAntiphon": {
+        "incipit": "The Lord hath raised up for us",
+        "text": "The Lord hath raised up for us an horn of salvation in the house of his servant David."
+      }
+    },
+    {
+      "season": "wednesday",
+      "heading": "Office Hymn (Wednesday Mattins)",
+      "textLines": [
+        "Hence, night and clouds that night-time brings,\nConfus'd and dark and troubl'd things;\nThe dawn is here, the sky grows white,\nChrist is at hand; depart from sight.",
+        "Earth's dusky veil is torn away,\nPierc'd by the sparkling beams of day:\nThe world resumes its hues apace\nSoon as the day-star shows its face.",
+        "But thee, O Christ, alone we seek,\nWith conscience pure and temper meek:\nWith tears and chants we humbly pray\nThat thou wouldst guide us through the day.",
+        "For man' a shade obscures each sense\nWhich needs thy beams to purge it thence:\nLight of the Morning Star, illume,\nSerenely shining, all our gloom.",
+        "All laud to God the Father be;\nAll praise, eternal Son, to thee;\nAll glory, as is ever meet,\nTo God the Holy Paraclete. Amen."
+      ],
+      "versicle": {
+        "v": "O satisfy us with thy mercy, and that soon.",
+        "r": "So shall we rejoice and be glad all the days of our life."
+      },
+      "benedictusAntiphon": {
+        "incipit": "From the hand of all",
+        "text": "From the hand of all that hate us, the Lord hath delivered us."
+      }
+    },
+    {
+      "season": "thursday",
+      "heading": "Office Hymn (Thursday Mattins)",
+      "textLines": [
+        "Behold the golden dawn arise;\nThe paling night forsakes the skies:\nThose shades that hid the world from view,\nAnd us to dang'rous error drew.",
+        "May this new day be calmly pass'd,\nMay we keep pure while it shall last:\nNor let our lips from truth depart,\nNor dark designs engage the heart.",
+        "So may the day speed on; the tongue\nNo falsehood know, the hands no wrong:\nOur eyes from wanton gaze refrain,\nNo guilt our guarded bodies stain.",
+        "For God all-seeing from on high\nSurveys us with a watchful eye:\nEach day our every act he knows\nFrom early dawn to evening's close.",
+        "All laud to God the Father be;\nAll praise, eternal Son, to thee;\nAll glory, as is ever meet,\nTo God the Holy Paraclete. Amen."
+      ],
+      "versicle": {
+        "v": "O satisfy us with thy mercy, and that soon.",
+        "r": "So shall we rejoice and be glad all the days of our life."
+      },
+      "benedictusAntiphon": {
+        "incipit": "Let us serve",
+        "text": "Let us serve the Lord in holiness, and he will deliver us from the hand of our enemies."
+      }
+    },
+    {
+      "season": "friday",
+      "heading": "Office Hymn (Friday Mattins)",
+      "textLines": [
+        "Eternal glory of the sky,\nBlest hope of frail humanity,\nThe Father's Sole-begotten One,\nYet born a spotless Virgin’s Son;",
+        "Uplift us with thine arm of might,\nAnd let our hearts rise pure and bright,\nAnd, ardent in God's praises, pay\nThe thanks we owe him every day.",
+        "The day-star's rays are glitt'ring clear,\nAnd tell that day itself is near:\nThe shadows of the night depart;\nThou, holy Light, illume the heart!",
+        "Within our senses ever dwell,\nAnd worldly darkness thence expel:\nLong as the days of life endure,\nPreserve our souls devout and pure.",
+        "The Faith that first must be possess'd,\nRoot deep within our inmost breast:\nAnd joyous Hope in second place,\nThen Charity, thy greatest grace.",
+        "All laud to God the Father be;\nAll praise, eternal Son, to thee;\nAll glory, as is ever meet,\nTo God the Holy Paraclete. Amen."
+      ],
+      "versicle": {
+        "v": "O satisfy us with thy mercy, and that soon.",
+        "r": "So shall we rejoice and be glad all the days of our life."
+      },
+      "benedictusAntiphon": {
+        "incipit": "Through the tender mercy",
+        "text": "Through the tender mercy of our God: whereby the day-spring from on high hath visited us."
+      }
+    },
+    {
+      "season": "saturday",
+      "heading": "Office Hymn (Saturday Mattins)",
+      "textLines": [
+        "Dawn sprinkles all the east with light;\nDay o'er the earth is gliding bright;\nMorn's glitt'ring rays their course begin;\nFarewell to darkness and to sin.",
+        "Each phantom of the night depart,\nEach thought of guilt forsake the heart:\nLet every ill that darkness brought\nBeneath its shade, now come to naught.",
+        "So that last morning, dread and great,\nWhich we with trembling hope await,\nWith blessed light for us shall glow,\nWho chant the song we sang below.",
+        "All laud to God the Father be:\nAll praise, eternal Son, to thee;\nAll glory, as is ever meet,\nTo God the Holy Paraclete. Amen."
+      ],
+      "versicle": {
+        "v": "O satisfy us with thy mercy, and that soon.",
+        "r": "So shall we rejoice and be glad all the days of our life."
+      },
+      "benedictusAntiphon": {
+        "incipit": "Give light, O Lord,",
+        "text": "Give light, O Lord, to them that sit in darkness: and guide our feet into the way of peace, thou God of Israel."
+      }
+    }
+  ],
+  "invitatoryHymnOptions": [
+    {
+      "season": "summer",
+      "heading": "Invitatory Hymn (Sunday in Summer)",
+      "textLines": [
+        "Father we praise thee, now the night is over,\nActive and watchful, stand we all before thee;\nSinging we offer prayer and meditation:\nThus we adore thee.",
+        "Monarch of all things, fit us for thy mansions;\nBanish our weakness, health and wholeness sending;\nBring us to heaven, where thy Saints united\nJoy without ending.",
+        "All-Holy Father, Son, and equal Spirit,\nTrinity blessed send us thy salvation;\nThine is the glory, gleaming and resounding\nThrough all creation. Amen."
+      ]
+    },
+    {
+      "season": "winter",
+      "heading": "Invitatory Hymn (Sunday in Winter)",
+      "textLines": [
+        "This day the first of days was made,\nWhen God in light the world array'd;\nOr when his Word arose again\nAnd, conqu'ring death, gave life to men.",
+        "Slumber and sloth drive far away;\nEarlier arise to greet the day,\nAnd ere its dawn in heav'n unfold\nThe heart's desire to God be told.",
+        "Unto our prayer that he attend\nHis all-creating pow'r extend\nAnd still renew us, lest we miss\nThrough earthly stain our heav'nly bliss.",
+        "That us, who here this day repair\nTo keep th'Apostle's time of prayer,\nAnd hymn the quiet hours of morn,\nWith blessed gifts he may adorn.",
+        "For this, Redeemer, thee we pray\nThat thou wilt wash our sins away\nAnd of thy loving-kindness grant\nWhate'er of good our spirits want:",
+        "That exiles here awhile in flesh\nSome earnest may our souls refresh\nOf that pure life for which we long\nSome foretaste of the heav'nly song.",
+        "O Father that we ask be done\nThrough Jesus Christ, thine only Son;\nWho, with the Holy Ghost and thee\nDoth live and reign eternally. Amen."
+      ]
+    },
+    {
+      "season": "monday",
+      "heading": "Invitatory Hymn (Monday)",
+      "textLines": [
+        "Our limbs refresh'd with slumber now,\nAnd sloth cast off, in prayer we bow;\nAnd while we sing thy praises dear,\nO Father, be thou present here.",
+        "To thee our earliest morning song,\nTo thee our heart’s full pow'rs belong;\nAnd thou, O Holy One, prevent\nEach foll'wing action and intent.",
+        "As shades at morning flee away,\nAnd night before the star of day;\nSo each transgression of the night\nBe purg'd by thee, celestial Light!",
+        "Cut off, we pray thee, each offence,\nAnd every lust of thought and sense;\nThat by their lips who thee adore\nThou mayst be prais'd forevermore.",
+        "Grant this, O Father ever One\nWith Christ, thy sole-begotten Son,\nAnd Holy Ghost, whom all adore,\nReigning and blest forevermore. Amen."
+      ]
+    },
+    {
+      "season": "tuesday",
+      "heading": "Invitatory Hymn (Tuesday)",
+      "textLines": [
+        "O Light of Light, O Dayspring bright,\nCo-equal in thy Father's Light:\nAssist us, as with prayer and psalm\nThy servants break the twilight calm.",
+        "All darkness from our minds dispel,\nAnd turn to flight the hosts of hell:\nBid sleepfulness out eyelids fly,\nLest overwhelm'd in sloth we lie.",
+        "Jesu, thy pardon, kind and free,\nBestow on us who trust in thee:\nAnd as thy praises we declare,\nO with acceptance hear our prayer.",
+        "O Father, that we ask be done,\nThrough Jesus Christ, thine only Son;\nWho, with the Holy Ghost and thee,\nDoth live and reign eternally. Amen."
+      ]
+    },
+    {
+      "season": "wednesday",
+      "heading": "Invitatory Hymn (Wednesday)",
+      "textLines": [
+        "Who madest all and dost control,\nO Lord, with thy true touch divine,\nCast out the slumbers of the soul,\nFrom every rest that is not thine.",
+        "Look down, Eternal Holiness,\nAnd wash our guiltiness away,\nOf us, who, rising to confess,\nOutstrip the ling'ring dawn of day.",
+        "Our hearts and hands by night, O Lord,\nWe lift them, for thy law we need;\nAs holy Prophets give the word,\nAnd holy Paul hath weigh'd the deed.",
+        "Each sin to thee of years gone by,\nOur sins we show before thy Throne,\nWe shrink not from thine awful eye,\nBut ask, forgive the sins we own.",
+        "Grant this, O Father, Only Son\nAnd Holy Spirit, God of grace,\nTo whom all worship shall be done\nIn every nation, time, and place. Amen."
+      ]
+    },
+    {
+      "season": "thursday",
+      "heading": "Invitatory Hymn (Thursday)",
+      "textLines": [
+        "The dusky veil of night hath laid\nThe varied hues of earth in shade;\nBefore thee, righteous Judge of all,\nWe contrite in confession fall.",
+        "Take far away our load of sin,\nOur soil-ed minds make clean within:\nThy sov'reign grace, O Christ, impart,\nFrom all offence to guard our heart.",
+        "For lo! our mind is dull and cold,\nEnvenom'd by sin’s baneful hold:\nFain would it now the darkness flee,\nAnd seek, Redeemer, unto thee.",
+        "Far from it drive the shades of night,\nIts inmost darkness put to flight;\nTill in the daylight of the Blest\nIt joys to find itself at rest.",
+        "Almighty Father, hear our cry,\nThrough Jesus Christ, our Lord most High,\nWho, with the Holy Ghost and thee,\nDoth live and reign eternally. Amen."
+      ]
+    },
+    {
+      "season": "friday",
+      "heading": "Invitatory Hymn (Friday)",
+      "textLines": [
+        "O Three in One, and One in Three,\nWho rulest all things mightily:\nBow down to hear the songs of praise\nWhich, freed from bonds of sleep, we raise.",
+        "While lingers yet the peace of night,\nWe rouse us from our slumbers light:\nThat might of instant prayer may win\nThe healing balm for wounds of sin.",
+        "If, by the wiles of Satan caught,\nThis night-time we have sinned in aught,\nThat sin thy glorious pow'r to-day,\nFrom heav'n descending, cleanse away.",
+        "Let naught impure our bodies stain,\nNo laggard sloth our souls detain,\nNo taint of sin our spirits know,\nTo chill the fervour of their glow.",
+        "Wherefore, Redeemer, grant that we\nFulfill'd with thine own Light may be:\nThat, in our course, from day to day,\nBy no misdeed we fall away.",
+        "Grant this, O Father ever One\nWith Christ, thy sole-begotten Son,\nAnd Holy Ghost, whom all adore,\nReigning and blest forevermore. Amen."
+      ]
+    },
+    {
+      "season": "saturday",
+      "heading": "Invitatory Hymn (Saturday)",
+      "textLines": [
+        "Great God of boundless mercy hear;\nThou Ruler of this earthly sphere;\nIn Substance one, in Persons three,\nDread Trinity in Unity!",
+        "Do thou in love accept our lays\nOf mingled penitence and praise;\nAnd set our hearts from error free,\nMore fully to rejoice in thee.",
+        "Our reins and hearts in pity heal,\nAnd with thy chast'ning fires anneal;\nGird thou our loins, each passion quell,\nAnd every harmful lust expel.",
+        "Now as our anthems, upward borne,\nAwake the silence of the morn,\nEnrich us with thy gifts of grace,\nFrom heav'n, thy blissful dwelling-place!",
+        "Hear thou our prayer, Almighty King!\nHear thou our praises, while we sing,\nAdoring with the heav'nly host,\nThe Father, Son, and Holy Ghost! Amen."
+      ]
+    }
+  ]
+}

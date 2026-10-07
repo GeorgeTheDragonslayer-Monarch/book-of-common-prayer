@@ -1,0 +1,338 @@
+{
+  "title": "Hour of None",
+  "source": "pages/Office/None.tex - transcribed in full. English only, like Compline: no \\elcol{English}{Latin} pairs in this source file. As in Terce.tex, the Gloria Patri after each of the five Psalm 119 portions is reconstructed here rather than left out (see the note transcribed in terce-template.json).",
+  "psalmAntiphonOptions": [
+    {
+      "season": "advent",
+      "text": "Behold, a great Prophet cometh: and he shall renew Jerusalem. Alleluia."
+    },
+    {
+      "season": "christmastide",
+      "text": "Unto us a Child is born this day: and his Name shall be called the mighty God. Alleluia. Alleluia."
+    },
+    {
+      "season": "epiphanyOctave",
+      "text": "Three are the gifts which the wise men presented unto the Lord: gold, and incense, and myrrh, to the Son of God, the Mighty King. Alleluia."
+    },
+    {
+      "season": "septuagesimatide",
+      "text": "The householder said to his labourers: Why stand ye here all the day idle? They say unto him, Because no man hath hired us. He saith unto them, Go ye also into the vineyard; and whatsoever is right, that shall ye receive."
+    },
+    {
+      "season": "lent",
+      "text": "Get thee hence, Satan: thou shalt not tempt the Lord thy God."
+    },
+    {
+      "season": "passiontide",
+      "text": "Your father Abraham rejoiced to see my day: and he saw it, and was glad."
+    },
+    {
+      "season": "eastertide",
+      "text": "For fear of him the keepers did shake: and became as dead men. Alleluia."
+    },
+    {
+      "season": "festivalsThroughoutYear",
+      "text": "Of whom, and through whom, and to whom, are all things: to him be glory for ever."
+    },
+    {
+      "season": "feriasThroughoutYear",
+      "text": "Give me understanding, O Lord, according to thy word."
+    }
+  ],
+  "chapterOptions": [
+    {
+      "season": "ferial",
+      "text": "Bear ye one another's burdens, and so fulfil the law of Christ."
+    },
+    {
+      "season": "sundaysAndFeastDays",
+      "text": "One Lord, one Faith, one Baptism, one God and Father of all, who is above all, and through all, and in you all."
+    },
+    {
+      "season": "eastertide",
+      "text": "There are three that bear witness in earth: the Spirit, and the Water, and the Blood: and these three agree in one."
+    }
+  ],
+  "shortRespondOptions": [
+    {
+      "season": "ferial",
+      "lines": [
+        {
+          "v": "Deliver me, O Lord, and be merciful unto me.",
+          "r": "Deliver me, O Lord, and be merciful unto me."
+        },
+        {
+          "v": "My foot standeth right; I will praise the Lord in the congregations.",
+          "r": "And be merciful unto me."
+        },
+        {
+          "v": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+          "r": "Deliver me, O Lord, and be merciful unto me."
+        },
+        {
+          "v": "I will praise thy Name, O Lord.",
+          "r": "For thou hast delivered me out of all my trouble."
+        }
+      ]
+    },
+    {
+      "season": "festal",
+      "lines": [
+        {
+          "v": "I call with my whole heart; hear me, O Lord.",
+          "r": "I call with my whole heart; hear me, O Lord."
+        },
+        {
+          "v": "I will keep thy statutes.",
+          "r": "Hear me, O Lord."
+        },
+        {
+          "v": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+          "r": "I will call with my whole heart; hear me, O Lord."
+        },
+        {
+          "v": "Cleanse me, O Lord, from my secret faults.",
+          "r": "Keep thy servant also from presumptuous sins."
+        }
+      ]
+    },
+    {
+      "season": "eastertide",
+      "lines": [
+        {
+          "v": "I call with my whole heart; hear me, O Lord, alleluia, alleluia.",
+          "r": "I call with my whole heart; hear me, O Lord, alleluia, alleluia."
+        },
+        {
+          "v": "I will keep thy statutes.",
+          "r": "Hear me, O Lord, alleluia, alleluia."
+        },
+        {
+          "v": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+          "r": "I will call with my whole heart; hear me, O Lord, alleluia, alleluia."
+        },
+        {
+          "v": "Cleanse me, O Lord, from my secret faults, alleluia.",
+          "r": "Keep thy servant also from presumptuous sins, alleluia."
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "type": "versicle",
+      "v": "O God, ✠ make speed to save us.",
+      "r": "O Lord, make haste to help us."
+    },
+    {
+      "type": "versicle",
+      "v": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+      "r": "As it was in the beginning, is now, and ever shall be, world without end. Amen."
+    },
+    {
+      "type": "versicle",
+      "v": "Praise ye the Lord.",
+      "r": "The Lord's Name be praised."
+    },
+    {
+      "type": "heading",
+      "text": "Rerum Deus"
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "O God, creation's secret force, Thyself unmov'd, all motion's source, Who from the morn till evening ray, Through all its changes guid'st the day:\nGrant us, when this short life is past, The glorious evening that shall last; That, by a holy death attain'd, Eternal glory may be gain'd.\nO Father, that we ask be done, Through Jesus Christ, thine only Son; Who, with the Holy Ghost and thee, Doth live and reign eternally. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 119, xvii. Mirabilia"
+    },
+    {
+      "type": "placeholder",
+      "key": "littleHourAntiphon"
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "Thy testimonies are wonderful : therefore doth my soul keep them.\nWhen thy word goeth forth : it giveth light and understanding unto the simple.\nI opened my mouth, and drew in my breath : for my delight was in thy commandments.\nO look thou upon me, and be merciful unto me : as thou usest to do unto those that love thy Name.\nOrder my steps in thy word : and so shall no wickedness have dominion over me.\nO deliver me from the wrongful dealings of men : and so shall I keep thy commandments.\nShew the light of thy countenance upon thy servant : and teach me thy statutes.\nMine eyes gush out with water : because men keep not thy law.\n℣. Glory be to the Father, and to the Son, and to the Holy Ghost.\n℟. As it was in the beginning, is now, and ever shall be, world without end. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 119, xviii. Justus es, Domine"
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "Righteous art thou, O Lord : and true is thy judgement.\nThe testimonies that thou hast commanded : are exceeding righteous and true.\nMy zeal hath even consumed me : because mine enemies have forgotten thy words.\nThy word is tried to the uttermost : and thy servant loveth it.\nI am small, and of no reputation : yet do I not forget thy commandments.\nThy righteousness is an everlasting righteousness : and thy law is the truth.\nTrouble and heaviness have taken hold upon me : yet is my delight in thy commandments.\nThe righteousness of thy testimonies is everlasting : O grant me understanding, and I shall live.\n℣. Glory be to the Father, and to the Son, and to the Holy Ghost.\n℟. As it was in the beginning, is now, and ever shall be, world without end. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 119, xix. Clamavi in toto corde meo"
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "I call with my whole heart : hear me, O Lord, I will keep thy statutes.\nYea, even unto thee do I call : help me, and I shall keep thy testimonies.\nEarly in the morning do I cry unto thee : for in thy word is my trust.\nMine eyes prevent the night-watches : that I might be occupied in thy words.\nHear my voice, O Lord, according unto thy loving-kindness : quicken me, according as thou art wont.\nThey draw nigh that of malice persecute me : and are far from thy law.\nBe thou nigh at hand, O Lord : for all thy commandments are true.\nAs concerning thy testimonies, I have known long since : that thou hast grounded them for ever.\n℣. Glory be to the Father, and to the Son, and to the Holy Ghost.\n℟. As it was in the beginning, is now, and ever shall be, world without end. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 119, xx. Vide humilitatem"
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "O consider mine adversity, and deliver me : for I do not forget thy law.\nAvenge thou my cause, and deliver me : quicken me, according to thy word.\nHealth is far from the ungodly : for they regard not thy statutes.\nGreat is thy mercy, O Lord : quicken me, as thou art wont.\nMany there are that trouble me, and persecute me : yet do I not swerve from thy testimonies.\nIt grieveth me when I see the transgressors : because they keep not thy law.\nConsider, O Lord, how I love thy commandments : O quicken me, according to thy loving-kindness.\nThy word is true from everlasting : all the judgements of thy righteousness endure for evermore.\n℣. Glory be to the Father, and to the Son, and to the Holy Ghost.\n℟. As it was in the beginning, is now, and ever shall be, world without end. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 119, xxi. Principes persecuti sunt"
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "Princes have persecuted me without a cause : but my heart standeth in awe of thy word.\nI am as glad of thy word : as one that findeth great spoils.\nAs for lies, I hate and abhor them : but thy law do I love.\nSeven times a day do I praise thee : because of thy righteous judgements.\nGreat is the peace that they have who love thy law : and they are not offended at it.\nLord, I have looked for thy saving health : and done after thy commandments.\nMy soul hath kept thy testimonies : and loved them exceedingly.\nI have kept thy commandments and testimonies : for all my ways are before thee.\n℣. Glory be to the Father, and to the Son, and to the Holy Ghost.\n℟. As it was in the beginning, is now, and ever shall be, world without end. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 119, xxii. Appropinquet deprecatio"
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "Let my complaint come before thee, O Lord : give me understanding, according to thy word.\nLet my supplication come before thee : deliver me, according to thy word.\nMy lips shall speak of thy praise : when thou hast taught me thy statutes.\nYea, my tongue shall sing of thy word : for all thy commandments are righteous.\nLet thine hand help me : for I have chosen thy commandments.\nI have longed for thy saving health, O Lord : and in thy law is my delight.\nO let my soul live, and it shall praise thee : and thy judgements shall help me.\nI have gone astray like a sheep that is lost : O seek thy servant, for I do not forget thy commandments.\n℣. Glory be to the Father, and to the Son, and to the Holy Ghost.\n℟. As it was in the beginning, is now, and ever shall be, world without end. Amen."
+    },
+    {
+      "type": "placeholder",
+      "key": "littleHourAntiphon",
+      "position": "after"
+    },
+    {
+      "type": "heading",
+      "text": "Chapter"
+    },
+    {
+      "type": "placeholder",
+      "key": "littleHourChapter"
+    },
+    {
+      "type": "rubric",
+      "text": "After the Chapter is said,"
+    },
+    {
+      "type": "versicle",
+      "r": "Thanks be to God."
+    },
+    {
+      "type": "heading",
+      "text": "Short Respond"
+    },
+    {
+      "type": "placeholder",
+      "key": "littleHourShortRespond"
+    },
+    {
+      "type": "rubric",
+      "text": "The Suffrages are omitted today.",
+      "feriaOmittedNotice": true
+    },
+    {
+      "type": "heading",
+      "text": "Suffrages",
+      "feriaOnly": true
+    },
+    {
+      "type": "rubric",
+      "text": "The Suffrages are said, kneeling, on all Ferias outside of Eastertide.",
+      "feriaOnly": true
+    },
+    {
+      "type": "versicle",
+      "v": "Lord, have mercy upon us.",
+      "r": "Christ, have mercy upon us.",
+      "feriaOnly": true
+    },
+    {
+      "type": "versicle",
+      "v": "Lord, have mercy upon us.",
+      "feriaOnly": true
+    },
+    {
+      "type": "heading",
+      "text": "Lord's Prayer",
+      "feriaOnly": true
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Our Father, who art in heaven, Hallowed be thy Name. Thy kingdom come. Thy will be done on earth, As it is in heaven. Give us this day our daily bread. And forgive us our trespasses, As we forgive those who trespass against us. And lead us not into temptation; But deliver us from evil. Amen.",
+      "feriaOnly": true
+    },
+    {
+      "type": "versicle",
+      "v": "Cast me not away in the time of age.",
+      "r": "Forsake me not when my strength faileth me.",
+      "feriaOnly": true
+    },
+    {
+      "type": "versicle",
+      "v": "Hide not thy face from me.",
+      "r": "Lest I be like unto them that go down into the pit.",
+      "feriaOnly": true
+    },
+    {
+      "type": "versicle",
+      "v": "Quicken me, O Lord, for thy Name's sake.",
+      "r": "And for thy righteousness' sake bring my soul out of trouble.",
+      "feriaOnly": true
+    },
+    {
+      "type": "heading",
+      "text": "Collects"
+    },
+    {
+      "type": "versicle",
+      "v": "The Lord be with you. (or, O Lord, hear our prayer.)",
+      "r": "And with thy spirit. (or, And let our cry come unto thee.)"
+    },
+    {
+      "type": "versicle",
+      "v": "Let us pray."
+    },
+    {
+      "type": "rubric",
+      "text": "The Collect(s) of the Day is here said, followed by this memorial Collect."
+    },
+    {
+      "type": "placeholder",
+      "key": "collectOfDay"
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "Lord Jesu Christ, who for our sakes didst tread the paths of death; make known to us the way of life; that as thou wast reckoned with the transgressors in thy death, and with the rich in thy burial, so we, who are dead in trespasses and sins, may be raised up by thee to the land of true riches. Who livest and reignest with the Father and the Holy Ghost, ever one God, world without end. Amen."
+    },
+    {
+      "type": "versicle",
+      "v": "The Lord be with you. (or, O Lord, hear our prayer.)",
+      "r": "And with thy spirit. (or, And let our cry come unto thee.)"
+    },
+    {
+      "type": "versicle",
+      "v": "Let us bless the Lord.",
+      "r": "Thanks be to God."
+    },
+    {
+      "type": "versicle",
+      "v": "May the souls ✠ of the faithful departed, through the mercy of God, rest in peace."
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "Now unto him that is able to keep us from falling and to present us faultless before the presence of his glory with exceeding joy; to the only wise God our Saviour be glory and majesty, dominion, and power, both now and ever. Amen."
+    },
+    {
+      "type": "end",
+      "text": "Here Endeth the Order of None."
+    }
+  ]
+}

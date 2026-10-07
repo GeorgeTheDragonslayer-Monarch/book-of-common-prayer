@@ -1,0 +1,414 @@
+window.FOREOFFICE_DATA = {
+  "title": "Fore-Office",
+  "source": "pages/Office/ForeOffice.tex - transcribed in full. Shared by Mattins and Evensong, which each prepend it via js/app.js's foreOfficeSentences/foreOfficeAbsolution placeholders rather than duplicating this text in both templates.",
+  "preRubric1": "The Minister shall begin Morning and Evening Prayer by reading one or more of the following Sentences of Scripture.",
+  "preRubric2": "On any day, save a Day of Fasting or Abstinence, or on any day when the Litany or Holy Communion is immediately to follow, the Minister may, at his discretion, pass at once from the Sentences to the Lord's Prayer and Angelic Salutation, which may never be omitted.",
+  "categoryTitles": {
+    "general": "General",
+    "morning": "Morning",
+    "evening": "Evening",
+    "advent": "Advent",
+    "christmastide": "Christmastide",
+    "epiphanytide": "Epiphanytide",
+    "septuagesima": "Septuagesimatide",
+    "lent": "Lent",
+    "passiontide": "Passiontide",
+    "eastertide": "Eastertide",
+    "ascensiontide": "Ascensiontide",
+    "whitsuntide": "Whitsuntide",
+    "trinitySunday": "Trinity Sunday",
+    "apostle": "Apostle",
+    "martyr": "Martyr",
+    "bishopConfessorDoctor": "Bishop, Confessor, or Doctor",
+    "abbotMonk": "Abbot or Monk",
+    "virginMartyressMatron": "Virgin, Martyress, or Matron",
+    "blessedVirginMary": "Blessed Virgin Mary",
+    "blessedSacrament": "Blessed Sacrament",
+    "dedicationOfChurch": "Dedication of a Church"
+  },
+  "sentenceCategories": {
+    "general": [
+      {
+        "text": "When the wicked man turneth away from his wickedness that he hath committed, and doeth that which is lawful and right, he shall save his soul alive.",
+        "citation": "Ezek 18:27"
+      },
+      {
+        "text": "I acknowledge my transgressions, and my sin is ever before me.",
+        "citation": "Ps 51:3"
+      },
+      {
+        "text": "Hide thy face from my sins, and blot out all mine iniquities.",
+        "citation": "Ps 51:9"
+      },
+      {
+        "text": "The sacrifices of God are a broken spirit: a broken and a contrite heart, O God, thou wilt not despise.",
+        "citation": "Ps 51:17"
+      },
+      {
+        "text": "Rend your heart, and not your garments, and turn unto the Lord your God: for he is gracious and merciful, slow to anger, and of great kindness, and repenteth him of the evil.",
+        "citation": "Jl 2:13"
+      },
+      {
+        "text": "To the Lord our God belong mercies and forgivenesses, though we have rebelled against him; neither have we obeyed the voice of the Lord our God, to walk in his laws which he set before us.",
+        "citation": "Dan 9:9-10"
+      },
+      {
+        "text": "O Lord, correct me, but with judgment; not in thine anger, lest thou bring me to nothing.",
+        "citation": "Jer 10:24; Ps 6:1"
+      },
+      {
+        "text": "Repent ye; for the Kingdom of Heaven is at hand.",
+        "citation": "Mt 3:2"
+      },
+      {
+        "text": "I will arise and go to my father, and will say unto him, Father, I have sinned against heaven, and before thee, and am no more worthy to be called thy son.",
+        "citation": "Lk 15:18-19"
+      },
+      {
+        "text": "Enter not into judgment with thy servant, O Lord; for in thy sight shall no man living be justified.",
+        "citation": "Ps 143:2"
+      },
+      {
+        "text": "If we say that we have no sin, we deceive ourselves, and the truth is not in us; but if we confess our sins, God is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.",
+        "citation": "1 Jn 1:8-9"
+      }
+    ],
+    "morning": [
+      {
+        "text": "The LORD is in his holy temple: let all the earth keep silence before him.",
+        "citation": "Hab 2:20"
+      },
+      {
+        "text": "I was glad when they said unto me, We will go into the house of the LORD.",
+        "citation": "Ps 122:1"
+      },
+      {
+        "text": "Let the words of my mouth, and the meditation of my heart, be alway acceptable in thy sight, O LORD, my strength and my redeemer.",
+        "citation": "Ps 19:14"
+      },
+      {
+        "text": "O send out thy light and thy truth, that they may lead me, and bring me unto thy holy hill, and to thy dwelling.",
+        "citation": "Ps 43:3"
+      },
+      {
+        "text": "Thus saith the high and lofty One that inhabiteth eternity, whose name is Holy; I dwell in the high and holy place, with him also that is of a contrite and humble spirit, to revive the spirit of the humble, and to revive the heart of the contrite ones.",
+        "citation": "Is 57:15"
+      },
+      {
+        "text": "The hour cometh, and now is, when the true worshippers shall worship the Father in spirit and in truth: for the Father seeketh such to worship him.",
+        "citation": "Jn 4:23"
+      },
+      {
+        "text": "Grace be unto you, and peace, from God our Father, and from the Lord Jesus Christ.",
+        "citation": "Phil 1:2"
+      }
+    ],
+    "evening": [
+      {
+        "text": "The LORD is in his holy temple: let all the earth keep silence before him.",
+        "citation": "Hab 2:20"
+      },
+      {
+        "text": "LORD, I have loved the habitation of thy house, and the place where thine honour dwelleth.",
+        "citation": "Ps 26:8"
+      },
+      {
+        "text": "Let my prayer be set forth in thy sight as the incense; and let the lifting up of my hands be an evening sacrifice.",
+        "citation": "Ps 141:2"
+      },
+      {
+        "text": "O worship the LORD in the beauty of holiness; let the whole earth stand in awe of him.",
+        "citation": "Ps 96:9"
+      },
+      {
+        "text": "Let the words of my mouth, and the meditation of my heart, be alway acceptable in thy sight, O LORD, my strength and my redeemer.",
+        "citation": "Ps 19:14-15"
+      },
+      {
+        "text": "Seek ye the Lord while he may be found, call ye upon him while he is near: let the wicked forsake his way and the unrighteous man his thoughts: and let him return unto the Lord, and he will have mercy upon him: and to our God, for he will abundantly pardon.",
+        "citation": "Is 55:6-7"
+      }
+    ],
+    "advent": [
+      {
+        "text": "Repent ye, for the Kingdom of heaven is at hand.",
+        "citation": "Mt 3:2"
+      },
+      {
+        "text": "Watch ye, for ye know not when the master of the house cometh, at even, or at midnight, or at the cock-crowing, or in the morning: lest coming suddenly he find you sleeping.",
+        "citation": "Mk 13:35-6"
+      },
+      {
+        "text": "Prepare ye the way of the LORD, make straight in the desert a highway for our God.",
+        "citation": "Is 40:3"
+      },
+      {
+        "text": "Send, O Lord, the Lamb, the Ruler of the land, from the rock of the desert unto the mount of the daughter of Sion.",
+        "citation": "Sarum"
+      }
+    ],
+    "christmastide": [
+      {
+        "text": "The Word was made flesh, and dwelt among us. Alleluia.",
+        "citation": "Jn 1:14"
+      },
+      {
+        "text": "Behold, I bring you good tidings of great joy, which shall be to all people. For unto you is born this day in the city of David a Saviour, which is Christ the Lord.",
+        "citation": "Lk 2:10-11"
+      },
+      {
+        "text": "Behold, the tabernacle of God is with men, and he will dwell with them, and they shall be his people, and God himself shall be with them, and be their God.",
+        "citation": "Rev 21:3"
+      },
+      {
+        "text": "Herein was the love of God manifested in us, that God hath sent his only begotten Son into the world, that we might live through him.",
+        "citation": "1 Jn 4:9"
+      }
+    ],
+    "epiphanytide": [
+      {
+        "text": "From the rising of the sun even unto the going down of the same my Name shall be great among the Gentiles; and in every place incense shall be offered unto my Name, and a pure offering: for my Name shall be great among the heathen, saith the LORD of hosts.",
+        "citation": "Mal 1:11"
+      },
+      {
+        "text": "And the Gentiles shall come to thy light, and kings to the brightness of thy rising.",
+        "citation": "Is 60:3"
+      },
+      {
+        "text": "The earth shall be filled with the knowledge of the glory of the LORD, as the waters cover the sea.",
+        "citation": "Hab 2:14"
+      },
+      {
+        "text": "All they from Sheba shall come: they shall bring gold and incense; and they shall shew forth the praises of the LORD.",
+        "citation": "Is 60:6"
+      },
+      {
+        "text": "The kings of Tharsis and of the isles shall give presents: the kings of Arabia and Saba shall bring gifts.",
+        "citation": "Ps 72:10"
+      }
+    ],
+    "septuagesima": [
+      {
+        "text": "He hath delivered me from the snare of the hunter, and from the sharp word.",
+        "citation": "Ps 91:3 LXX"
+      },
+      {
+        "text": "The Lord is high above all heathen: and his glory above the heavens.",
+        "citation": "Ps 113:4"
+      }
+    ],
+    "lent": [
+      {
+        "text": "He shall deliver thee from the snare of the hunter. And from the noisome pestilence.",
+        "citation": "Ps 91:3"
+      }
+    ],
+    "passiontide": [
+      {
+        "text": "God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.",
+        "citation": "Rom 5:8"
+      },
+      {
+        "text": "Is it nothing to you, all ye that pass by? behold, and see if there be any sorrow like unto my sorrow which is done unto me, wherewith the LORD hath afflicted me.",
+        "citation": "Lam 1:12"
+      },
+      {
+        "text": "Draw nigh unto my soul and save it. O deliver me because of mine enemies.",
+        "citation": "Ps 69:18"
+      }
+    ],
+    "eastertide": [
+      {
+        "text": "He is risen. The Lord is risen indeed.",
+        "citation": "Mk 16:6"
+      },
+      {
+        "text": "Thanks be to God, which giveth us the victory through our Lord Jesus Christ.",
+        "citation": "1 Cor 15:57"
+      },
+      {
+        "text": "If ye then be risen with Christ, seek those things which are above, where Christ sitteth on the right hand of God.",
+        "citation": "Col 3:1"
+      },
+      {
+        "text": "In thy resurrection, O Christ, let heaven and earth rejoice, alleluia.",
+        "citation": "cf. Ps 96:11"
+      }
+    ],
+    "ascensiontide": [
+      {
+        "text": "Seeing that we have a great High Priest, that is passed into the heavens, Jesus the Son of God, let us come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.",
+        "citation": "Heb 4:14,16"
+      },
+      {
+        "text": "Christ is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of God for us.",
+        "citation": "Heb 9:24"
+      },
+      {
+        "text": "I ascend to my Father, and your Father. And to my God, and your God. Alleluia.",
+        "citation": "Jn 20:17"
+      }
+    ],
+    "whitsuntide": [
+      {
+        "text": "Ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judæa, and in Samaria, and unto the uttermost part of the earth.",
+        "citation": "Acts 1:8"
+      },
+      {
+        "text": "There is a river, the streams whereof shall make glad the city of God, the holy place of the tabernacles of the Most High.",
+        "citation": "Ps 46:4"
+      },
+      {
+        "text": "The love of God hath been shed abroad in our hearts through the Holy Spirit which was given unto us.",
+        "citation": "Rom 5:5"
+      },
+      {
+        "text": "Send forth thy Spirit, and they shall be made: and thou shalt renew the face of the earth. Alleluia.",
+        "citation": "Sarum"
+      }
+    ],
+    "trinitySunday": [
+      {
+        "text": "Holy, holy, holy, Lord God Almighty, which was, and is, and is to come.",
+        "citation": "Rev 4:8"
+      },
+      {
+        "text": "Holy, holy, holy, is the LORD of hosts: the whole earth is full of his glory.",
+        "citation": "Is 6:3"
+      },
+      {
+        "text": "God is love; and he that abideth in love abideth in God and God in him.",
+        "citation": "1 Jn 4:16"
+      },
+      {
+        "text": "The Lord is high above all heathen: and his glory above the heavens.",
+        "citation": "Ps 113:4"
+      },
+      {
+        "text": "Blessed art thou in the firmament of heaven: and above all to be praised and glorified for ever.",
+        "citation": "Az 34"
+      }
+    ],
+    "apostle": [
+      {
+        "text": "Thou hast given an heritage unto those that fear thy Name, O Lord.",
+        "citation": "Ps 61:5"
+      }
+    ],
+    "martyr": [
+      {
+        "text": "Thou hast crowned him, O Lord, with glory and worship.",
+        "citation": "Ps 8:5"
+      },
+      {
+        "text": "The voice of joy and health is in the dwellings of the righteous. Alleluia.",
+        "citation": "Ps 118:15"
+      },
+      {
+        "text": "But the righteous live for evermore, and their reward also is with the Lord.",
+        "citation": "Wis 5:15"
+      },
+      {
+        "text": "Pray for us, O blessed N. That we may be made worthy of the promises of Christ.",
+        "citation": "cf. Heb 12:1"
+      }
+    ],
+    "bishopConfessorDoctor": [
+      {
+        "text": "The righteous shall flourish like a palm-tree: and shall spread abroad like a cedar in Libanus.",
+        "citation": "Ps 92:11"
+      },
+      {
+        "text": "The Lord guided the righteous in right paths. And shewed him the kingdom of God.",
+        "citation": "Wis 10:10"
+      },
+      {
+        "text": "Pray for us, O blessed N. That we may be made worthy of the promises of Christ.",
+        "citation": "cf. Heb 12:1"
+      }
+    ],
+    "abbotMonk": [
+      {
+        "text": "O ye holy and humble men of heart, bless ye the Lord: praise and exalt him above all for ever.",
+        "citation": "Pr. of Az. 65"
+      }
+    ],
+    "virginMartyressMatron": [
+      {
+        "text": "In thy grace and in thy beauty, go forth, ride prosperously and reign.",
+        "citation": "Ps 45:4"
+      },
+      {
+        "text": "God is in the midst of her, therefore shall she not be removed: God shall help her, and that right early.",
+        "citation": "Ps 46:5"
+      },
+      {
+        "text": "Pray for us, O blessed N. That we may be made worthy of the promises of Christ.",
+        "citation": "cf. Heb 12:1"
+      }
+    ],
+    "blessedVirginMary": [
+      {
+        "text": "Pray for us, O holy Mother of God. That we may be made worthy of the promises of Christ.",
+        "citation": "cf. Is 7:14"
+      },
+      {
+        "text": "O holy Mother of God, Mary ever-Virgin, intercede for us unto the Lord our God.",
+        "citation": "Heb 12:1"
+      }
+    ],
+    "blessedSacrament": [
+      {
+        "text": "I have eaten my honeycomb with my honey. I have drunk my wine with my milk. (Alleluia.)",
+        "citation": "Song 5:1"
+      },
+      {
+        "text": "Thou gavest them bread from heaven. Containing in itself all sweetness.",
+        "citation": null
+      }
+    ],
+    "dedicationOfChurch": [
+      {
+        "text": "My house shall be called the house of prayer.",
+        "citation": "Mt 21:13"
+      },
+      {
+        "text": "This is the Lord's house, firmly builded: it is well founded on the solid rock.",
+        "citation": "cf. Mt 7:24-25"
+      }
+    ]
+  },
+  "exhortationLong": {
+    "heading": "Exhortation to Penitence",
+    "dropcap": true,
+    "text": "Dearly beloved brethren, the Scripture moveth us, in sundry places, to acknowledge and confess our manifold sins and wickedness; and that we should not dissemble nor cloak them before the face of Almighty God our heavenly Father; but confess them with an humble, lowly, penitent, and obedient heart; to the end that we may obtain forgiveness of the same, by his infinite goodness and mercy. And although we ought, at all times, humbly to acknowledge our sins before God; yet ought we chiefly so to do, when we assemble and meet together to render thanks for the great benefits that we have received at his hands, to set forth his most worthy praise, to hear his most holy Word, and to ask those things which are requisite and necessary, as well for the body as the soul. Wherefore I pray and beseech you, as many as are here present, to accompany me with a pure heart, and humble voice, unto the throne of the heavenly grace, saying—"
+  },
+  "exhortationShort": {
+    "dropcap": true,
+    "text": "Beloved, we are come together in the presence of Almighty God and of the whole company of heaven to offer unto him through our Lord Jesus Christ our worship and praise and thanksgiving; to make confession of our sins; to pray, as well for others as for ourselves, that we may know more truly the greatness of God's love and shew forth in our lives the fruits of his grace; and to ask on behalf of all men such things as their well-being doth require. Wherefore let us kneel in silence, and remember God's presence with us now."
+  },
+  "exhortationOmittedRubric": "If the exhortation be omitted, to be said in its place: “Let us humbly confess our sins unto Almighty God.”",
+  "exhortationOmittedText": "Let us humbly confess our sins unto Almighty God.",
+  "generalConfession": {
+    "heading": "General Confession",
+    "rubric": "To be said by the whole Congregation, after the Minister, all kneeling.",
+    "dropcap": true,
+    "text": "Almighty and most merciful Father; We have erred, and strayed from thy ways like lost sheep. We have followed too much the devices and desires of our own hearts. We have offended against thy holy laws. We have left undone those things which we ought to have done; And we have done those things which we ought not to have done; And there is no health in us. But thou, O Lord, have mercy upon us, miserable offenders. Spare thou those, O God, who confess their faults. Restore thou those who are penitent; According to thy promises declared unto mankind in Christ Jesus our Lord. And grant, O most merciful Father, for his sake; That we may hereafter live a godly, righteous, and sober life, To the glory of thy holy Name. Amen."
+  },
+  "absolution": {
+    "heading": "Declaration of Absolution",
+    "priestRubric": "To be made by the Priest alone, standing; the People still kneeling.",
+    "priestNoteRubric": "But Note, That the Priest, at his discretion, may use, instead of what follows, the Absolution from the Order for the Holy Communion.",
+    "fullText": "Almighty God, the Father of our Lord Jesus Christ, who desireth not the death of a sinner, but rather that he may turn from his wickedness and live, hath given power, and commandment, to his Ministers, to declare and pronounce to his people, being penitent, the Absolution and Remission of their sins. He pardoneth and ✠ absolveth all those who truly repent, and unfeignedly believe his holy Gospel.\nWherefore let us beseech him to grant us true repentance, and his Holy Spirit, that those things may please him which we do at this present; and that the rest of our life hereafter may be pure and holy; so that at the last we may come to his eternal joy; through Jesus Christ our Lord. Amen.",
+    "shortText": "The Almighty and merciful Lord grant you Absolution ✠ and Remission of all your sins, true repentance, amendment of life, and the grace and consolation of the Holy Spirit. Amen.",
+    "noPriestRubric": "If no Priest be present, the Minister saying the Service shall read the following, that Minister and the People still kneeling.",
+    "noPriestText": "Grant, we beseech thee, merciful Lord, to thy faithful people pardon and peace, that they may be cleansed from all their sins, and serve thee with a quiet mind. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen."
+  },
+  "lordsPrayerAndAve": {
+    "heading": "The Lord's Prayer & Angelic Salutation",
+    "rubric": "Then the Minister shall kneel, and say the Lord's Prayer & Angelic Salutation; the People still kneeling, and repeating them with him, both here, and wheresoever else they are used in Divine Service.",
+    "note": "This Fore-Office Lord's Prayer includes the closing doxology (“For thine is the kingdom...”); the Lord's Prayer said later in the body of Mattins/Evensong itself does not, matching how each is actually printed at its own place in the source.",
+    "lordsPrayerText": "Our Father, who art in heaven, Hallowed be thy Name. Thy kingdom come. Thy will be done on earth, As it is in heaven. Give us this day our daily bread. And forgive us our trespasses, As we forgive those who trespass against us. And lead us not into temptation; But deliver us from evil: For thine is the kingdom, and the power, and the glory, for ever and ever. Amen.",
+    "aveText": "Hail Mary, full of grace; The Lord is with thee; Blessed art thou amongst women, And blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, Pray for us sinners, now and at the hour of our death. Amen."
+  }
+};

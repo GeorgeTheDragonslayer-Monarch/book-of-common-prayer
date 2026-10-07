@@ -1,0 +1,83 @@
+window.PURIFICATION_TEMPLATE = {
+  "title": "Purification of Women after Childbirth",
+  "source": "Transcribed from pages/Pastoral/Purification.tex (drawn, per its own inline comments, from the 1549 BCP and the Sarum Use). English-only, matching the source (no Latin is given anywhere in this file). Psalm 121 is reused verbatim from data/psalter.json rather than retranscribed, matching the established convention already used for Compline's four fixed Psalms and the Litany of Saints' closing Psalm 70.",
+  "sections": [
+    {
+      "type": "rubric",
+      "text": "The Woman, at the usual time after her delivery, shall come into the Church decently apparelled, and there shall kneel down in some convenient place nigh the door of the Church, and the Priest standing by her shall say these words.\nNote, The Priest shall come vested in surplice and white stole, with a Minister bearing the aspersorium. It is a laudable custom for the Woman to hold a lighted candle."
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Forasmuch as it hath pleased Almighty God, of his goodness, to give you safe deliverance, and your Child Baptism, and hath preserved you in the great danger of Child-birth: ye shall therefore give hearty thanks unto God, and pray,"
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 121. Levavi oculus"
+    },
+    {
+      "type": "rubric",
+      "text": "Then shall be said by both of them the following Psalm, the Woman still kneeling."
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "I will lift up mine eyes unto the hills : from whence cometh my help.\nMy help cometh even from the Lord : who hath made heaven and earth.\nHe will not suffer thy foot to be moved : and he that keepeth thee will not sleep.\nBehold, he that keepeth Israel : shall neither slumber nor sleep.\nThe Lord himself is thy keeper : the Lord is thy defence upon thy right hand;\nSo that the sun shall not burn thee by day : neither the moon by night.\nThe Lord shall preserve thee from all evil : yea, it is even he that shall keep thy soul.\nThe Lord shall preserve thy going out, and thy coming in : from this time forth for evermore.\n℣. Glory be to the Father, and to the Son, and to the Holy Ghost.\n℟. As it was in the beginning, is now, and ever shall be, world without end. Amen."
+    },
+    {
+      "type": "versicle",
+      "v": "Lord, have mercy upon us.",
+      "r": "Christ, have mercy upon us."
+    },
+    {
+      "type": "versicle",
+      "v": "Lord, have mercy upon us."
+    },
+    {
+      "type": "rubric",
+      "text": "Then shall the Minister say the Lord's Prayer, with what followeth."
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Our Father, who art in heaven, Hallowed be thy Name. Thy kingdom come. Thy will be done on earth, As it is in heaven. Give us this day our daily bread. And forgive us our trespasses, As we forgive those who trespass against us. And lead us not into temptation; But deliver us from evil. Amen."
+    },
+    {
+      "type": "versicle",
+      "v": "O Lord, save this woman thy servant;",
+      "r": "Who putteth her trust in thee."
+    },
+    {
+      "type": "versicle",
+      "v": "Be thou to her a strong tower;",
+      "r": "From the face of her enemy."
+    },
+    {
+      "type": "versicle",
+      "v": "O Lord hear our prayer.",
+      "r": "And let our cry come unto thee."
+    },
+    {
+      "type": "versicle",
+      "v": "The Lord be with you.",
+      "r": "And with thy spirit."
+    },
+    {
+      "type": "rubric",
+      "text": "{{Let us pray.}}"
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "O almighty God, we give thee humble thanks for that thou hast been graciously pleased to preserve, through the great pain and peril of child-birth, this woman, thy servant, who desireth now to offer her praises and thanksgivings unto thee. Grant, we beseech thee, most merciful Father, that she, through thy help, may faithfully live according to thy will in this life, and also may be partaker of everlasting glory in the life to come. Through."
+    },
+    {
+      "type": "rubric",
+      "text": "The Priest sprinkles her with Holy Water and then leadeth the Woman into the Church, with what followeth."
+    },
+    {
+      "type": "text",
+      "text": "Come into the Temple of God, that thou mayest have life everlasting and live for ever. Amen."
+    }
+  ]
+};

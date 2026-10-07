@@ -1,0 +1,421 @@
+window.PREPARATION_TEMPLATE = {
+  "title": "Preparation for Holy Communion",
+  "source": "Transcribed from pages/Eucharistic/Preparation.tex. The five Psalms (84, 85, 86, 116:10, 130) are bilingual, with English verses matching the site's own Psalter (data/psalter.json) verbatim - confirmed by direct comparison before transcription, and reproduced here as this page's own independent copy per the site's established no-cross-file-reuse convention, since Preparation.tex renders them in a distinct bilingual devotional format rather than the Psalter's own listing. The opening antiphon carries a {\\dag} dagger mark on its first occurrence only (dropped on the repeat after the Psalms), preserved as a literal † exactly as printed, mirroring the same asymmetric pattern already established in Thanksgiving.tex. No cross marks (\\ding{64}/\\ding{66}) appear anywhere in this file. The 'Prayer of St. Ambrose' daily cycle uses \\marginpar and \\margrub/\\margrubleft macros to give an alternate wording for a Priest preparing to celebrate Mass versus the ordinary wording said by others; these were originally rendered here as inline, always-shown '(or, for a Priest: ...)' parentheticals; George's 9/8 note (task #189) asked that the correct wording be auto-selected from the Priest/Deacon/Layman setting instead of printing the parenthetical note itself, so these are now encoded as `{{priest|default::priest}}` markers (an empty default half means the priest's clause is a pure addition rather than a substitution - see js/app.js's `escapeHtml`/`PRIEST_INLINE_RE`), resolved at render time against `ministerRank`. One unambiguous typo, 'our of the worthiness' for 'out of the worthiness', is corrected per the site's typo-correction policy. Five additional devotional prayers present in the source only as LaTeX comments (a prayer of St. Augustine, two further prayers before Communion, a prayer to the Saint of the Day, and thanksgiving prayers to Pope St. Gregory) are excluded, matching the site's established practice of following the source's own choice of what is currently active.",
+  "sections": [
+    {
+      "type": "heading",
+      "text": "Psalms"
+    },
+    {
+      "type": "text",
+      "alleluiaMarker": true,
+      "omitUnlessDoubleOrHigher": true,
+      "text": "Ant. Remember not, † Lord, our offences, nor the offences of our forefathers; neither take thou vengeance of our sins. (Alleluia.)",
+      "textLatin": "Ant. Ne reminiscáris, † Dómine, delícta nostra, vel paréntum nostrórum, neque vindíctam sumas de peccátis nostris. (Allelúja.)"
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 84"
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "O how amiable are thy dwellings : thou Lord of hosts!\nMy soul hath a desire and longing to enter into the courts of the Lord : my heart and my flesh rejoice in the living God.\nYea, the sparrow hath found her an house, and the swallow a nest where she may lay her young : even thy altars, O Lord of hosts, my King and my God.\nBlessed are they that dwell in thy house : they will be alway praising thee.\nBlessed is the man whose strength is in thee : in whose heart are thy ways.\nWho going through the vale of misery use it for a well : and the pools are filled with water.\nThey will go from strength to strength : and unto the God of gods appeareth every one of them in Sion.\nO Lord God of hosts, hear my prayer : hearken, O God of Jacob.\nBehold, O God our defender : and look upon the face of thine Anointed.\nFor one day in thy courts : is better than a thousand.\nI had rather be a door-keeper in the house of my God : than to dwell in the tents of ungodliness.\nFor the Lord God is a light and defence : the Lord will give grace and worship, and no good thing shall he withhold from them that live a godly life.\nO Lord God of hosts : blessed is the man that putteth his trust in thee.",
+      "textLatin": "Quam dilécta tabernácula tua, Dómine virtútum: * concupíscit, et déficit ánima mea in átria Dómini.\nCor meum, et caro mea * exsultavérunt in Deum vivum.\nÉtenim passer invénit sibi domum: * et turtur nidum sibi, ubi ponat pullos suos.\nAltária tua, Dómine virtútum: * Rex meus, et Deus meus.\nBeáti, qui hábitant in domo tua, Dómine: * in sǽcula sæculórum laudábunt te.\nBeátus vir, cujus est auxílium abs te: * ascensiónes in corde suo dispósuit, in valle lacrimárum in loco, quem pósuit.\nÉtenim benedictiónem dabit legislátor, ibunt de virtúte in virtútem: * vidébitur Deus deórum in Sion.\nDómine, Deus virtútum, exáudi oratiónem meam: * áuribus pércipe, Deus Iacob.\nProtéctor noster, áspice, Deus: * et réspice in fáciem Christi tui:\nQuia mélior est dies una in átriis tuis, * super míllia.\nElégi abiéctus esse in domo Dei mei: * magis quam habitáre in tabernáculis peccatórum.\nQuia misericórdiam, et veritátem díligit Deus: * grátiam et glóriam dabit Dóminus.\nNon privábit bonis eos, qui ámbulant in innocéntia: * Dómine virtútum, beátus homo, qui sperat in te."
+    },
+    {
+      "type": "versicle",
+      "v": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+      "r": "As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+      "vLatin": "℣. Glória Patri, et Fílio, * et Spirítui Sancto:",
+      "rLatin": "℟. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 85"
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "Lord, thou art become gracious unto thy land : thou hast turned away the captivity of Jacob.\nThou hast forgiven the offence of thy people : and covered all their sins.\nThou hast taken away all thy displeasure : and turned thyself from thy wrathful indignation.\nTurn us then, O God our Saviour : and let thine anger cease from us.\nWilt thou be displeased at us for ever : and wilt thou stretch out thy wrath from one generation to another?\nWilt thou not turn again, and quicken us : that thy people may rejoice in thee?\nShew us thy mercy, O Lord : and grant us thy salvation.\nI will hearken what the Lord God will say concerning me : for he shall speak peace unto his people, and to his saints, that they turn not again.\nFor his salvation is nigh them that fear him : that glory may dwell in our land.\nMercy and truth are met together : righteousness and peace have kissed each other.\nTruth shall flourish out of the earth : and righteousness hath looked down from heaven.\nYea, the Lord shall shew loving-kindness : and our land shall give her increase.\nRighteousness shall go before him : and he shall direct his going in the way.",
+      "textLatin": "Benedixísti, Dómine, terram tuam: * avertísti captivitátem Iacob.\nRemisísti iniquitátem plebis tuæ: * operuísti ómnia peccáta eórum.\nMitigásti omnem iram tuam: * avertísti ab ira indignatiónis tuæ.\nConvérte nos, Deus, salutáris noster: * et avérte iram tuam a nobis.\nNumquid in æternum irascéris nobis? * aut exténdes iram tuam a generatióne in generatiónem?\nDeus, tu convérsus vivificábis nos: * et plebs tua lætábitur in te.\nOsténde nobis, Dómine, misericórdiam tuam: * et salutáre tuum da nobis.\nÁudiam quid loquátur in me Dóminus Deus: * quóniam loquétur pacem in plebem suam.\nEt super sanctos suos: * et in eos, qui convertúntur ad cor.\nVerúmtamen prope timéntes eum salutáre ipsíus: * ut inhábitet glória in terra nostra.\nMisericórdia, et véritas obviavérunt sibi: * justítia, et pax osculátæ sunt.\nVéritas de terra orta est: * et justítia de cælo prospéxit.\nÉtenim Dóminus dabit benignitátem: * et terra nostra dabit fructum suum.\nJustítia ante eum ambulábit: * et ponet in via gressus suos."
+    },
+    {
+      "type": "versicle",
+      "v": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+      "r": "As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+      "vLatin": "℣. Glória Patri, et Fílio, * et Spirítui Sancto:",
+      "rLatin": "℟. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 86"
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "Bow down thine ear, O Lord, and hear me : for I am poor, and in misery.\nPreserve thou my soul, for I am holy : my God, save thy servant that putteth his trust in thee.\nBe merciful unto me, O Lord : for I will call daily upon thee.\nComfort the soul of thy servant : for unto thee, O Lord, do I lift up my soul.\nFor thou, Lord, art good and gracious : and of great mercy unto all them that call upon thee.\nGive ear, Lord, unto my prayer : and ponder the voice of my humble desires.\nIn the time of my trouble I will call upon thee : for thou hearest me.\nAmong the gods there is none like unto thee, O Lord : there is not one that can do as thou doest.\nAll nations whom thou hadst made shall come and worship thee, O Lord : and shall glorify thy Name.\nFor thou art great, and doest wondrous things : thou art God alone.\nTeach me thy way, O Lord, and I will walk in thy truth : O knit my heart unto thee, that I may fear thy Name.\nI will thank thee, O Lord my God, with all my heart : and will praise thy Name for evermore.\nFor great is thy mercy toward me : and thou hast delivered my soul from the nethermost hell.\nO God, the proud are risen against me : and the congregations of naughty men have sought after my soul, and have not set thee before their eyes.\nBut thou, O Lord God, art full of compassion and mercy : long-suffering, plenteous in goodness and truth.\nO turn thee then unto me, and have mercy upon me : give thy strength unto thy servant, and help the son of thine handmaid.\nShew some token upon me for good, that they who hate me may see it and be ashamed : because thou, Lord, hast holpen me and comforted me.",
+      "textLatin": "Inclína, Dómine, aurem tuam, et exáudi me: * quóniam inops, et pauper sum ego.\nCustódi ánimam meam, quóniam sanctus sum: * salvum fac servum tuum, Deus meus, sperántem in te.\nMiserére mei, Dómine, quóniam ad te clamávi tota die: * lætífica ánimam servi tui, quóniam ad te, Dómine, ánimam meam levávi.\nQuóniam tu, Dómine, suávis, et mitis: * et multæ misericórdiæ ómnibus invocántibus te.\nÁuribus pércipe, Dómine, oratiónem meam: * et inténde voci deprecatiónis meæ.\nIn die tribulatiónis meæ clamávi ad te: * quia exaudísti me.\nNon est símilis tui in diis, Dómine: * et non est secúndum ópera tua.\nOmnes gentes quascúmque fecísti, vénient, et adorábunt coram te, Dómine: * et glorificábunt nomen tuum.\nQuóniam magnus es tu, et fáciens mirabília: * tu es Deus solus.\nDeduc me, Dómine, in via tua, et ingrédiar in veritáte tua: * lætétur cor meum ut tímeat nomen tuum.\nConfitébor tibi, Dómine, Deus meus, in toto corde meo, * et glorificábo nomen tuum in æternum:\nQuia misericórdia tua magna est super me: * et eruísti ánimam meam ex inférno inferióri.\nDeus, iníqui insurrexérunt super me, et synagóga poténtium quæsiérunt ánimam meam: * et non proposuérunt te in conspéctu suo.\nEt tu, Dómine, Deus miserátor et miséricors, * pátiens, et multæ misericórdiæ, et verax,\nRéspice in me, et miserére mei, * da impérium tuum púero tuo: et salvum fac fílium ancíllæ tuæ.\nFac mecum signum in bonum, ut vídeant qui odérunt me, et confundántur: * quóniam tu, Dómine, adjuvísti me, et consolátus es me."
+    },
+    {
+      "type": "versicle",
+      "v": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+      "r": "As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+      "vLatin": "℣. Glória Patri, et Fílio, * et Spirítui Sancto:",
+      "rLatin": "℟. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 116:10"
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "I believed, and therefore will I speak; but I was sore troubled : I said in my haste, All men are liars.\nWhat reward shall I give unto the Lord : for all the benefits that he hath done unto me?\nI will receive the cup of salvation : and call upon the Name of the Lord.\nI will pay my vows now in the presence of all his people : right dear in the sight of the Lord is the death of his saints.\nBehold, O Lord, how that I am thy servant : I am thy servant, and the son of thine handmaid; thou hast broken my bonds in sunder.\nI will offer to thee the sacrifice of thanksgiving : and will call upon the Name of the Lord.\nI will pay my vows unto the Lord, in the sight of all his people : in the courts of the Lord's house, even in the midst of thee, O Jerusalem. Praise the Lord.",
+      "textLatin": "Crédidi, propter quod locútus sum: * ego autem humiliátus sum nimis.\nEgo dixi in excéssu meo: * Omnis homo mendax.\nQuid retríbuam Dómino, * pro ómnibus, quæ retríbuit mihi?\nCálicem salutáris accípiam: * et nomen Dómini invocábo.\nVota mea Dómino reddam coram omni pópulo ejus: * pretiósa in conspéctu Dómini mors sanctórum ejus:\nO Dómine, quia ego servus tuus: * ego servus tuus, et fílius ancíllæ tuæ.\nDirupísti víncula mea: * tibi sacrificábo hóstiam laudis, et nomen Dómini invocábo.\nVota mea Dómino reddam in conspéctu omnis pópuli ejus: * in átriis domus Dómini, in médio tui, Jerúsalem."
+    },
+    {
+      "type": "versicle",
+      "v": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+      "r": "As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+      "vLatin": "℣. Glória Patri, et Fílio, * et Spirítui Sancto:",
+      "rLatin": "℟. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Psalm 130"
+    },
+    {
+      "type": "canticle",
+      "dropcap": true,
+      "text": "Out of the deep have I called unto thee, O Lord : Lord, hear my voice.\nO let thine ears consider well : the voice of my complaint.\nIf thou, Lord, wilt be extreme to mark what is done amiss : O Lord, who may abide it?\nFor there is mercy with thee : therefore shalt thou be feared.\nI look for the Lord; my soul doth wait for him : in his word is my trust.\nMy soul fleeth unto the Lord : before the morning watch, I say, before the morning watch.\nO Israel, trust in the Lord, for with the Lord there is mercy : and with him is plenteous redemption.\nAnd he shall redeem Israel : from all his sins.",
+      "textLatin": "De profúndis clamávi ad te, Dómine: * Dómine, exáudi vocem meam:\nFiant aures tuæ intendéntes, * in vocem deprecatiónis meæ.\nSi iniquitátes observáveris, Dómine: * Dómine, quis sustinébit?\nQuia apud te propitiátio est: * et propter legem tuam sustínui te, Dómine.\nSustínuit ánima mea in verbo ejus: * sperávit ánima mea in Dómino.\nA custódia matutína usque ad noctem: * speret Israël in Dómino.\nQuia apud Dóminum misericórdia: * et copiósa apud eum redémptio.\nEt ipse rédimet Israël, * ex ómnibus iniquitátibus ejus."
+    },
+    {
+      "type": "versicle",
+      "v": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+      "r": "As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+      "vLatin": "℣. Glória Patri, et Fílio, * et Spirítui Sancto:",
+      "rLatin": "℟. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen."
+    },
+    {
+      "type": "text",
+      "alleluiaMarker": true,
+      "text": "Ant. Remember not, Lord, our offences, nor the offences of our forefathers; neither take thou vengeance of our sins. (Alleluia.)",
+      "textLatin": "Ant. Ne reminiscáris, Dómine, delícta nostra, vel paréntum nostrórum, neque vindíctam sumas de peccátis nostris. (Allelúja.)"
+    },
+    {
+      "type": "versicle",
+      "v": "Lord, have mercy upon us.",
+      "r": "Christ, have mercy upon us.",
+      "vLatin": "℣. Kýrie, eléison.",
+      "rLatin": "℟. Christe, eléison."
+    },
+    {
+      "type": "versicle",
+      "v": "Lord, have mercy upon us.",
+      "vLatin": "℣. Kýrie, eléison."
+    },
+    {
+      "type": "rubric",
+      "text": "The Lord's Prayer is said silently until,"
+    },
+    {
+      "type": "versicle",
+      "v": "And lead us not into temptation.",
+      "r": "But deliver us from evil. Amen.",
+      "vLatin": "℣. Et ne nos indúcas in tentatiónem.",
+      "rLatin": "℟. Sed líbera nos a malo. Amen."
+    },
+    {
+      "type": "versicle",
+      "v": "I said, Lord, be merciful unto me.",
+      "r": "Heal my soul; for I have sinned against thee.",
+      "vLatin": "℣. Ego dixi: Dómine, miserére mei.",
+      "rLatin": "℟. Sana ánimam meam, quia peccávi tibi."
+    },
+    {
+      "type": "versicle",
+      "v": "Turn thee again, O Lord, at the last.",
+      "r": "And be gracious unto thy servants.",
+      "vLatin": "℣. Convértere, Dómine, aliquántulum.",
+      "rLatin": "℟. Et deprecáre super servos tuos."
+    },
+    {
+      "type": "versicle",
+      "v": "O Lord, let thy mercy be shewed upon us.",
+      "r": "As we do put our trust in thee.",
+      "vLatin": "℣. Fiat misericórdia tua, Dómine, super nos.",
+      "rLatin": "℟. Quemádmodum sperávimus in te."
+    },
+    {
+      "type": "versicle",
+      "v": "Let thy priests be clothed with righteousness.",
+      "r": "And let thy saints sing with joyfulness.",
+      "vLatin": "℣. Sacerdótes tui induántur justítiam.",
+      "rLatin": "℟. Et Sancti tui exsúltent."
+    },
+    {
+      "type": "versicle",
+      "v": "Cleanse me, O Lord, from my secret faults.",
+      "r": "Keep thy servant also from presumptuous sins.",
+      "vLatin": "℣. Ab occúltis meis munda me, Dómine.",
+      "rLatin": "℟. Et ab aliénis parce servo tuo."
+    },
+    {
+      "type": "versicle",
+      "v": "O Lord, hear my prayer.",
+      "r": "And let my cry come unto thee.",
+      "vLatin": "℣. Dómine, exáudi oratiónem meam.",
+      "rLatin": "℟. Et clamor meus ad te véniat."
+    },
+    {
+      "type": "versicle",
+      "v": "The Lord be with you.",
+      "r": "And with thy spirit.",
+      "vLatin": "℣. Dóminus vobíscum.",
+      "rLatin": "℟. Et cum spíritu tuo."
+    },
+    {
+      "type": "rubric",
+      "text": "{{Let us pray.}}"
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "Most gracious God, incline thy merciful ears unto our prayers and by the grace of the Holy Spirit illumine our hearts, that we may worthily serve at thy holy Mysteries, and love thee with an everlasting love.",
+      "textLatin": "Aures tuæ pietátis, mitíssime Deus, inclína précibus nostris, et grátia Sancti Spíritus illúmina cor nostrum: ut tuis mystériis digne ministráre, teque ætérna caritáte dilígere mereámur."
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "O God, unto whom all hearts are open, all desires known, and from whom no secrets are hid: cleanse the thoughts of our hearts by the inspiration of thy Holy Spirit, that we may perfectly love thee and worthily magnify thy holy Name.",
+      "textLatin": "Deus, cui omne cor patet et omnis volúntas lóquitur, et quem nullum latet secrétum: purífica per infusiónem Sancti Spíritus cogitatiónes cordis nostri: ut te perfécte dilígere, et digne laudáre mereámur."
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "Enkindle, O Lord, our hearts and minds with the fire of the Holy Spirit: that we may serve thee with a chaste body and please thee with a clean heart.",
+      "textLatin": "Ure igne Sancti Spíritus renes nostros et cor nostrum, Dómine: ut tibi casto córpore serviámus, et mundo corde placeámus."
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "We beseech thee, O Lord, that the Comforter, who proceedeth from thee, may enlighten our minds: and lead us into all truth, as thy Son hath promised.",
+      "textLatin": "Mentes nostras, quæsumus, Dómine, Paráclitus, qui a te procédit, illúminet: et indúcat in omnem, sicut tuus promísit Fílius, veritátem."
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "Let the power of the Holy Spirit come upon us, O Lord, we beseech thee: that he may both mercifully cleanse our hearts, and defend us from all adversities.",
+      "textLatin": "Adsit nobis, quæsumus, Dómine, virtus Spíritus Sancti: quæ et corda nostra cleménter expúrget et ab ómnibus tueátur advérsis."
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "O God, who didst teach the hearts of thy faithful people, by sending them the light of thy Holy Spirit: grant us by the same Spirit to have a right judgement in all things, and evermore to rejoice in his holy comfort.",
+      "textLatin": "Deus, qui corda fidélium Sancti Spíritus illustratióne docuísti: da nobis in eódem Spíritu recta sápere; et de ejus semper consolatióne gaudére."
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "Purify our consciences, we beseech thee, O Lord, by thy visitation: that our Lord Jesus Christ thy Son, when he cometh, may find in us a mansion prepared for himself. Who with thee, in the unity of the Holy Spirit, liveth and reigneth God, world without end. Amen.",
+      "textLatin": "Consciéntias nostras, quæsumus, Dómine, visitándo purífica: ut véniens Dóminus noster Jesus Christus, Fílius tuus, parátam sibi in nobis invéniat mansiónem: Qui tecum vivit et regnat."
+    },
+    {
+      "type": "heading",
+      "text": "Prayer of St. Ambrose"
+    },
+    {
+      "type": "rubric",
+      "text": "In the following prayers, the sections in parentheses is said, unless he be a Priest preparing to celebrate Mass, in which case he should always say the text in the margin."
+    },
+    {
+      "type": "inlineToggle",
+      "toggle": "ambrosePortion",
+      "options": [
+        {
+          "value": "portion",
+          "label": "Today's Portion"
+        },
+        {
+          "value": "full",
+          "label": "Full Prayer"
+        }
+      ]
+    },
+    {
+      "type": "inlineToggle",
+      "toggle": "ambroseDayPick",
+      "ambrosePortionOption": "portion",
+      "options": [
+        {
+          "value": "0",
+          "label": "Sunday"
+        },
+        {
+          "value": "1",
+          "label": "Monday"
+        },
+        {
+          "value": "2",
+          "label": "Tuesday"
+        },
+        {
+          "value": "3",
+          "label": "Wednesday"
+        },
+        {
+          "value": "4",
+          "label": "Thursday"
+        },
+        {
+          "value": "5",
+          "label": "Friday"
+        },
+        {
+          "value": "6",
+          "label": "Saturday"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Sunday",
+      "weekdayPortion": 0
+    },
+    {
+      "type": "text",
+      "text": "O Supreme High Priest and true Chief Bishop, Jesus Christ, who didst offer thyself to God the Father a pure and spotless Victim upon the Altar of the Cross for us miserable sinners, and who didst give us thy Flesh to eat and thy Blood to drink, and didst ordain that Mystery in the power of the Holy Spirit, saying, This do, as often as ye shall do it, in remembrance of me; I pray thee, by that same Blood of thine, the great price of our salvation; I pray thee, by that wonderful and unspeakable love wherewith thou didst vouchsafe to love us, miserable and unworthy, as to wash us from our sins in thy Blood;{{priest|:: teach me, thy unworthy servant, whom among thy other gifts, not for my own merit, but only out of the worthiness of thy mercy, thou hast deigned to call to the priestly office;}} teach me, I pray thee, by thy Holy Spirit, to {{priest|approach::handle}} so great a Mystery with such reverence and honour, with such fear and devotion, as are due and fitting. Make me, through thy grace, always so to believe and understand, so to conceive and firmly hold, so to think and speak of this wondrous Mystery, as shall please thee and benefit my own soul. Let thy good Spirit enter into my heart, there silently to sound, and without clamour of words to speak all truth. For exceeding deep are thy Mysteries, and covered with a sacred veil. Of thy great mercy grant me to {{priest|assist at::celebrate}} the Solemnity of the Mass with a clean heart and a pure mind. Set free my heart from all unclean and unholy, all vain and hurtful thoughts. Defend me with the loving and faithful guard, the mighty protection of thy blessed Angels, that the enemies of all good may go away ashamed. By the virtue of this great Mystery and by the hand of thy holy Angel drive away from me and from all thy servants the hard spirit of pride and vain-glory, of impurity and uncleanness, of doubting and mistrust. Let them be confounded that persecute us: let them perish that make haste to destroy us.",
+      "weekdayPortion": 0
+    },
+    {
+      "type": "heading",
+      "text": "Monday",
+      "weekdayPortion": 1
+    },
+    {
+      "type": "text",
+      "text": "O King of virgins and lover of chastity and innocence, extinguish in my body, by the dew of thy heavenly blessing, whatever may kindle the burning of wanton desire, that so one even purity of soul and body may abide in me. Mortify in my members the incitements of the flesh, and all lustful emotions, and give me true and persevering chastity with thine other gifts which please thee in truth, so that I may with chaste body and pure heart offer unto thee the sacrifice of praise. For with what contrition of heart and flowing of tears, with what reverence and awe, with what chastity of body and purity of soul, should that divine and heavenly Sacrifice be celebrated, wherein thy Flesh is eaten indeed, where thy Blood is drunk indeed, wherein things lowest and highest, earthly and divine, are united, where the holy Angels are present, where thou art in a marvellous and unspeakable manner both Priest and Sacrifice",
+      "weekdayPortion": 1
+    },
+    {
+      "type": "heading",
+      "text": "Tuesday",
+      "weekdayPortion": 2
+    },
+    {
+      "type": "text",
+      "text": "Who can worthily {{priest|assist at::celebrate}} this Sacrifice unless thou, O God, makest him worthy? I know, O Lord, yea, truly do I know, and this do I confess to thy loving-kindness, that I am unworthy to approach so great a Mystery, by reason of my numberless sins and negligences; but I know and truly with my whole heart do I believe, and with my mouth confess, that thou canst make me worthy, who alone canst make clean one conceived of unclean seed, and canst make sinners to be righteous and holy. By this thine almighty power I beseech thee, O my God, to grant that I, a sinner, may {{priest|assist at::celebrate}} this Sacrifice with fear and trembling, with purity of heart and streams of tears, with spiritual gladness and heavenly joy; may my mind feel the sweetness of thy most blessed Presence, and the guardianship of thy holy Angels round about me.",
+      "weekdayPortion": 2
+    },
+    {
+      "type": "heading",
+      "text": "Wednesday",
+      "weekdayPortion": 3
+    },
+    {
+      "type": "text",
+      "text": "For now, O Lord, mindful of thy venerable Passion, I approach thine Altar, to offer thee that Sacrifice which thou hast instituted, and commanded us to offer in remembrance of thee for our salvation. Receive it, I beseech thee, O God Most High, for thy holy Church, and for the people whom thou hast purchased with thy Blood. (And since thou hast willed that I, a sinner, should be in the midst between thee and the same thy people, although thou perceivest in me the evidence of no good works, at least refuse not the service of the ministry which thou hast given me; let not the price of their salvation be wasted through my unworthiness, whose saving Victim and redemption thou didst deign to be.) If thou wilt graciously vouchsafe to behold (or, Also I bring before thee, O Lord) the tribulations of the people, the perils of the nations, the groans of prisoners, the miseries of orphans, the necessities of strangers, the helplessness of the weak, the depression of the weary, the infirmities of the aged, the aspirations of the young, the vows of virgins, the lamentations of widows.",
+      "weekdayPortion": 3
+    },
+    {
+      "type": "heading",
+      "text": "Thursday",
+      "weekdayPortion": 4
+    },
+    {
+      "type": "text",
+      "text": "For thou, O Lord, art merciful unto all and hatest nothing that thou hast made. Remember what is our nature, for thou art our Father, thou art our God. Be not angry with us for ever, nor withhold the multitude of thy mercies from us; for it is not in our righteousness that we humbly present our prayers before thy face, but because of thy great compassion. Take away from us our iniquities, and graciously kindle the fire of thy Holy Spirit within us. Take away our hearts of stone, and give us an heart of flesh, which may love thee, prefer thee, delight in thee, follow thee, and enjoy thee. We pray thee of thy mercy, O Lord, vouchsafe to shew the light of thy countenance unto thy family awaiting the service of thy holy Name; and that the good desires of none may be ineffectual, the petitions of none unfruitful, do thou put into our minds such prayers as thou mayest delight graciously to hear and answer.",
+      "weekdayPortion": 4
+    },
+    {
+      "type": "heading",
+      "text": "Friday",
+      "weekdayPortion": 5
+    },
+    {
+      "type": "text",
+      "text": "We beseech thee also, O Lord, Holy Father, for the souls of the faithful departed; that this great Sacrament of thy love may be unto them health and salvation, joy and refreshment. Grant them this day, O Lord my God, a great and abundant feast of thee, the living Bread, which camest down from heaven, and givest life unto the world; even of thy holy and blessed Flesh, the Lamb without spot, that takest away the sins of the world; even of that Flesh, which was taken from the holy and glorious womb of the blessed Virgin Mary, and conceived of the Holy Ghost; and of that Fountain of mercy which by the soldier's spear flowed from thy most sacred Side; that after being fed and satisfied, refreshed and comforted, they may rejoice in thy praise and glory.",
+      "weekdayPortion": 5
+    },
+    {
+      "type": "text",
+      "text": "I pray thy mercy, O Lord, that on the bread to be offered unto thee may descend the fulness of thy blessing and the hallowing of thy Godhead. May there also descend the invisible and incomprehensible majesty of thy Holy Spirit, as it came down of old on the sacrifices of the fathers; which will both make our oblations thy Body and Blood, and teach us, {{priest|thy unworthy servants::me thy unworthy priest,}} to treat so great a Mystery with purity of heart and with tears of devotion, with reverence and trembling, so that thou mayest graciously and favourably receive this sacrifice{{priest|:: at my hands}} for the well-being of all, both living and departed.",
+      "weekdayPortion": 5
+    },
+    {
+      "type": "heading",
+      "text": "Saturday",
+      "weekdayPortion": 6
+    },
+    {
+      "type": "text",
+      "text": "I intreat thee also, O Lord, by this most holy mystery of thy Body and Blood, wherewith we are daily fed and given to drink, washed and sanctified in thy Church, and are made partakers of the one supreme Divinity, grant unto me thy holy graces, that fulfilled therewith I may draw near to thine Altar with a good conscience; so that these heavenly Sacraments may be made unto me salvation and life; for thou hast said with thy holy and blessed mouth, `The bread that I will give is my flesh, which I will give for the life of the world. I am the living bread which came down from heaven. If any man eat of this bread, he shall live for ever.'",
+      "weekdayPortion": 6
+    },
+    {
+      "type": "text",
+      "text": "O sweetest Bread, heal the palate of my heart, that I may taste the pleasant savour of thy love. Heal it of all infirmities, that I may find sweetness in nothing out of thee. O purest Bread, having all delight and all savour, which ever refreshest us, and never failest, let my heart feed on thee, and may my inmost soul be fulfilled with the sweetness of thy savour. The Angels feed upon thee fully: let the wayfaring man feed on thee according to his measure, that, refreshed with such a Viaticum, he fail not by the way. O holy Bread, O living Bread, O pure Bread, who camest down from heaven, and givest life unto the world, come into my heart, and cleanse me from all defilement of flesh and spirit. Enter into my soul; heal and cleanse me within and without; be the protection and continual health of my soul and body. Drive far from me all foes that lie in wait; Let them flee at the presence of thy power, so that being guarded without and within by thee, I may come to thy kingdom by a straight way: where, not as now in mysteries, but face to face, we shall behold thee: when thou shalt have delivered up the kingdom to God, even the Father, and shalt be God, all in all. Then shalt thou satisfy me with thyself in wondrous fulness, so that I shall never hunger nor thirst any more. Who with the same God the Father and the Holy Ghost livest and reignest, world without end. Amen.",
+      "weekdayPortion": 6
+    },
+    {
+      "type": "heading",
+      "text": "Another Prayer of St. Ambrose"
+    },
+    {
+      "type": "text",
+      "text": "To the Table of thy most sweet Feast, O loving Lord Jesus Christ, I, a sinner, presuming nothing on my own merits, but trusting in thy mercy and goodness, approach with fear and trembling. For my heart and my body are stained with many and grievous sins, my thoughts and my lips have not been carefully kept. Wherefore, O gracious God, O awful majesty, I, in my misery, being brought into a great strait, turn to thee, the Fountain of mercy, to thee I hasten to be healed, and flee under thy protection: and thee, before whom I cannot stand as my Judge, I long to have as my Saviour. To thee, O Lord, I show my wounds, to thee I discover my shame. I know my sins, many and great, for which I am afraid: but I hope in thy mercies, of which there is no end. Look therefore upon me with the eyes of thy mercy, O Lord Jesus Christ, eternal King, God and Man, crucified for man. Hearken unto me whose trust is in thee: have mercy upon me who am full of misery and sin, thou Fountain of mercy that will never cease to flow. Hail, Victim of Salvation, offered for me and for all mankind upon the Altar of the Cross! Hail, noble and precious Blood, flowing from the wounds of my crucified Lord Jesus Christ, and washing away the sins of the whole world! Remember O Lord, thy creature, whom thou hast redeemed with thine own Blood. It repents me that I have sinned, and I desire to amend what I have done. Take away therefore from me, O most merciful Father, all my sins and iniquities; that being purified both in soul and body, I may be made meet worthily to taste the Holy of Holies; and grant that this holy foretaste of thy Body and Blood, which I, unworthy, purpose to take, may be for the remission of my sins; the perfect cleansing of my faults; the driving away of shameful thoughts, and the renewal of good desires; the healthful performance of works well pleasing unto thee; and the most sure protection of soul and body against the wiles of my enemies. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "A Devotional Prayer to St. Mary"
+    },
+    {
+      "type": "text",
+      "text": "O most Blessed Virgin Mary, mother of gentleness and mercy, I, a miserable and unworthy sinner, fly to thy protection with every sentiment of humility and love; and I implore of thy loving kindness that thou wouldst vouchsafe graciously to be near me, and all who throughout the whole Church are to receive the Body and Blood of thy Son this day, even as thou wert near thy sweetest Son as he hung bleeding on the Cross. Aided by thy gracious help, may we worthily approach this august Sacrament. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "A Devotional Prayer to St. Joseph"
+    },
+    {
+      "type": "text",
+      "text": "O blessed Joseph, happy among men, in that it was given unto thee not only to see and hear the God, whom many kings desired to see and saw not, to hear and heard not, but also to carry and embrace him, to clothe and protect him!"
+    },
+    {
+      "type": "versicle",
+      "v": "Pray for us, O blessed Joseph.",
+      "r": "That we may be made worthy of the promises of Christ."
+    },
+    {
+      "type": "rubric",
+      "text": "{{Let us pray.}}"
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "O God, who hast given unto us a royal priesthood: vouchsafe, we pray thee; that, like as blessed Joseph was found worthy reverently to hold and carry in his arms thine only-begotten Son, born of the Virgin Mary, so thou wouldest make us in purity of heart and innocence of deed to serve thy holy altars: that we may this day worthily receive the sacred Body and Blood of thy Son, and in the world to come be found worthy to attain to the reward of eternal life. Through the same Christ our Lord. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "A Devotional Prayer to All the Angels & Saints"
+    },
+    {
+      "type": "text",
+      "text": "Angels, Archangels, Thrones, Dominations, Princedoms, Powers and Virtues of the heavens, Cherubim, and Seraphim, and all ye saints of God, especially my Patrons, vouchsafe to intercede for me, that I may be enabled worthily to offer this sacrifice to Almighty God, to the praise and glory of his Name, for my benefit, and that of all his holy Church. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Declaration of Intention before Mass"
+    },
+    {
+      "type": "text",
+      "text": "I intend to {{priest|assist at this celebration of the Mass and at the consecration of::celebrate Mass and to consecrate}} the Body and Blood of our Lord Jesus Christ, according to the rite of Holy Church, to the praise of Almighty God, and of the whole Church triumphant; for my own benefit; for the benefit of the whole Church militant and expectant; for all who have commended themselves to my prayers in general and in particular, . . . and for the good estate of the Holy Catholic Church."
+    },
+    {
+      "type": "text",
+      "text": "The Almighty and merciful Lord grant unto us joy with peace, amendment of life, time for true repentance, the grace and comfort of the Holy Ghost, and perseverance in good works. Amen."
+    }
+  ]
+}

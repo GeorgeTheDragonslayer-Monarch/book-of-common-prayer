@@ -1,0 +1,726 @@
+{
+  "title": "Our Lady on Saturday",
+  "source": "Transcribed from pages/Votives/Votive.tex. Entirely English-only, no elcol pairs, \\paracol, or minipage apparatus anywhere in the file; one standalone \\ding{64} cross mark, in the nuptial blessing under Holy Matrimony ('sanctify and ✠ bless you'). Covers four distinct Votive Masses: Our Lady on Saturday (five seasonal forms - Advent, Epiphanytide, Septuagesimatide, Eastertide, Trinitytide - each with its own Introit/Collect/Epistle/Gradual-or-Alleluia/Gospel/Offertory/Secret/Communion/Postcommunion), the Mass of the Angels, the Mass at a wedding for Holy Matrimony (including the two nuptial-blessing prayers and the final ring-blessing formula, distinct from the Sacrament of Matrimony rite itself already built at data/matrimony.json), and Masses for the Dead (the Collect/Secret/Postcommunion for the day of death or burial - each with a further 3rd/7th/30th-day alternate - the anniversary of death, and daily Requiem Masses, which uniquely give three alternate Collects/Secrets/Postcommunions side by side per the rubric governing which to use). The source mixes two different ways of marking each Mass-part's label - explicit \\subsection{Introit} headings in the Angels/Matrimony/Requiem Masses, versus bare \\introit/\\collect/\\offertory/etc. macros with no subsection heading in Our Lady on Saturday - both of which print as the same bold section label in the finished book, so both are normalized here to the same 'heading' section type for consistency; this is a typographic-equivalence decision, not a content change. The Advent form of Our Lady on Saturday has its Collect, Secret, and Postcommunion each commented out in the source and replaced with a rubric directing to the Collects/Secrets/Postcommunions of St. Mary in Advent, the Advent Feria, and the Holy Ghost printed on other pages - only the active rubric is included, matching the site's established practice of following the source's own choice of what is currently active. Print-only page cross-references (to specific page numbers) are dropped as meaningless on this site; ordinal-number macros ('3rd', '7th', '30th', '1st', '2nd') are flattened to plain text. \\divineName{Lord} and \\textsc{Jesus} (typographic-only macros for the divine Name) are flattened to plain text, matching the site's established practice for \\textsc{} elsewhere. Added 8/29 (per Augustine's answer, Q10 of the release-audit list): a 'Third Collect, Secret & Postcommunion' block, sourced from pages/Propers/Seasonal.tex:52-58 ('Against the Persecutors of the Church') and :63-69 ('For the Chief Bishop'), with a manual toggle between the two (votiveThirdCollectOption/votiveThirdCollectChoice) - this is the ad libitum third Collect the Our Lady on Saturday rubrics above already reference but never supplied text for. Also added bvmSeasonOption flags to all five seasonal forms of Our Lady on Saturday, so the page shows only the one matching the current date (see pickBvmSaturdaySeason in app.js) rather than all five back to back. Task #201 (George's corrections doc: \"The different Votive Masses should be provided in different pages, accessible on different items under the Votive Masses drop-down in the menu.\"): this file was split out of the single combined data/votive.json (which held all four of pages/Votives/Votive.tex's own top-level \\section blocks - Our Lady on Saturday, Mass of the Angels, Holy Matrimony, and Masses for the Dead - concatenated one after another on one page) into its own separate template, one per source \\section, each now its own site page under a new \"Votive Masses\" nav dropdown. The old page-level \"Votive Masses\" heading and this section's own now-redundant repeat of its own title (previously plain `{\"type\": \"heading\"}` entries) are both dropped here, since the page's own <h2 class=\"office-title\"> already supplies the title - matching every other static-rite page's convention sitewide.",
+  "sections": [
+    {
+      "type": "heading",
+      "text": "Advent",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "heading",
+      "text": "Introit",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Drop down dew, ye heavens, from above, and let the skies pour down righteousness: let the earth open, and bring forth a Saviour. Ps. Lord, thou art become gracious unto thy land: thou hast turned away the captivity of Jacob.",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "heading",
+      "text": "Collect",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "rubric",
+      "text": "The Collects {{of St. Mary in Advent}}, {{of the Advent Feria,}} and {{of the Holy Ghost}} are here said.",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "heading",
+      "text": "Epistle. Isaiah 7:10",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "In those days: The Lord spake again unto Ahaz, saying, Ask thee a sign of the Lord thy God; ask it either in the depth, or in the height above. But Ahaz said, I will not ask, neither will I tempt the Lord. And he said, Hear ye now, O house of David; Is it a small thing for you to weary men, but will ye weary my God also? Therefore the Lord himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel. Butter and honey shall he eat, that he may know to refuse the evil, and choose the good.",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "heading",
+      "text": "Gradual",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "text",
+      "text": "Lift up your heads, O ye gates: and be ye lift up, ye everlasting doors: and the King of glory shall come in. ℣. Who shall ascend into the hill of the Lord? or who shall rise up in his holy place? Even he that hath clean hands, and a pure heart.",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "heading",
+      "text": "Alleluia",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "text",
+      "text": "Alleluia, alleluia. ℣. Hail, Mary, full of grace; the Lord is with thee: blessed art thou among women. Alleluia.",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "heading",
+      "text": "Gospel. Luke 1:26",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "At that time: The Angel Gabriel was sent from God unto a city of Galilee, named Nazareth, To a virgin espoused to a man whose name was Joseph, of the house of David; and the virgin's name was Mary. And the angel came in unto her, and said, Hail, thou that art highly favoured, the Lord is with thee: blessed art thou among women. And when she saw him, she was troubled at his saying, and cast in her mind what manner of salutation this should be. And the angel said unto her, Fear not, Mary: for thou hast found favour with God. And, behold, thou shalt conceive in thy womb, and bring forth a son, and shalt call his name Jesus. He shall be great, and shall be called the Son of the Highest: and the Lord God shall give unto him the throne of his father David: And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end. Then said Mary unto the angel, How shall this be, seeing I know not a man? And the angel answered and said unto her, The Holy Ghost shall come upon thee, and the power of the Highest shall overshadow thee: therefore also that holy thing which shall be born of thee shall be called the Son of God. And, behold, thy cousin Elisabeth, she hath also conceived a son in her old age: and this is the sixth month with her, who was called barren. For with God nothing shall be impossible. And Mary said, Behold the handmaid of the Lord; be it unto me according to thy word.",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "heading",
+      "text": "Offertory",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "text",
+      "text": "Hail, Mary, full of grace; the Lord is with thee: blessed art thou among women, and blessed is the fruit of thy womb.",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "heading",
+      "text": "Secret",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "rubric",
+      "text": "The Secrets {{of St. Mary in Advent}}, {{of the Advent Feria,}} and {{of the Holy Ghost}} are here said.",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "heading",
+      "text": "Communion",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "text",
+      "text": "Behold, a Virgin shall conceive, and bear a son: and shall call his name Immanuel.",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "heading",
+      "text": "Postcommunion",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "rubric",
+      "text": "The Postcommunions {{of St. Mary in Advent}}, {{of the Advent Feria,}} and {{of the Holy Ghost}} are here said.",
+      "bvmSeasonOption": "advent"
+    },
+    {
+      "type": "heading",
+      "text": "Epiphanytide",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "rubric",
+      "text": "From the Octave {{of the Epiphany}} (or in Votive Masses, from 26 December) until 1 February, inclusive.",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "heading",
+      "text": "Introit",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "All the rich among the people shall make their supplication before thee: the Virgins that be her fellows shall be brought unto the King: they that bear her company shall be brought unto thee with joy and gladness. Ps. My heart is inditing of a good matter: I speak of the things which I have made unto the King.",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "heading",
+      "text": "Collect",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "O God, who by the virgin child-bearing of blessed Mary hast bestowed upon mankind the rewards of eternal salvation: grant, we beseech thee; that we may perceive her intercession for us, through whom we have been counted worthy to receive the author of life, Jesus Christ thy Son our Lord. Who liveth.",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "heading",
+      "text": "Epistle. Titus 3:4",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Dearly beloved: The kindness and love of God our Saviour toward man appeared, Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Holy Ghost; Which he shed on us abundantly through Jesus Christ our Saviour; That being justified by his grace, we should be made heirs according to the hope of eternal life: in Christ Jesus our Lord.",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "heading",
+      "text": "Gradual",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "text",
+      "text": "Thou art fairer than the children of men: full of grace are thy lips. ℣. My heart is inditing of a good matter: I speak of the things which I have made unto the King: my tongue is the pen of a ready writer.",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "heading",
+      "text": "Alleluia",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "text",
+      "text": "Alleluia, alleluia. ℣. After childbirth, O Virgin, thou didst remain inviolate: Mother of God, intercede for us. Alleluia.",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "heading",
+      "text": "Gospel. Luke 2:15",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "At that time: The shepherds said one to another, Let us now go even unto Bethlehem, and see this thing which is come to pass, which the Lord hath made known unto us. And they came with haste, and found Mary, and Joseph, and the babe lying in a manger. And when they had seen it, they made known abroad the saying which was told them concerning this child. And all they that heard it wondered at those things which were told them by the shepherds. But Mary kept all these things, and pondered them in her heart. And the shepherds returned, glorifying and praising God for all the things that they had heard and seen, as it was told unto them.",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "heading",
+      "text": "Offertory",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "text",
+      "text": "Happy indeed art thou, O sacred Virgin Mary, and most worthy of all praise: for out of thee hath arisen the sun of righteousness, Christ our God.",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "heading",
+      "text": "Secret",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Through thy mercy, O Lord, and the intercession of blessed Mary, ever Virgin, may this oblation avail for our prosperity and peace, both now and for ever. Through.",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "heading",
+      "text": "Communion",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "text",
+      "text": "Blessed is the womb of the Virgin Mary, that bore the Son of the everlasting Father.",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "heading",
+      "text": "Postcommunion",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "May this communion, O Lord, cleanse us from guilt: and at the intercession of blessed Mary, the Virgin Mother of God, make us partakers of thy heavenly healing. Through the same.",
+      "bvmSeasonOption": "epiphany"
+    },
+    {
+      "type": "heading",
+      "text": "Septuagesimatide",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "rubric",
+      "text": "From the Saturday after the Purification of the Blessed Virgin Mary to the Saturday after Sexagesima Sunday, or in Votive Masses till the Saturday after {{Passion Sunday,}} inclusive, according to the Rubrics.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "heading",
+      "text": "Introit",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Hail, O Mother most holy, who in childbirth didst bring forth the Monarch: him who o'er heaven and earth reigneth for ever and ever. Ps. My heart is inditing of a good matter: I speak of the things which I have made unto the King.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "heading",
+      "text": "Collect",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Grant, we beseech thee, O Lord God, that we thy servants may enjoy perpetual health of mind and of body: and, by the glorious intercession of blessed Mary ever Virgin, be delivered from present sadness, and rejoice in everlasting gladness. Through.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "rubric",
+      "text": "The Collects {{of the Holy Ghost}} and {{Against the Persecutors of the Church}}, or {{for the Chief Bishop}}, are then said.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "heading",
+      "text": "Epistle. Ecclesiasticus 24:9",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "He created me from the beginning before the world; And to the end I shall not fail. In the holy tabernacle I ministered before him; And so was I established in Sion. In the beloved city likewise he gave me rest; And in Jerusalem was my authority. And I took root in a people that was glorified, Even in the portion of the Lord's own inheritance.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "heading",
+      "text": "Gradual",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "text",
+      "text": "Blessed and venerable art thou O Virgin Mary: who without spot wast found Mother of the Saviour. ℣. Virgin Mother of God, he whom the whole world containeth not, being made man lay hid in thy womb.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "heading",
+      "text": "Alleluia",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "text",
+      "text": "Alleluia, alleluia. ℣. Now hath blossomed Jesse's rod: a Virgin bears both man and God: God restoreth peace to men, high and low are one again. Alleluia.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "rubric",
+      "text": "After Septuagesima Sunday, use the following Tract instead of the {{Alleluia.}}",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "heading",
+      "text": "Tract",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "text",
+      "text": "Rejoice, O Virgin Mary, alone thou hast destroyed all heresies. ℣. Who didst believe the words of the Archangel Gabriel. ℣. Whilst a Virgin, thou didst bring forth him who is God and man: and after childbirth, O Virgin, inviolate didst remain. ℣. Mother of God, intercede for us.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "heading",
+      "text": "Gospel. Luke 11:27",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "At that time: As Jesus spake to the multitudes, a certain woman of the company lifted up her voice, and said unto him, Blessed is the womb that bare thee, and the paps which thou hast sucked. But he said, Yea rather, blessed are they that hear the word of God, and keep it.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "heading",
+      "text": "Offertory",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "text",
+      "text": "Happy indeed art thou, O sacred Virgin Mary, and most worthy of all praise: for out of thee hath arisen the sun of righteousness, Christ our God.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "heading",
+      "text": "Secret",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Through thy mercy, O Lord, and the intercession of blessed Mary ever Virgin, may this oblation avail for our prosperity and peace, both now and ever. Through.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "rubric",
+      "text": "The Secrets {{of the Holy Ghost}} and {{Against the Persecutors of the Church}}, or {{for the Chief Bishop}}, are then said.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "heading",
+      "text": "Communion",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "text",
+      "text": "Blessed is the womb of the Virgin Mary, that bore the Son of the everlasting Father.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "heading",
+      "text": "Postcommunion",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Grant, we beseech thee, O Lord: that we, who have received these aids to our salvation, may at all times and in all places be protected by the advocacy of blessed Mary ever Virgin; in whose honour we have made these offerings to thy majesty. Through.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "rubric",
+      "text": "The Postcommunions {{of the Holy Ghost}} and {{Against the Persecutors of the Church}}, or {{for the Chief Bishop}}, are then said.",
+      "bvmSeasonOption": "septuagesima"
+    },
+    {
+      "type": "heading",
+      "text": "Eastertide",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "rubric",
+      "text": "From Saturday after Low Sunday until Saturday after the Fourth Sunday after Easter; or in Votive Masses from Wednesday after Easter till Saturday in the Octave of Pentecost, inclusive, according to the Rubrics.",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "heading",
+      "text": "Introit",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Hail, O Mother most holy, who in childbirth didst bring forth the Monarch: him who o'er heaven and earth reigneth for ever and ever, alleluia, alleluia. Ps. My heart is inditing of a good matter: I speak of the things which I have made unto the King.",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "rubric",
+      "text": "On Saturday, {{Gloria in excelsis}} is said.",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "heading",
+      "text": "Collect",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Grant, we beseech thee, O Lord God, that we thy servants may enjoy perpetual health of mind and of body: and at the glorious intercession of blessed Mary ever Virgin, be delivered from present sadness, and rejoice in everlasting gladness. Through.",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "rubric",
+      "text": "The Collects {{of the Holy Ghost}} and {{Against the Persecutors of the Church}}, or {{for the Chief Bishop}}, are then said.",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "heading",
+      "text": "Epistle. Ecclesiasticus 24:9",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "He created me from the beginning before the world; And to the end I shall not fail. In the holy tabernacle I ministered before him; And so was I established in Sion. In the beloved city likewise he gave me rest; And in Jerusalem was my authority. And I took root in a people that was glorified, Even in the portion of the Lord's own inheritance.",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "heading",
+      "text": "Alleluia",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "text",
+      "text": "Alleluia, alleluia. ℣. Now hath blossomed Jesse's rod: a Virgin bears both man and God: God restoreth peace to men, high and low are one again. Alleluia. ℣. Hail, Mary, full of grace; the Lord is with thee: blessed art thou among women. Alleluia.",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "heading",
+      "text": "Gospel. John 19:25",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "At that time: There stood by the cross of Jesus his mother, and his mother's sister, Mary the wife of Cleophas, and Mary Magdalene. When Jesus therefore saw his mother, and the disciple standing by, whom he loved, he saith unto his mother, Woman, behold thy son! Then saith he to the disciple, Behold thy mother! And from that hour that disciple took her unto his own home.",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "heading",
+      "text": "Offertory",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "text",
+      "text": "Blessed art thou, O Virgin Mary, who didst bear the Creator of all things: thou broughtest forth him who made thee, and for ever remainest a Virgin, alleluia.",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "heading",
+      "text": "Secret",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Through thy mercy, O Lord, and the intercession of blessed Mary ever Virgin, may this oblation avail for our prosperity and peace, both now and ever. Through.",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "rubric",
+      "text": "The Secrets {{of the Holy Ghost}} and {{Against the Persecutors of the Church}}, or {{for the Chief Bishop}}, are then said.",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "heading",
+      "text": "Communion",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "text",
+      "text": "Blessed is the womb of the Virgin Mary, that bore the Son of the everlasting Father, alleluia.",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "heading",
+      "text": "Postcommunion",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Grant, we beseech thee, O Lord: that we who have received these aids to our salvation, may at all times and in all places be protected by the advocacy of blessed Mary ever Virgin; in whose honour we have made these offerings to thy majesty. Through.",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "rubric",
+      "text": "The Postcommunions {{of the Holy Ghost}} and {{Against the Persecutors of the Church}}, or {{for the Chief Bishop}}, are then said.",
+      "bvmSeasonOption": "eastertide"
+    },
+    {
+      "type": "heading",
+      "text": "Trinitytide",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "rubric",
+      "text": "From the Saturday after the Divine Compassion Octave, or in Votives from the Monday after {{Trinity Sunday,}} until the Saturday before the First Sunday in {{Advent,}} inclusive.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "heading",
+      "text": "Introit",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Hail, O Mother most holy, who in childbirth didst bring forth the Monarch: him who o'er heaven and earth reigneth for ever and ever. Ps. My heart is inditing of a good matter: I speak of the things which I have made unto the King.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "rubric",
+      "text": "On Saturday, {{Gloria in excelsis}} is said.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "heading",
+      "text": "Collect",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Grant, we beseech thee, O Lord God, that we thy servants may enjoy perpetual health of mind and of body: and, by the glorious intercession of blessed Mary ever Virgin, be delivered from present sadness, and rejoice in everlasting gladness. Through.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "rubric",
+      "text": "The Collects {{of the Holy Ghost}} and {{Against the Persecutors of the Church}}, or {{for the Chief Bishop}}, are then said.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "heading",
+      "text": "Epistle. Ecclesiasticus 24:9",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "He created me from the beginning before the world; And to the end I shall not fail. In the holy tabernacle I ministered before him; And so was I established in Sion. In the beloved city likewise he gave me rest; And in Jerusalem was my authority. And I took root in a people that was glorified, Even in the portion of the Lord's own inheritance.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "heading",
+      "text": "Gradual",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "text",
+      "text": "Blessed and venerable art thou, O Virgin Mary: who without spot wast found Mother of the Saviour. ℣. Virgin Mother of God, he whom the whole world containeth not, being made man lay hid in thy womb.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "heading",
+      "text": "Alleluia",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "text",
+      "text": "Alleluia, alleluia. ℣. After childbirth, O Virgin, thou didst remain inviolate : Mother of God, intercede for us. Alleluia.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "heading",
+      "text": "Gospel. Luke 11:27",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "At that time: As Jesus spake to the multitudes, a certain woman of the company lifted up her voice, and said unto him, Blessed is the womb that bare thee, and the paps which thou hast sucked. But he said, Yea rather, blessed are they that hear the word of God, and keep it.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "heading",
+      "text": "Offertory",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "text",
+      "text": "Hail, Mary, full of grace; the Lord is with thee: blessed art thou among women, and blessed is the fruit of thy womb.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "heading",
+      "text": "Secret",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Through thy mercy, Lord, and the intercession of blessed Mary ever Virgin, may this oblation avail for our prosperity and peace, both now and ever. Through.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "rubric",
+      "text": "The Secrets {{of the Holy Ghost}} and {{Against the Persecutors of the Church}}, or {{for the Chief Bishop}}, are then said.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "heading",
+      "text": "Communion",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "text",
+      "text": "Blessed is the womb of the Virgin Mary, that bore the Son of the everlasting Father.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "heading",
+      "text": "Postcommunion",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Grant, we beseech thee, O Lord: that we who have received these aids to our salvation may at all times and in all places be protected by the advocacy of blessed Mary ever Virgin; in whose honour we have made these offerings to thy majesty. Through.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "rubric",
+      "text": "The Postcommunions {{of the Holy Ghost}} and {{Against the Persecutors of the Church}}, or {{for the Chief Bishop}}, are then said.",
+      "bvmSeasonOption": "trinitytide"
+    },
+    {
+      "type": "heading",
+      "text": "Third Collect, Secret & Postcommunion"
+    },
+    {
+      "type": "rubric",
+      "text": "As noted above, the Collects {{of the Holy Ghost}} and {{Against the Persecutors of the Church}}, or {{for the Chief Bishop}}, are then said {{ad libitum.}} The Priest may choose between the two forms below."
+    },
+    {
+      "type": "inlineToggle",
+      "toggle": "votiveThirdCollect",
+      "options": [
+        {
+          "value": "persecutors",
+          "label": "Against the Persecutors of the Church"
+        },
+        {
+          "value": "chiefBishop",
+          "label": "For the Chief Bishop"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Collect",
+      "votiveThirdCollectOption": "persecutors"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "We beseech thee, O Lord, mercifully to hear the prayers of thy Church: that all adversities and errors being done away, she may serve thee in freedom and quietness. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
+      "votiveThirdCollectOption": "persecutors"
+    },
+    {
+      "type": "heading",
+      "text": "Secret",
+      "votiveThirdCollectOption": "persecutors"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Defend us, O Lord, who wait upon thy mysteries: that we, cleaving fast to things heavenly, may serve thee both in body and soul. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
+      "votiveThirdCollectOption": "persecutors"
+    },
+    {
+      "type": "heading",
+      "text": "Postcommunion",
+      "votiveThirdCollectOption": "persecutors"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "We beseech thee, O Lord our God: that we, whom thou makest to rejoice in the partaking of heavenly things, may by thee be defended against all earthly perils. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
+      "votiveThirdCollectOption": "persecutors"
+    },
+    {
+      "type": "heading",
+      "text": "Collect",
+      "votiveThirdCollectOption": "chiefBishop"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "O God, the pastor and ruler of all the faithful, mercifully look upon thy servant N., whom thou hast been pleased to set as pastor over thy Church; grant him, we beseech thee, to be in word and conversation a wholesome example to the people committed to his charge; that he with them may attain unto everlasting life. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
+      "votiveThirdCollectOption": "chiefBishop"
+    },
+    {
+      "type": "heading",
+      "text": "Secret",
+      "votiveThirdCollectOption": "chiefBishop"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Look favourably, we beseech thee, O Lord, upon the gifts which we offer: and guide with thy continual protection thy servant N., whom thou hast been pleased to set as pastor over thy Church. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
+      "votiveThirdCollectOption": "chiefBishop"
+    },
+    {
+      "type": "heading",
+      "text": "Postcommunion",
+      "votiveThirdCollectOption": "chiefBishop"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "We beseech thee, O Lord, that the divine sacrament which we have here received may be our protection: and together with the flock entrusted to his charge ever save and defend thy servant N.; whom thou hast been pleased to set as pastor over thy Church. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
+      "votiveThirdCollectOption": "chiefBishop"
+    }
+  ]
+}

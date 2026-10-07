@@ -1,0 +1,1282 @@
+:root {
+  /* =====================================================================
+     DARK MODE (Deep Monastic Obsidian) - the site's default theme, per
+     the 2026 dark-mode redesign. Every color below is the DARK value;
+     see the html[data-theme="light"] block further down for the light
+     ("Light mode") overrides - same token names, so every rule in this
+     file that references var(--ink)/var(--paper)/etc. adapts to
+     whichever theme is active without needing its own light/dark
+     duplicate. Toggled by js/app.js's theme switcher (Settings ->
+     Appearance), persisted via localStorage, defaulting to dark.
+     ===================================================================== */
+  --rubric-red: #e2665c;    /* brightened from the light theme's #a3272c - the original
+                                measures only 2.38:1 against a dark page background (fails
+                                WCAG AA); this measures 5.20:1. */
+  --ink: #EAE5DE;           /* soft alabaster white - main text */
+  --paper: #1c1a18;         /* the reading-column ".page" surface - a solid, slightly
+                                raised charcoal, not glass/blurred (kept opaque for long-
+                                text legibility; glass/blur is reserved for floating
+                                chrome - dropdowns, the Today card, popovers - below) */
+  --paper-edge: #121110;    /* the page's own background, behind everything - Obsidian */
+  --accent: #6b1620;        /* overridden per-day by js/liturgical-color.js - unaffected by theme */
+  --feast-title-color: #6b1620; /* same as --accent, EXCEPT White & Gold days in dark mode, where
+     it's forced to white instead - the print book's gold-ink day titles read as muddy/low-contrast
+     against this site's dark paper; see updateFeastTitleColor() in app.js. Used only by the specific
+     "title" elements that show today's Feast/season name as bare text (season banner, Home page
+     "today" card) - buttons/nav/badges keep using --accent, which already pairs it with a
+     contrasting background. */
+  --accent-text: #fdf6e3;
+  --accent-rgb: 107, 22, 32; /* r,g,b fallback for --accent, kept in sync by the same JS - see app.js applyLiturgicalColor */
+  --max-width: 700px;       /* the "printed book" reading column - every ordinary page */
+  --col-wide: 1180px;       /* Home + Calendar only (desktop), and the header/nav row */
+  --muted-text: #A39E93;    /* muted gold-gray - fine print, captions */
+
+  /* ---- Glass surfaces (floating chrome: dropdowns, Today card, popovers) ---- */
+  --card-bg: rgba(26, 24, 23, 0.65);
+  --card-border: rgba(255, 255, 255, 0.05);
+
+  /* ---- Nav bar + its dropdowns (legibility complaint 8/23: too see-
+     through against the ambient background pattern) - a separate,
+     more opaque pair from --card-bg/--card-border above, used only by
+     nav.main-nav/.nav-menu/the mobile .nav-inner, so the Today card and
+     other floating chrome keep their original lighter glass look. */
+  --nav-bg: rgba(20, 18, 17, 0.92);
+  --nav-border: rgba(255, 255, 255, 0.08);
+
+  /* ---- Buttons ---- */
+  --primary-fill: #801818;      /* liturgical deep burgundy - the one true CTA color, same in both themes */
+  --primary-fill-hover: #5c1010;
+  --on-primary: #f5f0e6;        /* text color on --primary-fill - passes ~8-10:1 in both themes, so it doesn't need its own light-mode override */
+  --chip-bg: rgba(255, 255, 255, 0.04);      /* secondary "glass pill" buttons */
+  --chip-bg-hover: rgba(255, 255, 255, 0.06);
+  --chip-border: rgba(255, 255, 255, 0.07);
+
+  --logo-bg: #1a1817;
+  --logo-border: rgba(255, 255, 255, 0.12);
+  --hairline: rgba(255, 255, 255, 0.06);     /* nav underline, dividers */
+  --placeholder-bg: rgba(224, 175, 90, 0.08);   /* "missing content" callout - dim amber wash */
+  --placeholder-border: rgba(224, 175, 90, 0.3);
+  --glow-alpha-1: 0.35;    /* ambient glow strength - see .ambient-glow; softer in light mode */
+  --glow-alpha-2: 0.28;
+  --pattern-alpha: 0.1;    /* Canterbury Cross side pattern strength - see .side-pattern; softer in light mode */
+
+  /* ---- Fonts ---- */
+  --font-heading: 'Cinzel', 'Cormorant Garamond', "Iowan Old Style", Georgia, serif;
+  --font-display: 'Cormorant Garamond', "Iowan Old Style", Georgia, serif;
+  --font-body: 'EB Garamond', 'Lora', "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-ui: 'Inter', 'Lato', -apple-system, sans-serif;
+
+  font-family: var(--font-body);
+}
+
+/* =====================================================================
+   LIGHT MODE - restores this site's original warm parchment/vellum
+   theme (the design used throughout this whole project prior to the
+   2026 dark-mode redesign). Same token names as :root above; only the
+   values differ, so nothing else in this file needs a light/dark
+   duplicate. Toggled by setting data-theme="light" on <html>.
+   ===================================================================== */
+html[data-theme="light"] {
+  --rubric-red: #a3272c;
+  --ink: #241f1a;
+  --paper: #fbf7ee;
+  --paper-edge: #e7ddc8;
+  --muted-text: #6a6450;
+  --card-bg: rgba(255, 255, 255, 0.55);
+  --card-border: rgba(40, 32, 20, 0.08);
+  --nav-bg: rgba(251, 247, 238, 0.94);
+  --nav-border: rgba(40, 32, 20, 0.1);
+  --chip-bg: rgba(40, 32, 20, 0.035);
+  --chip-bg-hover: rgba(40, 32, 20, 0.06);
+  --chip-border: rgba(40, 32, 20, 0.1);
+  --logo-bg: #ffffff;
+  --logo-border: rgba(40, 32, 20, 0.12);
+  --hairline: rgba(40, 32, 20, 0.1);
+  --placeholder-bg: #fff9e8;
+  --placeholder-border: #d8c98a;
+  --glow-alpha-1: 0.16;
+  --glow-alpha-2: 0.12;
+  --pattern-alpha: 0.07;
+}
+
+/* ---------- Text size (accessibility) ----------
+   Scales the root font-size, which every other size in this file is
+   set relative to (rem units throughout) - so this one rule scales the
+   entire site's typography proportionally without needing a duplicate
+   set of font-size rules per element. Toggled by js/app.js's
+   applyTextSizeChoice(), persisted via localStorage like the theme.
+
+   --text-scale mirrors the same percentage as a plain number (1 /
+   1.13 / 1.28), for the handful of UI-chrome rules below (the header
+   nav, its dropdowns, and the floating Autoscroll/Settings buttons)
+   that deliberately opt OUT of this scaling - see the "chrome, not
+   content" comment by .nav-link/.nav-trigger further down. This
+   started as George's report that X-Large pushed nav items onto a
+   second line: the accessibility intent of a text-size setting is
+   "make the reading text bigger," not "make every button and menu
+   bigger too, until the layout breaks" - a real browser's own page-
+   zoom already covers the latter case. */
+:root { --text-scale: 1; }
+html[data-textsize="large"] { font-size: 113%; --text-scale: 1.13; }
+html[data-textsize="xlarge"] { font-size: 128%; --text-scale: 1.28; }
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper-edge);
+  color: var(--ink);
+  line-height: 1.5;
+  position: relative;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+  /* Per Augustine's 8/13 review notes: full justification throughout,
+     like a printed Prayer Book. Headings/rubrics/versicles/etc. already
+     set their own text-align: center and are unaffected. hyphens: auto
+     softens the ragged word-spacing justify can cause in the narrow
+     .col-en/.col-la bilingual columns and on small screens. */
+  text-align: justify;
+  hyphens: auto;
+}
+
+a { color: inherit; }
+
+/* =====================================================================
+   AMBIENT GLOW - two huge, heavily blurred radial blobs fixed behind
+   everything, tinted by the day's own liturgical color (--accent-rgb,
+   set per-day by js/liturgical-color.js). Softer in light mode
+   (--glow-alpha-1/2 above) so it stays a quiet wash rather than
+   muddying the parchment.
+   ===================================================================== */
+.ambient-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.ambient-glow::before,
+.ambient-glow::after {
+  content: "";
+  position: absolute;
+  width: 70vw;
+  height: 70vw;
+  max-width: 900px;
+  max-height: 900px;
+  border-radius: 50%;
+  filter: blur(120px);
+}
+.ambient-glow::before {
+  top: -15%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(var(--accent-rgb), var(--glow-alpha-1)) 0%, rgba(var(--accent-rgb), 0) 70%);
+}
+.ambient-glow::after {
+  bottom: -20%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(var(--accent-rgb), var(--glow-alpha-2)) 0%, rgba(var(--accent-rgb), 0) 70%);
+}
+
+/* ---------- Side pattern (Canterbury Cross) ----------
+   Fills the empty left/right gutters outside the centered content
+   column with a faint, repeating geometric Canterbury Cross - the
+   traditional four-armed Anglican cross (the flared-arm, rounded-tip
+   silhouette of the actual Canterbury Cross brooch, not a plain Latin
+   or Greek cross). George supplied two reference photos to confirm the
+   exact shape before this was built.
+
+   Implemented as a CSS mask, not a plain background-image, specifically
+   so the color can stay dynamic: mask-image only defines the repeating
+   SHAPE (cut from a solid SVG silhouette), while the actual visible
+   color comes from background-color, which reads rgba(var(--accent-rgb),
+   ...) - the same per-day liturgical-color variable the header, buttons,
+   and ambient glow already use (set by js/liturgical-color.js). A plain
+   background-image referencing this SVG couldn't react to that variable
+   at all (an embedded SVG's own fill is fixed at load time); masking a
+   solid-color layer is the standard technique for a CSS-variable-
+   tintable repeating pattern.
+
+   Sits behind everything (z-index: 0, same as .ambient-glow, painted
+   after it so it layers on top of the glow's soft wash) and is only
+   ever actually VISIBLE in the gutters, since .page/header/nav/etc. all
+   paint their own backgrounds on top of it at higher z-index - no
+   masking-to-just-the-gutters logic needed, the opaque center column
+   already covers it there naturally. */
+.side-pattern {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: rgba(var(--accent-rgb), var(--pattern-alpha));
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%3E%3Cg%20fill%3D%22black%22%3E%3Cpath%20d%3D%22M57%2C60%20C55%2C46%2056%2C34%2038%2C14%20Q60%2C4%2082%2C14%20C64%2C34%2065%2C46%2063%2C60%20Z%22%2F%3E%3Cpath%20d%3D%22M57%2C60%20C55%2C46%2056%2C34%2038%2C14%20Q60%2C4%2082%2C14%20C64%2C34%2065%2C46%2063%2C60%20Z%22%20transform%3D%22rotate%2890%2060%2060%29%22%2F%3E%3Cpath%20d%3D%22M57%2C60%20C55%2C46%2056%2C34%2038%2C14%20Q60%2C4%2082%2C14%20C64%2C34%2065%2C46%2063%2C60%20Z%22%20transform%3D%22rotate%28180%2060%2060%29%22%2F%3E%3Cpath%20d%3D%22M57%2C60%20C55%2C46%2056%2C34%2038%2C14%20Q60%2C4%2082%2C14%20C64%2C34%2065%2C46%2063%2C60%20Z%22%20transform%3D%22rotate%28270%2060%2060%29%22%2F%3E%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%2212%22%20height%3D%2212%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%3E%3Cg%20fill%3D%22black%22%3E%3Cpath%20d%3D%22M57%2C60%20C55%2C46%2056%2C34%2038%2C14%20Q60%2C4%2082%2C14%20C64%2C34%2065%2C46%2063%2C60%20Z%22%2F%3E%3Cpath%20d%3D%22M57%2C60%20C55%2C46%2056%2C34%2038%2C14%20Q60%2C4%2082%2C14%20C64%2C34%2065%2C46%2063%2C60%20Z%22%20transform%3D%22rotate%2890%2060%2060%29%22%2F%3E%3Cpath%20d%3D%22M57%2C60%20C55%2C46%2056%2C34%2038%2C14%20Q60%2C4%2082%2C14%20C64%2C34%2065%2C46%2063%2C60%20Z%22%20transform%3D%22rotate%28180%2060%2060%29%22%2F%3E%3Cpath%20d%3D%22M57%2C60%20C55%2C46%2056%2C34%2038%2C14%20Q60%2C4%2082%2C14%20C64%2C34%2065%2C46%2063%2C60%20Z%22%20transform%3D%22rotate%28270%2060%2060%29%22%2F%3E%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%2212%22%20height%3D%2212%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  -webkit-mask-size: 90px 90px;
+  mask-size: 90px 90px;
+  transition: background-color 0.4s ease;
+}
+
+.page-shell { position: relative; z-index: 1; }
+
+/* ---------- Header ---------- */
+header.site-header {
+  background: var(--accent);
+  color: var(--accent-text);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: background 0.4s ease;
+}
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.header-inner img.site-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.6);
+  flex-shrink: 0;
+  background: #fff;
+}
+.header-inner .title-block { text-align: left; }
+header.site-header h1 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+header.site-header .subtitle {
+  font-family: var(--font-ui);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-top: 0.2rem;
+}
+
+/* Desktop only: the logo+title lockup sits directly above the Home nav
+   link, sharing the same wide reference column (--col-wide) and
+   left-alignment as nav-inner below, rather than each being
+   independently centered on its own narrower column. See the matching
+   nav-inner rule inside the existing 900px mobile-nav breakpoint
+   further down for the other half of this alignment. */
+@media (min-width: 900px) {
+  .header-inner {
+    max-width: var(--col-wide);
+    /* 0.9rem compensates for nav-link's own 0.9rem horizontal padding,
+       so the title's visible text lines up with "Home"'s visible text,
+       not just with nav-inner's own (padding-less) bounding box. */
+    padding-left: 0.9rem;
+  }
+  /* As a flex item, nav-inner normally shrinks to fit its own content
+     (flexbox's default sizing), then gets THAT smaller box centered by
+     nav.main-nav's justify-content: center - a different, narrower box
+     than header-inner's, which stretches to fill up to --col-wide since
+     it's a normal block box, not a flex item. Adding width: 100% here
+     forces nav-inner to size itself the same way (100% of the available
+     row, capped at --col-wide), so both boxes end up exactly the same
+     width and share the same centered left edge; its own nav items still
+     pack flush-left inside that box via the default flex-start. */
+  .nav-inner { width: 100%; max-width: var(--col-wide); margin: 0 auto; }
+}
+
+/* ---------- Main nav ---------- */
+/* Glassmorphic per George's request - this reverses the earlier "solid,
+   not glass" call for nav.main-nav specifically (see the .page/.office-
+   toolbar comment further down, which still applies to those: dense,
+   in-flow reading text stays opaque for legibility). The nav bar itself
+   is a thin strip of short labels, not paragraphs, so translucency here
+   reads as intended - the ambient glow and page content behind it show
+   through - without the legibility cost a blurred page of running text
+   would have. Same --card-bg/--card-border glass tokens and blur radius
+   as every other floating-chrome surface (dropdowns, the Today card),
+   for visual consistency; translateZ(0) forces its own compositing
+   layer, the same fix already applied to .nav-menu for the backdrop-
+   filter/fractional-zoom rendering seam described there. */
+nav.main-nav {
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 20;
+  transition: background 0.4s ease, border-color 0.4s ease;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+.nav-inner {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.nav-item {
+  position: relative;
+}
+/* Padding/font-size here is deliberately snug, not the roomier 0.9rem/
+   0.9rem this used to be, across every desktop width (901px and up -
+   the mobile hamburger tier below 901px overrides this again with its
+   own, larger touch-friendly sizing). Eleven top-level items (Home
+   through About) need every spare pixel to fit on one row without
+   .nav-inner (flex-wrap: wrap) pushing the last item or two onto a
+   second line - and an open dropdown from the first line, positioned
+   absolute/top:100% relative to its own nav-item, then renders
+   overlapping that second line instead of clearing below the whole nav
+   bar (screenshot from George: the Hours dropdown overlapping "About").
+   This used to be scoped to a narrow 901-1300px "compact tier" media
+   query instead of applied everywhere - which left a real gap: above
+   1300px this padding reverted to the roomier default, and at browser
+   zoom levels other than 100% (George's screenshot was at 130%), the
+   *effective* CSS viewport width can land in that untested >1300px-but-
+   still-too-narrow range, wrapping again. Applying this padding
+   unconditionally at every desktop width removes that gap rather than
+   guessing at a wider upper bound. */
+/* Chrome, not content: the header nav (below) and the floating
+   Autoscroll/Settings buttons (.fab-btn/.fab-panel, further down) both
+   divide by var(--text-scale) in their own font-size, deliberately
+   opting OUT of the Text Size accessibility setting above. rem units
+   are always relative to the ROOT element's font-size specifically
+   (not to any nearer ancestor), so raising html's font-size at
+   data-textsize="large"/"xlarge" would otherwise inflate every rem-
+   sized thing on the page uniformly, nav included - and the nav is a
+   fixed-width row competing eleven items for space, not reading prose;
+   growing it is exactly what pushed items onto a second line in
+   George's report. Dividing a rem value by --text-scale here cancels
+   the root's own growth back out algebraically (new_root_px =
+   base_px * scale; (X * new_root_px) / scale = X * base_px), landing
+   back at the original absolute size regardless of which Text Size
+   option is active - .nav-menu's dropdown/panel items (further down)
+   get the same treatment, which also happens to keep the Settings
+   panel's own "Normal/Large/X-Large" option labels from growing
+   alongside themselves. line-height/margin are reset explicitly too -
+   a <button>'s UA-default line-height doesn't always match a plain
+   <a>'s inherited one, which was making .nav-trigger's dropdown items
+   (Hours, Litanies, etc.) sit a pixel or two off from .nav-link's plain
+   items (Home, Calendar, etc.) even though both share this one rule. */
+.nav-link, .nav-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  background: none;
+  border: none;
+  margin: 0;
+  line-height: 1;
+  font-family: var(--font-ui);
+  font-size: calc(0.82rem / var(--text-scale));
+  color: var(--ink);
+  padding: 0.7rem 0.55rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+.nav-link:hover, .nav-trigger:hover, .nav-item.open .nav-trigger {
+  background: var(--paper-edge);
+}
+.nav-link.current { color: var(--accent); font-weight: 600; }
+.nav-trigger .caret { font-size: calc(0.7rem / var(--text-scale)); margin-top: 1px; }
+
+/* UX-AUDIT.md Finding #5: a visible focus style distinct from :hover,
+   since keyboard/switch users have no mouse to "hover" with. Browsers'
+   default focus ring is suppressed nowhere else in this file, but Safari/
+   Firefox's defaults are inconsistent and easy to miss against this
+   site's parchment palette, so an explicit, consistent one is given to
+   every nav control and menu item. :focus-visible (not plain :focus)
+   so mouse clicks still don't show a ring, matching normal expectations. */
+.nav-link:focus-visible, .nav-trigger:focus-visible,
+.nav-menu a:focus-visible, .nav-menu button:focus-visible,
+.nav-hamburger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  background: var(--paper-edge);
+}
+
+/* Hamburger toggle - hidden entirely above the mobile-nav breakpoint
+   below; see that media query for what it controls. */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  margin: 0 0.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 1px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+nav.main-nav.mobile-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav.main-nav.mobile-open .nav-hamburger span:nth-child(2) { opacity: 0; }
+nav.main-nav.mobile-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 190px;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--nav-border);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  border-radius: 6px;
+  padding: 0.35rem;
+  display: none;
+  flex-direction: column;
+  /* Forces this panel onto its own GPU compositing layer. Without it,
+     an open dropdown rendered at a fractional browser zoom level (e.g.
+     120-130%) can show a visible seam/tear where its blurred edge meets
+     whatever's beneath it - a Chromium backdrop-filter + sub-pixel-zoom
+     rendering quirk, not a layout bug (the element's actual position is
+     correct either way). Reported by George; reproduced only at
+     non-100% zoom. */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+.nav-item.open .nav-menu { display: flex; }
+.nav-menu a, .nav-menu button {
+  /* calc(.../var(--text-scale)) here for the same "chrome, not content"
+     reason as .nav-link/.nav-trigger above - this rule covers both the
+     Hours/Litanies/etc. dropdown items AND the Settings/Autoscroll
+     panel's own option buttons (they share .nav-menu - see
+     .settings-panel further down), so without this, picking "X-Large"
+     would also inflate the Settings panel's own "Normal/Large/X-Large"
+     labels, right down to the option you'd just clicked. */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  margin: 0;
+  line-height: 1.3;
+  font-family: var(--font-ui);
+  text-align: left;
+  font-size: calc(0.88rem / var(--text-scale));
+  color: var(--ink);
+  padding: 0.45rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.nav-menu a:hover, .nav-menu button:hover { background: var(--paper-edge); }
+.nav-menu a.selected, .nav-menu button.selected { color: var(--accent); font-weight: 600; }
+.nav-menu a.selected::after, .nav-menu button.selected::after { content: "✓"; }
+
+/* Settings panel (UX-AUDIT.md Finding #2): the six prayer-customization
+   toggles that used to be six separate top-level nav dropdowns, at the
+   same visual weight as real page navigation, are now one "Settings"
+   trigger with a single wider panel grouping all six together. Each
+   .settings-group keeps the at-a-glance "current value" label that used
+   to live in the main nav bar itself (e.g. "Language: English"), just
+   moved from the nav bar into its own group heading here instead. */
+.settings-panel {
+  min-width: 300px;
+  max-width: calc(100vw - 2rem);
+  padding: 0.6rem;
+}
+.settings-group { padding: 0.5rem 0.4rem; }
+.settings-group + .settings-group { border-top: 1px solid var(--paper-edge); }
+.settings-group-label {
+  font-family: var(--font-ui);
+  font-size: calc(0.78rem / var(--text-scale));
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.35rem;
+}
+.settings-group-label span { text-transform: none; font-weight: 400; color: var(--ink); letter-spacing: normal; }
+.settings-group-note { font-family: var(--font-ui); font-size: calc(0.7rem / var(--text-scale)); color: var(--muted-text); margin-bottom: 0.4rem; line-height: 1.3; }
+.settings-select {
+  width: 100%;
+  font-family: var(--font-ui);
+  font-size: calc(0.82rem / var(--text-scale));
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--paper-edge);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+}
+.settings-group-options { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.settings-group-options button {
+  flex: 1 1 auto;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid var(--paper-edge);
+  border-radius: 999px;
+  font-size: calc(0.82rem / var(--text-scale));
+  padding: 0.35rem 0.7rem;
+}
+.settings-group-options button:hover { background: var(--paper-edge); }
+.settings-group-options button.selected { background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 600; }
+.settings-group-options button.selected::after { content: ""; }
+
+/* Inline page toggles (8/25 note): seven choices that used to live in the
+   global Settings panel (Gloria in excelsis/Patri, Venite on Ash
+   Wednesday, Great Litany length, Exhortation to Penitence length, Ten
+   Commandments/Summary of the Law, Matrimony Psalm, Compline Collect)
+   now render as their own centered segmented button group directly on
+   the page, immediately above the section each one controls - matching
+   the pattern George sent from The Anglican Office Book. Same pill-
+   button/accent-highlight visual language as .settings-group-options,
+   but a separate, self-contained class so the two contexts (a fixed-
+   width dropdown panel vs. a centered in-flow block on the page) don't
+   have to share layout assumptions. */
+.inline-toggle { display: flex; justify-content: center; margin: 0.7rem 0; }
+.inline-toggle-options { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; }
+.inline-toggle-options button {
+  border: 1px solid var(--paper-edge);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: calc(0.8rem / var(--text-scale));
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+}
+.inline-toggle-options button:hover { background: var(--paper-edge); }
+.inline-toggle-options button.selected { background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 600; }
+
+/* Old Testament Canticle picker (8/25 note): a native <select>, not an
+   .inline-toggle button group - nine options is too many for a row of
+   pills, so this uses a plain labeled dropdown instead, centered the
+   same way as the button-group toggles above for visual consistency
+   with the rest of this inline-controls family. */
+.ode-picker { display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin: 0.7rem 0; flex-wrap: wrap; }
+.ode-picker label {
+  font-family: var(--font-ui);
+  font-size: calc(0.78rem / var(--text-scale));
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.ode-picker select {
+  border: 1px solid var(--paper-edge);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: calc(0.8rem / var(--text-scale));
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+}
+
+/* ---------- Floating controls (Autoscroll + Settings) ----------
+   Fixed to the bottom-right corner, outside the header nav entirely -
+   Settings used to be a nav item; Autoscroll is new. Both are icon-only
+   round buttons stacked vertically (Autoscroll above Settings, matching
+   the order they were requested in), each opening its own panel to the
+   LEFT of the button rather than below it, since these buttons sit at
+   the very bottom of the viewport and a panel opening downward would
+   run off-screen. The panel is bottom-anchored to its button (not
+   top-anchored) so a tall panel (Settings has eight groups) grows
+   upward into free space above the button instead of downward past the
+   bottom of the screen. */
+.floating-controls {
+  position: fixed;
+  right: 1.1rem;
+  bottom: 1.1rem;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.7rem;
+}
+.fab-item { position: relative; }
+.fab-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  font-size: calc(1.3rem / var(--text-scale));
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--ink);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.fab-btn:hover { background: var(--paper-edge); transform: scale(1.05); }
+.fab-item.open .fab-btn, .fab-btn.active {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+}
+.fab-panel {
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: calc(100% + 0.7rem);
+  bottom: 0;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 560px) {
+  .floating-controls { right: 0.7rem; bottom: 0.7rem; gap: 0.55rem; }
+  .fab-btn { width: 44px; height: 44px; font-size: calc(1.15rem / var(--text-scale)); }
+  .fab-panel { right: calc(100% + 0.5rem); max-width: calc(100vw - 4rem); }
+}
+
+/* ---------- Mobile nav (UX-AUDIT.md Finding #1) ----------
+   Below this width the thirteen-item nav used to wrap into a wall of
+   rows that pushed a phone's entire first screen below the fold, every
+   single page load. The hamburger button (hidden above this width)
+   toggles nav.main-nav's "mobile-open" class, which is the only thing
+   that makes .nav-inner visible again down here - see js/app.js's
+   navHamburger listener. */
+@media (max-width: 900px) {
+  nav.main-nav { justify-content: space-between; align-items: center; padding: 0 0.5rem; flex-wrap: nowrap; }
+  .nav-hamburger { display: flex; }
+  .nav-inner {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    /* The base rule above (used for the desktop horizontal layout) sets
+       flex-wrap: wrap, which was never overridden here - with
+       flex-direction switched to column, a wrapping flex container
+       treats its own max-height as a column-break point: once an open
+       dropdown's expanded content pushed the running total past
+       max-height, everything after it restarted in a second "column"
+       from near the top, overlapping the first. Caught by screenshot-
+       testing the open Settings/Hours dropdowns, not visible from a
+       plain code read. nowrap keeps this a single vertical list that
+       scrolls (via overflow-y below) instead of ever breaking sideways. */
+    flex-wrap: nowrap;
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 2px solid var(--paper-edge);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    /* 80vh rather than calc(100vh - <header height>): the header's own
+       height varies (logo shrinks again at the 560px breakpoint below
+       this one), and getting that subtraction wrong left the last two
+       items (Settings, About) rendered past the bottom of the viewport
+       with no way to scroll them into view - a real bug caught by
+       screenshot-testing this fix, not just a code read. 80vh is always
+       comfortably short of whatever's left below the nav bar at any
+       screen height this site targets. */
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  nav.main-nav.mobile-open .nav-inner { display: flex; }
+  .nav-item { width: 100%; }
+  .nav-link, .nav-trigger { width: 100%; padding: 0.8rem 1rem; font-size: calc(1rem / var(--text-scale)); }
+  .nav-menu { position: static; box-shadow: none; border: none; border-radius: 0; background: var(--paper); margin: 0 0 0.3rem; }
+  .settings-panel { max-width: none; }
+
+  /* The floating Autoscroll/Settings buttons live outside .nav-inner
+     entirely (see .floating-controls above) and aren't part of the
+     mobile hamburger menu this whole block builds - they keep their own
+     fixed-corner, pop-to-the-left behavior at every width. Without
+     these three re-declarations, the generic mobile .nav-item/.nav-menu/
+     .settings-panel rules just above (written for the hamburger's
+     in-flow vertical list) would also match these buttons purely by
+     shared class name and strip their floating/absolute positioning. */
+  .fab-item { width: auto; }
+  .fab-panel {
+    position: absolute;
+    top: auto;
+    left: auto;
+    right: calc(100% + 0.5rem);
+    bottom: 0;
+    max-width: calc(100vw - 4rem);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    background: var(--card-bg);
+    margin: 0;
+  }
+}
+
+/* ---------- Pages ---------- */
+main { width: 100%; }
+.page {
+  background: var(--paper);
+  min-height: 60vh;
+  padding: 1.5rem 1.75rem 4rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.08);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  transition: background 0.4s ease;
+}
+.page[hidden] { display: none; }
+
+/* Home and Calendar only: use the same wide reference column as the
+   header/nav row (--col-wide) on desktop instead of the narrow "printed
+   book" reading column every other page keeps - these two are dashboards/
+   overviews, not long-form text, so they can make use of the extra
+   screen space. Collapses back to the same narrow centered column as
+   everything else below 1024px (phones/tablets). */
+@media (min-width: 1024px) {
+  #page-home, #page-calendar { max-width: var(--col-wide); }
+}
+
+/* Home page */
+.home-hero { text-align: center; padding: 1.5rem 0 2rem; }
+.home-hero h2 { font-family: var(--font-heading); font-size: 1.5rem; font-variant: small-caps; margin: 0.5rem 0; }
+.home-hero p { font-family: var(--font-body); color: var(--muted-text); max-width: 34rem; margin: 0.75rem auto; }
+.home-cta {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  background: var(--primary-fill);
+  color: var(--on-primary);
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.home-cta:hover { background: var(--primary-fill-hover); }
+
+/* Secondary "category link" pills - a uniform, symmetrical grid instead
+   of variable-width flex-wrapped pills, so every edge lines up. Forced
+   to 2 columns on phones, widening to 3/4 as there's more room. */
+.home-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+@media (min-width: 640px) { .home-links { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .home-links { grid-template-columns: repeat(4, 1fr); } }
+.home-links button {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  border: 1px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--ink);
+  padding: 0.65rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.home-links button:hover { background: var(--chip-bg-hover); border-color: rgba(var(--accent-rgb), 0.4); }
+.home-links button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* UX-AUDIT.md Finding #3: ~26 destinations used to render as one
+   undifferentiated wall of identically-weighted pills. Grouped into
+   labeled sections instead, with the Daily Office - the thing most
+   people open this site for, every single day - visually first and
+   given slightly more weight than the rest. On desktop's wide column
+   (see #page-home above), the groups flow into two newspaper-style
+   columns instead of one long single-file stack. */
+.home-groups { display: flex; flex-direction: column; gap: 1.75rem; margin-top: 1.5rem; }
+@media (min-width: 1024px) {
+  .home-groups { display: block; column-count: 2; column-gap: 2.5rem; }
+  .home-group { break-inside: avoid; margin-bottom: 1.75rem; }
+}
+.home-group-title {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-variant: small-caps;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.02em;
+}
+.home-group-featured {
+  background: rgba(var(--accent-rgb), 0.07);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.1rem 1rem 1.25rem;
+}
+.home-group-featured .home-group-title { font-size: 1.15rem; }
+.home-group-plain { text-align: center; }
+
+/* ---------- Home page "Today" summary card ----------
+   Home page redesign (2026): an at-a-glance dashboard for the actual
+   calendar today - date/season, fasting status, commemorations (names
+   only - saint bios are a deferred feature, see ROADMAP.md), and today's
+   Mass Epistle/Gospel in full - sitting above the existing nav-button
+   groups. Deliberately NOT tied to the Office/Mass pages' shared
+   `currentDate` (which those two toolbars can move away from "today"),
+   since this is meant to answer "what's going on today," not act as a
+   third date-navigable view. */
+.today-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem 1.25rem;
+  margin: 1.25rem 0 0;
+  text-align: left;
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+.today-header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem; border-bottom: 1px double var(--hairline); padding-bottom: 0.6rem; margin-bottom: 0.7rem; }
+.today-date { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 1.15rem; }
+.today-season { font-family: var(--font-ui); font-size: 0.88rem; color: var(--feast-title-color); font-weight: 600; }
+.today-season .color-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+.today-fasting { margin-bottom: 0.7rem; font-family: var(--font-ui); font-size: 0.85rem; color: var(--ink); background: rgba(var(--accent-rgb), 0.08); border: 1px solid rgba(var(--accent-rgb), 0.25); border-radius: 6px; padding: 0.45rem 0.7rem; }
+.today-fasting[hidden] { display: none; }
+.today-fasting .fasting-badge { font-weight: 700; color: var(--rubric-red); }
+.today-commem-label { font-family: var(--font-ui); font-variant: small-caps; font-weight: 700; color: var(--accent); font-size: 0.8rem; margin-bottom: 0.2rem; }
+.today-commem-list { margin: 0 0 0.9rem; padding-left: 1.2rem; font-size: 0.9rem; }
+.today-commem-list li { margin: 0.1rem 0; }
+.today-reading { margin: 0.7rem 0; }
+.today-reading h4 { font-family: var(--font-heading); font-variant: small-caps; color: var(--accent); font-size: 0.92rem; margin: 0 0 0.3rem; }
+.today-reading p { margin: 0; font-size: 0.92rem; }
+
+/* ---------- Calendar page (month grid) ---------- */
+.cal-page-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: -1.5rem -1.75rem 1.25rem;
+  padding: 0.6rem 1rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--hairline);
+  transition: background 0.4s ease;
+}
+.cal-page-toolbar button {
+  font-family: var(--font-ui);
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.cal-page-toolbar button:hover { background: var(--accent); color: var(--accent-text); }
+.cal-page-month { font-weight: 700; min-width: 11rem; text-align: center; }
+.cal-page-dow-row, .cal-page-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.cal-page-dow { font-size: 0.75rem; text-align: center; color: var(--muted-text); padding-bottom: 4px; }
+.cal-page-day {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.15rem;
+  min-height: 4.2rem;
+  border: 1px solid var(--card-border);
+  border-top: 3px solid var(--day-color, var(--card-border));
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--ink);
+  cursor: pointer;
+  padding: 0.3rem 0.2rem 0.35rem;
+  font-family: var(--font-ui);
+  transition: background 0.2s ease, border-color 0.4s ease;
+}
+.cal-page-day:hover { background: var(--chip-bg-hover); }
+.cal-page-day.empty { border: none; background: none; cursor: default; min-height: 4.2rem; }
+.cal-page-day.today { box-shadow: 0 0 0 2px var(--accent) inset; }
+.cal-page-daynum { font-weight: 700; font-size: 0.85rem; }
+.cal-page-feast { font-size: 0.62rem; color: var(--rubric-red); text-align: center; line-height: 1.15; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.cal-page-marks { display: flex; gap: 0.2rem; margin-top: auto; }
+.mark-fast, .mark-abst {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+.mark-fast { background: var(--rubric-red); }
+.mark-abst { background: #5c5344; }
+.cal-page-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 1.25rem; margin-top: 1rem; }
+.legend-item { display: inline-flex; align-items: center; gap: 0.35rem; }
+.legend-swatch { display: inline-flex; align-items: center; justify-content: center; width: 1.1rem; height: 1.1rem; border-radius: 50%; font-size: 0.6rem; font-weight: 700; color: #fff; }
+
+@media (max-width: 560px) {
+  .cal-page-toolbar { margin: -1.5rem -1.75rem 1rem; }
+  .cal-page-day { min-height: 3.4rem; padding: 0.25rem 0.1rem; }
+  .cal-page-feast { display: none; } /* too cramped at phone width; the F/A marks + today's own Home card carry the detail */
+}
+
+/* About page */
+.about-page h2 { font-variant: small-caps; }
+.about-page p { margin: 0.8rem 0; }
+.about-page a { color: var(--accent); }
+
+.about-divider {
+  border: none;
+  border-top: 1px solid rgba(var(--accent-rgb), 0.25);
+  margin: 2rem 0;
+}
+
+.about-editors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.editor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+}
+
+.editor-card figcaption {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.9rem;
+}
+
+.editor-card img {
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+}
+
+.editor-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.editor-title {
+  font-family: var(--font-ui);
+  color: var(--muted-text);
+  font-size: 0.9rem;
+  margin-top: 0.15rem;
+}
+
+/* ---------- Office toolbar ---------- */
+.office-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: -1.5rem -1.75rem 1.25rem;
+  padding: 0.6rem 1rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--hairline);
+  position: relative;
+  transition: background 0.4s ease;
+}
+.office-toolbar button {
+  font-family: var(--font-ui);
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.office-toolbar button:hover { background: var(--accent); color: var(--accent-text); }
+.office-toolbar .current-date { font-family: var(--font-ui); font-weight: 600; min-width: 11rem; text-align: center; font-size: 0.95rem; }
+
+/* Calendar popover - merged control (8/31): a color-coded month/day grid
+   for browsing plus a native date input for typing a date directly or
+   jumping straight to a distant month/year, combined into one popover
+   instead of two separate toolbar controls that did overlapping jobs. */
+.calendar-anchor { position: relative; display: inline-flex; }
+.calendar-popover {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  padding: 0.85rem;
+  z-index: 30;
+  width: 320px;
+  max-width: calc(100vw - 2rem);
+  box-sizing: border-box;
+}
+.calendar-popover[hidden] { display: none; }
+/* The quick-date input sits at the top of the popover, above the month
+   grid it can also re-center live (see the "input" listener in
+   setupDateToolbar) - a full-width field rather than the old toolbar-
+   button styling, since it now lives inside the popover's own card
+   rather than alongside the prev/next/today buttons. */
+.cal-quick-date {
+  display: block;
+  width: 100%;
+  font-family: var(--font-ui);
+  background: none;
+  border: 1px solid var(--card-border);
+  color: var(--ink);
+  border-radius: 4px;
+  padding: 0.32rem 0.5rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.7rem;
+  box-sizing: border-box;
+}
+/* 8/31: the quick-date field used to be a native <input type="date">, but
+   its built-in calendar-picker icon opened the browser's OWN separate
+   date-picker flyout on click - a second, redundant calendar UI stacked
+   on top of this popover's own day-grid below. Switched to a plain text
+   input (manually parsed as MM/DD/YYYY in setupDateToolbar) specifically
+   because that native icon can't be reliably hidden cross-browser (Firefox
+   has no equivalent to WebKit's ::-webkit-calendar-picker-indicator), so
+   the only sure fix was to stop using type="date" at all. */
+.cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+/* Month/year dropdowns (8/31, per George: replace one-month-at-a-time
+   arrow paging with direct jump-to selects, so you're not clicking
+   through years of months to reach a far-off date). */
+.cal-header select {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-ui);
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 4px;
+  padding: 0.25rem 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cal-header select.cal-year-select { flex: 0 0 5.2em; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.cal-grid .cal-dow { font-size: 0.68rem; text-align: center; color: var(--muted-text); padding-bottom: 4px; }
+.cal-day {
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.4rem 0;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  /* Pending-corrections fix (10/3, task #217, item #14): each day square
+     now carries its own liturgical color (set inline as --day-color by
+     renderCalendarPopover in js/app.js), shown the same way the full
+     #calendar page's own .cal-page-day grid already shows it - a 3px
+     top accent, not a full fill, so the "feast" red-text/border styling
+     below (a different, unrelated signal - which days are red-letter
+     feasts) stays legible on top of it. */
+  border-top: 3px solid var(--day-color, transparent);
+  background: none;
+  color: var(--ink);
+  width: 100%;
+}
+.cal-day:hover { background: var(--paper-edge); }
+.cal-day.empty { cursor: default; }
+.cal-day.empty:hover { background: none; }
+.cal-day.feast { color: var(--rubric-red); font-weight: 600; border-color: rgba(163,39,44,0.25); }
+.cal-day.today { border-color: var(--accent); }
+.cal-day.selected { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+
+@media (max-width: 420px) {
+  .calendar-popover { right: auto; left: 50%; transform: translateX(-50%); width: min(300px, calc(100vw - 2rem)); }
+}
+
+/* ---------- Season banner ---------- */
+.season-banner { text-align: center; margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px double var(--paper-edge); }
+.season-banner .color-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+.season-banner .season-label { font-size: 1.1rem; font-weight: 600; color: var(--feast-title-color); }
+.season-banner .kalendar-line { font-size: 0.85rem; color: var(--rubric-red); margin-top: 0.25rem; font-style: italic; }
+.season-banner .fallback-note { font-size: 0.72rem; color: var(--muted-text); margin-top: 0.3rem; }
+
+h2.office-title { font-family: var(--font-heading); text-align: center; font-variant: small-caps; font-size: 1.4rem; margin: 0 0 1.25rem; }
+h2.office-title .office-title-latin { display: block; font-size: 0.95rem; font-style: italic; color: var(--muted-text); }
+
+.section-heading { font-family: var(--font-heading); text-align: center; font-variant: small-caps; font-weight: 700; font-size: 1.05rem; margin: 1.6rem 0 0.4rem; }
+.section-heading .heading-latin { display: block; font-size: 0.85rem; font-style: italic; font-weight: 400; color: var(--muted-text); }
+.collect-heading { text-align: center; font-weight: 700; font-size: 0.85rem; color: var(--accent); margin: 0.9rem 0 0.2rem; text-transform: uppercase; letter-spacing: 0.02em; }
+.collect-heading.commemoration { color: var(--muted-text); font-size: 0.78rem; }
+p.collect-block.commemoration { font-size: 0.92rem; color: var(--ink); }
+.rubric-fine { color: var(--muted-text); font-size: 0.7rem; font-style: italic; text-align: center; margin: 0.2rem 1.5rem 0.9rem; }
+
+.rubric { color: var(--rubric-red); font-size: 0.88rem; text-align: center; margin: 0.5rem 1.5rem 0.7rem; }
+.rubric::before { content: "¶ "; }
+
+/* The source LaTeX prints most rubric text in red, but wraps specific
+   words/phrases that reference something outside the rubric itself -
+   canticle names, Creed names, feast names, or (as with "Here beginneth
+   ... Here endeth ...") entire spoken-aloud sentences - in black via its
+   own \blackrubric{} macro. .rubric-black is for a whole rubric-style
+   paragraph that's entirely black (no red, no "¶" mark, since it's
+   words actually said aloud rather than an instruction to the reader).
+   .rubric-black-inline is for just a marked substring within an
+   otherwise-red .rubric paragraph. */
+.rubric-black { color: var(--ink); font-size: 0.88rem; text-align: center; margin: 0.5rem 1.5rem 0.7rem; }
+.rubric .rubric-black-inline { color: var(--ink); }
+
+/* `[[...]]` - the mirror image: a red physical-action note embedded
+   inline within otherwise-plain spoken text (Gloria/Creed/Sanctus
+   stage directions like "(Bow head.)") - see escapeHtml() in app.js. */
+.rubric-red-inline { color: var(--rubric-red); }
+
+/* Opening Sentences (Fore-Office) - each of the site's sentence
+   categories (General, Morning, Evening, Advent, ..., Martyr, ...) gets
+   its own small centered red title above its own block of sentences,
+   matching ForeOffice.tex's own `\centerline{\color{RubricRed}\small%
+   <Title>}` heading above every one of its sentence groups (task
+   #135). Deliberately NOT .rubric - that class adds a "¶ " pilcrow
+   prefix for instructional rubric paragraphs, which the source's own
+   plain category titles never carry. */
+.sentence-category-heading { color: var(--rubric-red); font-size: 0.8rem; text-align: center; text-transform: uppercase; letter-spacing: 0.03em; margin: 1.1rem 0 0.3rem; }
+.sentence-category-heading:first-child { margin-top: 0.3rem; }
+
+/* Comfortable Words (Mass Ordinary) - each attribution line ("Hear
+   also what Saint Paul saith.") centered in small caps, per the 8/23
+   note; citations reuse .sentence-citation (see renderForeOffice). */
+.comfortable-words-attribution { text-align: center; font-variant: small-caps; font-weight: 600; margin: 0.7rem 0 0.2rem; }
+
+/* `%%...%%` - the Ten Commandments' own omit-able "inset" clauses (see
+   escapeHtml() in app.js). Wrapped in literal parentheses at render
+   time rather than styled specially - per George's 9/1 note, plain
+   text set off by parentheses, not small-caps. No dedicated rule
+   needed; kept as a class hook in case future styling is wanted. */
+
+/* Opt-in flag on the plain "text" section type - see the
+   centeredSmallCaps comment in app.js. */
+.solemn-declaration { text-align: center; font-variant: small-caps; }
+
+.versicle, .response { margin: 0.15rem 0; }
+.versicle::before { content: "℣. "; }
+.response::before { content: "℟. "; }
+
+.antiphon { text-align: center; font-style: italic; color: var(--ink); margin: 0.4rem 2rem; }
+.antiphon::before { content: "Ant. "; font-style: normal; font-weight: 600; }
+
+.bilingual-row { display: flex; gap: 1.25rem; margin: 0.15rem 0; }
+.bilingual-row .col-en { flex: 1; }
+.bilingual-row .col-la { flex: 1; font-style: italic; color: var(--ink); border-left: 1px solid var(--paper-edge); padding-left: 0.75rem; }
+.no-latin-note { font-size: 0.7rem; color: var(--muted-text); font-style: italic; }
+
+/* `continuousColumns` canticles (currently just the Venite - see
+   app.js) - two independent flowing columns rather than one row per
+   verse, since the source Latin doesn't keep a 1:1 line count with
+   the English past verse 7. Each side wraps and breaks on its own;
+   nothing about one column's line lengths affects the other's. */
+.canticle-columns { display: flex; gap: 1.25rem; margin: 0.3rem 0; align-items: flex-start; }
+.canticle-columns .col-en { flex: 1; }
+.canticle-columns .col-la { flex: 1; font-style: italic; color: var(--ink); border-left: 1px solid var(--paper-edge); padding-left: 0.75rem; }
+
+/* Words of Institution (8/25 note, from George's two reference photos):
+   the actual sacramental formula, set visibly apart from the narrative
+   frame around it - a left accent border + indent, matching the
+   printed-missal convention of setting the verba off from the rest of
+   the text, without attempting the photos' literal margin-note layout
+   (see app.js's institutionWords comment for why). Bold weight, not
+   italic or small-caps - these are the words themselves, not a
+   secondary annotation. */
+.institution-words { margin: 0.6rem 0 0.6rem 0.25rem; padding-left: 1rem; border-left: 3px solid var(--accent); }
+.institution-words p { font-weight: 600; }
+
+/* The paired lettered ceremonial-action notes ("(a) He takes & holds
+   the Bread.") - a compact, left-aligned list right after their
+   paragraph, playing the same role as a print missal's side-margin
+   notes without needing to stay vertically pinned to anything. Fine
+   print, not full rubric-red weight: these are stage-direction detail
+   for a Priest who already knows the ceremony, not a primary
+   instruction. */
+.ceremonial-notes { margin: 0.3rem 0 0.8rem; max-width: 42em; margin-left: auto; margin-right: auto; }
+.ceremonial-note { color: var(--muted-text); font-size: 0.78rem; font-style: italic; line-height: 1.5; }
+.ceremonial-note-letter { font-style: normal; font-weight: 600; }
+
+p.canticle-line, p.creed-block, p.collect-block, p.plain-text { margin: 0.3rem 0; max-width: 42em; margin-left: auto; margin-right: auto; }
+
+/* Office Hymn stanzas (8/25 note: "display distinct stanza breaks
+   clearly rather than one continuous run-on block") - each <br>-joined
+   line inside one .hymn-stanza keeps a tight, poetry-like line-height
+   (not the wider paragraph spacing), while stanza-to-stanza still gets
+   the normal paragraph margin below, from renderHymnStanza's one <p>
+   per stanza. Slightly narrower max-width than prose paragraphs reads
+   more like a printed hymnal column, less like a wall of text. */
+.hymn-stanza { margin: 0.6rem 0; max-width: 34em; margin-left: auto; margin-right: auto; line-height: 1.55; }
+
+/* Task #169: the bilingual "hymnStanzas" section type's per-stanza
+   .canticle-columns row, for hymns (Benediction's O Salutaris Hostia /
+   Tantum Ergo) formatted like an Office Hymn but with a genuine,
+   line-for-line Latin column. Matches .hymn-stanza's own stanza-to-
+   stanza margin and line-height exactly, so a stanza reads the same
+   whether or not Latin is showing alongside it. */
+.hymn-stanza-row { margin: 0.6rem auto; max-width: 34em; line-height: 1.55; }
+
+/* Site-wide rule (8/23 meeting notes): "N." name placeholders italicized
+   everywhere - see escapeHtml()'s NAME_PLACEHOLDER_RE in app.js. */
+.name-placeholder { font-style: italic; }
+
+.dropcap-letter {
+  float: left;
+  font-size: 2.6rem;
+  line-height: 0.78;
+  padding: 0.05em 0.08em 0 0;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.placeholder-block { background: var(--placeholder-bg); border: 1px dashed var(--placeholder-border); border-radius: 6px; padding: 0.6rem 0.8rem; margin: 0.4rem 0 0.9rem; }
+.placeholder-block .citation { font-weight: 700; color: var(--accent); }
+.placeholder-block .missing { color: var(--muted-text); font-style: italic; font-size: 0.85rem; }
+.lesson-block { margin: 0.4rem 0 0.9rem; }
+.lesson-citation { font-weight: 700; color: var(--accent); font-size: 0.9rem; margin-bottom: 0.25rem; text-align: center; }
+.sentence-citation { font-size: 0.8rem; font-style: italic; color: var(--muted-text); }
+p.lesson-text { margin: 0.3rem 0; max-width: 42em; margin-left: auto; margin-right: auto; }
+.psalm-block { margin-bottom: 0.9rem; }
+.psalm-block h4 { margin: 0 0 0.2rem; font-size: 0.95rem; }
+.psalm-block p { margin: 0.15rem 0; }
+.psalm-range { font-size: 0.75rem; font-style: italic; color: var(--muted-text); font-weight: normal; }
+
+.end-mark { text-align: center; font-variant: small-caps; margin-top: 2rem; color: var(--accent); }
+.end-mark .end-latin { display: block; font-size: 0.8rem; font-style: italic; }
+
+.optional-toggle { text-align: center; margin: 1.5rem 0 0.5rem; }
+.optional-toggle button { background: none; border: none; color: var(--accent); text-decoration: underline; cursor: pointer; font-size: 0.85rem; }
+.optional-section[hidden] { display: none; }
+
+footer.site-footer { font-family: var(--font-ui); text-align: center; font-size: 0.75rem; color: var(--muted-text); padding: 1.5rem 1rem 2.5rem; max-width: var(--max-width); margin: 0 auto; }
+
+@media (max-width: 560px) {
+  .bilingual-row { flex-direction: column; gap: 0.1rem; }
+  .bilingual-row .col-la { border-left: none; padding-left: 0; border-top: 1px dotted var(--paper-edge); padding-top: 0.15rem; }
+  .canticle-columns { flex-direction: column; gap: 0.3rem; }
+  .canticle-columns .col-la { border-left: none; padding-left: 0; border-top: 1px dotted var(--paper-edge); padding-top: 0.25rem; }
+  .nav-inner { justify-content: center; }
+  .header-inner img.site-logo { width: 66px; height: 66px; }
+
+  /* UX-AUDIT.md Finding #6: the date label's own min-width (11rem) plus
+     the four other controls no longer fit on one row at phone widths,
+     which used to wrap into an unbalanced 3-line stack ("<- Today" /
+     date alone / "-> [calendar]"). Giving the date its own full-width
+     first row and letting the four small controls share one centered
+     row below reads as two deliberate rows instead of an awkward wrap. */
+  .office-toolbar .current-date { order: -1; flex-basis: 100%; min-width: 0; margin-bottom: 0.15rem; }
+}

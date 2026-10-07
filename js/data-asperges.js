@@ -1,0 +1,64 @@
+window.ASPERGES_TEMPLATE = {
+  "title": "Aspersion of the People",
+  "source": "Transcribed from pages/Eucharistic/Asperges.tex. The 'Asperges, me' antiphon and Psalm 51 verse are given in the .tex itself only as Gregorian chant score references (\\gregorioscore{}), but the referenced chant file (resources/gabc/Asperges.gabc) embeds the actual bilingual sung text inline with its musical notation (English word paired with Latin syllable at each neume, per the site's established GABC-extraction precedent from task #73's Preface text) - so the antiphon and psalm verse below are transcribed from that file, not fabricated. The Gloria Patri that follows is the same doxology text already used for Vidi Aquam below. Per the .tex's own rubric ('The following Gloria Patri is omitted in Passiontide, the psalm simply being repeated'), the Gloria Patri and the repeated psalm verse are now shown automatically based on the date (seasonalOmit/seasonalOnly: \"gloriaAsperges\", checked via seasonKeyFor's existing \"passiontide\" bucket) rather than as a printed rubric (task #190). The Eastertide replacement, 'Vidi Aquam,' is given as ordinary text in the source and is transcribed in full, bilingually. No cross marks or \\paracol/minipage apparatus anywhere in the file. The source's own occasional plain 'ae' rather than the {\\ae} ligature macro (in 'saeculum') is preserved exactly as printed.",
+  "sections": [
+    {
+      "type": "heading",
+      "text": "Asperges, Me"
+    },
+    {
+      "type": "rubric",
+      "text": "Having blest the water, the Priest who is going to celebrate, vested in a cope of the colour of the day, proceeds to the Altar. And there kneeling, even in Eastertide, with the ministers below the steps, he receives the aspersorium from the Deacon, and first asperses the Altar thrice, then himself, and, standing up, the ministers, beginning the Antiphon {{Thou shalt purge me.}} And the Quire continues: {{O Lord, with hyssop, etc.,}} as below. Meanwhile the Celebrant asperses the Clergy, and then the People, saying with a low voice with the ministers the Psalm {{Have mercy upon me, O God.}}"
+    },
+    {
+      "type": "text",
+      "text": "Ant. Thou shalt purge me, O Lord, with hyssop, and I shall be clean: thou shalt wash me, and I shall be whiter than snow.",
+      "textLatin": "Ant. Aspérges me, Dómine, hyssópo, et mundábor: lavábis me, et super nívem dealbábor."
+    },
+    {
+      "type": "text",
+      "text": "Have mercy upon me, O God, after thy great goodness. According to the multitude of thy mercies, do away mine offences.",
+      "textLatin": "Miserére méi, Déus, secúndum mágnam misericórdiam túam."
+    },
+    {
+      "type": "text",
+      "text": "Glory be to the Father, and to the Son, and to the Holy Ghost: * as it was in the beginning, is now and ever shall be, world without end. Amen.",
+      "textLatin": "Glória Patri, et Fílio, et Spirítui Sancto. Sicut erat in princípio, et nunc, et semper: et in sǽcula sæculórum. Amen.",
+      "seasonalOmit": "gloriaAsperges"
+    },
+    {
+      "type": "text",
+      "text": "Have mercy upon me, O God, after thy great goodness. According to the multitude of thy mercies, do away mine offences.",
+      "textLatin": "Miserére méi, Déus, secúndum mágnam misericórdiam túam.",
+      "seasonalOnly": "gloriaAsperges"
+    },
+    {
+      "type": "heading",
+      "text": "Vidi Aquam"
+    },
+    {
+      "type": "rubric",
+      "text": "The following replaces the {{Asperges, me}} during Eastertide."
+    },
+    {
+      "type": "text",
+      "text": "Ant. I beheld water * issuing out from the temple, on the right side, alleluia: and all to whom that water came were saved, and they shall say: alleluia, alleluia.",
+      "textLatin": "Ant. Vidi aquam egredientem de templo, * a latere dextro, allelúja: * Et omnes, ad quos pervenit aqua ista, * salvi facti sunt et dicent, allelúja, allelúja."
+    },
+    {
+      "type": "text",
+      "text": "O give thanks unto the Lord, for he is gracious: because his mercy endureth for ever.",
+      "textLatin": "Confitémini Domino, quoniam bonus: * quoniam in saeculum misericordia ejus."
+    },
+    {
+      "type": "text",
+      "text": "Glory be to the Father, and to the Son, and to the Holy Ghost: * as it was in the beginning, is now and ever shall be, world without end. Amen.",
+      "textLatin": "Glória Patri, et Fílio, et Spirítui Sancto. Sicut erat in princípio, et nunc, et semper: et in sǽcula sæculórum. Amen."
+    },
+    {
+      "type": "text",
+      "text": "Ant. I beheld water * issuing out from the temple, on the right side, alleluia: and all to whom that water came were saved, and they shall say: alleluia, alleluia.",
+      "textLatin": "Ant. Vidi aquam egredientem de templo, * a latere dextro, allelúja: * Et omnes, ad quos pervenit aqua ista, * salvi facti sunt et dicent, allelúja, allelúja."
+    }
+  ]
+}

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Book of Common Prayer &mdash; Daily Office</title>
+<meta name="description" content="An interactive daily office for the 2025 Proposed Book of Common Prayer (Antiochian Western Rite Vicariate)." />
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/logo-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/logo-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="ambient-glow" aria-hidden="true"></div>
+<div class="side-pattern" aria-hidden="true"></div>
+<div class="page-shell">
+<header class="site-header">
+  <div class="header-inner">
+    <img class="site-logo" src="assets/logo-circle.png" alt="Apologia Anglicana seal" />
+    <div class="title-block">
+      <h1>Book of Common Prayer</h1>
+      <div class="subtitle">Antiochian Western Rite Vicariate</div>
+    </div>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navInner">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-inner" id="navInner">
+    <div class="nav-item"><a href="#home" class="nav-link" data-nav-link="home">Home</a></div>
+    <div class="nav-item"><a href="#calendar" class="nav-link" data-nav-link="calendar">Kalendar</a></div>
+
+    <div class="nav-item" data-dropdown="hours">
+      <button class="nav-trigger" data-trigger="hours" aria-haspopup="true" aria-expanded="false">Hours <span class="caret">&#9662;</span></button>
+      <div class="nav-menu" id="hoursMenu">
+        <a href="#office/mattins">Mattins</a>
+        <a href="#office/prime">Prime</a>
+        <a href="#office/terce">Terce</a>
+        <a href="#office/sext">Sext</a>
+        <a href="#office/none">None</a>
+        <a href="#office/evensong">Evensong</a>
+        <a href="#office/compline">Compline</a>
+      </div>
+    </div>
+
+    <div class="nav-item" data-dropdown="litanies">
+      <button class="nav-trigger" data-trigger="litanies" aria-haspopup="true" aria-expanded="false">Litanies <span class="caret">&#9662;</span></button>
+      <div class="nav-menu" id="litaniesMenu">
+        <a href="#litany">The Great Litany</a>
+        <a href="#penitential">A Penitential Office</a>
+        <a href="#litany-saints">Litany of the Saints</a>
+      </div>
+    </div>
+
+    <!-- 8/23 meeting note: Eucharistic Devotions before Holy Mass in the
+         nav order (was the reverse). -->
+    <div class="nav-item" data-dropdown="eucharistic">
+      <button class="nav-trigger" data-trigger="eucharistic" aria-haspopup="true" aria-expanded="false">Eucharistic Devotions <span class="caret">&#9662;</span></button>
+      <div class="nav-menu" id="eucharisticMenu">
+        <a href="#benediction">Benediction of the Blessed Sacrament</a>
+        <a href="#preparation">Preparation for Holy Communion</a>
+        <a href="#thanksgiving">Thanksgiving for Holy Communion</a>
+        <a href="#asperges">Aspersion of the People</a>
+        <a href="#foremass">Prayers at the Foot of the Altar</a>
+      </div>
+    </div>
+
+    <div class="nav-item"><a href="#mass" class="nav-link" data-nav-link="mass">Holy Mass</a></div>
+
+    <div class="nav-item" data-dropdown="pastoral">
+      <button class="nav-trigger" data-trigger="pastoral" aria-haspopup="true" aria-expanded="false">Pastoral <span class="caret">&#9662;</span></button>
+      <div class="nav-menu" id="pastoralMenu">
+        <a href="#baptism">Baptism of Infants</a>
+        <a href="#adult-baptism">Baptism of Adults</a>
+        <a href="#confession">Confession</a>
+        <a href="#reception">Reception of Converts</a>
+        <a href="#confirmation">Confirmation</a>
+        <a href="#matrimony">Matrimony</a>
+        <a href="#purification">Purification of Women</a>
+        <a href="#unction">Holy Unction</a>
+        <a href="#communion-sick">Communion of the Sick</a>
+        <a href="#burial">Burial of the Dead</a>
+        <a href="#burial-child">Burial of a Child</a>
+      </div>
+    </div>
+
+    <div class="nav-item"><a href="#family" class="nav-link" data-nav-link="family">Family Prayers</a></div>
+
+    <div class="nav-item" data-dropdown="officedead">
+      <button class="nav-trigger" data-trigger="officedead" aria-haspopup="true" aria-expanded="false">Office of the Dead <span class="caret">&#9662;</span></button>
+      <div class="nav-menu" id="officeDeadMenu">
+        <a href="#vesper-dead">Vespers of the Dead</a>
+        <a href="#matins-dead">Matins of the Dead</a>
+        <a href="#lauds-dead">Lauds of the Dead</a>
+      </div>
+    </div>
+
+    <div class="nav-item" data-dropdown="votive">
+      <button class="nav-trigger" data-trigger="votive" aria-haspopup="true" aria-expanded="false">Votive Masses <span class="caret">&#9662;</span></button>
+      <div class="nav-menu" id="votiveMenu">
+        <a href="#votive-bvm">Our Lady on Saturday</a>
+        <a href="#votive-angels">Mass of the Angels</a>
+        <a href="#votive-matrimony">Holy Matrimony</a>
+        <a href="#votive-dead">Masses for the Dead</a>
+      </div>
+    </div>
+
+    <div class="nav-item"><a href="#about" class="nav-link" data-nav-link="about">About</a></div>
+  </div>
+</nav>
+
+<!-- Floating controls (moved out of the header nav): a vertical stack of
+     two icon-only buttons fixed to the bottom-right corner of the
+     viewport - Autoscroll above, Settings (gear icon, no label) below.
+     Each opens its own panel to the LEFT of the button, bottom-anchored
+     so the panel grows upward rather than off the bottom of the screen.
+     Reuses the exact same [data-trigger]/".nav-item.open" dropdown
+     open/close JS as the header nav (see js/app.js's "Nav dropdowns"
+     section) - these wrapper divs carry the same "nav-item" class so
+     that generic logic finds and manages them with zero JS changes. -->
+<div class="floating-controls" id="floatingControls">
+  <!-- 8/23 meeting note: "Add a scroll to top button to the interface."
+       Plain button, no dropdown panel - just scrolls the page. Hidden
+       until the reader has scrolled down some amount, so it doesn't
+       clutter the corner on a short page or right at the top of a long
+       one; see the scroll listener in app.js. -->
+  <button class="fab-btn" id="scrollTopBtn" type="button" aria-label="Scroll to top" hidden>
+    <span aria-hidden="true">&#8593;</span>
+  </button>
+
+  <div class="nav-item fab-item" data-dropdown="autoscroll">
+    <button class="fab-btn" data-trigger="autoscroll" aria-haspopup="true" aria-expanded="false" aria-label="Autoscroll settings">
+      <span id="autoscrollIcon" aria-hidden="true">&#9654;&#65039;</span>
+    </button>
+    <div class="nav-menu settings-panel fab-panel" id="autoscrollMenu">
+      <div class="settings-group">
+        <div class="settings-group-label">Autoscroll: <span id="autoscrollLabel">Off</span></div>
+        <div class="settings-group-options" id="autoscrollToggle">
+          <button data-autoscroll="off" class="selected">Off</button>
+          <button data-autoscroll="on">On</button>
+        </div>
+      </div>
+      <div class="settings-group">
+        <div class="settings-group-label">Speed: <span id="autoscrollSpeedLabel">Normal</span></div>
+        <div class="settings-group-options" id="autoscrollSpeedMenu">
+          <button data-autoscroll-speed="slow">Slow</button>
+          <button data-autoscroll-speed="normal" class="selected">Normal</button>
+          <button data-autoscroll-speed="fast">Fast</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-item fab-item" data-dropdown="settings">
+    <button class="fab-btn" data-trigger="settings" aria-haspopup="true" aria-expanded="false" aria-label="Settings">
+      <span aria-hidden="true">&#9881;&#65039;</span>
+    </button>
+    <div class="nav-menu settings-panel fab-panel" id="settingsMenu">
+      <div class="settings-group">
+        <div class="settings-group-label">Appearance: <span id="themeLabel">Dark</span></div>
+        <div class="settings-group-options" id="themeMenu">
+          <button data-theme-choice="dark" class="selected">Dark</button>
+          <button data-theme-choice="light">Light</button>
+        </div>
+      </div>
+      <div class="settings-group">
+        <div class="settings-group-label">Text Size: <span id="textSizeLabel">Normal</span></div>
+        <div class="settings-group-options" id="textSizeMenu">
+          <button data-textsize="normal" class="selected">Normal</button>
+          <button data-textsize="large">Large</button>
+          <button data-textsize="xlarge">X-Large</button>
+        </div>
+      </div>
+      <div class="settings-group">
+        <div class="settings-group-label">Language: <span id="langLabel">English</span></div>
+        <div class="settings-group-options" id="languageMenu">
+          <button data-lang="english" class="selected">English</button>
+          <button data-lang="latin">Latin</button>
+          <button data-lang="both">Both (side by side)</button>
+        </div>
+      </div>
+      <div class="settings-group">
+        <div class="settings-group-label">Minister: <span id="ministerLabel">Layman</span></div>
+        <div class="settings-group-options" id="ministerMenu">
+          <button data-minister="priest">Priest</button>
+          <button data-minister="deacon">Deacon</button>
+          <button data-minister="layman" class="selected">Layman</button>
+        </div>
+      </div>
+      <div class="settings-group">
+        <div class="settings-group-label">Region: <span id="regionLabel">America</span></div>
+        <div class="settings-group-options" id="regionMenu">
+          <button data-region="america" class="selected">America</button>
+          <button data-region="commonwealth">British Commonwealth</button>
+        </div>
+      </div>
+      <div class="settings-group">
+        <div class="settings-group-label">Weekday Canticle: <span id="morningCanticleLabel">Benedicite/Te Deum</span></div>
+        <div class="settings-group-options" id="morningCanticleMenu">
+          <button data-morning-canticle-mode="automatic" class="selected">Benedicite/Te Deum</button>
+          <button data-morning-canticle-mode="oldTestament">Old Testament Canticle</button>
+        </div>
+      </div>
+      <div class="settings-group">
+        <div class="settings-group-label">Time Zone: <span id="timezoneLabel">Automatic</span></div>
+        <div class="settings-group-note">Used only for the "Pray [Hour] now" link on the Home page, so it can suggest the right Hour for the actual time where you are.</div>
+        <select class="settings-select" id="timezoneSelect" aria-label="Time zone"></select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section id="page-home" class="page">
+    <div class="today-card" id="todayCard">
+      <div class="today-header">
+        <div class="today-date" id="todayDateLabel">&nbsp;</div>
+        <div class="today-season"><span class="color-dot" id="todayColorDot"></span><span id="todaySeasonLabel">Loading&hellip;</span></div>
+      </div>
+      <div class="today-fasting" id="todayFasting" hidden></div>
+      <div class="today-commemorations" id="todayCommemorations"></div>
+      <div class="today-readings" id="todayReadings"></div>
+    </div>
+    <div class="home-hero">
+      <h2>Pray the Daily Office</h2>
+      <p>An interactive edition of the 2025 Proposed Book of Common Prayer, for the Antiochian Western Rite Vicariate. Choose an Hour to pray it for any date &mdash; psalms, lessons, and season are assembled automatically.</p>
+      <a href="#office/evensong" class="home-cta" id="homeCta">Pray Evensong now</a>
+      <div class="home-groups">
+        <div class="home-group home-group-featured">
+          <h3 class="home-group-title">The Daily Office</h3>
+          <div class="home-links">
+            <button onclick="location.hash='#office/mattins'">Mattins</button>
+            <button onclick="location.hash='#office/evensong'">Evensong</button>
+            <button onclick="location.hash='#office/compline'">Compline</button>
+            <button onclick="location.hash='#litany'">The Great Litany</button>
+            <button onclick="location.hash='#penitential'">A Penitential Office</button>
+            <button onclick="location.hash='#litany-saints'">Litany of the Saints</button>
+          </div>
+        </div>
+
+        <div class="home-group">
+          <h3 class="home-group-title">Holy Mass &amp; Devotions</h3>
+          <div class="home-links">
+            <button onclick="location.hash='#mass'">The Holy Communion</button>
+            <button onclick="location.hash='#asperges'">Aspersion of the People</button>
+            <button onclick="location.hash='#foremass'">Prayers at the Foot of the Altar</button>
+            <button onclick="location.hash='#preparation'">Preparation for Holy Communion</button>
+            <button onclick="location.hash='#thanksgiving'">Thanksgiving for Holy Communion</button>
+            <button onclick="location.hash='#benediction'">Benediction of the Blessed Sacrament</button>
+          </div>
+        </div>
+
+        <div class="home-group">
+          <h3 class="home-group-title">Votive Masses</h3>
+          <div class="home-links">
+            <button onclick="location.hash='#votive-bvm'">Our Lady on Saturday</button>
+            <button onclick="location.hash='#votive-angels'">Mass of the Angels</button>
+            <button onclick="location.hash='#votive-matrimony'">Holy Matrimony</button>
+            <button onclick="location.hash='#votive-dead'">Masses for the Dead</button>
+          </div>
+        </div>
+
+        <div class="home-group">
+          <h3 class="home-group-title">Pastoral Rites</h3>
+          <div class="home-links">
+            <button onclick="location.hash='#baptism'">Baptism of Infants</button>
+            <button onclick="location.hash='#adult-baptism'">Baptism of Adults</button>
+            <button onclick="location.hash='#confession'">Confession</button>
+            <button onclick="location.hash='#reception'">Reception of Converts</button>
+            <button onclick="location.hash='#confirmation'">Confirmation</button>
+            <button onclick="location.hash='#matrimony'">Matrimony</button>
+            <button onclick="location.hash='#purification'">Purification of Women</button>
+            <button onclick="location.hash='#unction'">Holy Unction</button>
+            <button onclick="location.hash='#communion-sick'">Communion of the Sick</button>
+            <button onclick="location.hash='#burial'">Burial of the Dead</button>
+            <button onclick="location.hash='#burial-child'">Burial of a Child</button>
+          </div>
+        </div>
+
+        <div class="home-group">
+          <h3 class="home-group-title">Family Prayers &amp; the Office of the Dead</h3>
+          <div class="home-links">
+            <button onclick="location.hash='#family'">Family Prayers</button>
+            <button onclick="location.hash='#vesper-dead'">Vespers of the Dead</button>
+            <button onclick="location.hash='#matins-dead'">Matins of the Dead</button>
+            <button onclick="location.hash='#lauds-dead'">Lauds of the Dead</button>
+          </div>
+        </div>
+
+        <div class="home-group home-group-plain">
+          <div class="home-links">
+            <button onclick="location.hash='#about'">About this edition</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-office" class="page" hidden>
+    <h2 class="office-title" id="officeTitle">&nbsp;</h2>
+    <div class="office-toolbar">
+      <button id="prevDay" aria-label="Previous day">&larr;</button>
+      <button id="todayBtn">Today</button>
+      <span class="current-date" id="currentDateLabel">&nbsp;</span>
+      <button id="nextDay" aria-label="Next day">&rarr;</button>
+      <span class="calendar-anchor">
+        <button id="calendarToggle" aria-label="Pick a date">&#128197;</button>
+        <div class="calendar-popover" id="calendarPopover" hidden>
+          <input type="text" inputmode="numeric" autocomplete="off" placeholder="MM/DD/YYYY" id="calendarQuickDate" class="cal-quick-date" aria-label="Jump to a specific date (MM/DD/YYYY)">
+          <div id="calendarGrid"></div>
+        </div>
+      </span>
+    </div>
+    <div class="season-banner">
+      <div class="season-label"><span class="color-dot" id="colorDot"></span><span id="seasonLabel">Loading&hellip;</span></div>
+      <div class="kalendar-line" id="kalendarLine"></div>
+      <div class="fallback-note" id="fallbackNote"></div>
+    </div>
+    <div id="officeBody"></div>
+  </section>
+
+  <section id="page-calendar" class="page" hidden>
+    <div class="cal-page-toolbar">
+      <button id="calPagePrevMonth" aria-label="Previous month">&larr;</button>
+      <button id="calPageTodayBtn">This Month</button>
+      <span class="cal-page-month" id="calPageMonthLabel">&nbsp;</span>
+      <button id="calPageNextMonth" aria-label="Next month">&rarr;</button>
+    </div>
+    <div class="cal-page-grid" id="calPageGrid"></div>
+    <p class="rubric-fine cal-page-legend">
+      <span class="legend-item"><span class="legend-swatch mark-fast">F</span> Fasting day</span>
+      <span class="legend-item"><span class="legend-swatch mark-abst">A</span> Day of Abstinence</span>
+      <span class="legend-item">Tap a day to pray Mattins for that date.</span>
+    </p>
+  </section>
+
+  <section id="page-litany" class="page" hidden>
+    <div id="litanyBody"></div>
+  </section>
+
+  <section id="page-penitential" class="page" hidden>
+    <div id="penitentialBody"></div>
+  </section>
+
+  <section id="page-litany-saints" class="page" hidden>
+    <div id="litanySaintsBody"></div>
+  </section>
+
+  <section id="page-mass" class="page" hidden>
+    <h2 class="office-title" id="massTitle">&nbsp;</h2>
+    <div class="office-toolbar">
+      <button id="massPrevDay" aria-label="Previous day">&larr;</button>
+      <button id="massTodayBtn">Today</button>
+      <span class="current-date" id="massCurrentDateLabel">&nbsp;</span>
+      <button id="massNextDay" aria-label="Next day">&rarr;</button>
+      <span class="calendar-anchor">
+        <button id="massCalendarToggle" aria-label="Pick a date">&#128197;</button>
+        <div class="calendar-popover" id="massCalendarPopover" hidden>
+          <input type="text" inputmode="numeric" autocomplete="off" placeholder="MM/DD/YYYY" id="massCalendarQuickDate" class="cal-quick-date" aria-label="Jump to a specific date (MM/DD/YYYY)">
+          <div id="massCalendarGrid"></div>
+        </div>
+      </span>
+    </div>
+    <div class="season-banner">
+      <div class="season-label"><span class="color-dot" id="massColorDot"></span><span id="massSeasonLabel">Loading&hellip;</span></div>
+      <div class="kalendar-line" id="massKalendarLine"></div>
+      <div class="fallback-note" id="massFallbackNote"></div>
+    </div>
+    <div id="massBody"></div>
+  </section>
+
+  <section id="page-asperges" class="page" hidden>
+    <div id="aspergesBody"></div>
+  </section>
+
+  <section id="page-foremass" class="page" hidden>
+    <div id="foremassBody"></div>
+  </section>
+
+  <section id="page-preparation" class="page" hidden>
+    <div id="preparationBody"></div>
+  </section>
+
+  <section id="page-thanksgiving" class="page" hidden>
+    <div id="thanksgivingBody"></div>
+  </section>
+
+  <section id="page-benediction" class="page" hidden>
+    <div id="benedictionBody"></div>
+  </section>
+
+  <section id="page-confession" class="page" hidden>
+    <div id="confessionBody"></div>
+  </section>
+
+  <section id="page-communion-sick" class="page" hidden>
+    <div id="communionSickBody"></div>
+  </section>
+
+  <section id="page-purification" class="page" hidden>
+    <div id="purificationBody"></div>
+  </section>
+
+  <section id="page-burial-child" class="page" hidden>
+    <div id="burialChildBody"></div>
+  </section>
+
+  <section id="page-confirmation" class="page" hidden>
+    <div id="confirmationBody"></div>
+  </section>
+
+  <section id="page-reception" class="page" hidden>
+    <div id="receptionBody"></div>
+  </section>
+
+  <section id="page-matrimony" class="page" hidden>
+    <div id="matrimonyBody"></div>
+  </section>
+
+  <section id="page-baptism" class="page" hidden>
+    <div id="baptismBody"></div>
+  </section>
+
+  <section id="page-unction" class="page" hidden>
+    <div id="unctionBody"></div>
+  </section>
+
+  <section id="page-burial" class="page" hidden>
+    <div id="burialBody"></div>
+  </section>
+
+  <section id="page-adult-baptism" class="page" hidden>
+    <div id="adultBaptismBody"></div>
+  </section>
+
+  <section id="page-family" class="page" hidden>
+    <div id="familyBody"></div>
+  </section>
+
+  <section id="page-vesper-dead" class="page" hidden>
+    <div id="vesperDeadBody"></div>
+  </section>
+
+  <section id="page-matins-dead" class="page" hidden>
+    <div id="matinsDeadBody"></div>
+  </section>
+
+  <section id="page-lauds-dead" class="page" hidden>
+    <div id="laudsDeadBody"></div>
+  </section>
+
+  <section id="page-votive-bvm" class="page" hidden>
+    <div id="votiveBvmBody"></div>
+  </section>
+
+  <section id="page-votive-angels" class="page" hidden>
+    <div id="votiveAngelsBody"></div>
+  </section>
+
+  <section id="page-votive-matrimony" class="page" hidden>
+    <div id="votiveMatrimonyBody"></div>
+  </section>
+
+  <section id="page-votive-dead" class="page" hidden>
+    <div id="votiveDeadBody"></div>
+  </section>
+
+  <section id="page-about" class="page about-page" hidden>
+    <h2>About this edition</h2>
+    <p>The <em>2025 Proposed Book of Common Prayer</em> is a revision of the 1928 Book of Common Prayer, edited for Orthodox use within the Antiochian Western Rite Vicariate.</p>
+    <p>It starts with the 1928 BCP and revises only when necessary, drawing first on the wider Prayer Book tradition, then the Sarum Rite, before anything original is considered. The Mass follows the English Missal (1933 lay edition); the Daily Office follows the Breviarium Monasticum.</p>
+    <p>This site is a prototype interactive edition built from that book's LaTeX source: it resolves the liturgical calendar for any date (on the Orthodox/Julian Paschal cycle this Vicariate uses) and assembles the day's Office automatically. See <code>ROADMAP.md</code> in the project folder for what's implemented so far and what's still to come.</p>
+    <p><strong>Scripture texts.</strong> The King James Version (1611) is the standard translation for all Scripture on this site &mdash; the Lessons at Mattins and Evensong, and the Old Testament Canticles. The Psalms follow the older Coverdale Psalter of the Book of Common Prayer (from the Great Bible, 1535/1539) rather than the King James Version, per the historic and continuing custom of every Prayer Book edition since 1549: Coverdale's rendering is the one written for singing and chanting, and its wording (e.g. Psalm 23's &ldquo;therefore can I lack nothing&rdquo; rather than the King James &ldquo;I shall not want&rdquo;) will differ from the King James Bible accordingly. This applies everywhere the Psalter appears &mdash; the Daily Office Psalms, the Venite (Psalm 95), and the Little Hours &mdash; without a separate note at each occurrence. The Gospel Canticles (Magnificat, Benedictus, Nunc Dimittis) and the Old Testament Canticles are Scripture proper and follow the King James Version. One canticle, the Prayer of Azariah (an Old Testament Canticle from the Apocryphal additions to Daniel), does not appear in this project's own source materials and was sourced from the King James Apocrypha externally; see the Nine Biblical Odes entry in <code>ROADMAP.md</code> for that citation.</p>
+
+    <hr class="about-divider" />
+
+    <h2>What is Apologia Anglicana?</h2>
+    <p>Apologia Anglicana is committed to the defence of the Fides Anglicana: the authentic English expression of the Catholic Faith in the Orthodox Church.</p>
+    <p>Apologia Anglicana is an Orthodox, formerly Protestant, independent publication, committed to explaining and defending Holy Orthodoxy, specifically in its <a href="https://www.orthodoxwest.com/" target="_blank" rel="noopener">Western Rite</a>.</p>
+    <p>We invite those who seek catholicity&mdash;but are committed to being Western&mdash;to inquire into Orthodoxy.</p>
+
+    <h2>Editors at Apologia Anglicana</h2>
+    <div class="about-editors">
+      <figure class="editor-card">
+        <figcaption>
+          <span class="editor-name">Augustine Watson</span>
+          <span class="editor-title">Chief Editor</span>
+        </figcaption>
+        <img src="assets/augustine-watson.jpg" alt="Augustine Watson" loading="lazy" />
+      </figure>
+      <figure class="editor-card">
+        <figcaption>
+          <span class="editor-name">Ryan May</span>
+          <span class="editor-title">Editor</span>
+        </figcaption>
+        <img src="assets/ryan-may.jpg" alt="Ryan May" loading="lazy" />
+      </figure>
+    </div>
+  </section>
+</main>
+
+</div><!-- /.page-shell -->
+
+<script src="js/data-psalter.js"></script>
+<script src="js/data-kalendar.js"></script>
+<script src="js/data-lectionary.js"></script>
+<script src="js/data-lectionary-festivals.js"></script>
+<script src="js/data-evensong-template.js"></script>
+<script src="js/data-mattins-template.js"></script>
+<script src="js/data-foreoffice.js"></script>
+<script src="js/data-compline-template.js"></script>
+<script src="js/data-prime-template.js"></script>
+<script src="js/data-terce-template.js"></script>
+<script src="js/data-sext-template.js"></script>
+<script src="js/data-none-template.js"></script>
+<script src="js/data-collects-temporale.js"></script>
+<script src="js/data-collects-sanctorale.js"></script>
+<script src="js/data-feast-office-hymns.js"></script>
+<script src="js/data-seasonal-prayers.js"></script>
+<script src="js/data-kjv.js"></script>
+<script src="js/data-apocrypha.js"></script>
+<script src="js/data-marian-anthems.js"></script>
+<script src="js/data-athanasian-creed.js"></script>
+<script src="js/data-old-testament-canticles.js"></script>
+<script src="js/data-great-litany.js"></script>
+<script src="js/data-penitential.js"></script>
+<script src="js/data-litany-saints.js"></script>
+<script src="js/data-mass-ordinary.js"></script>
+<script src="js/data-mass-prefaces.js"></script>
+<script src="js/data-confession.js"></script>
+<script src="js/data-communion-sick.js"></script>
+<script src="js/data-purification.js"></script>
+<script src="js/data-burial-child.js"></script>
+<script src="js/data-confirmation.js"></script>
+<script src="js/data-reception.js"></script>
+<script src="js/data-matrimony.js"></script>
+<script src="js/data-baptism.js"></script>
+<script src="js/data-unction.js"></script>
+<script src="js/data-burial.js"></script>
+<script src="js/data-adult-baptism.js"></script>
+<script src="js/data-family.js"></script>
+<script src="js/data-asperges.js"></script>
+<script src="js/data-foremass.js"></script>
+<script src="js/data-candlemas-rite.js"></script>
+<script src="js/data-preparation.js"></script>
+<script src="js/data-thanksgiving.js"></script>
+<script src="js/data-benediction.js"></script>
+<script src="js/data-vesper-dead.js"></script>
+<script src="js/data-lauds-dead.js"></script>
+<script src="js/data-matins-dead.js"></script>
+<script src="js/data-collects-dead.js"></script>
+<script src="js/data-votive-bvm.js"></script>
+<script src="js/data-votive-angels.js"></script>
+<script src="js/data-votive-matrimony.js"></script>
+<script src="js/data-votive-dead.js"></script>
+<script src="js/computus.js"></script>
+<script src="js/fasting.js"></script>
+<script src="js/calendar.js"></script>
+<script src="js/psalms.js"></script>
+<script src="js/liturgical-color.js"></script>
+<script src="js/office-variants.js"></script>
+<script src="js/ranking.js"></script>
+<script src="js/scripture.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

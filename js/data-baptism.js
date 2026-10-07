@@ -1,0 +1,427 @@
+window.BAPTISM_TEMPLATE = {
+  "title": "Sacrament of Baptism for Infants",
+  "source": "Transcribed from pages/Pastoral/Baptism.tex. The opening 'Exhortation before Baptism' through the Gospel reading and its thanksgiving are English-only in the source; from 'Questioning before Baptism' onward the rite is bilingual English/Latin throughout, matching the source's own shift. Direct hand-transcription (per the established practice: structural regularity, not raw size, decides whether a file needs the two-phase parser pipeline) rather than a parser script, since this file - though long and cross-mark-heavy (46 ✠ marks) - is a uniform sequence of rubric/elcol/elcoldent blocks with no paracol alternatives or hand-laid-out apparatus. \\inrub{X} (the threefold immersion note) is folded inline as '(X)', the same treatment already established for similar inline notes on the Ordinary of the Mass. An alternative, non-immersion pouring method the source itself keeps commented out ('Old Catholic rubric does not allow for immersion') is not resurrected, matching the site's established practice elsewhere. The print-only page cross-reference '(p. \\pageref{confirmation})' is dropped as meaningless on this site.",
+  "sections": [
+    {
+      "type": "rubric",
+      "text": "The Priest of every Parish shall often admonish the People, that they defer not the Baptism of their Children, and that it is most convenient that Baptism should be administered upon Sundays and other Holy Days. Nevertheless, if necessity so require, Baptism may be administered upon any other day. And also he shall warn them that, except for urgent cause, they seek not to have their Children baptized in their houses."
+    },
+    {
+      "type": "rubric",
+      "text": "When there are Children to be baptized, the Parents or Sponsors shall give knowledge thereof to the Priest. And then the Godfathers and Godmothers, and the People with the Children, must be ready at the Font, either immediately after the Second Lesson at Morning or Evening Prayer, or at such other time as the Priest shall appoint."
+    },
+    {
+      "type": "rubric",
+      "text": "The clean Baptismal Font is filled with clear water. The container for salt and the phials of Holy Chrism and Oil of Catechumens are placed nearby. The Priest, with acolytes and other clergy, the Cross and candles going before, and with thurible and incense, comes to the Font, and there, or before the Altar of the Baptistery, begins with the questioning at the Doors of the Church, first with the following exhortation."
+    },
+    {
+      "type": "heading",
+      "text": "Exhortation before Baptism"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Dearly beloved, forasmuch as our Saviour Christ saith, None can enter into the Kingdom of God, except he be regenerate and born anew of Water and of the Holy Ghost; I beseech you to call upon God the Father, through our Lord Jesus Christ, that of his bounteous mercy he will grant to this Child that which by nature he cannot have; that he may be baptized with Water and the Holy Ghost, and received into Christ's holy Church, and be made a living member of the same."
+    },
+    {
+      "type": "rubric",
+      "text": "{{Let us pray.}}"
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "Almighty and immortal God, the aid of all who need, the helper of all who flee to thee for succour, the life of those who believe, and the resurrection of the dead; We call upon thee for this Child, that he, coming to thy holy Baptism, may receive remission of sin, by spiritual regeneration. Receive him, O Lord, as thou hast promised by thy well-beloved Son, saying, Ask, and ye shall have; seek, and ye shall find; knock, and it shall be opened unto you. So give now unto us who ask; let us who seek, find; open the gate unto us who knock; that this Child may enjoy the everlasting benediction of thy heavenly washing, and may come to the eternal kingdom which thou hast promised by Christ our Lord. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Hear the words of the Gospel, written by St. Mark, in the tenth Chapter, at the thirteenth Verse."
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "They brought young children to Christ, that he should touch them: and his disciples rebuked those that brought them. But when Jesus saw it, he was much displeased, and said unto them, Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of God. Verily I say unto you, Whosoever shall not receive the kingdom of God as a little child, he shall not enter therein. And he took them up in his arms, puts his hands upon them, and blessed them."
+    },
+    {
+      "type": "rubric",
+      "text": "Then shall the Priest say,"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "And now we being persuaded of the good will of our heavenly Father toward this Child declared by his Son Jesus Christ; let us faithfully and devoutly give thanks unto him and say,"
+    },
+    {
+      "type": "rubric",
+      "text": "The Priest and the People say together,"
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "Almighty and everlasting God, heavenly Father, We give thee humble thanks, That thou hast vouchsafed to call us to the knowledge of thy grace, and faith in thee: Increase this knowledge, And confirm this faith, in us evermore. Give thy Holy Spirit to this Child, That he may be born again, And be made an heir of everlasting salvation; Through our Lord Jesus Christ, Who liveth and reigneth with thee and the Holy Spirit, Now and forever. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Questioning before Baptism"
+    },
+    {
+      "type": "rubric",
+      "text": "The Priest then questions the Godparents, as follows,"
+    },
+    {
+      "type": "versicle",
+      "v": "N., What dost thou ask of the Church of God?",
+      "r": "Faith.",
+      "vLatin": "℣. N., Quid petis ab Ecclesia Dei?",
+      "rLatin": "℟. Fidem."
+    },
+    {
+      "type": "versicle",
+      "v": "What doth Faith bring to thee?",
+      "r": "Life everlasting.",
+      "vLatin": "℣. Fides quid tibi præstat?",
+      "rLatin": "℟. Vitam æternam."
+    },
+    {
+      "type": "versicle",
+      "v": "If then thou desirest to enter into life, keep the commandments. Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind; and thy neighbour as thyself.",
+      "vLatin": "℣. Si igitur vis ad vitam íngredi, serva mandáta. Díliges Dóminum Deum tuum ex toto corde tuo, ex tota ánima tua, et ex tota mente tua, et próximum tuum sicut teípsum."
+    },
+    {
+      "type": "rubric",
+      "text": "The Priest now breathes three times softly upon the face of the Infant, and says:"
+    },
+    {
+      "type": "text",
+      "text": "Depart from him, O unclean spirit, and give place to the Holy Spirit, the Comforter.",
+      "textLatin": "Exi ab eo, immúnde spíritus, et da locum Spirítui Sancto Paráclito."
+    },
+    {
+      "type": "rubric",
+      "text": "He then makes the sign of the cross upon the forehead and breast of the Child, while he saith:"
+    },
+    {
+      "type": "text",
+      "text": "Accept the sign of the Cross both on thy forehead ✠ and on thy breast ✠; receive the faith of the heavenly precepts; and be such in thy conduct, that thou mayest be the temple of God.",
+      "textLatin": "Accipe signum Crucis tam in fron ✠ te, quam in cor ✠ de, sume fidem cæléstium præceptórum: et talis esto móribus, ut templum Dei jam esse possis."
+    },
+    {
+      "type": "text",
+      "text": "Let us pray.",
+      "textLatin": "Orémus."
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "Mercifully hear our prayers, we beseech thee, O Lord; and, with thy ever-abiding power, preserve this thy chosen servant N., who hath been marked with the sign of the Lord's Cross; that, observing the beginnings of the greatness of thy glory, he may, by keeping thy commandments, deserve to arrive at the glory of regeneration. Through Christ our Lord.",
+      "textLatin": "Preces nostras, quæsumus Dómine, cleménter exáudi: et hunc Eléctum tuum, N., Crucis Domínicæ impressióne signátum perpétua virtúte custódi: ut magnitúdinis glóriæ tuæ rudiménta servans, per custódiam mandatórum tuórum ad regeneratiónis glóriam perveníre mereátur. Per Christum Dominum nostrum."
+    },
+    {
+      "type": "versicle",
+      "r": "Amen.",
+      "rLatin": "℟. Amen."
+    },
+    {
+      "type": "rubric",
+      "text": "The Priest then places his hand on the head of the child, and says:"
+    },
+    {
+      "type": "text",
+      "text": "Let us pray.",
+      "textLatin": "Orémus."
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "O almighty, everlasting God, Father of our Lord Jesus Christ, deign to look upon this thy servant N., whom thou hast vouchsafed to call to the rudiments of faith; drive out from him all blindness of heart; break all the chains of Satan wherewith he hath been bound: open to him, O Lord, the gate of thy mercy, that, being imbued with the seal of thy wisdom, he may be free from the filth of all evil desires, and, by the sweet odour of thy precepts, may joyfully serve thee in thy Church, and advance from day to day. Through the same Christ our Lord.",
+      "textLatin": "Omnípotens, sempitérne De-us, Pater Dómini nostri Jesu Christi, respícere dignáre super hunc fámulum tuum N., quem ad rudiménta fídei vocáre dignátus es: omnem cæcitátem cordis ab eo expélle: disrúmpe omnes láqueos sátanæ, quibus fúerat colligátus: áperi ei, Dómine, jánuam pietátis tuæ, ut signo sapiéntiæ tuæ imbútus, ómnium cupiditátum fœtóribus cáreat, et ad suávem odórem præceptórum tuórum lætus tibi in Ecclésia tua desérviat, et profíciat de die in diem. Per eúmdem Christum Dóminum nostrum."
+    },
+    {
+      "type": "versicle",
+      "r": "Amen.",
+      "rLatin": "℟. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Blessing of Salt"
+    },
+    {
+      "type": "rubric",
+      "text": "If the salt has not already been blest, it is here blest by the Priest."
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "I exorcise thee, creature of salt, in the name of God the Father ✠ Almighty, and in the charity of our Lord Jesus ✠ Christ, and in the power of the Holy ✠ Ghost.",
+      "textLatin": "Exorcízo te, creatúra salis, in nómine Dei ✠ Patris omnipoténtis, et in caritáte Dómini nostri Jesu ✠ Christi, et in virtúte Spíritus ✠ Sancti."
+    },
+    {
+      "type": "text",
+      "text": "I exorcise thee by the living ✠ God, by the true ✠ God, by the holy ✠ God; by God ✠ who hath created thee for the preservation of mankind, and hath appointed thee to be consecrated by his servants for the people coming unto the faith, that, in the name of the holy Trinity, thou mayest be made a salutary sacrament to drive away the enemy.\nWherefore, we beseech thee, O Lord our God, that, sanctifying this creature of salt, thou wouldst sanctify it, and blessing thou wouldst bless it, that it may become unto all who receive it a perfect medicine, abiding in their hearts, in the name of the same our Lord Jesus Christ, who will come to judge the living and the dead, and the world by fire.",
+      "textLatin": "Exorízo te per Deum ✠ vivum, per Deum ✠ verum, per Deum ✠ sanctum, per Deum ✠, qui te ad tutélam humáni géneris procreávit, et pópulo veniénti ad credulitátem per servos suos consecrári præcépit: ut in nómine sanctæ Trinitátis efficiáris salutáre Sacraméntum ad effugándum inimícum.\nProínde rogámus te, Dómine, Deus noster, ut hanc creatúram salis sanctificándo sanctí ✠ fices, et benedicéndo bene ✠ dícas ut fiat ómnibus accipiéntibus perfécta medicína, pérmanens in viscéribus eórum, in nómine ejúsdem Dómini nostri Jesu Christi, qui ventúrus est judicáre vivos et mórtuos, et sæculum per ignem."
+    },
+    {
+      "type": "versicle",
+      "r": "Amen.",
+      "rLatin": "℟. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Imposition of Salt"
+    },
+    {
+      "type": "rubric",
+      "text": "The Priest now puts a small quantity of the blessed salt into the mouth of the Child,"
+    },
+    {
+      "type": "text",
+      "text": "N., receive the salt of wisdom; may it be to thee a propitiation unto life everlasting.",
+      "textLatin": "N., Accipe sal sapiéntiæ: propitiátio sit tibi in vitam æternam."
+    },
+    {
+      "type": "versicle",
+      "r": "Amen.",
+      "rLatin": "℟. Amen."
+    },
+    {
+      "type": "versicle",
+      "v": "Peace be with thee.",
+      "r": "And with thy spirit.",
+      "vLatin": "℣. Pax tibi.",
+      "rLatin": "℟. Et cum spíritu tuo."
+    },
+    {
+      "type": "text",
+      "text": "Let us pray.",
+      "textLatin": "Orémus."
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "O God of our fathers, O God, the author of all truth, we humbly beseech thee, graciously vouchsafe to look upon this thy servant N., now tasting this first nutriment of salt, and do not suffer him to hunger any longer through want of being filled with heavenly food, so that he may always be fervent in spirit, rejoicing in hope, always serving thy name.",
+      "textLatin": "Deus patrum nostrórum, Deus universæ cónditor veritátis, te súpplices exorámus, ut hunc fámulum tuum N. respícere dignéris propítius, et hoc primum pábulum salis gustántem, non diútius esuríre permíttas, quo minus cibo expleátur cælésti, quátenus sit semper spíritu fervens, spe gaudens, tuo semper nómini sérviens."
+    },
+    {
+      "type": "text",
+      "text": "Bring him, O Lord, we beseech thee, to the laver of the new regeneration, that, with thy faithful, he may deserve to attain unto the everlasting rewards of thy promises. Through Christ our Lord.",
+      "textLatin": "Per duc eum, Dómine, quæsumus, ad novæ regeneratiónis lavácrum, ut cum fidélibus tuis promissiónum tuárum æterna præmia cónsequi mereátur. Per Christum Dóminum nostrum."
+    },
+    {
+      "type": "versicle",
+      "r": "Amen.",
+      "rLatin": "℟. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Exorcism of the Infant"
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "I exorcise thee, unclean spirit, in the name of the Father ✠, and of the Son ✠, and of the Holy ✠ Ghost, that thou go out and depart from this servant of God, N. For he who walked on foot upon the sea, and stretched out his right hand to Peter when sinking, commands thee, accursed one.",
+      "textLatin": "Exorcízo te, immúnde spiritus, in nómine Pa ✠ tris, et Fí ✠ lii, et Spíritus ✠ Sancti, ut éxeas, et recédas ab hoc fámulo Dei N.: Ipse enim tibi ímperat, maledícte damnáte, qui pédibus super mare ambulávit, et Petro mergénti déxteram porréxit."
+    },
+    {
+      "type": "text",
+      "text": "Therefore, accursed devil, acknowledge thy sentence, and give honour to the living and true God; give honour to Jesus Christ his Son, and to the Holy Ghost; and depart from this servant of God, N., because God, even our Lord Jesus Christ, hath deigned to call him to his holy grace and blessing, and to the font of baptism.",
+      "textLatin": "Ergo, maledícte diábole, recognósce senténtiam tuam, et da honórem Deo vivo et vero, da honórem Jesu Christo Fílio ejus, et Spirítui Sancto, et recéde ab hoc fámulo Dei N., quia istum sibi Deus, et Dóminus noster Jesus Christus ad suam sanctam grátiam, et benedictiónem, fontémque Baptísmatis vocáre dignátus est."
+    },
+    {
+      "type": "rubric",
+      "text": "With his right thumb, the Priest now makes the sign of the cross on the Child's forehead, saying:"
+    },
+    {
+      "type": "text",
+      "text": "And this sign of the holy Cross ✠ which we make upon his forehead, do thou, accursed devil, never dare to violate. Through the same Christ our Lord.",
+      "textLatin": "Et hoc signum sanctæ Cru ✠ cis, quod nos fronti ejus damus, tu, maledícte diábole, numquam áudeas violáre. Per eúmdem Christum Dóminum nostrum."
+    },
+    {
+      "type": "versicle",
+      "r": "Amen.",
+      "rLatin": "℟. Amen."
+    },
+    {
+      "type": "rubric",
+      "text": "Then the Priest places his hand on the head of the Child and says:"
+    },
+    {
+      "type": "text",
+      "text": "Let us pray.",
+      "textLatin": "Orémus."
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "I entreat thy eternal and most just mercy, O holy Lord, Father Almighty, eternal God, Author of light and truth, in behalf of this thy servant N., that thou wouldst vouchsafe to enlighten him with the light of thy wisdom; cleanse him, and sanctify him; give unto him true knowledge, that, being made worthy of the grace of thy baptism, he may retain firm hope, right counsel, and holy doctrine. Through Christ our Lord.",
+      "textLatin": "Æternam, ac justíssimam pietátem tuam déprecor, Dómine sancte, Pater omnípotens, æterne Deus, auctor lúminis et veritátis, super hunc fámulum tuum N. ut dignéris eum illumináre lúmine intelligéntiæ tuæ: munda eum, et sanctífica: da ei sciéntiam veram, ut dignus grátia Baptísmi tui efféctus, téneat firmam spem, consílium rectum, doctrínam sanctam. Per Christum Dóminum nostrum."
+    },
+    {
+      "type": "versicle",
+      "r": "Amen.",
+      "rLatin": "℟. Amen."
+    },
+    {
+      "type": "rubric",
+      "text": "The Priest now places one end of his stole upon the Child that is to be baptised, and leads it into the church, saying:"
+    },
+    {
+      "type": "text",
+      "text": "N., Come into the Temple of God, that thou mayest have part with Christ unto Life Everlasting.",
+      "textLatin": "N., Ingrédere in templum Dei, ut hábeas partem cum Christo in vitam æternam."
+    },
+    {
+      "type": "versicle",
+      "r": "Amen.",
+      "rLatin": "℟. Amen."
+    },
+    {
+      "type": "rubric",
+      "text": "When they have entered the church, the Priest, as he proceeds to the font, says in a loud tone, the Creed and the Lord's Prayer. The Godparents also say them with the Priest."
+    },
+    {
+      "type": "heading",
+      "text": "Nicene Creed"
+    },
+    {
+      "type": "creed",
+      "dropcap": true,
+      "text": "I believe in one God, the Father Almighty, Maker of heaven and earth, And of all things visible and invisible:\nAnd in one Lord Jesus Christ, the only-begotten Son of God; Begotten of his Father before all worlds, God of God, Light of Light, Very God of very God; Begotten, not made; Being of one substance with the Father; By whom all things were made: Who for us men and for our salvation came down from heaven, And was incarnate by the Holy Ghost of the Virgin Mary, And was made man: And was crucified also for us under Pontius Pilate; He suffered and was buried: And the third day he rose again according to the Scriptures: And ascended into heaven, And sitteth on the right hand of the Father: And he shall come again, with glory, to judge both the quick and the dead; Whose kingdom shall have no end.\nAnd I believe in the Holy Ghost, The Lord, and Giver of Life, Who proceedeth from the Father; Who with the Father and the Son together is worshiped and glorified; Who spake by the Prophets: And I believe one, holy, catholic, and apostolic Church: I acknowledge one Baptism for the remission of sins: And I look for the Resurrection of the dead: ✠ And the Life of the world to come. Amen.",
+      "textLatin": "Credo in unum Deum, Patrem omnipoténtem, factórem cæli et terræ, visibílium ómnium et invisibílium.\nEt in unum Dóminum Jesum Christum, Fílium Dei unigénitum. Et ex Patre natum ante ómnia sǽcula. Deum de Deo, lumen de lúmine, Deum verum de Deo vero. Génitum, non factum, consubstantiálem Patri: per quem ómnia facta sunt. Qui propter nos hómines et propter nostram salútem descéndit de cælis. Et incarnátus est de Spíritu Sancto ex María Vírgine: Et homo factus est. Crucifíxus étiam pro nobis: sub Póntio Piláto passus, et sepúltus est. Et resurréxit tértia die, secúndum Scriptúras. Et ascéndit in cælum: sedet ad déxteram Patris. Et íterum ventúrus est cum glória judicáre vivos et mórtuos: cujus regni non erit finis.\nEt in Spíritum Sanctum, Dóminum et vivificántem: qui ex Patre procédit. Qui cum Patre et Fílio simul adorátur et conglorificátur: qui locútus est per Prophétas. Et unam sanctam cathólicam et apostólicam Ecclésiam. Confíteor unum baptísma in remissiónem peccatórum. Et exspécto resurrectiónem mortuórum. ✠ Et vitam ventúri sæculi. Amen."
+    },
+    {
+      "type": "heading",
+      "text": "Lord's Prayer"
+    },
+    {
+      "type": "text",
+      "dropcap": true,
+      "text": "Our Father, who art in heaven, Hallowed be thy Name. Thy kingdom come. Thy will be done on earth, As it is in heaven. Give us this day our daily bread. And forgive us our trespasses, As we forgive those who trespass against us. And lead us not into temptation; But deliver us from evil. Amen.",
+      "textLatin": "Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum quotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris: et ne nos indúcas in tentatiónem: sed líbera nos a malo. Amen."
+    },
+    {
+      "type": "rubric",
+      "text": "Before entering the Baptistery the Priest again exorcises the Child, saying:"
+    },
+    {
+      "type": "collect",
+      "dropcap": true,
+      "text": "I exorcise thee, every unclean spirit, in the name of God the Father ✠ Almighty, and in the name of Jesus Christ his Son, ✠ our Lord and judge, and in the power of the Holy ✠ Ghost, that thou depart from this creature of God N., which our Lord hath vouchsafed to call unto his holy temple, that it may be made the temple of the living God, and that the Holy Ghost may dwell therein. Through the same Christ our Lord, who will come to judge the living and the dead, and the world by fire.",
+      "textLatin": "Exorcízo te, omnis spíritus immúnde, in nómine Dei ✠ Patris omnipoténtis, et in nómine Jesu ✠ Christi Fílii ejus, Dómini et Júdicis nostri, et in virtúte Spíritus ✠ Sancti, ut discédas ab hoc plásmate Dei N., quod Dóminus noster ad templum sanctum suum vocáre dignátus est, ut fiat templum Dei vivi, et Spíritus Sanctus hábitet in eo. Per eúmdem Christum Dominum nostrum, qui ventúrus est judicáre vivos, et mórtuos et sæculum per ignem."
+    },
+    {
+      "type": "versicle",
+      "r": "Amen.",
+      "rLatin": "℟. Amen."
+    },
+    {
+      "type": "rubric",
+      "text": "Then the Priest puts spit from his mouth into his thumb, then makes the sign of the Cross on the right, and afterwards on the left, ear of the Child that is to be baptised, and says once only:"
+    },
+    {
+      "type": "text",
+      "text": "Ephpheta, ✠ that is, ✠ Be thou opened.",
+      "textLatin": "Ephpheta, ✠ quod est, ✠ Adaperíre."
+    },
+    {
+      "type": "rubric",
+      "text": "And then, signing the nostrils, he adds:"
+    },
+    {
+      "type": "text",
+      "text": "For an odour ✠ of sweetness.",
+      "textLatin": "In odórem ✠ suavitátis."
+    },
+    {
+      "type": "rubric",
+      "text": "Lastly, in a louder tone of voice, he says:"
+    },
+    {
+      "type": "text",
+      "text": "But do thou depart, O devil; for the judgment of God will come.",
+      "textLatin": "Tu autem effugáre, diábole; appropinquábit enim judícium Dei."
+    },
+    {
+      "type": "rubric",
+      "text": "He then, by name, questions the Child (the Godparents responding):"
+    },
+    {
+      "type": "versicle",
+      "v": "N., Dost thou renounce Satan?",
+      "r": "I do renounce him.",
+      "vLatin": "℣. N., Abrenúntias Sátanæ?",
+      "rLatin": "℟. Abrenúntio."
+    },
+    {
+      "type": "versicle",
+      "v": "And all his works?",
+      "r": "I do renounce them.",
+      "vLatin": "℣. Et ómnibus opéribus ejus?",
+      "rLatin": "℟. Abrenúntio."
+    },
+    {
+      "type": "versicle",
+      "v": "And all his pomps?",
+      "r": "I do renounce them.",
+      "vLatin": "℣. Et ómnibus pompis ejus?",
+      "rLatin": "℟. Abrenúntio."
+    },
+    {
+      "type": "rubric",
+      "text": "The Priest then dips his right thumb into the Oil of Catechumens, and with it makes the sign of the Cross on the breast and between the shoulders of the Child, saying:"
+    },
+    {
+      "type": "text",
+      "text": "I anoint thee ✠ with the oil of salvation, in Christ ✠ Jesus our Lord, that thou mayest have life everlasting.",
+      "textLatin": "Ego te línio ✠ óleo salútis in Christo ✠ Jesu Dómino nostro, ut habeas vitam æternam."
+    },
+    {
+      "type": "versicle",
+      "r": "Amen.",
+      "rLatin": "℟. Amen."
+    },
+    {
+      "type": "rubric",
+      "text": "The Priest now removes the oil from his thumb, and from the breast and back of the child with some cotton wool, and changes the purple stole, which he had hitherto worn, for a white one; and then, by name, questions the Child as follows (the Godparents responding):"
+    },
+    {
+      "type": "versicle",
+      "v": "N., Dost thou believe in God the Father Almighty, Creator of heaven and earth?",
+      "r": "I do believe.",
+      "vLatin": "℣. N., Credis in Deum Patrem omnipoténtem, Creatórem cæli et terræ?",
+      "rLatin": "℟. Credo."
+    },
+    {
+      "type": "versicle",
+      "v": "Dost thou believe in Jesus Christ, his only Son our Lord, who was born into this world, and who suffered for us?",
+      "r": "I do believe.",
+      "vLatin": "℣. Credis in Jesum Christum Fílium ejus únicum, Dóminum nostrum, natum et passum?",
+      "rLatin": "℟. Credo."
+    },
+    {
+      "type": "versicle",
+      "v": "Dost thou also believe in the Holy Ghost, the Holy Catholic Church, the Communion of Saints, the Forgiveness of Sins, the Resurrection of the Body, and Life Everlasting?",
+      "r": "I do believe.",
+      "vLatin": "℣. Credis et in Spíritum Sanctum, sanctam Ecclésiam Cathólicam, Sanctórum communiónem, remissiónem peccatórum, carnis resurrectiónem et vitam æternam?",
+      "rLatin": "℟. Credo."
+    },
+    {
+      "type": "versicle",
+      "v": "N., Wilt thou be baptised?",
+      "r": "I will.",
+      "vLatin": "℣. N., Vis baptizári?",
+      "rLatin": "℟. Volo."
+    },
+    {
+      "type": "rubric",
+      "text": "Then the Priest places the Child in a Font sufficient for immersion."
+    },
+    {
+      "type": "text",
+      "text": "N., I baptise thee in the name of the Father, [[(he immerses)]] and of the Son, [[(he immerses)]] and of the Holy Ghost [[(he immerses)]].",
+      "textLatin": "N. Ego te baptízo in nómine Patris, [[(mergit)]] et Fílii, [[(mergit)]] et Spíritus Sancti [[(mergit)]]."
+    },
+    {
+      "type": "rubric",
+      "text": "After cleansing his hands, the Priest immediately moves onto Confirmation."
+    }
+  ]
+};
