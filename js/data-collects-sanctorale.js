@@ -287,6 +287,8 @@ window.COLLECTS_SANCTORALE = {
     "communion": "Verily, I say unto you: that ye which have forsaken all and followed me, shall receive an hundredfold, and shall inherit everlasting life.",
     "postcommunionText": "O Lord, who hast sanctified us with this saving mystery: we beseech thee; that he, whom thou hast given to be our advocate and guide, may never fail in prayer for us. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "Conversion of St. Paul",
+    "openingSentence": "Thou hast given an heritage unto those that fear thy Name, O Lord.",
+    "openingSentenceCitation": "Ps. 61:5",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "Go forth, Ananias,",
       "text": "Go forth, Ananias, and enquire for Saul, for behold, he prayeth: for he is a chosen vessel unto me, to bear my Name before the Gentiles, and Kings, and the children of Israel."
@@ -416,6 +418,7 @@ window.COLLECTS_SANCTORALE = {
     "communion": "It was revealed unto Simeon by the Holy Ghost, that he should not see death, before he had seen the Lord's Christ.",
     "postcommunionText": "We beseech thee, O Lord our God: that these holy mysteries, which thou hast given to us for the assurance of our redemption, may, by the intercession of blessed Mary ever Virgin, be for our healing both in this life and that which is to come. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "Candlemas",
+    "openingSentence": "It was revealed unto Simeon by the Holy Ghost, that he should not see death, until he had seen the Lord's Christ.",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "The ancient",
       "text": "The ancient carried the Infant, but the Infant governed the ancient: he whom a Virgin bare, and after bearing, remained virgin, the same was worshipped by her who bare him."
@@ -668,6 +671,8 @@ window.COLLECTS_SANCTORALE = {
     "postcommunionText": "May the gift, O Lord, which we have offered, make us to rejoice: that as we proclaim thy wonders in thine Apostle Peter; so through him we may receive the abundance of thy loving-kindness. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "postcommunionSecondaryText": "O Lord, who hast sanctified us with this saving mystery: we beseech thee; that he whom thou hast given to be our advocate and guide may never fail in prayer for us. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "Chair St. Peter Antioch",
+    "openingSentence": "That they would exalt him also in the congregation of the people: and praise him in the seat of the elders!",
+    "openingSentenceCitation": "Ps. 107:32",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "Thou art the shepherd of the sheep,",
       "text": "Thou art the shepherd of the sheep, Prince of the Apostles, unto thee were given the keys of the kingdom of heaven."
@@ -1026,6 +1031,8 @@ window.COLLECTS_SANCTORALE = {
     "communion": "Behold, a Virgin shall conceive, and bear a son: and shall call his name Immanuel.",
     "postcommunionText": "We beseech thee, O Lord, pour thy grace into our hearts; that, as we have known the incarnation of thy Son Jesus Christ by the message of an Angel, so by his cross and passion we may be brought unto the glory of his resurrection. Through the same Jesus Christ thy Son our Lord; who liveth and reigneth with thee in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "Annunciation",
+    "openingSentence": "Send, O Lord, the Lamb, the Ruler of the land. From the rock of the wilderness unto the mountain of the daughter of Sion.",
+    "openingSentenceCitation": "Is. 16:1",
     "gradual": "Full of grace are thy lips: because God hath blessed thee for ever. ℣. Because of the word of truth, of meekness, and righteousness: and thy right hand shall teach thee terrible things.",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "The Holy Ghost",
@@ -1299,6 +1306,7 @@ window.COLLECTS_SANCTORALE = {
     "communion": "Have I been so long time with you, and yet hast thou not known me, Philip? He that hath seen me hath seen my Father also, alleluia: believest thou not that I am in the Father, and the Father in me? Alleluia, alleluia.",
     "postcommunionText": "O Lord, who hast fulfilled us with saving mysteries: we beseech thee that we may be aided by the prayers of those whose festival we celebrate. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "Sts. Philip & James",
+    "openingSentence": "He was known of them in breaking of bread. Alleluia.",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "Let not your heart",
       "text": "Let not your heart be troubled, neither let it be afraid; ye believe in God, believe also in me: in my Father's house are many mansions, alleluia, alleluia."
@@ -1356,6 +1364,7 @@ window.COLLECTS_SANCTORALE = {
     "postcommunionText": "Almighty God, who hast fulfilled us with heavenly meat, and refreshed us with spiritual drink, we beseech thee: that as thou hast bidden us to triumph by the wood of the holy Cross of thy Son, the armour of righteousness for the salvation of the world, so thou wouldest defend us from the malicious enemy. Through the same Jesus Christ thy Son our Lord; who liveth and reigneth with thee in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "postcommunionSecondaryText": "We beseech thee, O Lord our God, that like as we whom thou hast refreshed by the partaking of thy sacred gift do offer unto thee our worship: so, by the intercession of thy Saints, Alexander, Eventius, Theodulus, and Juvenal, we may perceive the benefit of the same. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "Invention of the Cross",
+    "openingSentence": "Tell it out among the nations that the Lord reigneth from the tree.",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "O Cross,",
       "text": "O Cross, surpassing all the stars in splendour, world renowned, exceeding dear unto the hearts of men, holier than all things: thou only wert counted worthy to uphold the world’s random. Sweet the wood, sweet the iron, bearing so sweet a burden: bring aid to this congregation, who are here assembled to celebrate thy praises, alleluia, alleluia."
@@ -1904,6 +1913,7 @@ window.COLLECTS_SANCTORALE = {
     "communion": "Thou, child, shalt be called the Prophet of the Highest: for thou shalt go before the face of the lord to prepare his ways.",
     "postcommunionText": "Let thy Church, O God, rejoice at the birth of blessed John Baptist: through whom she hath known the author of her new birth, Jesus Christ thy Son our Lord. Who liveth and reigneth with thee in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "St. John Baptist",
+    "openingSentence": "There was a man sent from God whose name was John.",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "When Zacharias",
       "text": "When Zacharias went into the temple, there appeared unto him the Angel Gabriel, standing on the right side of the altar of incense."
@@ -1978,6 +1988,8 @@ window.COLLECTS_SANCTORALE = {
     "communion": "Thou art Peter, and upon this rock I will build my Church.",
     "postcommunionText": "O Lord, who hast satisfied us with heavenly food: defend us by the intercession of thine Apostles against all adversity. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "St. Peter",
+    "openingSentence": "Thou art Peter and upon this rock I will build my Church.",
+    "openingSentenceCitation": "Mt. 16:18",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "Thou art the shepherd of the sheep,",
       "text": "Thou art the shepherd of the sheep, O chief of the Apostles: unto thee were given the keys of the kingdom of heaven."
@@ -2054,6 +2066,7 @@ window.COLLECTS_SANCTORALE = {
     "communion": "Christ was once offered to bear the sins of many: and unto them that look for him shall he appear the second time without sin unto salvation.",
     "postcommunionText": "O Lord, who hast suffered us to approach thy holy table, and with joy to draw water out of the wells of the Saviour: we beseech thee, that his blood may be to us a well of water springing up unto life eternal. Who liveth and reigneth with thee in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "Precious Blood",
+    "openingSentence": "We therefore pray thee, help thy servants, whom thou hast redeemed with thy precious blood.",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "But ye are come",
       "text": "But ye are come unto mount Sion and unto the city of the living God, the heavenly Jerusalem, and to Jesus, the mediator of the new covenant, and to the Blood of sprinkling, that speaketh better things than that of Abel."
@@ -2365,6 +2378,8 @@ window.COLLECTS_SANCTORALE = {
     "communion": "I deal with the thing that is lawful and right, O Lord, let the proud do me no wrong: I hold straight all thy commandments, and all false ways I utterly abhor.",
     "postcommunionText": "We beseech thee, O Lord, that we who have received the only and saving remedy, thy precious Body and Blood: may by the protection of Saint Mary Magdalene be delivered from all evils. Who livest and reignest with the Father, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "St. Mary Magdalene",
+    "openingSentence": "Mary hath chosen that good part, which shall not be taken away from her.",
+    "openingSentenceCitation": "Lk. 10:42",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "A woman",
       "text": "A woman in the city which was a sinner, when she knew that Jesus sat at meat in the house of Simon the leper, brought an alabaster box of ointment, and stood behind at the feet of Jesus, and began to wash his feet with tears, and did wipe them with the hairs of her head, and kissed his feet, and anointed them with the ointment."
@@ -2655,6 +2670,8 @@ window.COLLECTS_SANCTORALE = {
     "postcommunionText": "O God, who hast hallowed this day by the Transfiguration of thine Incarnate Word, and by the voice of thee, the Father, sent down to him, grant, we beseech thee, that we who have been fed with the Bread of Heaven, may be found meet to become members of him who gave commandment that this should be done in remembrance of him, Jesus Christ, thy Son, our Lord. Who liveth and reigneth with thee in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "postcommunionSecondaryText": "Grant to us, we beseech thee, O Lord: at the intercession of thy holy Martyrs Sixtus, Felicissimus, and Agapitus; that those things which we touch with our mouths we may receive in purity of heart. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "Transfiguration",
+    "openingSentence": "Let us worship the Father, the Son, and the Holy Ghost, reigning in his Majesty.",
+    "openingSentenceCitation": "Ps. 93:1",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "Christ Jesus,",
       "text": "Christ Jesus, the brightness of the Father and the express image of his person, who upholdeth all things by the word of his power, while he was by himself purging away our sins, vouchsafed on this day to shew himself in glory upon an high mountain."
@@ -2746,6 +2763,8 @@ window.COLLECTS_SANCTORALE = {
     "communion": "He that serveth me, let him follow me: and where I am there shall also my servant be.",
     "postcommunionText": "O Lord, who hast satisfied us with this sacred gift, we humbly beseech thee: that, we who celebrate the service of our bounden duty may, at the intercession of blessed Lawrence thy Martyr perceive the increase of thy saving grace. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "St. Lawrence",
+    "openingSentence": "He hath dispersed abroad, and given to the poor: and his righteousness remaineth for ever.",
+    "openingSentenceCitation": "Ps. 112:9",
     "gradual": "Thou hast proved and visited mine heart, O Lord, in the night-season. ℣. Thou hast tried me with fire, and hast found no wickedness in me.",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "Lawrence the Deacon",
@@ -3129,6 +3148,8 @@ window.COLLECTS_SANCTORALE = {
     "communion": "Blessed is the womb of the Virgin Mary, that bore the Son of the everlasting Father.",
     "postcommunionText": "Grant, we beseech thee, O Lord: that the sacraments which we have received in the observance of this yearly festival; may both in this life and that which is to come be profitable for our healing. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "Marymas",
+    "openingSentence": "The Lord shall come down like the rain into a fleece of wool. Even as the drops that water the earth.",
+    "openingSentenceCitation": "Judg. 6:37",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "Let us celebrate",
       "text": "Let us celebrate the worshipful Nativity of the blessed and glorious Virgin Mary: for she hath obtained the dignity of Motherhood, and yet lost not her maiden purity."
@@ -3455,6 +3476,7 @@ window.COLLECTS_SANCTORALE = {
     "communion": "O all ye Angels of the Lord, bless ye the Lord: sing ye praises, and magnify him above all for ever.",
     "postcommunionText": "O Lord, forasmuch as we put our trust in the intercession of thy blessed Archangel Michael; we humbly beseech thee; that those things which we touch with our lips we may likewise receive into our hearts. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "Michaelmas",
+    "openingSentence": "The smoke of the incense ascended up before God out of the Angel's hand.",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "While John beheld",
       "text": "While John beheld the sacred mystery, the Archangel Michael sounded the trumpet: Forgive us, O Lord our God, that openest the book, and loosest the seals thereof, alleluia."
@@ -3737,6 +3759,8 @@ window.COLLECTS_SANCTORALE = {
     "communion": "Blessed is the womb of the Virgin Mary, that bare the Son of the everlasting Father.",
     "postcommunionText": "O Lord, let this holy Communion cleanse us from every guilty stain: that at the intercession of the blessed Virgin Mary, Mother of God, we may be made partakers thereby of thy healing unto life eternal. Through the same Jesus Christ thy Son our Lord; who liveth and reigneth with thee in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "Walsingham",
+    "openingSentence": "How dreadful is this place! this is none other but the house of God, and this is the gate of heaven.",
+    "openingSentenceCitation": "Gn 28:17",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "O all ye Saints,",
       "text": "O all ye Saints, come unto the Holy Place of Walsingham, and bless ye the Lord."
@@ -3944,6 +3968,8 @@ window.COLLECTS_SANCTORALE = {
     "communion": "Blessed are the pure in heart, for they shall see God; blessed are the peacemakers, for they shall be called the children of God; blessed are they which are persecuted for righteousness' sake, for theirs is the kingdom of heaven.",
     "postcommunionText": "Grant, we beseech thee, O Lord, unto thy faithful people ever to rejoice in the veneration of all thy Saints: and to be defended by their perpetual supplication. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "All Hallows",
+    "openingSentence": "The righteous live for evermore, but their reward is with the Lord.",
+    "openingSentenceCitation": "Wis. 5:15",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "O ye Angels and Archangels,",
       "text": "O ye Angels and Archangels, O ye Thrones and Dominions, Principalities and Powers, Virtues of the heavens, Cherubim and Seraphim, O ye Patriarchs and Prophets, ye holy Doctors of the law, O all ye Apostles, ye Martyrs of Christ, ye holy Confessors, ye Virgins of the Lord, ye holy Hermits, and all Saints: offer for us your intercessions."
@@ -4419,6 +4445,7 @@ window.COLLECTS_SANCTORALE = {
     "communion": "Follow me: I will make you fishers of men: and they straightway left their nets, and followed the Lord.",
     "postcommunionText": "We beseech thee, O Lord, that these divine mysteries, which we have joyfully received on the festivity (commemoration) of blessed Andrew thine Apostle: may effectually avail for the glory of thy Saints, and likewise for our pardon. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
     "name": "St. Andrew",
+    "openingSentence": "The Lord loved Andrew in the odour of sweetness.",
     "firstEvensongMagnificatAntiphon": {
       "incipit": "One of the two",
       "text": "One of the two which followed the Lord was Andrew, Simon Peter's brother, alleluia."

@@ -302,6 +302,12 @@ window.FEAST_OFFICE_HYMNS = {
         "Thus we praise with veneration\nAll the armies of the sky;\nChiefly him, the warrior Primate\nOf celestial chivalry,\nMichael, who in princely virtue\nCast Abaddon from on high.",
         "By whose watchful care repelling,\nKing of everlasting grace,\nEvery ghostly adversary,\nAll things evil, all things base,\nGrant us of thine only goodness\nIn thy Paradise a place.",
         "Glory to the Father sing we\nWith resounding voices sweet,\nGlory unto Christ our Saviour,\nGlory to the Paraclete:\nStanding forth, One God and Trinal,\nEre the ages; as is meet. Amen."
+      ],
+      "invitatoryHymn": [
+        "Thee, O Christ, the Father's splendour,\nLife and virtue of the heart,\nIn the presence of the Angels\nSing we now with tuneful art;\nMeetly in alternate chorus\nBearing our responsive part.",
+        "Thus we praise with veneration\nAll the armies of the sky;\nChiefly him, the warrior Primate\nOf celestial chivalry,\nMichael, who in princely virtue\nCast Abaddon from on high.",
+        "By whose watchful care repelling,\nKing of everlasting grace,\nEvery ghostly adversary,\nAll things evil, all things base,\nGrant us of thine only goodness\nIn thy Paradise a place.",
+        "Glory to the Father sing we\nWith resounding voices sweet,\nGlory unto Christ our Saviour,\nGlory to the Paraclete:\nStanding forth, One God and Trinal,\nEre the ages; as is meet. Amen."
       ]
     },
     "10-2": {

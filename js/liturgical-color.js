@@ -136,6 +136,18 @@ function resolveLiturgicalColor(resolved, feastInfo) {
   if (resolved && resolved.kalendarKey === "1-4" && feastInfo && feastInfo.winner === "feast") {
     return "red";
   }
+  // George's consolidated 10/7 note: "Mattins and Evensong of All Souls'
+  // Day should be the Office of the Dead with Double rite." PropTime.tex
+  // prints All Souls' three Masses under `\festival{Double}{2
+  // November}{...}{MournfulBlack}` - black, not the generic non-martyr
+  // "white" the feast-winner rule just below would otherwise give it (All
+  // Souls, Double rank, isn't a Martyr). Checked by kalendarKey, same
+  // one-off-fixed-date convention as the Holy Innocents/Octave exceptions
+  // just above, and before the generic rule for the same reason.
+  if (resolved && resolved.kalendarKey === "11-2" && feastInfo && feastInfo.winner === "feast") {
+    const kalendar = resolved.kalendar || [];
+    if (kalendar.some((e) => e.name === "All Souls")) return "black";
+  }
   if (feastInfo) {
     if (feastInfo.winner === "feast") {
       return feastInfo.isMartyr ? "red" : "white";

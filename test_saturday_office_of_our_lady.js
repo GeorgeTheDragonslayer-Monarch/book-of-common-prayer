@@ -26,11 +26,34 @@
 // Mass's own already-sourced 5 seasonal BVM Collects (data/votive-bvm.json,
 // data/seasonal-prayers.json's "maryInAdvent" entry for Advent
 // specifically) rather than inventing anything. Deliberately NOT
-// attempted: the Invitatory antiphon (Mattins.tex's own Invitatory-
-// antiphon rubric doesn't name Saturday as a trigger at all - adding one
-// would invent a rule, not fix a gap) and full proper Psalms/Lessons for
-// this Office (would need the Common of the Blessed Virgin Mary, i.e.
-// the same missing Commons.tex already blocking other items).
+// attempted at the time: the Invitatory antiphon (Mattins.tex's own
+// Invitatory-antiphon rubric doesn't name Saturday as a trigger at all -
+// adding one would invent a rule, not fix a gap); full proper Psalms/
+// Lessons for this Office (would need the Common of the Blessed Virgin
+// Mary, i.e. the same missing Commons.tex already blocking other items);
+// and the rubric's own "of a Sunday anticipated" exclusion, which this
+// codebase had no way to model for Evensong yet (see below).
+//
+// George's 10/7 note (the Magnificat-antiphon bug, task #19) led to a
+// fix in `resolveEveningDisplacement` that completes exactly that missing
+// exclusion as a side effect: an ordinary plain Saturday's First Evensong
+// of the following Sunday now correctly displaces today's Evensong the
+// same way a Double-tier feast's First Evensong already did (both are
+// "a Sunday anticipated according to the rubrics" / Table 2's own code-1
+// case - a plain Saturday has no claim of its own either way). Since
+// `isOfficeOfOurLadyToday`'s very first check is `resolved.weekdayName
+// !== "Saturday"`, and Evensong's title/Collect are now driven by
+// `renderResolved` (which becomes tomorrow's *Sunday* resolved day the
+// moment displacement fires), that check now correctly excludes Evensong
+// on its own, with no separate code needed - exactly as this function's
+// own doc comment anticipated it eventually would once Evensong's
+// displacement mechanism covered the ordinary-Sunday case. Mattins is
+// untouched by any of this (Mattins is never "anticipating" anything,
+// and `resolveEveningDisplacement` only ever runs for `currentHour ===
+// "evensong"') - it still correctly shows "(Office of Our Lady)" on an
+// unencumbered Saturday morning. Evensong's two checks below were updated
+// to expect the new, rubric-correct behavior: First Evensong of the
+// following Sunday, NOT "(Office of Our Lady)".
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
 
@@ -73,8 +96,14 @@ for (const d of ["2026-10-03", "2026-09-05"]) {
   const domE = runOnDate(d + "T12:00:00Z", "#office/evensong");
   const labelE = domE.window.document.getElementById("seasonLabel").textContent;
   const bodyE = domE.window.document.getElementById("officeBody").textContent;
-  check(`${d} Evensong title says "(Office of Our Lady)" too`, labelE.includes("(Office of Our Lady)"));
-  check(`${d} Evensong Collect is of Our Lady on Saturday too`, bodyE.includes("perpetual health of mind"));
+  const bannerE = domE.window.document.querySelector(".rubric-fine");
+  // Updated per task #19's fix: Rubrics.tex's own "of a Sunday
+  // anticipated" exclusion now correctly applies at Evensong - an
+  // unencumbered plain Saturday's Evensong is First Evensong of the
+  // following Sunday, not "(Office of Our Lady)".
+  check(`${d} Evensong title does NOT say "(Office of Our Lady)" ("Sunday anticipated" rubric exclusion)`, !labelE.includes("(Office of Our Lady)"));
+  check(`${d} Evensong Collect is NOT of Our Lady on Saturday (Sunday's own First Evensong instead)`, !bodyE.includes("perpetual health of mind"));
+  check(`${d} Evensong shows the First-Evensong-of-the-following-Sunday banner`, !!bannerE && /^This Evensong is First Evensong of/.test(bannerE.textContent));
 
   // The Mass page must be completely unaffected - it shares the same
   // "collectOfDay" placeholder key but has its own, different rubric.

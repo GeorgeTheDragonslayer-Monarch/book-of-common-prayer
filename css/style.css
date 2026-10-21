@@ -881,7 +881,12 @@ main { width: 100%; }
   border: 1px solid var(--card-border);
   border-top: 3px solid var(--day-color, var(--card-border));
   border-radius: 6px;
-  background: var(--card-bg);
+  /* George's consolidated 10/7 note, item 10 (same fix as .cal-day
+     above): a background WASH of the day's own liturgical color
+     (--day-color-rgb), layered under the ordinary card background,
+     makes each day's color actually visible rather than just the thin
+     top-border hairline this used to rely on alone. */
+  background: linear-gradient(rgba(var(--day-color-rgb, 0, 0, 0), 0.16), rgba(var(--day-color-rgb, 0, 0, 0), 0.16)), var(--card-bg);
   color: var(--ink);
   cursor: pointer;
   padding: 0.3rem 0.2rem 0.35rem;
@@ -1083,19 +1088,26 @@ main { width: 100%; }
   cursor: pointer;
   border: 1px solid transparent;
   /* Pending-corrections fix (10/3, task #217, item #14): each day square
-     now carries its own liturgical color (set inline as --day-color by
-     renderCalendarPopover in js/app.js), shown the same way the full
-     #calendar page's own .cal-page-day grid already shows it - a 3px
-     top accent, not a full fill, so the "feast" red-text/border styling
-     below (a different, unrelated signal - which days are red-letter
-     feasts) stays legible on top of it. */
+     now carries its own liturgical color (set inline as --day-color/
+     --day-color-rgb by renderCalendarPopover in js/app.js), shown the
+     same way the full #calendar page's own .cal-page-day grid already
+     shows it - originally just a 3px top accent, so the "feast" red-text/
+     border styling below (a different, unrelated signal - which days are
+     red-letter feasts) would stay legible on top of it.
+     George's consolidated 10/7 note, item 10: that 3px hairline alone
+     read as "most of the days [are] the same colour" - too subtle to
+     notice as each day having its own color. Added a low-alpha
+     background WASH of that same color underneath the hairline (using
+     --day-color-rgb, the same hex-to-rgb-triplet pattern already used for
+     --accent-rgb elsewhere on this site), light enough that the feast
+     red text/border still reads clearly on top. */
   border-top: 3px solid var(--day-color, transparent);
-  background: none;
+  background: rgba(var(--day-color-rgb, 0, 0, 0), 0.16);
   color: var(--ink);
   width: 100%;
 }
 .cal-day:hover { background: var(--paper-edge); }
-.cal-day.empty { cursor: default; }
+.cal-day.empty { cursor: default; background: none; }
 .cal-day.empty:hover { background: none; }
 .cal-day.feast { color: var(--rubric-red); font-weight: 600; border-color: rgba(163,39,44,0.25); }
 .cal-day.today { border-color: var(--accent); }

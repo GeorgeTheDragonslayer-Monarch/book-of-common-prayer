@@ -1289,7 +1289,22 @@
         const feastInfo = resolveFeastRankToday(resolved);
         const colorKey = resolveLiturgicalColor(resolved, feastInfo);
         const color = (typeof LITURGICAL_COLORS !== "undefined" ? LITURGICAL_COLORS : {})[colorKey];
-        const style = color ? ` style="--day-color:${color.hex}"` : "";
+        // George's consolidated 10/7 note, item 10: "the calendar button is
+        // still making most of the days the same colour of the day, as in
+        // the last picture sent." Traced to the CSS, not this color
+        // computation: resolveLiturgicalColor already returns a distinct,
+        // correct color per day here (confirmed live across a real month -
+        // green/white/red all present as expected), but .cal-day only ever
+        // showed it as a 3px border-top hairline (task #217, item #14's own
+        // deliberate choice, to keep the "feast" red-text styling legible
+        // on top of it) - too subtle to read as "this day is colored" at a
+        // glance, so the whole grid still looked like one uniform color.
+        // Adding a low-alpha background WASH of the same color (via this
+        // --day-color-rgb triplet, same hexToRgbTriplet pattern already
+        // used for --accent-rgb) makes each day's color immediately
+        // visible while staying light enough for the feast red text/border
+        // to still read clearly on top - see the matching CSS change.
+        const style = color ? ` style="--day-color:${color.hex};--day-color-rgb:${hexToRgbTriplet(color.hex)}"` : "";
         html += `<button class="${classes.join(" ")}" data-cal-day="${day}"${style}>${day}</button>`;
       }
       html += `</div>`;
@@ -1482,15 +1497,43 @@
         if (currentHour === "evensong") return eveningDisplacement ? (festival.evensongI || festival.evensongII || null) : (festival.evensongII || festival.evensongI || null);
       }
     }
-    const entry = resolved.lectionary;
+    // George's 10/8 note: "it had the Evensong lessons for tonight... I
+    // think it's because it is correctly identifying last evening as I
+    // Evensong of [a Red Letter feast]. However, when the Festival does
+    // not have proper Psalms and Lessons..., the Psalms and Lessons are
+    // ferial." Reached here precisely when `feastInfo.winner==="feast"`
+    // (today's rendering has been displaced to a winning feast's own
+    // day per resolveEveningDisplacement) but that feast has no
+    // `lectionaryFestivalsData` entry of its own (the `festival` branch
+    // above already returns early whenever one exists) - `resolved` at
+    // this point IS the displacing feast's own full resolved day
+    // (renderResolved in renderOfficePage), so its `.lectionary` is that
+    // feast's own CIVIL date's row in the continuous ferial course-
+    // reading table - one calendar day further along than tonight's own
+    // row, which is the actual bug (Deuteronomy 31:30 instead of the
+    // correct ~29-30 continuation). `eveningDisplacement.todayResolved`
+    // (added alongside `tomorrowResolved` above) is the true civil
+    // tonight's own undisplaced resolved day, whose `.lectionary` is the
+    // right ferial row to fall back to instead.
+    const usingDisplacedFerial = currentHour === "evensong" && eveningDisplacement && eveningDisplacement.todayResolved;
+    const entry = usingDisplacedFerial ? eveningDisplacement.todayResolved.lectionary : resolved.lectionary;
     if (!entry) return null;
     if (currentHour === "mattins") return entry.mattins || null;
-    // Same displacement fix as the festival branch above - when tonight
-    // is anticipating tomorrow's Office (e.g. a plain feria evening
-    // before a Sunday whose own row happens to carry both evensongI and
-    // evensongII), First Evensong is what's actually being prayed
-    // tonight, not Second.
-    if (currentHour === "evensong") return eveningDisplacement ? (entry.evensongI || entry.evensongII || null) : (entry.evensongII || entry.evensongI || null);
+    if (currentHour === "evensong") {
+      // Under this specific displaced-ferial fallback, `entry` is
+      // already tonight's own civil-date row, not tomorrow's - a plain
+      // feria has no First/Second Evensong distinction of its own (that
+      // concept only exists for Sundays/feasts), so there's no
+      // evensongI/II choice left to make here, just whichever of the
+      // two the ferial data happens to carry.
+      if (usingDisplacedFerial) return entry.evensongII || entry.evensongI || null;
+      // Same displacement fix as the festival branch above - when tonight
+      // is anticipating tomorrow's Office (e.g. a plain feria evening
+      // before a Sunday whose own row happens to carry both evensongI and
+      // evensongII), First Evensong is what's actually being prayed
+      // tonight, not Second.
+      return eveningDisplacement ? (entry.evensongI || entry.evensongII || null) : (entry.evensongII || entry.evensongI || null);
+    }
     return null;
   }
 
@@ -1757,8 +1800,54 @@
   // transferred, octaveCommemoration } - winner is "feast" or "season"
   // (or "season" by default when there's no competing Sanctorale entry
   // to rank against), matching decideCollectWinner's own vocabulary.
+  function resolveTemporaleSeasonEntry(resolved) {
+    const bucket = collectsTemporaleData[resolved.periodKey];
+    // George's consolidated 10/7 note: "Holy Week's Masses needs to be
+    // replaced with what is in the Missal." Holy Monday through Easter
+    // Even all share the single "Palm Sunday" periodKey bucket (same
+    // periodKey/dayLabel pair js/calendar.js's describeSeason already
+    // special-cases for the on-screen title, task #212) - but this
+    // lookup used to return that one bucket object directly, with no
+    // day-of-week awareness at all, so every day of Holy Week literally
+    // showed Palm Sunday's own Mass (the Palm procession Gospel and the
+    // Passion according to St. Matthew), Easter Even included, whose
+    // true Mass is the entirely different Paschal Vigil. Fixed by
+    // dereferencing one level deeper by `dayLabel` for this one
+    // periodKey, matching data/collects-temporale.json's own new nested
+    // shape (see that file's own "_note" on "Palm Sunday") - every other
+    // periodKey's bucket is still a flat Mass-propers object, unchanged.
+    if (resolved.periodKey === "Palm Sunday" && bucket && resolved.dayLabel && bucket[resolved.dayLabel]) {
+      return bucket[resolved.dayLabel];
+    }
+    return bucket;
+  }
+
+  // George's 10/20 note: "The program struggles to make sense of feasts
+  // with 2 Evensongs. It uses the same Psalm and Magnificat Antiphon (the
+  // 2nd Evensong one) both days." Root cause: every place that picks
+  // between a day's `firstEvensong...`/`secondEvensong...` antiphon pair
+  // (the group Psalm antiphon and the Magnificat antiphon, both here and
+  // in their Feast-then-Common fallback and the deferred last-Psalm-
+  // antiphon cases below) always preferred the Second Evensong variant
+  // outright, with no awareness of `eveningDisplacement` - the same
+  // Table-2 mechanism (resolveEveningDisplacement, task #91) that
+  // pickLectionarySlot already consults to tell First Evensong of a
+  // feast (tonight anticipates tomorrow, which outranks today - code
+  // 1/3/5) apart from the feast's own Second Evensong (no displacement
+  // needed; tonight already IS the feast's evening). When displaced,
+  // `resolved` throughout this render pass is already tomorrow's own
+  // resolution (renderOfficePage's `renderResolved`), so `primaryEntry`
+  // is the SAME feast entry on both nights - only which variant of its
+  // antiphon pair is proper to say differs. Most sourced days only carry
+  // one variant total, so the fallback direction simply reverses rather
+  // than ever going without an antiphon a day does have.
+  function pickEvensongAntiphonVariant(firstVariant, secondVariant) {
+    const preferFirst = currentHour === "evensong" && !!eveningDisplacement;
+    return preferFirst ? (firstVariant || secondVariant) : (secondVariant || firstVariant);
+  }
+
   function resolveMassPropersWinner(resolved) {
-    const seasonEntry = collectsTemporaleData[resolved.periodKey] || resolveEpiphanyOverflow(resolved.periodKey, resolved.date);
+    const seasonEntry = resolveTemporaleSeasonEntry(resolved) || resolveEpiphanyOverflow(resolved.periodKey, resolved.date);
     let sanctorale = collectsSanctoraleData[resolved.kalendarKey];
 
     // Feast Day transfer (Ranking.tex: a I/II Double hard-blocked on its
@@ -2002,24 +2091,40 @@
     // (todayResolution.winner === "season" and not a Sunday, i.e.
     // classifyVespersCategory's specific "ordinary Feria" branch) - a
     // winning Semidouble/Simple feast today (classifyVespersCategory's
-    // OTHER null case, "no row or column in Table 2") is left exactly as
-    // before, since that's a genuinely different, more ambiguous
-    // situation this note doesn't address and no source cell answers.
-    const todayIsPlainFeria = todayResolution.winner === "season" && resolved.weekdayName !== "Sunday";
-    const tomorrowIsDoubleTier = ["lesserDouble", "greaterDouble", "secondDouble", "firstDouble"].includes(tomorrowCategory);
+    // OTHER null case, "no row or column in Table 2") used to be left out
+    // of this carve-out on the theory that it was "a genuinely different,
+    // more ambiguous situation" - George's 10/7 note shows that's not so:
+    // "Saturday did not have a Magnificat antiphon during I Evensong. For
+    // certain Sundays in Trinitytide, this is found in the Proper of
+    // Season" describes exactly this gap, just with an ordinary Sunday
+    // (not a Double-rank feast) as tomorrow's claim, which the carve-out's
+    // `tomorrowIsDoubleTier` list never included either. Both gaps share
+    // one root cause: `classifyVespersCategory` returns null/"memorial"
+    // for ANY day whose own office can't outrank at least a Lesser
+    // Double - a true plain feria, a feria noting only a losing Memorial
+    // or Vigil (neither ever wins against the season), or even a winning
+    // Semidouble/Simple feast (tier 1-3, still below Lesser Double's own
+    // tier) - none of which have a row in Table2_revision.pdf because
+    // none of them ever have a real claim to assert against a Sunday or
+    // a Double-rank feast tomorrow. So instead of narrowing this carve-out
+    // to "plain feria only" + "Double-tier tomorrow only" (both
+    // accidentally too strict, confirmed by tracing live dates: 4 July
+    // 2026, a winning Semidouble within the Octave of Sts. Peter & Paul,
+    // and 8/22 August 2026, common Vigils of St. Lawrence/St.
+    // Bartholomew, all failed to anticipate the following ordinary
+    // Sunday's First Evensong before this fix), this now fires whenever
+    // TODAY has no real claim (any category other than the four Double
+    // tiers) and TOMORROW does (an ordinary Sunday or any Double tier) -
+    // using the same code 1 ("nothing of today") the original Gorazde fix
+    // already established as correct for a claim-less today, since
+    // Table 2 itself gives a losing Memorial/Vigil/Semidouble no
+    // commemoration slot to retain either.
+    const todayOutranksNothing = !["lesserDouble", "greaterDouble", "secondDouble", "firstDouble"].includes(todayCategory);
+    const tomorrowHasFirstEvensongClaim = ["sunday", "lesserDouble", "greaterDouble", "secondDouble", "firstDouble"].includes(tomorrowCategory);
     let code;
     if (todayCategory && window.Ranking.TABLE2_TOMORROW_WINS[todayCategory]) {
       code = window.Ranking.TABLE2_TOMORROW_WINS[todayCategory][tomorrowCategory];
-    } else if ((!todayCategory || todayCategory === "memorial") && todayIsPlainFeria && tomorrowIsDoubleTier) {
-      // Task #184's fix to classifyVespersCategory (ranking.js) now
-      // classifies a plain feria that happens to carry its own losing
-      // Memorial as `"memorial"` rather than `null` - neither
-      // TABLE2_TOMORROW_WINS nor TABLE2_TODAY_WINS defines a `"memorial"`
-      // row, so the branch above still correctly finds nothing either
-      // way, but this carve-out's own `!todayCategory` guard needs the
-      // same allowance so a Double-tier feast tomorrow still fully
-      // displaces today's Evensong exactly as it already did before that
-      // fix, whether or not today's own feria happens to note a Memorial.
+    } else if (todayOutranksNothing && tomorrowHasFirstEvensongClaim) {
       code = 1;
     }
     if (!code) return null;
@@ -2046,6 +2151,15 @@
       todayName,
       todayText,
       code,
+      // George's 10/8 note: "it had the Evensong lessons for tonight...
+      // when the Festival does not have proper Psalms and Lessons... the
+      // Psalms and Lessons are ferial." The civil TODAY's own resolved
+      // day (pre-displacement), kept alongside `tomorrowResolved` so
+      // pickLectionarySlot can fall back to TODAY's own ferial Psalms/
+      // Lessons specifically when tomorrow's displacing feast has no
+      // dedicated lectionaryFestivalsData entry of its own - see the
+      // comment there.
+      todayResolved: resolved,
     };
   }
 
@@ -2364,6 +2478,35 @@
       }
     }
     return null;
+  }
+
+  // George's consolidated 10/7 note: "Mattins and Evensong of All Souls'
+  // Day should be the Office of the Dead with Double rite." All Souls
+  // (2 November, kalendarKey "11-2") is a fixed Double-rank feast -
+  // kalendar.json already carries it correctly as such - but winning the
+  // day under Ranking.tex only ever drove the ordinary Daily Office's own
+  // title/Collect/Psalms/Lessons before this, same as any other feast.
+  // The actual Office of the Dead (Vespers/Matins/Lauds of the Dead,
+  // `data/vesper-dead.json`/`matins-dead.json`/`lauds-dead.json`) has
+  // only ever existed as three separate, date-blind static-rite pages
+  // (task #176 made them date-AWARE for their own internal Double-rite
+  // antiphon-doubling/Psalm-omission rules, but never substituted them
+  // IN PLACE of the ordinary Office page on any specific day). This is
+  // the missing link: on All Souls' Day specifically, `renderOfficePage`
+  // now checks this and swaps in the Dead rite's own content instead of
+  // the ordinary Mattins/Evensong templates. Scoped tightly to the exact
+  // winning-feast case (not just any day with kalendarKey "11-2") so the
+  // one acknowledged gap this project hasn't modeled - All Souls'
+  // Sunday-transfer rule, which would move it to 3 November in years
+  // where 2 November falls on a Sunday and a Sunday's Office would then
+  // correctly win the civil 2nd - is left exactly as honest as it was
+  // before (no Dead-rite override on a day All Souls didn't actually
+  // win), rather than guessed at.
+  function isAllSoulsOfficeOfTheDeadToday(resolved, feastInfo) {
+    if (!resolved || resolved.kalendarKey !== "11-2") return false;
+    if (!feastInfo || feastInfo.winner !== "feast") return false;
+    const kalendarEntries = resolved.kalendar || [];
+    return kalendarEntries.some((e) => e.name === "All Souls");
   }
 
   function resolveFeastRankToday(resolved) {
@@ -3077,6 +3220,40 @@
       return heading + body;
     }).join("");
 
+    // George's 10/8 note: "The Opening Sentence for St. Michael is
+    // still missing. Opening Sentences are sometimes found in the
+    // Proper of the Saints." pages/Propers/PropTime.tex gives 17 fixed
+    // Sanctorale feasts (St. Andrew, Conversion of St. Paul, Candlemas,
+    // Chair of St. Peter at Antioch, the Annunciation, Sts. Philip &
+    // James, Invention of the Cross, St. John Baptist, St. Peter,
+    // Precious Blood, St. Mary Magdalene, the Transfiguration,
+    // St. Lawrence, the Assumption ["Marymas"], Michaelmas, Walsingham,
+    // and All Hallows) their own single `\textit{Opening Sentence.}`
+    // line, printed right above that feast's own Mass propers - a
+    // different, more specific thing than ForeOffice.tex's fixed
+    // General/Morning/Evening/Common-of-Saint sentence categories
+    // handled by the loop just above, which has no slot for an
+    // individual feast's own one-off sentence at all. (Christ the
+    // King also has one in the source, but it's a movable feast - no
+    // \feastdate to key it by - so it's left for a follow-up rather
+    // than guessed at here.) Newly sourced onto the matching
+    // `data/collects-sanctorale.json` entry (`openingSentence` +
+    // optional `openingSentenceCitation`, parsed 1:1 from PropTime.tex)
+    // and shown as one more tier, after the General/Morning-or-Evening/
+    // Common-of-Saint sentences already printed above, exactly when
+    // today's actual winning feast (not a merely-commemorated one) has
+    // one sourced - every other day is completely unaffected.
+    if (feastInfo && feastInfo.winner === "feast" && resolved.kalendarKey) {
+      const sanctoraleEntry = collectsSanctoraleData[resolved.kalendarKey];
+      if (sanctoraleEntry && sanctoraleEntry.openingSentence) {
+        const cite = sanctoraleEntry.openingSentenceCitation
+          ? ` <span class="sentence-citation">(${escapeHtml(sanctoraleEntry.openingSentenceCitation)})</span>`
+          : "";
+        html += `<p class="sentence-category-heading">${escapeHtml(sanctoraleEntry.name || feastInfo.name)}</p>`;
+        html += `<p class="plain-text">${escapeHtml(sanctoraleEntry.openingSentence)}${cite}</p>`;
+      }
+    }
+
     // Exhortation to Penitence - the source prints this as an inline
     // "longer form ... or, shorter form ... [or, if omitted, this line
     // instead]" choice (8/23 note: replace with proper selection
@@ -3144,6 +3321,17 @@
   function renderPlaceholder(key, resolved, sec) {
     if (key === "foreOffice") return renderForeOffice(resolved);
     if (key === "invitatoryHymnSlot") {
+      // George's 10/8 note: "When the Invitatory is omitted (the
+      // Venite), the Invitatory Hymn is omitted." The Invitatory Hymn
+      // is, by its own name and placement (Mattins.tex line 93's "After
+      // the Venite, a Hymn may be sung"), an appendage to the Venite
+      // itself, not an independent element - on the handful of days the
+      // Venite is dropped outright (isVeniteOmittedToday: Maundy
+      // Thursday/Good Friday/Easter Even unconditionally, Ash Wednesday
+      // when that toggle is set), there is no Venite for it to follow,
+      // so nothing is shown here either, matching the Venite slot's own
+      // omission. Every other day is unaffected.
+      if (resolved && typeof isVeniteOmittedToday === "function" && isVeniteOmittedToday(resolved)) return "";
       // George's 9/1 note: Mattins.tex line 93's "Note, After the Venite,
       // a Hymn may be sung" rubric (line 93-94 comment: "Rubric added to
       // permit the Invitatory Hymn") is a DIFFERENT hymn slot than the one
@@ -3304,18 +3492,6 @@
           if (seasonEntry && !seasonEntry.unreachable && seasonEntry[hymnField]) feastEntry = seasonEntry;
         }
       }
-      if (feastEntry) {
-        let html = `<div class="section-heading">${escapeHtml("Office Hymn (" + feastEntry.name + ")")}</div>`;
-        html += feastEntry[hymnField].map((stanza, i) => renderHymnStanza(stanza, i === 0)).join("");
-        return html;
-      }
-
-      const optList = hourKey === "mattins" ? currentTemplate.mattinsHymnOptions : currentTemplate.evensongHymnOptions;
-      const seasonKey = typeof pickOfficeHymnSeason === "function" ? pickOfficeHymnSeason(resolved, hourKey) : null;
-      const h = (optList || []).find((o) => o.season === seasonKey);
-      if (!h) return `<div class="placeholder-block"><span class="missing">No Office Hymn text is prescribed by this Prayer Book here - the rubric permits "a Hymn" at the choice of the minister or congregation. See ROADMAP.md.</span></div>`;
-      let html = `<div class="section-heading">${escapeHtml(h.heading)}</div>`;
-      html += h.textLines.map((stanza, i) => renderHymnStanza(stanza, i === 0)).join("");
       // George's 9/1 note: "The Versicle also needs to be provided after
       // the Office Hymn." FerialHymns.tex gives each of the 15 ferial
       // Office Hymn subsections (Sunday Mattins in Winter/Summer, Sunday
@@ -3323,17 +3499,50 @@
       // ℣./℟. pair right after the hymn's last stanza - sourced and
       // added to mattinsHymnOptions/evensongHymnOptions as a `versicle`
       // field (English only; the source gives no Latin here, unlike the
-      // Venite/Psalm versicles elsewhere in this Breviary). No Latin
-      // equivalent given in the source (renderVersicleLine already
-      // handles that honestly rather than fabricating one). Scoped to
-      // just the ferial cycle: the 52 feast/season-proper Office Hymn
-      // overrides (data/feast-office-hymns.json, task #90) don't carry a
-      // sourced versicle of their own in this pass - `h.versicle` is
-      // simply absent for those, so nothing renders there rather than
-      // guessing at one; see ROADMAP.md.
-      if (h.versicle) {
-        html += renderVersicleLine(h.versicle.v, undefined, "versicle");
-        html += renderVersicleLine(h.versicle.r, undefined, "response");
+      // Venite/Psalm versicles elsewhere in this Breviary). Note this
+      // versicle is keyed by WEEKDAY, not by which hymn text is sung -
+      // every non-Sunday weekday at a given Hour shares the identical
+      // ℣./℟. (Mon-Fri at Evensong: "Lord, let my prayer be set forth...";
+      // Mon-Sat at Mattins: "O satisfy us with thy mercy..."), only Sunday
+      // and (at Evensong) Saturday differing - confirming it belongs to
+      // the Hour's ferial weekday cycle itself, same as the Little Hours'
+      // own fixed per-Hour versicles elsewhere on this site, rather than
+      // to the particular hymn printed above it.
+      //
+      // George's 10/20 note: "In Evensong on Feast Days, the Versicle and
+      // Response is missing after the Office Hymn." Root cause: this used
+      // to `return` straight out of the `feastEntry` branch above before
+      // ever reaching this lookup, so a winning Feast's own proper hymn
+      // (or its Common's) always rendered with no trailing ℣./℟. at all -
+      // the 52 feast/season-proper Office Hymn overrides (data/feast-
+      // office-hymns.json, task #90) have never had a versicle of their
+      // own sourced for them individually. Fixed by falling through to
+      // this same by-weekday lookup regardless of which hymn text was
+      // printed above, since (per the note just above) that versicle
+      // isn't proper to the ferial hymn text anyway, but to the Hour and
+      // weekday - so it's the honest, already-sourced text to show here
+      // too, rather than silently showing nothing. A feast-specific
+      // versicle of its own, if one is ever sourced, would simply take
+      // priority by being added to feastEntry and checked first.
+      const optList = hourKey === "mattins" ? currentTemplate.mattinsHymnOptions : currentTemplate.evensongHymnOptions;
+      const seasonKey = typeof pickOfficeHymnSeason === "function" ? pickOfficeHymnSeason(resolved, hourKey) : null;
+      const h = (optList || []).find((o) => o.season === seasonKey);
+      const versicle = (feastEntry && feastEntry.versicle) || (h && h.versicle);
+      let html;
+      if (feastEntry) {
+        html = `<div class="section-heading">${escapeHtml("Office Hymn (" + feastEntry.name + ")")}</div>`;
+        html += feastEntry[hymnField].map((stanza, i) => renderHymnStanza(stanza, i === 0)).join("");
+      } else if (h) {
+        html = `<div class="section-heading">${escapeHtml(h.heading)}</div>`;
+        html += h.textLines.map((stanza, i) => renderHymnStanza(stanza, i === 0)).join("");
+      } else {
+        return `<div class="placeholder-block"><span class="missing">No Office Hymn text is prescribed by this Prayer Book here - the rubric permits "a Hymn" at the choice of the minister or congregation. See ROADMAP.md.</span></div>`;
+      }
+      // No Latin equivalent given in the source (renderVersicleLine
+      // already handles that honestly rather than fabricating one).
+      if (versicle) {
+        html += renderVersicleLine(versicle.v, undefined, "versicle");
+        html += renderVersicleLine(versicle.r, undefined, "response");
       }
       return html;
     }
@@ -3358,7 +3567,21 @@
       // isSundayPsalmsOptional above pickLectionarySlot for the exact
       // scoping rule.
       const properPsalms = resolveEffectiveProperPsalms(resolved, lectionarySlot);
-      const { entries } = resolvePsalmsForDay(resolved, psalterData, monthlySlot, properPsalms);
+      // George's 10/7 note: the Table-of-Concurrence displacement swap
+      // (renderResolved, used as this module's `resolved` throughout a
+      // displaced I Evensong) carries tomorrow's date, which is correct
+      // for the Collect/Lessons/proper-Psalms decision above but wrong
+      // for the 30-Day Monthly Psalter's day-of-month fallback below -
+      // resolvePsalmsForDay reads resolved.date.getUTCDate() directly,
+      // so left unguarded it quietly renders tomorrow's monthly-cycle
+      // Psalms instead of tonight's own. Mirrors the same
+      // usingDisplacedFerial guard already applied in pickLectionarySlot
+      // above for the parallel Lessons bug; only matters when
+      // properPsalms is falsy, since resolvePsalmsForDay returns early
+      // on a Proper hit before ever touching .date.
+      const usingDisplacedFerialPsalms = currentHour === "evensong" && eveningDisplacement && eveningDisplacement.todayResolved;
+      const psalmDayResolved = usingDisplacedFerialPsalms ? eveningDisplacement.todayResolved : resolved;
+      const { entries } = resolvePsalmsForDay(psalmDayResolved, psalterData, monthlySlot, properPsalms);
       if (entries.length === 0) return `<div class="placeholder-block"><span class="missing">No psalms resolved for this day yet.</span></div>`;
       // Task #170: the toggle only ever appears when there's an actual
       // choice to make - a Sunday Second Class or lower whose own Proper
@@ -3431,7 +3654,7 @@
         if (primaryEntry && !primaryEntryIsPlainSeasonFeria) {
           festalPsalmAntiphon = currentHour === "mattins"
             ? primaryEntry.psalmAntiphon
-            : (primaryEntry.secondEvensongPsalmAntiphon || primaryEntry.firstEvensongPsalmAntiphon);
+            : pickEvensongAntiphonVariant(primaryEntry.firstEvensongPsalmAntiphon, primaryEntry.secondEvensongPsalmAntiphon);
         }
         // George's 9/8 note, task #185: "If it [the Feast] lack anything,
         // then its listed Common should be used for whatever else is
@@ -3460,7 +3683,7 @@
           if (commonEntry) {
             festalPsalmAntiphon = currentHour === "mattins"
               ? commonEntry.psalmAntiphon
-              : (commonEntry.secondEvensongPsalmAntiphon || commonEntry.firstEvensongPsalmAntiphon);
+              : pickEvensongAntiphonVariant(commonEntry.firstEvensongPsalmAntiphon, commonEntry.secondEvensongPsalmAntiphon);
           }
         }
       }
@@ -3554,16 +3777,17 @@
       } else if (key === "benedictusAntiphon") {
         ant = primaryEntry.benedictusAntiphon;
       } else {
-        // Evensong's own Second Evensong antiphon is preferred as "this
-        // evening's" Magnificat antiphon when the source gives one,
-        // falling back to First Evensong's when it doesn't (most sourced
-        // days only ever have one Magnificat antiphon total, not a
-        // distinct pair) - a deliberate simplification that doesn't
-        // thread this through the fuller First/Second Evensong
-        // concurrence machinery (task #91's Table 2 logic), which exists
-        // to decide whose Office is said tonight at all, not which of
-        // two antiphon variants of the SAME day's Office to show.
-        ant = primaryEntry.secondEvensongMagnificatAntiphon || primaryEntry.firstEvensongMagnificatAntiphon;
+        // George's 10/20 note, task #91: on a feast with a distinct
+        // First and Second Evensong Magnificat antiphon pair, which one
+        // is "this evening's" depends on whether tonight is First
+        // Evensong (eveningDisplacement set - tonight anticipates this
+        // same feast, found via `resolved`) or the feast's own Second
+        // Evensong (no displacement) - see pickEvensongAntiphonVariant's
+        // own comment above resolveMassPropersWinner for the full
+        // rationale. Most sourced days only ever have one Magnificat
+        // antiphon total, not a distinct pair, so either direction just
+        // falls back to whichever one the day actually has.
+        ant = pickEvensongAntiphonVariant(primaryEntry.firstEvensongMagnificatAntiphon, primaryEntry.secondEvensongMagnificatAntiphon);
       }
       // George's 9/8 note, task #185: same Feast-then-Common priority as
       // the Office Hymn (pickFeastCommonHymnLabel, task #90) and the
@@ -3587,7 +3811,7 @@
         if (commonEntry) {
           ant = key === "benedictusAntiphon"
             ? commonEntry.benedictusAntiphon
-            : (commonEntry.secondEvensongMagnificatAntiphon || commonEntry.firstEvensongMagnificatAntiphon);
+            : pickEvensongAntiphonVariant(commonEntry.firstEvensongMagnificatAntiphon, commonEntry.secondEvensongMagnificatAntiphon);
         }
       }
       // George's 9/2 note, task #141: "if it's a feria you'll get the
@@ -4452,7 +4676,8 @@
       // Psalm antiphon is proper to its Sunday, not the whole week.
       const isSunday = resolved.date && resolved.date.getUTCDay() === 0;
       const primaryEntryIsPlainSeasonFeria = primaryEntry === seasonEntry && !isSunday;
-      const festalPsalmAntiphon = primaryEntry && !primaryEntryIsPlainSeasonFeria && (primaryEntry.secondEvensongPsalmAntiphon || primaryEntry.firstEvensongPsalmAntiphon);
+      const festalPsalmAntiphon = primaryEntry && !primaryEntryIsPlainSeasonFeria
+        && pickEvensongAntiphonVariant(primaryEntry.firstEvensongPsalmAntiphon, primaryEntry.secondEvensongPsalmAntiphon);
       if (festalPsalmAntiphon) {
         return `<p class="antiphon">${escapeHtml(festalPsalmAntiphon.text)}</p>`;
       }
@@ -4464,7 +4689,13 @@
     // last-Psalm antiphon is always drawn from whichever Psalm list (the
     // 30-Day Psalter or the Sunday's own Proper) is actually on screen.
     const properPsalms = resolveEffectiveProperPsalms(resolved, lectionarySlot);
-    const { entries } = resolvePsalmsForDay(resolved, psalterData, monthlySlot, properPsalms);
+    // Same displaced-Evensong day-of-month guard as the "psalms" case
+    // above (George's 10/7 note) - this deferred last-Psalm antiphon
+    // must fall back to the same Monthly Psalter entries actually shown
+    // there, not tomorrow's.
+    const usingDisplacedFerialPsalms = currentHour === "evensong" && eveningDisplacement && eveningDisplacement.todayResolved;
+    const psalmDayResolved = usingDisplacedFerialPsalms ? eveningDisplacement.todayResolved : resolved;
+    const { entries } = resolvePsalmsForDay(psalmDayResolved, psalterData, monthlySlot, properPsalms);
     if (!entries.length) return "";
     const last = entries[entries.length - 1];
     const psalm = psalterData.psalms[String(last.num)];
@@ -5586,14 +5817,58 @@
     if (isOfficeOfOurLadyToday(renderResolved, officeFeastInfo)) {
       officeTitleText = `${officeTitleText} (Office of Our Lady)`;
     }
+    // George's consolidated 10/7 note: "Mattins and Evensong of All
+    // Souls' Day should be the Office of the Dead with Double rite." See
+    // isAllSoulsOfficeOfTheDeadToday above for the full scoping rationale.
+    const allSoulsDeadOffice = (currentHour === "mattins" || currentHour === "evensong") && isAllSoulsOfficeOfTheDeadToday(renderResolved, officeFeastInfo);
+    if (allSoulsDeadOffice) {
+      officeTitleText = `${officeTitleText} — the Office of the Dead (Double rite)`;
+    }
     document.getElementById("seasonLabel").textContent = officeTitleText;
     document.getElementById("kalendarLine").innerHTML = renderKalendarLine(renderResolved, officeFeastInfo);
     document.getElementById("fallbackNote").textContent = renderResolved.lectionary ? "" : "No exact lectionary entry found for this day in this prototype's data yet.";
 
-    const template = HOUR_TEMPLATES[currentHour];
-    currentTemplate = template || null;
     const body = document.getElementById("officeBody");
     const titleEl = document.getElementById("officeTitle");
+
+    if (allSoulsDeadOffice) {
+      // Mattins of the Dead (Matins + Lauds, said together as one Hour in
+      // the classical form) substitutes for the ordinary Mattins;
+      // Vespers of the Dead substitutes for the ordinary Evensong.
+      // `currentTemplate` is left at whatever it already was (or null) -
+      // safe, since none of these three templates has a "placeholder"
+      // section, the only section type that ever reads it.
+      currentTemplate = null;
+      // Double rite mandates all three Nocturns (see matinsDeadNocturns's
+      // own declaration comment above and task #64) - not the user's own
+      // "one Nocturn" choice, which only applies on the separate,
+      // date-blind Matins-of-the-Dead page. Saved/restored around the
+      // render so visiting that page afterward still shows whatever the
+      // user had actually chosen there.
+      const savedMatinsDeadNocturns = matinsDeadNocturns;
+      // Both Nocturn toggles (matinsDeadNocturns itself, and the
+      // Nocturn-I/II/III picker that only matters when "one" is chosen)
+      // are stripped out here - they have no click handler wired to
+      // #officeBody (only to #matinsDeadBody on the dedicated page), and
+      // since Double rite forces "three" unconditionally on this page
+      // anyway, there is no live choice left for them to offer.
+      const stripNocturnToggles = (tmpl) => ({ sections: (tmpl.sections || []).filter((s) => s.type !== "inlineToggle") });
+      if (currentHour === "mattins") {
+        if (titleEl) titleEl.innerHTML = "Mattins &amp; Lauds of the Dead";
+        matinsDeadNocturns = "three";
+        const matinsHtml = window.MATINS_DEAD_TEMPLATE ? renderOfficeSections(stripNocturnToggles(window.MATINS_DEAD_TEMPLATE), renderResolved) : "";
+        matinsDeadNocturns = savedMatinsDeadNocturns;
+        const laudsHtml = window.LAUDS_DEAD_TEMPLATE ? renderOfficeSections(window.LAUDS_DEAD_TEMPLATE, renderResolved) : "";
+        body.innerHTML = matinsHtml + `<div class="section-heading">Lauds of the Dead</div>` + laudsHtml;
+      } else {
+        if (titleEl) titleEl.innerHTML = "Vespers of the Dead";
+        body.innerHTML = window.VESPER_DEAD_TEMPLATE ? renderOfficeSections(window.VESPER_DEAD_TEMPLATE, renderResolved) : "";
+      }
+      return;
+    }
+
+    const template = HOUR_TEMPLATES[currentHour];
+    currentTemplate = template || null;
     if (!template) {
       if (titleEl) titleEl.innerHTML = escapeHtml(HOUR_LABELS[currentHour]);
       body.innerHTML = `<div class="placeholder-block"><span class="missing">${escapeHtml(HOUR_LABELS[currentHour])} isn't wired up in this prototype yet. See ROADMAP.md for what's next.</span></div>`;
@@ -6053,7 +6328,10 @@
       }
       const classes = ["cal-page-day"];
       if (isToday) classes.push("today");
-      const style = color ? ` style="--day-color:${color.hex}"` : "";
+      // Same background-wash fix as renderCalendarPopover above (George's
+      // consolidated 10/7 note, item 10) - --day-color-rgb lets the CSS
+      // build a low-alpha rgba() wash from this day's own color.
+      const style = color ? ` style="--day-color:${color.hex};--day-color-rgb:${hexToRgbTriplet(color.hex)}"` : "";
       html += `<button class="${classes.join(" ")}" data-cal-page-day="${day}"${style} aria-label="${escapeHtml(fmtDate(d))}${names.length ? ", " + escapeHtml(names[0]) : ""}">` +
         `<span class="cal-page-daynum">${day}</span>` +
         (names.length ? `<span class="cal-page-feast">${escapeHtml(names[0])}</span>` : "") +

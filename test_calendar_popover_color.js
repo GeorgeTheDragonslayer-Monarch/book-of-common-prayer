@@ -68,6 +68,19 @@ const WHITE_GOLD = "#8a6d1d";
 const VIOLET = "#5b3a6e";
 const GREEN = "#2f6b3f";
 
+// George's consolidated 10/7 note, item 10: the 3px-top-accent-only
+// treatment these squares used to get (--day-color alone) read as "most
+// of the days [are] the same colour" - too subtle to notice. Fixed by
+// also setting a --day-color-rgb triplet (same hexToRgbTriplet pattern
+// as --accent-rgb) so the CSS can show a low-alpha background wash of
+// the day's color too, not just the hairline. So the inline style string
+// now reads "--day-color:<hex>;--day-color-rgb:<r, g, b>" - checked here
+// by matching just the --day-color segment at the front, rather than the
+// old exact-equality check against --day-color alone.
+function hasDayColor(style, hex) {
+  return !!style && style.indexOf(`--day-color:${hex}`) === 0;
+}
+
 // The Office page's own popover (#calendarPopover / #calendarGrid),
 // opened while viewing a date in August 2026.
 {
@@ -77,11 +90,11 @@ const GREEN = "#2f6b3f";
     return btn ? btn.getAttribute("style") : null;
   };
   check("Popover is visible after clicking its toggle", doc.getElementById("calendarPopover").hidden === false);
-  check("10 August (St. Lawrence, Martyr) is red", dayStyle(10) === `--day-color:${RED}`);
-  check("14 August (Vigil of the Assumption) is violet", dayStyle(14) === `--day-color:${VIOLET}`);
-  check("15 August (the Assumption) is white/gold", dayStyle(15) === `--day-color:${WHITE_GOLD}`);
-  check("9 August (an ordinary Trinitytide Sunday) is green", dayStyle(9) === `--day-color:${GREEN}`);
-  check("12 August (an ordinary feria) is green", dayStyle(12) === `--day-color:${GREEN}`);
+  check("10 August (St. Lawrence, Martyr) is red", hasDayColor(dayStyle(10), RED));
+  check("14 August (Vigil of the Assumption) is violet", hasDayColor(dayStyle(14), VIOLET));
+  check("15 August (the Assumption) is white/gold", hasDayColor(dayStyle(15), WHITE_GOLD));
+  check("9 August (an ordinary Trinitytide Sunday) is green", hasDayColor(dayStyle(9), GREEN));
+  check("12 August (an ordinary feria) is green", hasDayColor(dayStyle(12), GREEN));
   // The pre-existing red-letter "feast" flag (a different, unrelated
   // signal) must still work exactly as before this fix.
   const btn10 = grid.querySelector('[data-cal-day="10"]');
@@ -100,8 +113,8 @@ const GREEN = "#2f6b3f";
     return btn ? btn.getAttribute("style") : null;
   };
   check("Mass page's popover is visible after clicking its toggle", doc.getElementById("massCalendarPopover").hidden === false);
-  check("Mass page's popover: 14 August is violet too", dayStyle(14) === `--day-color:${VIOLET}`);
-  check("Mass page's popover: 15 August is white/gold too", dayStyle(15) === `--day-color:${WHITE_GOLD}`);
+  check("Mass page's popover: 14 August is violet too", hasDayColor(dayStyle(14), VIOLET));
+  check("Mass page's popover: 15 August is white/gold too", hasDayColor(dayStyle(15), WHITE_GOLD));
 }
 
 console.log(failed ? "\nRESULT: FAIL" : "\nRESULT: PASS");
