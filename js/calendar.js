@@ -213,6 +213,44 @@ function resolveLiturgicalDay(queryDate, lectionaryData, kalendarData) {
     if (tomorrowVigil) kalendarEntries = kalendarEntries.concat([tomorrowVigil]);
   }
 
+  // George's 10/26 note: "Yesterday was the feast of Christ the King
+  // and the online BCP did not reflect that in the relevant offices."
+  // Christ the King (pages/Propers/PropTime.tex: "Our Lord Jesus Christ
+  // the King," "First Class Double / Last Sunday in October") is kept
+  // on a moveable civil date with no \feastdate of its own - unlike
+  // every other entry data/kalendar.json actually has, it can never be
+  // keyed by a fixed "M-D" kalendarKey (confirmed: the string "Christ
+  // the King" never appears anywhere in that file). Injected here
+  // instead, the same single choke point the Vigil-on-Sunday rule just
+  // above already uses, as a synthetic Kalendar entry whenever today
+  // genuinely IS the last Sunday of October - every downstream consumer
+  // of `resolved.kalendar` (resolveFeastRankToday's ranking loop, the
+  // "also commemorated" footnote dump, resolveLiturgicalColor) then
+  // sees it exactly as a real dated Kalendar line would look, with zero
+  // changes needed in any of them. `rank: "1st Double"` matches
+  // ranking.js's own RANK_TIER ladder (PropTime.tex's own heading reads
+  // "First Class Double" - a display-string synonym, not a different
+  // rank, kept separately on the Mass Propers object in js/app.js
+  // rather than lost by this substitution). `isChristTheKing: true` is
+  // an extra marker field (every other Kalendar entry only ever has
+  // name/rank/redLetter/note) that js/app.js's own isChristTheKingToday()
+  // checks for, so the Mass Propers/Opening Sentence/Office Lessons
+  // overrides there don't need to re-derive this same date arithmetic a
+  // second time.
+  if (weekdayName === "Sunday") {
+    const octThirtyFirst = new Date(Date.UTC(q.getUTCFullYear(), 9, 31)); // month 9 = October
+    const lastSundayOfOctober = addDays(octThirtyFirst, -octThirtyFirst.getUTCDay());
+    if (daysBetween(lastSundayOfOctober, q) === 0) {
+      kalendarEntries = kalendarEntries.concat([{
+        name: "Christ the King",
+        rank: "1st Double",
+        redLetter: true,
+        note: null,
+        isChristTheKing: true,
+      }]);
+    }
+  }
+
   return {
     date: q,
     periodKey,

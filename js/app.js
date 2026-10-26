@@ -1474,7 +1474,7 @@
         const transferred = findTransferredFeast(resolved.date);
         festivalKey = transferred ? `${transferred.fromDate.getUTCMonth() + 1}-${transferred.fromDate.getUTCDate()}` : null;
       }
-      const festival = festivalKey && lectionaryFestivalsData[festivalKey];
+      const festival = isChristTheKingToday(resolved) ? CHRIST_THE_KING_LECTIONARY : (festivalKey && lectionaryFestivalsData[festivalKey]);
       if (festival) {
         if (currentHour === "mattins") return festival.mattins || null;
         // George's 9/7 note: "It's pulling II Evensong Psalms and Lessons
@@ -1846,9 +1846,84 @@
     return preferFirst ? (firstVariant || secondVariant) : (secondVariant || firstVariant);
   }
 
+  // George's 10/26 note: "Yesterday was the feast of Christ the King and
+  // the online BCP did not reflect that in the relevant offices." See
+  // js/calendar.js's own Kalendar-injection comment (the single choke
+  // point that actually decides WHICH day this is) for the full root-
+  // cause story: Christ the King has no \feastdate of its own
+  // (PropTime.tex keeps it on "Last Sunday in October," a computed
+  // civil date, not a fixed Kalendar entry), so it was never wired into
+  // any of this site's data files at all - resolveLiturgicalDay now
+  // injects a synthetic Kalendar entry for it whenever today genuinely
+  // is that Sunday, tagged `isChristTheKing: true` so this one check
+  // doesn't need to re-derive the same "last Sunday of October" date
+  // arithmetic a second time.
+  function isChristTheKingToday(resolved) {
+    const kalEntries = (resolved && resolved.kalendar) || [];
+    return kalEntries.some((e) => e.isChristTheKing);
+  }
+
+  // Transcribed verbatim from pages/Propers/PropTime.tex's "Our Lord
+  // Jesus Christ the King" entry (manually inserted between Sts. Simon
+  // & Jude and All Hallows - "First Class Double, Last Sunday in
+  // October"). Every field matches data/collects-sanctorale.json's own
+  // shape (see e.g. its "9-29" Michaelmas entry), so the exact same
+  // rendering code that already shows a fixed Sanctorale entry's Mass
+  // Propers/Opening Sentence can show this one too - substituted in
+  // below wherever that code would otherwise look this feast up by its
+  // (nonexistent) kalendarKey. The Collect/Secret/Postcommunion's
+  // source-text "Who liveth." shorthand is expanded to "...who liveth
+  // and reigneth with thee in the unity of the Holy Ghost, God,
+  // throughout all ages, world without end. Amen." - the exact
+  // expansion every other "Who liveth."-ending Collect already
+  // transcribed into this site's data uses (e.g. the Conception, "12-8";
+  // Sts. Philip & James, "5-1"; Candlemas, "2-2") - not new wording
+  // invented for this entry. The source's three "Commemoration is made
+  // of the Sunday occurring" rubrics (after the Collect/Secret/
+  // Postcommunion) need no separate code at all: Christ the King always
+  // falls ON a Sunday, so task #142's suppressSundayPriorCommemoration
+  // guard (which only suppresses a commemoration on a WEEKDAY) never
+  // fires here, and the pre-existing renderCommemoratedOration machinery
+  // already commemorates that Sunday's own Collect/Secret/Postcommunion
+  // automatically. The fourth rubric ("The Last Gospel is of the Sunday
+  // occurring") has no corresponding substitution mechanism anywhere on
+  // this site - Last Gospel isn't modeled as its own swappable Mass part
+  // at all - so it's left unimplemented rather than guessed at; see
+  // ROADMAP.md.
+  const CHRIST_THE_KING_SANCTORALE = {
+    name: "Christ the King",
+    introit: "Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour. To him be glory and dominion for ever and ever. Ps. Give the King thy judgments, O God: and thy righteousness unto the King's Son.",
+    text: "Almighty and everlasting God, who in thy beloved Son, the King of all, hast been pleased to make all things new: mercifully grant; that all the families of the Gentiles, dispersed by the wounds of sin, may be made subject to his most gracious governance. Who liveth and reigneth with thee in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
+    epistleCitation: "Colossians 1:12",
+    epistleText: "Brethren: We give thanks unto the Father, which hath made us meet to be partakers of the inheritance of the saints in light: Who hath delivered us from the power of darkness, and hath translated us into the kingdom of his dear Son: In whom we have redemption through his blood, even the forgiveness of sins: Who is the image of the invisible God, the firstborn of every creature: For by him were all things created, that are in heaven, and that are in earth, visible and invisible, whether they be thrones, or dominions, or principalities, or powers: all things were created by him, and for him: And he is before all things, and by him all things consist. And he is the head of the body, the church: who is the beginning, the firstborn from the dead; that in all things he might have the preeminence. For it pleased the Father that in him should all fulness dwell; And, having made peace through the blood of his cross, by him to reconcile all things unto himself; by him, I say, whether they be things in earth, or things in heaven, in Christ Jesus our Lord.",
+    gradual: "His dominion shall be from the one sea to the other, and from the flood unto the world's end. ℣. All kings shall fall down before him: all nations shall do him service.",
+    gradualAlleluia: "Alleluia, alleluia. ℣. His dominion is an everlasting dominion, which shall not pass away: and his kingdom that which shall not be destroyed. Alleluia.",
+    gospelCitation: "John 18:33",
+    gospelText: "At that time: Pilate said unto Jesus: Art thou the King of the Jews? Jesus answered him, Sayest thou this thing of thyself, or did others tell it thee of me? Pilate answered, Am I a Jew? Thine own nation and the chief priests have delivered thee unto me: what hast thou done? Jesus answered, My kingdom is not of this world: if my kingdom were of this world, then would my servants fight, that I should not be delivered to the Jews: but now is my kingdom not from hence. Pilate therefore said unto him, Art thou a king then? Jesus answered, Thou sayest that I am a king. To this end was I born, and for this cause came I into the world, that I should bear witness unto the truth. Every one that is of the truth heareth my voice.",
+    offertory: "Desire of me, and I shall give thee the heathen for thine inheritance, and the utmost parts of the earth for thy possession.",
+    secretText: "We offer unto thee, O Lord, the victim of man's reconciliation: grant, we beseech thee; that he, whom we offer in these present sacrifices, may himself grant unto all nations the gifts of unity and peace, Jesus Christ thy Son our Lord. Who liveth and reigneth with thee in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
+    communion: "The Lord remaineth a King for ever: the Lord shall give his people the blessing of peace.",
+    postcommunionText: "O Lord, who hast bestowed on us the food of immortality, we beseech thee: that we, who glory to fight beneath the banner of Christ the King, may with him be enabled to reign for ever on the heavenly throne. Who liveth and reigneth with thee in the unity of the Holy Ghost, God, throughout all ages, world without end. Amen.",
+    openingSentence: "All power is given unto me in heaven and in earth.",
+    openingSentenceCitation: "Mt 28:18",
+  };
+
+  // Transcribed verbatim from pages/Lectionary/LectionaryFestivals.tex's
+  // "Christ the King / Last Sunday in October" row - same shape as
+  // data/lectionary-festivals.json's own fixed-date entries (see e.g.
+  // its "9-29" entry), substituted into pickLectionarySlot below in
+  // place of the normal (inapplicable, since this feast has no fixed
+  // kalendarKey) lectionaryFestivalsData lookup.
+  const CHRIST_THE_KING_LECTIONARY = {
+    name: "Christ the King",
+    evensongI: { psalms: "29,45,47", lesson1: "Jer 23:1-8", lesson2: "Lk 1:26-33" },
+    mattins: { psalms: "2,8,24", lesson1: "Jer 10", lesson2: "Rev 19:1-16" },
+    evensongII: { psalms: "48,72", lesson1: "Dan 4", lesson2: "1 Tim 6:1-16" },
+  };
+
   function resolveMassPropersWinner(resolved) {
     const seasonEntry = resolveTemporaleSeasonEntry(resolved) || resolveEpiphanyOverflow(resolved.periodKey, resolved.date);
-    let sanctorale = collectsSanctoraleData[resolved.kalendarKey];
+    let sanctorale = isChristTheKingToday(resolved) ? CHRIST_THE_KING_SANCTORALE : collectsSanctoraleData[resolved.kalendarKey];
 
     // Feast Day transfer (Ranking.tex: a I/II Double hard-blocked on its
     // own calendar date is transferred to the first unhindered day) -
@@ -3233,10 +3308,14 @@
     // different, more specific thing than ForeOffice.tex's fixed
     // General/Morning/Evening/Common-of-Saint sentence categories
     // handled by the loop just above, which has no slot for an
-    // individual feast's own one-off sentence at all. (Christ the
-    // King also has one in the source, but it's a movable feast - no
-    // \feastdate to key it by - so it's left for a follow-up rather
-    // than guessed at here.) Newly sourced onto the matching
+    // individual feast's own one-off sentence at all. (Christ the King
+    // also has one in the source - this WAS left for a follow-up, since
+    // it's a movable feast with no \feastdate to key it by, until
+    // George's 10/26 note that the live site wasn't observing the feast
+    // at all; CHRIST_THE_KING_SANCTORALE above now supplies it, and the
+    // `isChristTheKingToday` substitution just below picks it up the
+    // same way a fixed feast's own sourced entry would be.) Newly
+    // sourced onto the matching
     // `data/collects-sanctorale.json` entry (`openingSentence` +
     // optional `openingSentenceCitation`, parsed 1:1 from PropTime.tex)
     // and shown as one more tier, after the General/Morning-or-Evening/
@@ -3244,7 +3323,7 @@
     // today's actual winning feast (not a merely-commemorated one) has
     // one sourced - every other day is completely unaffected.
     if (feastInfo && feastInfo.winner === "feast" && resolved.kalendarKey) {
-      const sanctoraleEntry = collectsSanctoraleData[resolved.kalendarKey];
+      const sanctoraleEntry = isChristTheKingToday(resolved) ? CHRIST_THE_KING_SANCTORALE : collectsSanctoraleData[resolved.kalendarKey];
       if (sanctoraleEntry && sanctoraleEntry.openingSentence) {
         const cite = sanctoraleEntry.openingSentenceCitation
           ? ` <span class="sentence-citation">(${escapeHtml(sanctoraleEntry.openingSentenceCitation)})</span>`
