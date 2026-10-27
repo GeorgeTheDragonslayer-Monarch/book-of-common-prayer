@@ -58,6 +58,27 @@ function buildAnchorList(anchors) {
     [anchors.easterDay, "Easter Day"],
     [anchors.easterI, "Easter I"],
     [anchors.easterII, "Easter II"],
+    // George's follow-up (10/26) to the Christ the King investigation
+    // (see ROADMAP.md): "Patronage of St. Joseph" (PropSeas.tex:3144,
+    // "Wednesday after the Second Sunday after Easter," First Class
+    // Double, Simple Octave) had full Mass Propers already sitting in
+    // data/collects-temporale.json and Office Lessons already in
+    // data/lectionary-temporale.json (keys "Sunday"/"Thursday"/"Friday"/
+    // "Saturday" - the Feast Day itself plus its Simple Octave's first 3
+    // days, same "Sunday" reused-as-anchor-day convention as Corpus
+    // Christi/the Compassion of Our Lord just below) - but, unlike
+    // Christ the King, this periodKey simply had no anchor here at all,
+    // so resolveLiturgicalDay could never reach it; any date on or after
+    // it silently kept whatever Easter II/III offset it would otherwise
+    // have gotten. Fixed the same way Corpus Christi/the Compassion of
+    // Our Lord were: anchored at Easter II + 3 days (confirmed a clean,
+    // dedicated offset with no collision against any other anchor here).
+    // Unlike Christ the King, this needed no synthetic Kalendar entry -
+    // it's a plain Temporale-style period with no competing fixed-date
+    // Sanctorale entry to rank against, so resolveMassPropersWinner's
+    // existing "season wins, no decision" fallback (reached whenever
+    // `sanctorale` is falsy) already renders it correctly once reachable.
+    [addDaysLocal(anchors.easterII, 3), "Patronage of St. Joseph"],
     [anchors.easterIII, "Easter III"],
     [anchors.easterIV, "Easter IV"],
     [anchors.rogationSunday, "Rogation Sunday"],
@@ -101,6 +122,24 @@ function buildAnchorList(anchors) {
   // week), mirroring how Corpus Christi (Trinity Sunday + 4, also a
   // Thursday reusing the "Sunday" label) is anchored just above.
   list.push([addDaysLocal(anchors.trinity[0], 5), "Compassion of Our Lord"]);
+  // George's follow-up (10/26) to the Christ the King investigation (see
+  // ROADMAP.md): the Autumn Ember Days ("no Feast is kept unless it be a
+  // First or Second Class Double" - PropTime.tex) had the exact same bug
+  // as Christ the King and Patronage of St. Joseph - computus.js's
+  // getLiturgicalYearAnchors already computes emberWedSeptember/
+  // emberFriSeptember/emberSatSeptember (the Wed/Fri/Sat of the week
+  // containing 14 September, Holy Cross Embertide), but nothing here ever
+  // anchored them, so they always fell through to whatever ordinary
+  // Trinitytide Sunday's bucket contained that date. Mass Propers and
+  // Office Lessons for all three days are now in data/collects-temporale
+  // .json and data/lectionary-temporale.json under "Ember Wednesday in
+  // Autumn"/"Ember Friday in Autumn"/"Ember Saturday in Autumn" (distinct
+  // periodKeys from the pre-existing Whitsun-only "Ember Wednesday"/
+  // "Ember Friday"/"Ember Saturday" keys above, which hold entirely
+  // different propers and must not be reused for these).
+  list.push([anchors.emberWedSeptember, "Ember Wednesday in Autumn"]);
+  list.push([anchors.emberFriSeptember, "Ember Friday in Autumn"]);
+  list.push([anchors.emberSatSeptember, "Ember Saturday in Autumn"]);
   list.push([anchors.sundayNextBeforeAdvent, "Sunday Next before Advent"]);
 
   list.sort((a, b) => a[0] - b[0]);
@@ -153,8 +192,8 @@ function resolveLiturgicalDay(queryDate, lectionaryData, kalendarData) {
     if (daysBetween(entry[0], q) >= 0) segment = entry;
     else break;
   }
-  const [segmentStart, initialPeriodKey] = segment;
-  const offset = daysBetween(segmentStart, q);
+  let [segmentStart, initialPeriodKey] = segment;
+  let offset = daysBetween(segmentStart, q);
   let periodKey = initialPeriodKey;
 
   let dayEntry = null;
@@ -165,6 +204,50 @@ function resolveLiturgicalDay(queryDate, lectionaryData, kalendarData) {
     if (offset >= 0 && offset < keys.length) {
       dayLabel = keys[offset];
       dayEntry = periodBucket[dayLabel];
+    }
+  }
+
+  // George's follow-up (10/26) continuing the Autumn Ember Days fix (see
+  // buildAnchorList above and ROADMAP.md): the single Thursday sitting
+  // between Ember Wednesday in Autumn and Ember Friday in Autumn is not
+  // itself an Ember day at all (Autumn Embertide, per PropTime.tex's own
+  // rubric, is Wed/Fri/Sat only) - it's an ordinary Trinitytide feria.
+  // Unlike Whitsun's own "Whit-Thursday" (hardcoded as a second day-key
+  // in the Whitsun "Ember Wednesday" bucket, since that Thursday's
+  // content is fixed, being measured from Easter), this Thursday's true
+  // content depends on *which* Trinity week it falls in - and that
+  // varies year to year, since Autumn Embertide is measured from the
+  // fixed 14 September rather than from Easter. "Ember Wednesday in
+  // Autumn"'s own lectionary/collects bucket has exactly one day-key (no
+  // Octave of its own, unlike Patronage of St. Joseph/Compassion of Our
+  // Lord above), so this Thursday falls through with offset 1 - out of
+  // range - and would otherwise just show no Office at all. Recomputed
+  // here from whichever Trinity anchor would have governed this date had
+  // the Ember anchors not intervened, the same "look past the segment
+  // that actually matched" a Christ-the-King- or Vigil-moved-to-Saturday-
+  // style special case, since nothing else in this function needs an
+  // anchor whose own span varies by year like this one's predecessor
+  // segment does.
+  if (periodKey === "Ember Wednesday in Autumn" && offset !== 0) {
+    let trinitySegment = null;
+    for (let i = 0; i < anchors.trinity.length; i++) {
+      if (daysBetween(anchors.trinity[i], q) >= 0) trinitySegment = [anchors.trinity[i], `Trinity ${toRoman(i + 1)}`];
+      else break;
+    }
+    if (trinitySegment) {
+      segmentStart = trinitySegment[0];
+      periodKey = trinitySegment[1];
+      offset = daysBetween(segmentStart, q);
+      dayLabel = null;
+      dayEntry = null;
+      const trinityBucket = lectionaryData[periodKey];
+      if (trinityBucket) {
+        const trinityKeys = Object.keys(trinityBucket);
+        if (offset >= 0 && offset < trinityKeys.length) {
+          dayLabel = trinityKeys[offset];
+          dayEntry = trinityBucket[dayLabel];
+        }
+      }
     }
   }
 

@@ -267,6 +267,59 @@
   // reason "Trinity I"'s first days double as Corpus Christi's Octave.
   const WHITSUN_EVEN_KEY = "Sunday within Ascension Octave|Saturday";
 
+  // George's follow-up (10/26) to the Christ the King investigation (see
+  // ROADMAP.md): a systematic check for other feasts with the same "no
+  // \feastdate to key it by" problem turned up "Patronage of St. Joseph"
+  // (PropSeas.tex: "Wednesday after the Second Sunday after Easter,"
+  // First Class Double, Simple Octave) and "Compassion of Our Lord"
+  // (PropSeas.tex: "Friday after Trinity I," Second Class Double, Simple
+  // Octave) - both genuinely moveable Feast Days modeled as their own
+  // Temporale-style periodKey (not a Kalendar entry at all, unlike
+  // Christ the King), newly anchored in js/calendar.js's
+  // buildAnchorList. Making them reachable exposed a second, closely
+  // related bug: `classifySeasonDay` below has no way to know that
+  // these two periodKeys' own Feast Day (`dayLabel === "Sunday"`, this
+  // data's anchor-day label, reused the same way Corpus Christi/the
+  // Compassion itself reuse it) is ITSELF a First/Second Class Double -
+  // with no entry here, each fell through to the generic "feria"
+  // classification (the weakest one, tier>=3 wins), so on every real
+  // civil-date collision checked across 2026-2060 (confirmed live, not
+  // theoretical - e.g. 2026-04-29, a Day within the Common Octave of
+  // St. George, Semidouble, was wrongly winning the Collect over
+  // Patronage of St. Joseph outright), a merely Semidouble or Greater
+  // Double fixed commemoration was wrongly outranking what the source
+  // explicitly marks as a First/Second Class Double.
+  //
+  // Fixed the same way "other-sunday"/"second-class-sunday" already
+  // protect a Lesser/Second Class Sunday from everything but a 1st/2nd
+  // Double: tier>=7 (1st Double only) to outrank Patronage of St.
+  // Joseph's own First Class Double strength, tier>=6 (2nd Double or
+  // 1st Double) for the Compassion's Second Class Double strength -
+  // the same tier thresholds "First Class Double"/"Second Class Double"
+  // already map to everywhere else in this file (Christ the King's own
+  // Kalendar-injection fix used the identical "First Class Double" ->
+  // "1st Double" correspondence). Ranking.tex itself doesn't address
+  // this exact pairing (a moveable Temporale-anchored Feast Day
+  // colliding with an ordinary fixed Kalendar entry) directly, so - like
+  // the unstated Greater Feria/Common Vigil thresholds flagged to
+  // Augustine elsewhere in this file - this is a reasoned extension of
+  // the existing, confirmed First/Second Class Double thresholds, not a
+  // rule transcribed verbatim from the source; worth a second look if
+  // Augustine is asked and gives a different answer. `commemorateOther:
+  // tier > 0` (not dropped outright) matches how a losing Common Octave
+  // day is explicitly still commemorated per Ranking.tex ("A Double
+  // Feast occurring within a Common Octave has its Office with
+  // Commemoration of the Octave") - confirmed correct for the live
+  // 2026-04-29 case, where St. George's Common Octave Day VII should
+  // still be footnoted under Patronage of St. Joseph's own winning
+  // Collect, not silently dropped. Deliberately scoped to only the
+  // Feast Day itself (`dayLabel === "Sunday"`) - the remaining days of
+  // each feast's own Simple Octave stay at the ordinary "feria"
+  // classification, matching Ranking.tex's statement that Simple
+  // Octaves carry no special protection of their own.
+  const MOVEABLE_FEAST_FIRST_CLASS_KEYS = new Set(["Patronage of St. Joseph|Sunday"]);
+  const MOVEABLE_FEAST_SECOND_CLASS_KEYS = new Set(["Compassion of Our Lord|Sunday"]);
+
   // Every one of this Kalendar's 39 Sanctorale Collects is 2nd Double or
   // higher (see ROADMAP.md), and not one of them falls on a Vigil date -
   // fixed or moveable - so, unlike the Privileged Octaves above, Vigil
@@ -300,6 +353,22 @@
     ...["Passion Monday", "Passion Tuesday", "Passion Wednesday", "Passion Thursday", "Passion Friday", "Passion Saturday"].map(
       (d) => `Passion Sunday|${d}`
     ),
+    // George's follow-up (10/26) to the Christ the King investigation (see
+    // ROADMAP.md): the Autumn Ember Days (newly anchored in calendar.js's
+    // buildAnchorList, see that fix) carry PropTime.tex's own explicit
+    // rubric in black and white - "On this day and the following Friday
+    // and Saturday, no Feast is kept unless it be a First or Second Class
+    // Double" - which is this Set's exact Second Class Feria rule, stated
+    // verbatim rather than inferred. Each is a standalone periodKey (its
+    // own Feast Day, dayLabel "Sunday" per this codebase's anchor-day
+    // convention, same as Patronage of St. Joseph/Compassion of Our Lord
+    // just above), unlike the Lent I-nested "Lent I|Ember Wednesday"-style
+    // keys elsewhere in this Set - and unlike the Whitsun Ember Days' own
+    // standalone "Ember Wednesday"/"Ember Friday"/"Ember Saturday"
+    // periodKeys noted below, these have no Privileged Octave of their
+    // own to belong to instead, so the plain Second Class Feria tier
+    // applies directly.
+    "Ember Wednesday in Autumn|Sunday", "Ember Friday in Autumn|Sunday", "Ember Saturday in Autumn|Sunday",
   ]);
   // Note: the standalone periodKeys "Ember Wednesday"/"Ember Friday"/
   // "Ember Saturday" (as opposed to a "Lent I|Ember Wednesday"-style
@@ -372,6 +441,25 @@
     if (PRIVILEGED_OCTAVE_3RD_KEYS.has(key)) return "privileged-octave-3rd";
     if (PRIVILEGED_OCTAVE_2ND_KEYS.has(key)) return "privileged-octave-2nd";
     if (key === WHITSUN_EVEN_KEY) return "privileged-vigil-1st";
+    if (MOVEABLE_FEAST_FIRST_CLASS_KEYS.has(key)) return "moveable-feast-first-class";
+    if (MOVEABLE_FEAST_SECOND_CLASS_KEYS.has(key)) return "moveable-feast-second-class";
+    // George's follow-up (10/26) to the Christ the King investigation:
+    // found via a live 2026-09-19 check - the Autumn Ember Days can
+    // genuinely coincide with a Common Vigil (here, the Vigil of St.
+    // Matthew, 21 September), and classifyVigil below would otherwise
+    // win this case first, loosening PropTime.tex's own absolute
+    // threshold for these three days ("no Feast is kept unless it be a
+    // First or Second Class Double," tier>=6) down to Common Vigil's
+    // generic tier>=4 - letting a plain Double (e.g. Sts. Januarius &
+    // Companions, Double, tier 4) wrongly win. Checked explicitly here,
+    // ahead of classifyVigil, same as the Moveable Feast keys just
+    // above - deliberately NOT a reordering of the general
+    // SECOND_CLASS_FERIA_KEYS/classifyVigil precedence (Ash Wednesday's
+    // and Lent's own Second Class Ferias were already confirmed to
+    // never actually collide with a Common Vigil date - see the
+    // Common Vigil comment below - so that ordering question stays
+    // exactly as open/unconfirmed with Augustine as it was before).
+    if (/^Ember (Wednesday|Friday|Saturday) in Autumn\|Sunday$/.test(key)) return "second-class-feria";
     const vigilCls = classifyVigil(resolved.kalendar);
     if (vigilCls) return vigilCls;
     if (SECOND_CLASS_FERIA_KEYS.has(key)) return "second-class-feria";
@@ -429,6 +517,18 @@
     if (cls === "privileged-octave-3rd-day") {
       // Ascension's Octave Day specifically: "only a I or II Double is
       // kept" - tier>=6, stricter than the rest of a Third Order Octave.
+      const winner = tier >= 6 ? "feast" : "season";
+      return { winner, commemorateOther: tier > 0, classification: cls, feastTier: tier };
+    }
+    if (cls === "moveable-feast-first-class") {
+      // Patronage of St. Joseph's own Feast Day - see the doc comment by
+      // MOVEABLE_FEAST_FIRST_CLASS_KEYS above for the full derivation.
+      const winner = tier >= 7 ? "feast" : "season";
+      return { winner, commemorateOther: tier > 0, classification: cls, feastTier: tier };
+    }
+    if (cls === "moveable-feast-second-class") {
+      // The Compassion of Our Lord's own Feast Day - see the doc comment
+      // by MOVEABLE_FEAST_SECOND_CLASS_KEYS above for the full derivation.
       const winner = tier >= 6 ? "feast" : "season";
       return { winner, commemorateOther: tier > 0, classification: cls, feastTier: tier };
     }

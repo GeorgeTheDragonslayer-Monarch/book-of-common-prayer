@@ -118,6 +118,13 @@ for (const d of ["2026-10-03", "2026-09-05"]) {
 const exclusions = [
   ["2026-04-18", "Low Saturday (within Easter's own Privileged Octave)"],
   ["2026-06-06", "Ember Saturday (Whitsun)"],
+  // George's follow-up (10/26) to the Christ the King investigation gave
+  // the Autumn Ember Saturday its own periodKey ("Ember Saturday in
+  // Autumn" - see js/calendar.js's buildAnchorList and ROADMAP.md),
+  // closing the gap this file's own isOfficeOfOurLadyToday comment used
+  // to flag by name ("September's Ember Saturday has no periodKey of
+  // its own to check in this codebase at all"). Now excluded here too.
+  ["2026-09-19", "Ember Saturday (Autumn)"],
   ["2026-06-13", "Saturday within Corpus Christi's own Privileged Octave"],
   ["2026-08-13", "A Double Feast (St. Maximus) winning the day"],
   ["2026-08-22", "An Octave Day (of the Assumption) winning the day"],

@@ -71,18 +71,30 @@ function check(label, cond) {
 const RED_RGB = "rgb(138, 31, 31)";
 const WHITE_GOLD_RGB = "rgb(138, 109, 29)";
 
-// St. George's Octave, 2026: Feast Day 23 April, Octave Day 30 April.
-// 25 April (St. Mark) and 26 April (Easter II, which outranks the
-// Octave in 2026) interrupt the Octave per the site's existing ranking
-// logic - not touched by this fix, and not asserted on here beyond
-// confirming they're simply *not* part of the Octave (their own
-// established colors are a separate concern).
+// St. George's Octave: Feast Day 23 April, Octave Day 30 April.
+// George's follow-up (10/26) to the Christ the King investigation fixed
+// a *different* bug that happened to also live on 2026-04-29 (see
+// ROADMAP.md and js/ranking.js's MOVEABLE_FEAST_FIRST_CLASS_KEYS):
+// Patronage of St. Joseph, once reachable at all, correctly outranks
+// this Octave's Day VII that year (it's a First Class Double, tier 7),
+// so 2026 stopped being a clean year for *this* test - 29 April 2026 is
+// now correctly "Patronage of St. Joseph," not "Day VII within the
+// Octave of St. George," and asserting otherwise here would be
+// asserting the very bug the other fix corrected. Re-pointed at 2037,
+// a year confirmed (by direct lookup) to have no such collision on any
+// of the dates checked below, so this file goes back to testing only
+// what it was originally written to test: the Octave inheriting the
+// Feast's own color. 25 April (St. Mark) and 26 April (Easter III,
+// which outranks the Octave in 2037) interrupt the Octave per the
+// site's existing ranking logic - not touched by this fix, and not
+// asserted on here beyond confirming they're simply *not* part of the
+// Octave (their own established colors are a separate concern).
 {
-  const dom = runOnDate("2026-04-23T12:00:00Z", "#mass");
+  const dom = runOnDate("2037-04-23T12:00:00Z", "#mass");
   const dot = dom.window.document.getElementById("massColorDot");
-  check("23 April 2026 (St. George's Feast Day) is red", dot && dot.getAttribute("style").includes(RED_RGB));
+  check("23 April 2037 (St. George's Feast Day) is red", dot && dot.getAttribute("style").includes(RED_RGB));
 }
-for (const d of ["2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29"]) {
+for (const d of ["2037-04-24", "2037-04-27", "2037-04-28", "2037-04-29"]) {
   const dom = runOnDate(d + "T12:00:00Z", "#mass");
   const label = dom.window.document.getElementById("massSeasonLabel").textContent;
   const dot = dom.window.document.getElementById("massColorDot");
@@ -90,11 +102,24 @@ for (const d of ["2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29"]) {
   check(`${d} (a Day within the Octave of St. George) is red, inheriting the Feast's own color`, dot && dot.getAttribute("style").includes(RED_RGB));
 }
 {
-  const dom = runOnDate("2026-04-30T12:00:00Z", "#mass");
+  const dom = runOnDate("2037-04-30T12:00:00Z", "#mass");
   const label = dom.window.document.getElementById("massSeasonLabel").textContent;
   const dot = dom.window.document.getElementById("massColorDot");
-  check('30 April 2026 is labeled "Octave Day of St. George"', label === "Octave Day of St. George, Greater Double" || /Octave Day of St\. George/.test(label));
+  check('30 April 2037 is labeled "Octave Day of St. George"', label === "Octave Day of St. George, Greater Double" || /Octave Day of St\. George/.test(label));
   check("The Octave Day itself is also red", dot && dot.getAttribute("style").includes(RED_RGB));
+}
+
+// Regression guard for the Patronage of St. Joseph ranking fix itself:
+// 2026-04-29 (the real date George's follow-up fix changed) must now
+// show Patronage of St. Joseph, white/gold, winning outright over Day
+// VII within the Octave of St. George - not the other way around. See
+// test_patronage_and_compassion.js for the fuller treatment of that fix.
+{
+  const dom = runOnDate("2026-04-29T12:00:00Z", "#mass");
+  const label = dom.window.document.getElementById("massSeasonLabel").textContent;
+  const dot = dom.window.document.getElementById("massColorDot");
+  check('29 April 2026 is labeled "Patronage of St. Joseph" (not the Octave of St. George)', /^Patronage of St\. Joseph/.test(label));
+  check("29 April 2026 is white/gold, not red", dot && dot.getAttribute("style").includes(WHITE_GOLD_RGB));
 }
 
 // Control: the Assumption's Octave (a non-martyr Common Octave) must

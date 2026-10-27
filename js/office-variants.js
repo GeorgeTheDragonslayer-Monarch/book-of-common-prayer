@@ -321,6 +321,18 @@ function pickMarianAnthem(resolved) {
   if (periodKey === "Whitsunday") return "reginaCaeli";
   if (periodKey === "Ember Wednesday" || periodKey === "Ember Friday" || periodKey === "Ember Saturday") return "reginaCaeli"; // Whitsun Embers
 
+  // George's follow-up (10/26) to the Christ the King investigation: the
+  // Autumn Ember Days (newly given their own standalone periodKeys in
+  // calendar.js's buildAnchorList, see that fix and ROADMAP.md) fall
+  // well after Trinity Sunday, so - unlike the Whitsun Ember Days just
+  // above, which fall before it - they belong under Salve Regina, not
+  // Regina Caeli. Before this periodKey existed, these dates resolved
+  // under their enclosing ordinary "Trinity N" periodKey and were
+  // already correctly caught by the `/^Trinity /` check below; matched
+  // explicitly here now that they have a periodKey of their own, so they
+  // don't silently fall through to the pre-Trinity-Sunday "aveRegina"
+  // default at the end of this function instead.
+  if (/^Ember (Wednesday|Friday|Saturday) in Autumn$/.test(periodKey)) return "salveRegina";
   if (periodKey === "Trinity Sunday" || /^Trinity /.test(periodKey) || periodKey === "Corpus Christi" || periodKey === "Sunday Next before Advent") {
     return "salveRegina";
   }

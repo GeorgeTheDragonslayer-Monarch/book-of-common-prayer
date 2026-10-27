@@ -116,10 +116,26 @@ for (const [d, expected] of otherVigils) {
   const label = dom.window.document.getElementById("massSeasonLabel").textContent;
   check("22 August 2026 still correctly shows the outranking Octave Day of the Assumption, not the moved Vigil", label === "Octave Day of the Assumption, Greater Double");
 }
+// George's follow-up (10/26) to the Christ the King investigation
+// changed what 19 September 2026 actually shows: that date is also
+// Ember Saturday in Autumn (newly anchored - see js/calendar.js's
+// buildAnchorList and ROADMAP.md), whose own PropTime.tex rubric ("no
+// Feast is kept unless it be a First or Second Class Double") is
+// stronger than the generic Common Vigil tier>=4 exception this block
+// is otherwise demonstrating - a plain Double (Sts. Januarius &
+// Companions, tier 4) no longer clears Ember Saturday's own tier>=6
+// threshold, so it's now correctly demoted to a commemoration, and
+// findVigilKalendarEntry's title rule (this file's own subject) takes
+// back over and shows the moved Vigil's name instead, exactly as it
+// would on any other date with no competing Double-or-above Feast. See
+// test_autumn_ember_days.js for the fuller treatment of that fix; this
+// block now demonstrates the SAME Common-Vigil-vs-real-Feast
+// precedence this file has always covered using only the 22 August
+// case just above, which isn't an Ember day and so is untouched.
 {
-  const dom = runOnDate("2026-09-19T12:00:00Z", "#mass"); // Vigil of St. Matthew moved from Sun 9-20
+  const dom = runOnDate("2026-09-19T12:00:00Z", "#mass"); // Vigil of St. Matthew moved from Sun 9-20, also Ember Saturday in Autumn
   const label = dom.window.document.getElementById("massSeasonLabel").textContent;
-  check("19 September 2026 still correctly shows the outranking Sts. Januarius & Companions, not the moved Vigil", label === "Sts. Januarius & Companions, Martyrs, Double");
+  check('19 September 2026 now correctly shows the moved Vigil (Ember Saturday in Autumn\'s own tier>=6 rubric outranks the plain Double)', label === "Vigil of St. Matthew, Vigil");
 }
 
 // The original Sundays themselves (where a Vigil was moved off per task

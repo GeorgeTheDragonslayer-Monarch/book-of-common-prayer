@@ -2518,11 +2518,12 @@
     // "Ember Saturday" is this codebase's own periodKey for the Whitsun
     // Ember Days only (js/calendar.js's buildAnchorList) - Advent's and
     // Lent's own Ember Saturdays are already excluded by the season check
-    // above. September's Ember Saturday has no periodKey of its own to
-    // check in this codebase at all (a separate, pre-existing gap - see
-    // liturgical-color.js's own Ember-day comment), so it isn't excluded
-    // here; flagged rather than guessed at.
-    if (resolved.periodKey === "Ember Saturday") return false;
+    // above. George's follow-up (10/26) to the Christ the King
+    // investigation gave September's Ember Saturday its own periodKey,
+    // "Ember Saturday in Autumn" (see that fix in buildAnchorList and
+    // ROADMAP.md) - excluded here the same way, now that there's
+    // something to check.
+    if (resolved.periodKey === "Ember Saturday" || resolved.periodKey === "Ember Saturday in Autumn") return false;
     if (feastInfo && feastInfo.winner === "feast") return false;
     if (isOctaveOccurrentToday(resolved)) return false;
     if (findVigilKalendarEntry(resolved)) return false;
@@ -2839,10 +2840,17 @@
       // same as its three neighbors here); Trinity I/II (no rubric
       // found, likely still within Corpus Christi's own privileged
       // season); the Whitsun Ember days (documented gap, see comment
-      // above) - everything else in this bucket (Trinity III-XXIV, the
-      // Sunday next before Advent, and the Autumnal Ember days, which
-      // nest under an ordinary Trinity Sunday's own periodKey) shares
-      // the one uniform rule.
+      // above) - everything else in this bucket (Trinity III-XXIV and
+      // the Sunday next before Advent) shares the one uniform rule.
+      // George's follow-up (10/26) to the Christ the King investigation:
+      // the Autumnal Ember days now have their own periodKeys ("Ember
+      // Wednesday in Autumn" etc. - see buildAnchorList in calendar.js
+      // and ROADMAP.md) rather than nesting under an ordinary Trinity
+      // Sunday's own periodKey as this comment used to say - but
+      // PropTime.tex's own rubric for them ("2nd Collect is of the
+      // Saints & 3rd is ad libitum") is identical to this bucket's
+      // uniform rule anyway, so they're correctly left out of the list
+      // below and fall through to the same `return` unchanged.
       if (["Whitsunday", "Trinity Sunday", "Corpus Christi", "Compassion of Our Lord", "Trinity I", "Trinity II", "Ember Wednesday", "Ember Friday", "Ember Saturday"].includes(pk)) return null;
       return { second: "ofSaints", third: "adLibitum" };
     }

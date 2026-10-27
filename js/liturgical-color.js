@@ -91,10 +91,25 @@ function seasonBaseColor(periodKey) {
   // Corpus Christi just above, for the same reason (no rule here named
   // it, so it would otherwise fall through to the green default).
   if (periodKey === "Compassion of Our Lord") return "white";
+  // George's follow-up (10/26) to the Christ the King investigation
+  // (see ROADMAP.md): "Patronage of St. Joseph" (newly anchored in
+  // calendar.js's buildAnchorList, see that fix) is marked "First Class
+  // Double" in its own PropSeas.tex entry - same reasoning as Corpus
+  // Christi/the Compassion of Our Lord just above: no rule here named
+  // it, so it would otherwise fall through to the green Eastertide-feria
+  // default below.
+  if (periodKey === "Patronage of St. Joseph") return "white";
   if (/^(Christmas|Easter|Whitsunday|Trinity Sunday|Circumcision|Most Holy Name)/.test(periodKey)) return "white";
   if (/^Trinity (I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII|XIII|XIV|XV|XVI|XVII|XVIII|XIX|XX|XXI|XXII|XXIII|XXIV)$/.test(periodKey)) return "green";
   if (/^Sunday Next before Advent$/.test(periodKey)) return "green";
   if (/^Rogation Sunday$/.test(periodKey)) return "violet";
+  // George's follow-up (10/26) to the Christ the King investigation (see
+  // ROADMAP.md): the Autumn Ember Days (newly anchored in calendar.js's
+  // buildAnchorList, see that fix) are marked "{LentenViolet}" in their
+  // own PropTime.tex entries - same violet as the Whitsun Ember days
+  // just below, just under distinct periodKey names ("...in Autumn") so
+  // this regex doesn't already match them.
+  if (/^Ember (Wednesday|Friday|Saturday) in Autumn$/.test(periodKey)) return "violet";
   if (/^Ember (Wednesday|Friday|Saturday)$/.test(periodKey)) return "violet";
   return "green";
 }

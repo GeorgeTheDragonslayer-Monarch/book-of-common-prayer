@@ -5031,5 +5031,47 @@
         "lesson2": "Titus 1:1-2:8"
       }
     }
+  },
+  "Ember Wednesday in Autumn": {
+    "Sunday": {
+      "mattins": {
+        "psalms": "[15,24,26]",
+        "lesson1": "Gn 14:13-20",
+        "lesson2": "Heb 4:14-5:10"
+      },
+      "evensongII": {
+        "psalms": "[84,132,134]",
+        "lesson1": "1 Kgs 19",
+        "lesson2": "1 Tim 3"
+      }
+    }
+  },
+  "Ember Friday in Autumn": {
+    "Sunday": {
+      "mattins": {
+        "psalms": "[15,24,26]",
+        "lesson1": "Num 17:1-18:7",
+        "lesson2": "Lk 12:35-48"
+      },
+      "evensongII": {
+        "psalms": "[84,132,134]",
+        "lesson1": "2 Kgs 2:1-22",
+        "lesson2": "1 Tim 4"
+      }
+    }
+  },
+  "Ember Saturday in Autumn": {
+    "Sunday": {
+      "mattins": {
+        "psalms": "[15,24,26]",
+        "lesson1": "Dt 14:22",
+        "lesson2": "1 Cor 9:7"
+      },
+      "evensongII": {
+        "psalms": "[84,132,134]",
+        "lesson1": "Ezek 34:1-16",
+        "lesson2": "Titus 1:1-2:8"
+      }
+    }
   }
 }
